@@ -12,7 +12,7 @@ const {page, language} = Astro.props;
 const path = localizedPath(`/${page.slug}/`, language);
 const t = {
   source: language === 'sq' ? 'Regjistër publik' : 'Public record',
-  teamNote: language === 'sq' ? 'Biografitë e plota nuk u gjetën në materialin publik të nxjerrë dhe nuk janë shpikur.' : 'Full biographies were not exposed in the extracted public material and have not been invented.',
+  teamNote: language === 'sq' ? 'Profilet e plota të ekipit janë shtuar nga materiali i dhënë nga KULT360.' : 'Full team profiles have been added from KULT360-supplied source material.',
   archive: language === 'sq' ? 'Përmbajtja e plotë e disa regjistrave mbetet në rishikim editorial.' : 'Full body content for some records remains under editorial review.',
   contact: language === 'sq' ? 'Na kontakto' : 'Contact us'
 };
