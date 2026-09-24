@@ -485,3 +485,317 @@ body:not(:has(.pcf-hero)) .brand-lockup{
     justify-self:start;
   }
 }
+
+
+/* === Full leadership profiles supplied by KULT360 === */
+.team-profile-page{
+  width:min(100%,74rem);
+  margin-inline:auto;
+}
+.team-profile-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(18rem,.62fr);
+  gap:clamp(2.2rem,5vw,5rem);
+  align-items:end;
+  padding-bottom:clamp(3rem,5vw,4.8rem);
+  border-bottom:1px solid rgba(9,9,8,.18);
+}
+.team-profile-hero__copy{
+  display:grid;
+  gap:.8rem;
+  align-content:end;
+}
+.team-profile-hero h1{
+  margin:0;
+  max-width:11ch;
+  font-family:var(--font-sans);
+  font-size:clamp(3.4rem,6.7vw,6.8rem);
+  line-height:.88;
+  letter-spacing:-.068em;
+  font-weight:690;
+}
+.team-profile-role{
+  margin:0;
+  color:var(--ref-muted);
+  font-size:.9rem;
+}
+.team-profile-quote{
+  margin:clamp(1.6rem,3vw,2.6rem) 0 0;
+  padding:1.1rem 0 0;
+  border-top:1px solid rgba(9,9,8,.2);
+  max-width:44rem;
+}
+.team-profile-quote p{
+  margin:0;
+  font-size:clamp(1.15rem,2vw,1.7rem);
+  line-height:1.28;
+  letter-spacing:-.025em;
+}
+.team-profile-quote cite{
+  display:block;
+  margin-top:.7rem;
+  font-style:normal;
+  color:var(--ref-muted);
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+.team-profile-hero__media{
+  align-self:stretch;
+  display:grid;
+  place-items:center;
+  min-height:29rem;
+  background:#e9e5dd;
+  border-radius:14px;
+  overflow:hidden;
+}
+.team-profile-hero__media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.team-profile-portrait-placeholder{
+  width:100%;
+  height:100%;
+  min-height:29rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:1.1rem;
+  background:#151514;
+  color:#fff;
+}
+.team-profile-portrait-placeholder>span{
+  align-self:center;
+  margin:auto;
+  color:var(--ref-yellow);
+  font-size:clamp(3.8rem,7vw,6rem);
+  letter-spacing:-.06em;
+  font-weight:650;
+}
+.team-profile-portrait-placeholder small{
+  color:#9b978f;
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+.team-profile-bio{
+  display:grid;
+  grid-template-columns:8rem minmax(0,1fr);
+  gap:clamp(2rem,5vw,5rem);
+  padding-block:clamp(3.8rem,6.5vw,6rem);
+  border-bottom:1px solid rgba(9,9,8,.18);
+}
+.team-profile-section-label{
+  margin:0;
+  font-size:.64rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:850;
+}
+.team-profile-bio__copy{
+  width:min(100%,46rem);
+}
+.team-profile-bio__copy p{
+  margin:0;
+  font-size:clamp(1.08rem,1.45vw,1.28rem);
+  line-height:1.66;
+}
+.team-profile-bio__copy p+p{margin-top:1.35rem}
+
+.team-profile-highlights{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  padding-block:clamp(3.8rem,6vw,5.5rem);
+  border-bottom:1px solid rgba(9,9,8,.18);
+}
+.team-profile-highlights article{
+  position:relative;
+  min-height:100%;
+  padding:1.3rem;
+  background:var(--ref-cream);
+  border:1px solid rgba(9,9,8,.14);
+  border-radius:12px;
+}
+.team-profile-index{
+  display:block;
+  margin-bottom:2.4rem;
+  color:var(--ref-muted);
+  font-size:.62rem;
+  font-weight:850;
+}
+.team-profile-highlights h2{
+  margin:0 0 1.15rem;
+  font-family:var(--font-sans);
+  font-size:clamp(1.6rem,2.5vw,2.5rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+  font-weight:650;
+}
+.team-profile-highlights ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+}
+.team-profile-highlights li{
+  display:grid;
+  gap:.25rem;
+  padding:.85rem 0;
+  border-top:1px solid rgba(9,9,8,.12);
+}
+.team-profile-highlights li strong{
+  font-size:.75rem;
+}
+.team-profile-highlights li span{
+  color:#4f4b45;
+  font-size:.8rem;
+  line-height:1.45;
+}
+
+.team-profile-languages{
+  display:grid;
+  grid-template-columns:8rem 1fr;
+  gap:clamp(2rem,5vw,5rem);
+  align-items:start;
+  padding:1.25rem 0;
+  border-bottom:1px solid rgba(9,9,8,.18);
+}
+.team-profile-languages>span{
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  font-weight:850;
+}
+.team-profile-languages p{
+  margin:0;
+  font-size:.82rem;
+}
+
+.team-profile-sections{
+  display:grid;
+}
+.team-profile-section{
+  display:grid;
+  grid-template-columns:minmax(12rem,.42fr) minmax(0,1fr);
+  gap:clamp(2rem,5vw,5rem);
+  padding-block:clamp(3.6rem,6vw,5.5rem);
+  border-bottom:1px solid rgba(9,9,8,.18);
+}
+.team-profile-section__head{
+  display:grid;
+  align-content:start;
+  gap:.6rem;
+}
+.team-profile-section__head>span{
+  color:var(--ref-muted);
+  font-size:.61rem;
+  font-weight:850;
+}
+.team-profile-section__head h2{
+  margin:0;
+  max-width:11ch;
+  font-family:var(--font-sans);
+  font-size:clamp(1.8rem,3vw,3rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+  font-weight:660;
+}
+.team-profile-section__grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 1.4rem;
+  border-top:1px solid rgba(9,9,8,.18);
+}
+.team-profile-item{
+  min-width:0;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(9,9,8,.14);
+}
+.team-profile-item h3{
+  margin:0 0 .25rem;
+  font-family:var(--font-sans);
+  font-size:.88rem;
+  line-height:1.25;
+  font-weight:700;
+}
+.team-profile-item p{
+  margin:0;
+  color:#4e4a44;
+  font-size:.78rem;
+  line-height:1.45;
+}
+.team-profile-item>span{
+  display:block;
+  margin-top:.35rem;
+  color:var(--ref-muted);
+  font-size:.61rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.team-profile-source{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding-block:1rem;
+  color:var(--ref-muted);
+  font-size:.61rem;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+.team-profile-source a{
+  color:inherit;
+  text-decoration:none;
+}
+
+@media(max-width:54rem){
+  .team-profile-hero{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .team-profile-hero__media{
+    width:min(100%,34rem);
+    min-height:0;
+    aspect-ratio:4/5;
+  }
+  .team-profile-portrait-placeholder{
+    min-height:0;
+    aspect-ratio:4/5;
+  }
+  .team-profile-bio,
+  .team-profile-languages,
+  .team-profile-section{
+    grid-template-columns:1fr;
+    gap:1.3rem;
+  }
+}
+
+@media(max-width:44rem){
+  .team-profile-page{
+    width:100%;
+  }
+  .team-profile-hero{
+    gap:1.7rem;
+    padding-bottom:2.7rem;
+  }
+  .team-profile-hero h1{
+    font-size:clamp(3rem,15vw,4.7rem);
+  }
+  .team-profile-hero__media{
+    width:100%;
+  }
+  .team-profile-highlights{
+    grid-template-columns:1fr;
+  }
+  .team-profile-section__grid{
+    grid-template-columns:1fr;
+  }
+  .team-profile-source{
+    flex-direction:column;
+  }
+}
