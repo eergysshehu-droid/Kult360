@@ -6,14 +6,23 @@ interface Props {language: Language; path: string; translations: readonly Langua
 const {language, path, translations} = Astro.props;
 const navSlugs = ['about','programs','projects','journal','media','get-involved'];
 const items = shellPages.filter(({slug}) => navSlugs.includes(slug));
+const normalizedPath = path.replace(/^\/sq\/?/, '/');
+const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
 ---
 <div class="mobile-navigation" data-mobile-nav>
-  <button class="menu-trigger" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false"><span>{language === 'sq' ? 'Menu' : 'Menu'}</span><span aria-hidden="true">☰</span></button>
+  <button class="menu-trigger" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false">
+    <span>{language === 'sq' ? 'Menu' : 'Menu'}</span><span class="menu-trigger__mark" aria-hidden="true"><i></i><i></i></span>
+  </button>
   <dialog class="menu-dialog" id="mobile-menu" aria-labelledby="mobile-menu-title">
     <div class="menu-dialog__panel">
-      <div class="menu-dialog__header"><p class="wordmark" id="mobile-menu-title">KULT<span class="wordmark__360">360</span></p><button class="menu-close" type="button" aria-label={language === 'sq' ? 'Mbyll menunë' : 'Close menu'}>×</button></div>
-      <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}><ul class="menu-list">{items.map((item, index) => <li><span>0{index + 1}</span><a href={localizedPath(`/${item.slug}/`, language)}>{item.label[language]}</a></li>)}</ul></nav>
-      <div class="menu-dialog__foot"><LanguageSwitcher {language} {path} {translations} /><a href="mailto:office@kult360.com">office@kult360.com</a></div>
+      <div class="menu-dialog__header">
+        <p class="wordmark wordmark--inverse" id="mobile-menu-title">KULT<span class="wordmark__360">360</span></p>
+        <button class="menu-close" type="button" aria-label={language === 'sq' ? 'Mbyll menunë' : 'Close menu'}>×</button>
+      </div>
+      <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
+        <ul class="menu-list">{items.map((item, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><a href={localizedPath(`/${item.slug}/`, language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
+      </nav>
+      <div class="menu-dialog__foot"><LanguageSwitcher {language} {path} {translations} /><a href="mailto:office@kult360.com">office@kult360.com ↗</a></div>
     </div>
   </dialog>
 </div>

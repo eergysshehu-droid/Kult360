@@ -1,8 +1,8 @@
 ---
 import {localizedPath, type Language} from '../../lib/site-config';
 import {projectImage, projectSlug, type Project} from '../../lib/content';
-interface Props {project: Project; language: Language; priority?: boolean}
-const {project, language, priority = false} = Astro.props;
+interface Props {project: Project; language: Language; priority?: boolean; index?: number}
+const {project, language, priority = false, index} = Astro.props;
 const image = projectImage(project);
 const href = localizedPath(`/projects/${projectSlug(project)}/`, language);
 const meta = project.location || project.kind.replaceAll('_', ' ');
@@ -10,10 +10,11 @@ const meta = project.location || project.kind.replaceAll('_', ' ');
 <article class="project-card">
   <a class="project-card__media" href={href} aria-label={`${project.title} — ${language === 'sq' ? 'shiko projektin' : 'view project'}`}>
     {image ? <img src={image} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" /> : <span class="project-card__fallback" aria-hidden="true"></span>}
+    <span class="project-card__arrow" aria-hidden="true">↗</span>
   </a>
   <div class="project-card__body">
-    <p class="meta">{meta}</p>
+    <div class="project-card__meta"><p class="meta">{meta}</p>{typeof index === 'number' && <span class="project-card__index">{String(index + 1).padStart(2, '0')}</span>}</div>
     <h3><a href={href}>{project.title}</a></h3>
-    {project.summary && <p>{project.summary}</p>}
+    {project.summary && <p class="project-card__summary">{project.summary}</p>}
   </div>
 </article>
