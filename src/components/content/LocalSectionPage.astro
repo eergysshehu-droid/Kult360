@@ -5,7 +5,8 @@ import ProjectCard from './ProjectCard.astro';
 import JournalCard from './JournalCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
 import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
-import {events, formatDate, initiatives, journal, opportunities, people, projectImage, projects, strategicPillars} from '../../lib/content';
+import {events, formatDate, initiatives, journal, opportunities, people, projectImage, projects} from '../../lib/content';
+import {programFocusAreas} from '../../content/program-focus';
 import type {ShellPageDefinition} from '../../content/shell-pages';
 
 interface Props {page: ShellPageDefinition; language: Language}
@@ -87,13 +88,16 @@ const t = {
   {page.slug === 'programs' && (
     <>
       <section class="program-page-grid ruled-section">
-        {strategicPillars.map((item, index) => (
-          <article class="program-page-card">
-            <span class="program-page-card__index">0{index + 1}</span>
-            <h2>{item.title}</h2>
-            <p>{item.summary || (language === 'sq' ? 'Fushë strategjike e KULT360.' : 'KULT360 strategic focus area.')}</p>
+        {programFocusAreas.map((item) => (
+          <a class="program-page-card" href={localizedPath(`/programs/${item.slug}/`, language)} style={`--program-accent:${item.accent}`}>
+            <span class="program-page-card__index">{item.number}</span>
+            <div class="program-page-card__body">
+              <h2>{item.title[language]}</h2>
+              <p>{item.summary[language]}</p>
+            </div>
+            <span class="program-page-card__action">{language === 'sq' ? 'Hap programin' : 'Open program'} <i aria-hidden="true">↗</i></span>
             <span class="program-page-card__accent" aria-hidden="true"></span>
-          </article>
+          </a>
         ))}
       </section>
       <section class="ruled-section">

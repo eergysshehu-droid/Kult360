@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from './ProjectCard.astro';
+import PartnerMarquee from './PartnerMarquee.astro';
+import {programFocusAreas, type ProgramFocusArea} from '../../content/program-focus';
+import {projects} from '../../lib/content';
+import {localizedPath, type Language} from '../../lib/site-config';
+
+interface Props {program: ProgramFocusArea; language: Language}
+const {program, language} = Astro.props;
+const relatedProjects = program.relatedProjectIds
+  .map((id) => projects.find((project) => project.id === id))
+  .filter((project) => project !== undefined);
+const programIndex = programFocusAreas.findIndex((item) => item.slug === program.slug);
+const previous = programFocusAreas[(programIndex - 1 + programFocusAreas.length) % programFocusAreas.length];
+const next = programFocusAreas[(programIndex + 1) % programFocusAreas.length];
+const path = localizedPath(`/programs/${program.slug}/`, language);
+const words = program.title[language].split(' ');
+---
+<BaseLayout title={program.title[language]} description={program.summary[language]} {language} {path} translations={['en', 'sq']}>
+  <article class="program-detail" style={`--program-accent:${program.accent}`}>
+    <header class="program-detail__hero">
+      <div class="program-detail__orbit" aria-hidden="true">
+        <img src="/media/brand/kult360-orbit-source.png" alt="" />
+      </div>
+      <div class="container-wide program-detail__hero-inner">
+        <div class="program-detail__hero-top">
+          <a href={localizedPath('/programs/', language)}>← {language === 'sq' ? 'Të gjitha programet' : 'All programs'}</a>
+          <span>{program.number} / 04</span>
+        </div>
+        <div class="program-detail__title-grid">
+          <p class="program-detail__eyebrow">{language === 'sq' ? 'Fushë strategjike' : 'Strategic focus area'}</p>
+          <h1>{words.map((word) => <span>{word}</span>)}</h1>
+          <p class="program-detail__summary">{program.summary[language]}</p>
+        </div>
+        <a class="program-detail__scroll" href="#approach">
+          <span>{language === 'sq' ? 'Shiko qasjen' : 'Explore the approach'}</span>
+          <i aria-hidden="true">↓</i>
+        </a>
+      </div>
+    </header>
+
+    <section class="container-wide program-detail__statement" id="approach">
+      <div class="program-detail__section-label"><span>{program.number}</span><p>{language === 'sq' ? 'Ideja qendrore' : 'The central idea'}</p></div>
+      <div>
+        <h2>{program.statement[language]}</h2>
+        <p>{program.introduction[language]}</p>
+      </div>
+    </section>
+
+    <section class="program-detail__principles">
+      <div class="container-wide">
+        <div class="program-detail__section-head">
+          <p>{language === 'sq' ? 'Si punojmë' : 'How we work'}</p>
+          <span>{language === 'sq' ? 'Tre parime pune' : 'Three working principles'}</span>
+        </div>
+        <div class="program-detail__principle-grid">
+          {program.principles.map((principle, index) => (
+            <article>
+              <span>0{index + 1}</span>
+              <h3>{principle.title[language]}</h3>
+              <p>{principle.body[language]}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="container-wide program-detail__projects">
+      <div class="program-detail__section-head">
+        <p>{language === 'sq' ? 'Nga arkivi' : 'From the archive'}</p>
+        <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Të gjitha projektet' : 'All projects'} ↗</a>
+      </div>
+      <div class="program-detail__project-grid">
+        {relatedProjects.map((project, index) => <ProjectCard {project} {language} priority={index === 0} />)}
+      </div>
+    </section>
+
+    <section class="program-detail__partners">
+      <div class="container-wide program-detail__section-head">
+        <p>{language === 'sq' ? 'Rrjeti ynë' : 'Our network'}</p>
+        <span>{language === 'sq' ? 'Partnerë & bashkëpunëtorë' : 'Partners & collaborators'}</span>
+      </div>
+      <PartnerMarquee {language} />
+    </section>
+
+    <nav class="container-wide program-detail__next" aria-label={language === 'sq' ? 'Programet' : 'Programs'}>
+      <a href={localizedPath(`/programs/${previous.slug}/`, language)}>
+        <span>← {language === 'sq' ? 'Më parë' : 'Previous'}</span>
+        <strong>{previous.title[language]}</strong>
+      </a>
+      <a href={localizedPath(`/programs/${next.slug}/`, language)}>
+        <span>{language === 'sq' ? 'Më tej' : 'Next'} →</span>
+        <strong>{next.title[language]}</strong>
+      </a>
+    </nav>
+  </article>
+</BaseLayout>

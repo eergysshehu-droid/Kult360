@@ -1,0 +1,12 @@
+---
+import ProgramDetailPage from '../../../components/content/ProgramDetailPage.astro';
+import {programFocusAreas} from '../../../content/program-focus';
+
+export const getStaticPaths = () => programFocusAreas.map((program) => ({
+  params: {slug: program.slug},
+  props: {program}
+}));
+
+const {program} = Astro.props;
+---
+<ProgramDetailPage {program} language="sq" />
