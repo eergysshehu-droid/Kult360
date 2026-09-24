@@ -97,7 +97,7 @@ const heroWordStep = 360 / heroWords.length;
       <div class="pcf-update-list">
         {featuredJournal.slice(0, 4).map((record) => (
           <a href={'/journal/' + journalSlug(record) + '/'}>
-            <span>{record.category || 'Journal'}</span>
+            <span>{record.category || 'Journal'}{record.language && record.language !== language ? ` · ${record.language.toUpperCase()}` : ''}</span>
             <strong>{record.title}</strong>
             <em>{record.read_time || 'Read'}</em>
           </a>
