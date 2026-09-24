@@ -5,9 +5,9 @@
     "role": "Chair of the Board",
     "source_url": "https://www.kult360.com/edazari",
     "legacy_path": "/edazari",
-    "profile_status": "verified_public",
+    "profile_status": "foundation_profile_supplied",
     "bio": null,
-    "bio_status": "No substantive team biography was exposed by the crawled profile result. Do not invent one.",
+    "bio_status": "Full profile content supplied directly by KULT360.",
     "observed_profile_image_name": "Crop-ESH00939-Edit.jpg",
     "related_public_content": [
       "https://www.kult360.com/post/hejza-n%C3%AB-bised%C3%AB-me-eda-zarin"
@@ -19,19 +19,19 @@
     "role": "Executive Director",
     "source_url": "https://www.kult360.com/ergysshehu",
     "legacy_path": "/ergysshehu",
-    "profile_status": "verified_public",
+    "profile_status": "foundation_profile_supplied",
     "bio": null,
-    "bio_status": "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    "bio_status": "Full profile content supplied directly by KULT360."
   },
   {
     "id": "person-eda-elbasani",
-    "name": "Eda Elbasani",
+    "name": "Enkelejda Elbasani",
     "role": "Director of Communications",
     "source_url": null,
     "legacy_path": null,
-    "profile_status": "role_verified_profile_url_not_discovered",
+    "profile_status": "foundation_profile_supplied",
     "bio": null,
-    "bio_status": "Not publicly extracted; requires source export or manual confirmation."
+    "bio_status": "Full profile content supplied directly by KULT360."
   },
   {
     "id": "person-eros-dibra",
@@ -39,18 +39,18 @@
     "role": "Director, Arts & Education",
     "source_url": "https://www.kult360.com/erosdibra",
     "legacy_path": "/erosdibra",
-    "profile_status": "verified_public",
+    "profile_status": "foundation_profile_supplied",
     "bio": null,
-    "bio_status": "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    "bio_status": "Full profile content supplied directly by KULT360."
   },
   {
     "id": "person-teufik-bashi",
     "name": "Teufik Bashi",
-    "role": "Director of Finance",
+    "role": "Director of Finance & Resources",
     "source_url": "https://www.kult360.com/teufikbashi",
     "legacy_path": "/teufikbashi",
-    "profile_status": "verified_public",
+    "profile_status": "foundation_profile_supplied",
     "bio": null,
-    "bio_status": "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    "bio_status": "Full profile content supplied directly by KULT360."
   }
 ]
