@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import {copy} from '../content/site-copy';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {copy} from '../../content/site-copy';
 import {
   featuredJournal,
   journalImage,
@@ -12,9 +12,9 @@ import {
   projectSlug,
   projects,
   strategicPillars
-} from '../lib/content';
-import {localizedPath} from '../lib/site-config';
-import {homePage} from '../content/shell-pages';
+} from '../../lib/content';
+import {localizedPath} from '../../lib/site-config';
+import {homePage} from '../../content/shell-pages';
 
 const language = 'sq';
 const programmeImages = ['/media/projects/artist-hub.jpg','/media/projects/blue-heart.jpg','/media/projects/literary-voices.jpg','/media/projects/luzatart.jpg'];
@@ -53,7 +53,7 @@ const storySelection = featuredJournal.slice(0, 6);
       <h2>Jemi një fondacion kulturor i pavarur që lidh praktikën artistike, të drejtat, edukimin, trashëgiminë dhe komunitetet.</h2>
       <div class="pcf-intro__aside">
         <p>Krijojmë hapësirë që artistët, idetë dhe komunitetet të takohen — në Shqipëri, në diasporë dhe në Europë.</p>
-        <a class="pcf-text-link" href="/about/">Rreth nesh ↗</a>
+        <a class="pcf-text-link" href="/sq/about/">Rreth nesh ↗</a>
       </div>
     </div>
   </section>
@@ -136,7 +136,7 @@ const storySelection = featuredJournal.slice(0, 6);
         {storySelection.map((record, index) => {
           const image = journalImage(record);
           return (
-            <a class:list={['pcf-story-card','pcf-story-card--' + ((index % 4) + 1)]} href={'/journal/' + journalSlug(record) + '/'}>
+            <a class:list={['pcf-story-card','pcf-story-card--' + ((index % 4) + 1)]} href={'/sq/journal/' + journalSlug(record) + '/'}>
               {image && <img src={image} alt="" loading="lazy" decoding="async" />}
               <span class="pcf-story-card__shade"></span>
               <div>
@@ -147,7 +147,7 @@ const storySelection = featuredJournal.slice(0, 6);
           );
         })}
       </div>
-      <a class="pcf-stories__all" href="/journal/">Zbulo të gjitha historitë ↗</a>
+      <a class="pcf-stories__all" href="/sq/journal/">Zbulo të gjitha historitë ↗</a>
     </div>
   </section>
 
