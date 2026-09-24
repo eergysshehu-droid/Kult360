@@ -1,7 +1,7 @@
 import projectsData from '../content/data/projects.json';
 import programsData from '../content/data/programs.json';
 import eventsData from '../content/data/events.json';
-import journalData from '../content/data/journal.json';
+import {wixJournalRecords as journalData} from './wix-journal';
 import peopleData from '../content/data/people.json';
 import partnersData from '../content/data/partners.json';
 import testimonialsData from '../content/data/testimonials.json';
@@ -26,16 +26,36 @@ export interface Program {id: string; title: string; kind: string; source_url?: 
 export interface EventRecord {id: string; title: string; start?: string | null; end?: string | null; timezone?: string | null; location?: string | null; source_url?: string | null; related_project?: string | null}
 export interface JournalRecord {
   id: string;
+  wix_id?: string;
   title: string;
+  slug?: string | null;
+  excerpt?: string | null;
   source_url?: string | null;
   source_index?: string | null;
   published_date_text?: string | null;
   published_date?: string | null;
+  first_published_date?: string | null;
+  last_published_date?: string | null;
   category?: string | null;
+  categories?: string[];
+  category_ids?: string[];
   author?: string | null;
+  member_id?: string | null;
   read_time?: string | null;
+  minutes_to_read?: number | null;
   proposed_type?: string | null;
   content_status?: string | null;
+  content_text?: string | null;
+  rich_content?: {nodes?: unknown[]; documentStyle?: unknown} | null;
+  hero_url?: string | null;
+  hero_image?: unknown;
+  media?: unknown;
+  hashtags?: string[];
+  tag_ids?: string[];
+  language?: string | null;
+  seo_data?: unknown;
+  featured?: boolean;
+  pinned?: boolean;
 }
 export interface Person {id: string; name: string; role: string; source_url?: string | null; legacy_path?: string | null; profile_status?: string; bio?: string | null; bio_status?: string; observed_profile_image_name?: string; related_public_content?: string[]}
 export interface Partner {name: string; relationship?: string; source_url?: string | null; status?: string}
@@ -55,6 +75,7 @@ export const projectSlug = (project: Project): string =>
   project.id.replace(/^project-/, '').replace(/^recognition-/, 'recognition-');
 
 export const journalSlug = (record: JournalRecord): string => {
+  if (record.slug) return record.slug;
   if (record.source_url) {
     try {
       const pathname = new URL(record.source_url).pathname;
@@ -81,12 +102,15 @@ export const projectImage = (project: Project): string | undefined => ({
   'project-jazz-wine-2014': '/media/projects/jazz-wine-2014.jpg'
 }[project.id] as string | undefined);
 
-export const journalImage = (record: JournalRecord): string | undefined => ({
-  'journal-04': '/media/journal/kosovo.jpeg',
-  'journal-05': '/media/journal/skanderbeg.webp',
-  'journal-07': '/media/journal/robot.webp',
-  'journal-12': '/media/journal/bossa.jpg'
-}[record.id] as string | undefined);
+export const journalImage = (record: JournalRecord): string | undefined => {
+  if (record.hero_url) return record.hero_url;
+  return ({
+    'journal-04': '/media/journal/kosovo.jpeg',
+    'journal-05': '/media/journal/skanderbeg.webp',
+    'journal-07': '/media/journal/robot.webp',
+    'journal-12': '/media/journal/bossa.jpg'
+  }[record.id] as string | undefined);
+};
 
 export const formatDate = (value?: string | null, language: 'en' | 'sq' = 'en'): string | undefined => {
   if (!value) return undefined;

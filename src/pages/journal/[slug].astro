@@ -1,13 +1,22 @@
 ---
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
-import {journal, journalImage, journalSlug} from '../../lib/content';
+import {journal, journalImage, journalSlug, formatDate} from '../../lib/content';
+import {renderRichContent} from '../../lib/rich-content';
+
 export const getStaticPaths = () => journal.map((record) => ({params:{slug:journalSlug(record)}, props:{record}}));
 const {record} = Astro.props;
 const language = 'en';
 const image = journalImage(record);
+const bodyHtml = renderRichContent(record.rich_content);
+const description = record.excerpt || record.content_text?.slice(0, 180) || (record.author ? 'Article by ' + record.author : 'KULT360 Journal');
 ---
-<EditorialLayout title={record.title} description={`${record.proposed_type || 'Journal'} — ${record.author || 'KULT360'}`} {language} path={`/journal/${journalSlug(record)}/`} translations={['en','sq']}>
-  <header class="article-header"><p class="eyebrow">{record.category || 'Journal'} · {record.proposed_type || 'Archive'}</p><h1>{record.title}</h1><p class="article-byline">{[record.author, record.published_date || record.published_date_text, record.read_time].filter(Boolean).join(' · ')}</p></header>
+<EditorialLayout title={record.title} {description} {language} path={'/journal/' + journalSlug(record) + '/'} translations={['en','sq']}>
+  <header class="article-header">
+    <p class="eyebrow">{record.category || 'Journal'}</p>
+    <h1>{record.title}</h1>
+    <p class="article-byline">{[record.author, formatDate(record.first_published_date || record.published_date, language), record.read_time].filter(Boolean).join(' · ')}</p>
+  </header>
   {image && <figure class="article-cover"><img src={image} alt="" fetchpriority="high" /></figure>}
-  <div class="article-body"><p class="display-copy">This record is preserved from the public KULT360 Journal inventory. The extracted migration source contains metadata and, for some entries, only a short summary rather than the complete article body.</p>{record.source_url && <p><a class="button" href={record.source_url} rel="noreferrer">Open legacy source ↗</a></p>}</div>
+  {bodyHtml ? <div class="article-body rich-content" set:html={bodyHtml}></div> : <div class="article-body rich-content"><p>{record.content_text}</p></div>}
+  {record.source_url && <p class="article-source"><a href={record.source_url} rel="noreferrer">Original KULT360 publication ↗</a></p>}
 </EditorialLayout>
