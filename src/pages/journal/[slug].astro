@@ -1,0 +1,13 @@
+---
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import {journal, journalImage, journalSlug} from '../../lib/content';
+export const getStaticPaths = () => journal.map((record) => ({params:{slug:journalSlug(record)}, props:{record}}));
+const {record} = Astro.props;
+const language = 'en';
+const image = journalImage(record);
+---
+<EditorialLayout title={record.title} description={`${record.proposed_type || 'Journal'} — ${record.author || 'KULT360'}`} {language} path={`/journal/${journalSlug(record)}/`} translations={['en','sq']}>
+  <header class="article-header"><p class="eyebrow">{record.category || 'Journal'} · {record.proposed_type || 'Archive'}</p><h1>{record.title}</h1><p class="article-byline">{[record.author, record.published_date || record.published_date_text, record.read_time].filter(Boolean).join(' · ')}</p></header>
+  {image && <figure class="article-cover"><img src={image} alt="" fetchpriority="high" /></figure>}
+  <div class="article-body"><p class="display-copy">This record is preserved from the public KULT360 Journal inventory. The extracted migration source contains metadata and, for some entries, only a short summary rather than the complete article body.</p>{record.source_url && <p><a class="button" href={record.source_url} rel="noreferrer">Open legacy source ↗</a></p>}</div>
+</EditorialLayout>

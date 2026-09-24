@@ -1,18 +1,9 @@
 export type Language = 'en' | 'sq';
 
-const requiredInProduction = (name: string, value: string | undefined): string => {
-  const normalized = value?.trim();
-  if (import.meta.env.PROD && !normalized) {
-    throw new Error(`${name} is required for a production build.`);
-  }
-  return normalized || '';
-};
-
 const optional = (value: string | undefined): string | undefined => value?.trim() || undefined;
 
-const siteUrl = requiredInProduction('SITE_URL', import.meta.env.SITE_URL) || 'http://localhost:4321';
-const sanityProjectId = requiredInProduction('PUBLIC_SANITY_PROJECT_ID', import.meta.env.PUBLIC_SANITY_PROJECT_ID);
-const sanityDataset = requiredInProduction('PUBLIC_SANITY_DATASET', import.meta.env.PUBLIC_SANITY_DATASET);
+const configuredUrl = import.meta.env.SITE_URL?.trim();
+const siteUrl = configuredUrl || (import.meta.env.PROD ? 'https://kult360.vercel.app' : 'http://localhost:4321');
 
 export const siteConfig = Object.freeze({
   name: 'KULT360',
@@ -22,17 +13,16 @@ export const siteConfig = Object.freeze({
   organization: {
     name: 'KULT360',
     legalName: optional(import.meta.env.PUBLIC_ORGANIZATION_LEGAL_NAME),
-    email: optional(import.meta.env.PUBLIC_CONTACT_EMAIL),
-    phone: optional(import.meta.env.PUBLIC_CONTACT_PHONE),
-    address: optional(import.meta.env.PUBLIC_CONTACT_ADDRESS)
+    email: optional(import.meta.env.PUBLIC_CONTACT_EMAIL) || 'office@kult360.com',
+    phone: optional(import.meta.env.PUBLIC_CONTACT_PHONE) || '+355 69 33 10 202',
+    address: optional(import.meta.env.PUBLIC_CONTACT_ADDRESS) || 'Rr. Kavajes, Tirana, Albania'
   },
   social: {
-    instagram: optional(import.meta.env.PUBLIC_SOCIAL_INSTAGRAM),
-    facebook: optional(import.meta.env.PUBLIC_SOCIAL_FACEBOOK),
-    youtube: optional(import.meta.env.PUBLIC_SOCIAL_YOUTUBE),
+    instagram: optional(import.meta.env.PUBLIC_SOCIAL_INSTAGRAM) || 'https://www.instagram.com/kult360/',
+    facebook: optional(import.meta.env.PUBLIC_SOCIAL_FACEBOOK) || 'https://www.facebook.com/kult360',
+    youtube: optional(import.meta.env.PUBLIC_SOCIAL_YOUTUBE) || 'https://www.youtube.com/@Kult360',
     linkedin: optional(import.meta.env.PUBLIC_SOCIAL_LINKEDIN)
-  },
-  cms: {projectId: sanityProjectId, dataset: sanityDataset, apiVersion: '2026-09-24'}
+  }
 });
 
 export const localizedPath = (path: string, language: Language): string => {

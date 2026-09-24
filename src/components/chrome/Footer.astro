@@ -1,11 +1,13 @@
 ---
-import {siteConfig, type Language} from '../../lib/site-config';
+import {siteConfig, localizedPath, type Language} from '../../lib/site-config';
 interface Props {language: Language}
 const {language} = Astro.props;
 ---
 <footer class="site-footer">
-  <div class="container site-footer__inner">
-    <p>{siteConfig.name}</p>
-    <p>{language === 'sq' ? 'Themel i përkohshëm — Faza 1' : 'Temporary foundation — Phase 1'}</p>
+  <div class="container-wide footer-grid">
+    <div><a class="footer-mark" href={localizedPath('/', language)}>KULT<span>360</span></a><p>{language === 'sq' ? 'Art · Të drejta · Edukim · Trashëgimi' : 'Art · Rights · Education · Heritage'}</p></div>
+    <div><p class="meta">{language === 'sq' ? 'Kontakt' : 'Contact'}</p><a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a><a href={`tel:${siteConfig.organization.phone?.replace(/\s/g,'')}`}>{siteConfig.organization.phone}</a><p>{siteConfig.organization.address}</p></div>
+    <div><p class="meta">Social</p><a href={siteConfig.social.instagram}>Instagram ↗</a><a href={siteConfig.social.facebook}>Facebook ↗</a><a href={siteConfig.social.youtube}>YouTube ↗</a></div>
   </div>
+  <div class="container-wide footer-bottom"><span>© {new Date().getFullYear()} KULT360</span><span>{language === 'sq' ? 'Preview lokal · Vercel' : 'Local-content preview · Vercel'}</span></div>
 </footer>

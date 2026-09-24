@@ -1,20 +1,16 @@
 :root {
-  --color-canvas: #f4f1e8;
-  --color-surface: #fffdf7;
-  --color-ink: #171713;
-  --color-muted: #666358;
-  --color-line: #cbc6b8;
-  --color-accent: #d0ad00;
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --space-4: 2rem;
-  --space-5: 3rem;
-  --space-6: 5rem;
-  --radius: 0.25rem;
-  --content-width: 82rem;
-  --text-width: 46rem;
-  --focus-ring: 0 0 0 3px var(--color-surface), 0 0 0 6px var(--color-ink);
+  --color-canvas:#f2efe5;
+  --color-surface:#fbfaf5;
+  --color-ink:#12120f;
+  --color-muted:#6d695e;
+  --color-line:#c9c3b4;
+  --color-accent:#e6be12;
+  --color-accent-soft:#f2d85c;
+  --font-sans:Arial,Helvetica,sans-serif;
+  --font-serif:Georgia,'Times New Roman',serif;
+  --space-1:.5rem; --space-2:1rem; --space-3:1.5rem; --space-4:2rem; --space-5:3rem; --space-6:5rem; --space-7:8rem;
+  --radius:.15rem;
+  --content-width:94rem;
+  --text-width:52rem;
+  --focus-ring:0 0 0 3px var(--color-canvas),0 0 0 6px var(--color-ink);
 }

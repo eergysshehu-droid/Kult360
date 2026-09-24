@@ -1,16 +1,14 @@
 import sitemap from '@astrojs/sitemap';
 import {defineConfig} from 'astro/config';
 
-const productionBuild = process.env.NODE_ENV === 'production';
-const siteUrl = process.env.SITE_URL?.trim();
-
-if (productionBuild && !siteUrl) {
-  throw new Error('SITE_URL is required for production builds.');
-}
+const siteUrl =
+  process.env.SITE_URL?.trim() ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ||
+  'https://kult360.vercel.app';
 
 export default defineConfig({
   output: 'static',
-  site: siteUrl || 'http://localhost:4321',
+  site: siteUrl,
   integrations: [sitemap({filter: (page) => !page.includes('/404')})],
   vite: {build: {cssCodeSplit: true}}
 });

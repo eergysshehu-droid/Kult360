@@ -1,0 +1,19 @@
+---
+import {localizedPath, type Language} from '../../lib/site-config';
+import {projectImage, projectSlug, type Project} from '../../lib/content';
+interface Props {project: Project; language: Language; priority?: boolean}
+const {project, language, priority = false} = Astro.props;
+const image = projectImage(project);
+const href = localizedPath(`/projects/${projectSlug(project)}/`, language);
+const meta = project.location || project.kind.replaceAll('_', ' ');
+---
+<article class="project-card">
+  <a class="project-card__media" href={href} aria-label={`${project.title} — ${language === 'sq' ? 'shiko projektin' : 'view project'}`}>
+    {image ? <img src={image} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" /> : <span class="project-card__fallback" aria-hidden="true"></span>}
+  </a>
+  <div class="project-card__body">
+    <p class="meta">{meta}</p>
+    <h3><a href={href}>{project.title}</a></h3>
+    {project.summary && <p>{project.summary}</p>}
+  </div>
+</article>

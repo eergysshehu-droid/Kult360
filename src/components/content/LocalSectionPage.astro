@@ -1,0 +1,103 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+import JournalCard from './JournalCard.astro';
+import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
+import {events, formatDate, initiatives, journal, opportunities, partners, people, projectImage, projects, strategicPillars} from '../../lib/content';
+import type {ShellPageDefinition} from '../../content/shell-pages';
+
+interface Props {page: ShellPageDefinition; language: Language}
+const {page, language} = Astro.props;
+const path = localizedPath(`/${page.slug}/`, language);
+const t = {
+  source: language === 'sq' ? 'Regjistër publik' : 'Public record',
+  teamNote: language === 'sq' ? 'Biografitë e plota nuk u gjetën në materialin publik të nxjerrë dhe nuk janë shpikur.' : 'Full biographies were not exposed in the extracted public material and have not been invented.',
+  archive: language === 'sq' ? 'Përmbajtja e plotë e disa regjistrave mbetet në rishikim editorial.' : 'Full body content for some records remains under editorial review.',
+  contact: language === 'sq' ? 'Na kontakto' : 'Contact us'
+};
+---
+<ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
+  <section class="section-intro">
+    <SectionHeader eyebrow="KULT360" heading={page.heading[language]} description={page.description[language]} />
+  </section>
+
+  {page.slug === 'about' && (
+    <>
+      <section class="editorial-statement ruled-section">
+        <p class="display-copy">{language === 'sq' ? 'KULT360 ndërton hapësira ku arti, edukimi, të drejtat dhe trashëgimia lidhen me praktikën kulturore.' : 'KULT360 connects artistic practice with education, rights, heritage and cultural participation.'}</p>
+      </section>
+      <section class="ruled-section">
+        <div class="section-kicker"><span>01</span><h2>{language === 'sq' ? 'Ekipi publik' : 'Public team'}</h2></div>
+        <div class="people-list">
+          {people.map((person) => (
+            <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}>
+              <span>{person.name}</span><span>{person.role}</span><span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+        <p class="source-note">{t.teamNote}</p>
+      </section>
+    </>
+  )}
+
+  {page.slug === 'programs' && (
+    <>
+      <section class="pillar-grid ruled-section">
+        {strategicPillars.map((item, index) => (
+          <article class="pillar-card"><span class="index">0{index + 1}</span><h2>{item.title}</h2><p>{language === 'sq' ? 'Fushë strategjike e verifikuar në faqen publike KULT360.' : 'Strategic focus area verified on the public KULT360 site.'}</p></article>
+        ))}
+      </section>
+      <section class="ruled-section">
+        <div class="section-kicker"><span>+</span><h2>{language === 'sq' ? 'Nisma' : 'Initiatives'}</h2></div>
+        <div class="two-column-list">{initiatives.map((item) => <article><h3>{item.title}</h3><p>{item.summary}</p></article>)}</div>
+      </section>
+    </>
+  )}
+
+  {page.slug === 'projects' && <section class="project-grid ruled-section">{projects.map((project) => <ProjectCard {project} {language} />)}</section>}
+
+  {page.slug === 'events' && (
+    <section class="event-list ruled-section">
+      {events.map((event) => <article><div><p class="meta">{formatDate(event.start, language)}</p><h2>{event.title}</h2></div><p>{event.location || '—'}</p></article>)}
+    </section>
+  )}
+
+  {page.slug === 'journal' && (
+    <section class="journal-index ruled-section">
+      {journal.map((record) => <JournalCard {record} {language} />)}
+      <p class="source-note">{t.archive}</p>
+    </section>
+  )}
+
+  {page.slug === 'media' && (
+    <section class="media-grid ruled-section">
+      {projects.filter((item) => item.id.startsWith('project-')).map((project) => {
+        const asset = projectImage(project);
+        return asset && <figure><img src={asset} alt="" loading="lazy" decoding="async" /><figcaption>{project.title}</figcaption></figure>;
+      })}
+    </section>
+  )}
+
+  {page.slug === 'people' && (
+    <section class="people-grid ruled-section">{people.map((person) => <article><p class="meta">{person.role}</p><h2><a href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}>{person.name}</a></h2></article>)}</section>
+  )}
+
+  {(page.slug === 'opportunities' || page.slug === 'get-involved' || page.slug === 'support') && (
+    <section class="opportunity-grid ruled-section">{opportunities.map((item) => <article><p class="meta">{item.kind}</p><h2>{item.title}</h2>{item.summary && <p>{item.summary}</p>}</article>)}</section>
+  )}
+
+  {page.slug === 'lab' && <section class="empty-record ruled-section"><p class="display-copy">KULT360 LAB</p><p>{t.archive}</p></section>}
+  {page.slug === 'resources' && <section class="empty-record ruled-section"><p>{t.archive}</p></section>}
+
+  {page.slug === 'contact' && (
+    <section class="contact-grid ruled-section">
+      <div><p class="meta">{t.contact}</p><h2><a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a></h2><p><a href={`tel:${siteConfig.organization.phone?.replace(/\s/g,'')}`}>{siteConfig.organization.phone}</a></p></div>
+      <div><p>{siteConfig.organization.address}</p><p><a href={siteConfig.social.instagram}>Instagram</a> · <a href={siteConfig.social.facebook}>Facebook</a> · <a href={siteConfig.social.youtube}>YouTube</a></p></div>
+    </section>
+  )}
+
+  {page.slug !== 'contact' && page.slug !== 'media' && (
+    <section class="partner-strip ruled-section"><p class="meta">{language === 'sq' ? 'Partnerë të përmendur në arkivin publik' : 'Partners named in the public archive'}</p><div>{partners.slice(0, 12).map((partner) => <span>{partner.name}</span>)}</div></section>
+  )}
+</ListingLayout>

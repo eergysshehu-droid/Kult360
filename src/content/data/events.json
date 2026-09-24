@@ -1,0 +1,62 @@
+[
+  {
+    "id": "event-qyteti-brenda-oborrit-2026",
+    "title": "Qyteti Brenda Oborrit — Special Night",
+    "start": "2026-08-28T19:30:00",
+    "timezone": "Europe/Tirane",
+    "location": "Oborri Tirana, Rr. Naim Frashëri, Tiranë",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "related_project": "project-qyteti-brenda-oborrit"
+  },
+  {
+    "id": "event-terminal-europe-week-2026",
+    "title": "TERMINAL — Europe Week 2026",
+    "start": "2026-05-15",
+    "end": "2026-05-17",
+    "location": "Old Railway Station, Shkodra",
+    "source_url": "https://www.kult360.com/",
+    "related_project": "project-terminal-europe-week-2026"
+  },
+  {
+    "id": "event-luzatart-2025",
+    "title": "LuzatArt Culture",
+    "start": "2025-08-14",
+    "location": "Luzat, Albania",
+    "source_url": "https://www.kult360.com/",
+    "related_project": "project-luzatart-culture"
+  },
+  {
+    "id": "event-literary-voices-2023",
+    "title": "Literary Voices / Heine & Poradeci",
+    "start": "2023-09-25",
+    "location": "Dukagjini Bookstore, Pristina",
+    "source_url": "https://www.kult360.com/",
+    "related_project": "project-literary-voices-heine-poradeci"
+  },
+  {
+    "id": "event-open-spaces-2023",
+    "title": "Open Spaces for Lost Culture",
+    "start": "2023-03-25",
+    "location": null,
+    "source_url": "https://www.kult360.com/",
+    "related_project": "project-open-spaces-lost-culture"
+  },
+  {
+    "id": "event-jazz-wine-2017",
+    "title": "Jazz & Wine International Festival Albania — Edition II",
+    "start": "2017-07-07",
+    "end": "2017-07-08",
+    "location": "Porto Palermo, Himarë",
+    "source_url": "https://www.kult360.com/",
+    "related_project": "project-jazz-wine-2017"
+  },
+  {
+    "id": "event-jazz-wine-2014",
+    "title": "Jazz & Wine International Festival Albania — Edition I",
+    "start": "2014-09-05",
+    "end": "2014-09-06",
+    "location": "Berat, Albania",
+    "source_url": "https://www.kult360.com/",
+    "related_project": "project-jazz-wine-2014"
+  }
+]

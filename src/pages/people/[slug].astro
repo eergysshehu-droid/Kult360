@@ -1,0 +1,10 @@
+---
+import DetailLayout from '../../layouts/DetailLayout.astro';
+import {people, personSlug} from '../../lib/content';
+export const getStaticPaths = () => people.map((person) => ({params:{slug:personSlug(person)}, props:{person}}));
+const {person} = Astro.props;
+const language = 'en';
+---
+<DetailLayout title={person.name} description={`${person.role} — KULT360`} {language} path={`/people/${personSlug(person)}/`} translations={['en','sq']} about>
+  <header class="person-detail"><p class="eyebrow">KULT360</p><h1>{person.name}</h1><p class="person-role">{person.role}</p></header><div class="detail-body"><p>{person.bio_status}</p>{person.source_url && <p><a class="button" href={person.source_url} rel="noreferrer">Legacy profile ↗</a></p>}</div>
+</DetailLayout>

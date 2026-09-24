@@ -1,13 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionHeader from '../../components/ui/SectionHeader.astro';
-import MediaPlaceholder from '../../components/media/MediaPlaceholder.astro';
+import ProjectCard from '../../components/content/ProjectCard.astro';
+import JournalCard from '../../components/content/JournalCard.astro';
+import {copy} from '../../content/site-copy';
+import {featuredJournal, featuredProjects, partners, people, strategicPillars} from '../../lib/content';
+import {localizedPath} from '../../lib/site-config';
 import {homePage} from '../../content/shell-pages';
 const language = 'sq';
 ---
-<BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en', 'sq']}>
-  <section class="container home-intro">
-    <SectionHeader eyebrow="Faza 1" heading={homePage.heading.sq} description={homePage.description.sq} />
-    <MediaPlaceholder label="Media në pritje të migrimit" />
+<BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en','sq']}>
+  <section class="hero container-wide">
+    <div class="hero__copy"><p class="eyebrow">{copy.heroEyebrow.sq}</p><h1>{copy.heroTitle.sq}</h1><p class="hero__lede">{copy.heroBody.sq}</p><div class="hero__actions"><a class="button button--solid" href="/sq/projects/">{copy.exploreProjects.sq}</a><a class="button" href="/sq/get-involved/">{copy.getInvolved.sq}</a></div></div>
+    <figure class="hero__media"><img src="/media/projects/terminal.jpg" alt="TERMINAL — Europe Week 2026, stacioni i vjetër hekurudhor i Shkodrës" fetchpriority="high" /><figcaption><span>TERMINAL</span><span>Europe Week 2026 · Shkodër</span></figcaption></figure>
   </section>
+  <section class="home-section container-wide"><div class="section-kicker"><span>01</span><h2>{copy.featuredProjects.sq}</h2><a href="/sq/projects/">Të gjitha ↗</a></div><div class="project-grid project-grid--featured">{featuredProjects.map((project, index) => <ProjectCard {project} {language} priority={index === 0} />)}</div></section>
+  <section class="home-section home-section--ink"><div class="container-wide"><div class="section-kicker section-kicker--inverse"><span>02</span><h2>{copy.focusAreas.sq}</h2></div><div class="pillar-list">{strategicPillars.map((item, index) => <article><span>0{index + 1}</span><h3>{item.title}</h3></article>)}</div></div></section>
+  <section class="home-section container-wide"><div class="section-kicker"><span>03</span><h2>{copy.journal.sq}</h2><a href="/sq/journal/">Ditari ↗</a></div><div class="journal-grid">{featuredJournal.map((record) => <JournalCard {record} {language} />)}</div></section>
+  <section class="home-section people-home container-wide"><div class="section-kicker"><span>04</span><h2>{copy.people.sq}</h2><a href="/sq/about/">Rreth nesh ↗</a></div><div class="people-list">{people.map((person) => <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}><span>{person.name}</span><span>{person.role}</span><span aria-hidden="true">↗</span></a>)}</div></section>
+  <section class="home-section partner-home container-wide"><div class="section-kicker"><span>05</span><h2>{copy.partners.sq}</h2></div><div class="partner-cloud">{partners.slice(0, 18).map((partner) => <span>{partner.name}</span>)}</div></section>
+  <section class="join-section"><div class="container-wide join-section__inner"><p class="eyebrow">KULT360</p><h2>Kultura rritet përmes pjesëmarrjes.</h2><a class="button button--light" href="/sq/get-involved/">{copy.getInvolved.sq} ↗</a></div></section>
 </BaseLayout>

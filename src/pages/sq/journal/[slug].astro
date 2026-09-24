@@ -1,0 +1,13 @@
+---
+import EditorialLayout from '../../../layouts/EditorialLayout.astro';
+import {journal, journalImage, journalSlug} from '../../../lib/content';
+export const getStaticPaths = () => journal.map((record) => ({params:{slug:journalSlug(record)}, props:{record}}));
+const {record} = Astro.props;
+const language = 'sq';
+const image = journalImage(record);
+---
+<EditorialLayout title={record.title} description={`${record.proposed_type || 'Ditari'} — ${record.author || 'KULT360'}`} {language} path={`/sq/journal/${journalSlug(record)}/`} translations={['en','sq']}>
+  <header class="article-header"><p class="eyebrow">{record.category || 'Ditari'} · {record.proposed_type || 'Arkiv'}</p><h1>{record.title}</h1><p class="article-byline">{[record.author, record.published_date || record.published_date_text, record.read_time].filter(Boolean).join(' · ')}</p></header>
+  {image && <figure class="article-cover"><img src={image} alt="" fetchpriority="high" /></figure>}
+  <div class="article-body"><p class="display-copy">Ky regjistër ruhet nga inventari publik i Ditarit KULT360. Burimi i migrimit përmban metadata dhe, për disa artikuj, vetëm përmbledhje të shkurtra dhe jo tekstin e plotë.</p>{record.source_url && <p><a class="button" href={record.source_url} rel="noreferrer">Hap burimin e vjetër ↗</a></p>}</div>
+</EditorialLayout>
