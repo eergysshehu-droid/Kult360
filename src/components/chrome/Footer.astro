@@ -3,28 +3,33 @@ import {siteConfig, localizedPath, type Language} from '../../lib/site-config';
 interface Props {language: Language}
 const {language} = Astro.props;
 ---
-<footer class="site-footer">
-  <div class="container-wide footer-top">
-    <a class="footer-mark" href={localizedPath('/', language)}>KULT<span>360</span></a>
+<footer class="site-footer site-footer--v2">
+  <div class="container-wide footer-v2__brand">
+    <a href={localizedPath('/', language)} aria-label="KULT360">
+      <img src="/media/brand/kult360-logo.png" alt="KULT360" />
+    </a>
     <p>{language === 'sq' ? 'Kulturë · Barazi · Komunitet' : 'Culture · Equality · Community'}</p>
   </div>
-  <div class="container-wide footer-grid">
+  <div class="container-wide footer-v2__grid">
     <div>
-      <p class="meta">{language === 'sq' ? 'Fondacioni' : 'Foundation'}</p>
+      <p class="foundation-label">{language === 'sq' ? 'Fondacioni' : 'Foundation'}</p>
       <p>{language === 'sq' ? 'Art · Të drejta · Edukim · Trashëgimi' : 'Art · Rights · Education · Heritage'}</p>
     </div>
     <div>
-      <p class="meta">{language === 'sq' ? 'Kontakt' : 'Contact'}</p>
-      <a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a>
-      <a href={`tel:${siteConfig.organization.phone?.replace(/\s/g,'')}`}>{siteConfig.organization.phone}</a>
+      <p class="foundation-label">{language === 'sq' ? 'Kontakt' : 'Contact'}</p>
+      <a href={'mailto:' + siteConfig.organization.email}>{siteConfig.organization.email}</a>
+      <a href={'tel:' + siteConfig.organization.phone?.replace(/\s/g,'')}>{siteConfig.organization.phone}</a>
       <p>{siteConfig.organization.address}</p>
     </div>
     <div>
-      <p class="meta">Social</p>
+      <p class="foundation-label">Social</p>
       <a href={siteConfig.social.instagram}>Instagram ↗</a>
       <a href={siteConfig.social.facebook}>Facebook ↗</a>
       <a href={siteConfig.social.youtube}>YouTube ↗</a>
     </div>
   </div>
-  <div class="container-wide footer-bottom"><span>© {new Date().getFullYear()} KULT360</span><span>Shkodër · Albania</span></div>
+  <div class="container-wide footer-v2__bottom">
+    <span>© {new Date().getFullYear()} KULT360 Foundation</span>
+    <span>Albania · Europe</span>
+  </div>
 </footer>
