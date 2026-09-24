@@ -15,7 +15,8 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
   <div class="container-wide site-header__inner">
     <a class="brand-lockup" href={localizedPath('/', language)} aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>
       <span class="brand-lockup__mark" aria-hidden="true">
-        <img src="/media/brand/kult360-logo-black.png" alt="" />
+        <img class="brand-lockup__logo brand-lockup__logo--dark" src="/media/brand/kult360-logo-black.png" alt="" />
+        <img class="brand-lockup__logo brand-lockup__logo--light" src="/media/brand/kult360-logo.png" alt="" />
       </span>
 </a>
     <nav class="desktop-navigation" aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
