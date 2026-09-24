@@ -1,0 +1,116 @@
+---
+import {getTeamProfile} from '../../content/team-profiles';
+import {personImage, type Person} from '../../lib/content';
+import type {Language} from '../../lib/site-config';
+
+interface Props {
+  person: Person;
+  language: Language;
+}
+
+const {person, language} = Astro.props;
+const profile = getTeamProfile(person.id);
+const image = personImage(person);
+const t = language === 'sq' ? {
+  about: 'Profili',
+  languages: 'Gjuhët',
+  archive: 'Profili i arkivit',
+  source: 'Përmbajtje e dhënë nga KULT360',
+  portrait: 'Portreti do të shtohet',
+  biography: 'Biografia'
+} : {
+  about: 'Profile',
+  languages: 'Languages',
+  archive: 'Archive profile',
+  source: 'Content supplied by KULT360',
+  portrait: 'Portrait to be added',
+  biography: 'Biography'
+};
+---
+<div class="team-profile-page">
+  <header class="team-profile-hero">
+    <div class="team-profile-hero__copy">
+      <p class="eyebrow">KULT360 · {t.about}</p>
+      <h1>{person.name}</h1>
+      <p class="team-profile-role">{person.role}</p>
+
+      {profile?.quote && (
+        <blockquote class="team-profile-quote">
+          <p>“{profile.quote}”</p>
+          {profile.quoteBy && <cite>— {profile.quoteBy}</cite>}
+        </blockquote>
+      )}
+    </div>
+
+    <div class="team-profile-hero__media">
+      {image ? (
+        <img src={image} alt={person.name} loading="eager" decoding="async" />
+      ) : (
+        <div class="team-profile-portrait-placeholder" aria-label={person.name + ' portrait unavailable'}>
+          <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0, 2)}</span>
+          <small>{t.portrait}</small>
+        </div>
+      )}
+    </div>
+  </header>
+
+  {profile && (
+    <>
+      <section class="team-profile-bio">
+        <p class="team-profile-section-label">{t.biography}</p>
+        <div class="team-profile-bio__copy">
+          {profile.bio.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="team-profile-highlights">
+        {profile.highlightColumns.map((column, index) => (
+          <article>
+            <span class="team-profile-index">{String(index + 1).padStart(2, '0')}</span>
+            <h2>{column.title}</h2>
+            <ul>
+              {column.items.map((item) => (
+                <li>
+                  {item.title && <strong>{item.title}:</strong>}
+                  <span>{item.body}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </section>
+
+      {profile.languages && (
+        <section class="team-profile-languages">
+          <span>{t.languages}</span>
+          <p>{profile.languages}</p>
+        </section>
+      )}
+
+      <div class="team-profile-sections">
+        {profile.sections.map((section, sectionIndex) => (
+          <section class="team-profile-section">
+            <div class="team-profile-section__head">
+              <span>{String(sectionIndex + 1).padStart(2, '0')}</span>
+              <h2>{section.title}</h2>
+            </div>
+            <div class="team-profile-section__grid">
+              {section.items.map((item) => (
+                <article class="team-profile-item">
+                  {item.title && <h3>{item.title}</h3>}
+                  <p>{item.body}</p>
+                  {item.meta && <span>{item.meta}</span>}
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </>
+  )}
+
+  <footer class="team-profile-source">
+    <span>{t.source}</span>
+    {person.source_url && <a href={person.source_url} rel="noreferrer">{t.archive} ↗</a>}
+  </footer>
+</div>
