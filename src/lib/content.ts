@@ -140,3 +140,11 @@ export const terminalGallery = [
   '/media/projects/terminal-gallery-02.jpg',
   '/media/projects/terminal-gallery-03.jpg'
 ];
+
+
+export const personImage = (person: Person): string | undefined => ({
+  'person-eda-zari': '/media/team/eda-zari.jpg',
+  'person-ergys-shehu': '/media/team/ergys-shehu.jpg',
+  'person-eda-elbasani': '/media/team/eda-elbasani.jpg',
+  'person-teufik-bashi': '/media/team/teufik-bashi.jpg'
+}[person.id] as string | undefined);
