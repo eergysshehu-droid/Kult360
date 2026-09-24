@@ -10,6 +10,7 @@ import '../styles/reset.css';
 import '../styles/global.css';
 import '../styles/typography.css';
 import '../styles/utilities.css';
+import '../styles/foundation-v2.css';
 
 type Props = BaseLayoutProps;
 const {title, description, language, path, translations = [language], noindex = false, about = false, schemas = []} = Astro.props;
@@ -20,7 +21,7 @@ const structuredData = [organizationSchema(), websiteSchema(), webPageSchema({ti
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="theme-color" content="#f4f1e9" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/site.webmanifest" />
     <SeoHead {title} {description} {language} {path} {translations} {noindex} />
