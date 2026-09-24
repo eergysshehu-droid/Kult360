@@ -85,9 +85,14 @@ const t = {
 
   {page.slug === 'programs' && (
     <>
-      <section class="pillar-grid ruled-section">
+      <section class="program-page-grid ruled-section">
         {strategicPillars.map((item, index) => (
-          <article class="pillar-card"><span class="index">0{index + 1}</span><h2>{item.title}</h2><p>{language === 'sq' ? 'Fushë strategjike e verifikuar në faqen publike KULT360.' : 'Strategic focus area verified on the public KULT360 site.'}</p></article>
+          <article class="program-page-card">
+            <span class="program-page-card__index">0{index + 1}</span>
+            <h2>{item.title}</h2>
+            <p>{item.summary || (language === 'sq' ? 'Fushë strategjike e KULT360.' : 'KULT360 strategic focus area.')}</p>
+            <span class="program-page-card__accent" aria-hidden="true"></span>
+          </article>
         ))}
       </section>
       <section class="ruled-section">
@@ -139,6 +144,14 @@ const t = {
   )}
 
   {page.slug !== 'contact' && page.slug !== 'media' && (
-    <section class="partner-strip ruled-section"><p class="meta">{language === 'sq' ? 'Partnerë të përmendur në arkivin publik' : 'Partners named in the public archive'}</p><div>{partners.slice(0, 12).map((partner) => <span>{partner.name}</span>)}</div></section>
+    <section class="partner-strip partner-strip--logos ruled-section">
+      <div class="partner-strip__head">
+        <p class="meta">{language === 'sq' ? 'Partnerë & bashkëpunëtorë' : 'Partners & collaborators'}</p>
+        <p>{language === 'sq' ? 'Logo nga arkivi publik KULT360 në Wix.' : 'Logo artwork from KULT360’s public Wix archive.'}</p>
+      </div>
+      <figure class="partner-strip__logo-wall">
+        <img src="https://static.wixstatic.com/media/b6f73a_3479026901e04553a687f2801d92c22e~mv2.jpg" alt={language === 'sq' ? 'Logot e partnerëve KULT360' : 'KULT360 partner logos'} loading="lazy" decoding="async" />
+      </figure>
+    </section>
   )}
 </ListingLayout>
