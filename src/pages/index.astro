@@ -34,6 +34,8 @@ const programmeSummaries = [
   'Opening culture to more people through inclusive learning, exchange and shared knowledge.',
   'Keeping living heritage active while building sustainable cultural futures.'
 ];
+const heroWords = ['nature.','art.','communities.','heritage.','memory.','education.','equality.','music.','digitality.'];
+const heroWordStep = 360 / heroWords.length;
 ---
 <BaseLayout title={homePage.heading.en} description={homePage.description.en} {language} path="/" translations={['en','sq']}>
   <section class="pcf-hero pcf-hero--black">
@@ -42,18 +44,25 @@ const programmeSummaries = [
       <p class="pcf-kicker">KULT360 Foundation · Albania</p>
 
       <div class="pcf-hero__headline-wrap">
-        <h1 class="pcf-hero__headline" aria-label="Culture is communities, heritage, memory, education, equality, art, music, nature and digitality">
+        <h1 class="pcf-hero__headline" aria-label="Culture is nature, art, communities, heritage, memory, education, equality, music and digitality">
           <span class="pcf-hero__prefix">Culture is</span>
-          <span class="pcf-hero__word-cycle" aria-hidden="true">
-            <b>communities.</b>
-            <b>heritage.</b>
-            <b>memory.</b>
-            <b>education.</b>
-            <b>equality.</b>
-            <b>art.</b>
-            <b>music.</b>
-            <b>nature.</b>
-            <b>digitality.</b>
+          <span
+            class="pcf-hero__word-cycle"
+            data-word-wheel
+            tabindex="0"
+            role="group"
+            aria-label="Rotating cultural themes. Scroll, swipe, or use arrow keys to rotate."
+          >
+            <span class="pcf-hero__word-cylinder" data-word-cylinder aria-hidden="true">
+              {heroWords.map((word, index) => (
+                <span
+                  class="pcf-hero__word"
+                  data-word-index={index}
+                  style={`--word-angle: ${index * heroWordStep}deg`}
+                >{word}</span>
+              ))}
+            </span>
+            <span class="sr-only" data-word-live aria-live="polite">nature.</span>
           </span>
         </h1>
       </div>
@@ -241,3 +250,69 @@ const programmeSummaries = [
     </div>
   </section>
 </BaseLayout>
+<script>
+  const wheel = document.querySelector('[data-word-wheel]');
+  const cylinder = wheel?.querySelector('[data-word-cylinder]');
+  const live = wheel?.querySelector('[data-word-live]');
+  const words = wheel ? Array.from(wheel.querySelectorAll('[data-word-index]')) : [];
+
+  if (wheel && cylinder && words.length) {
+    const count = words.length;
+    const step = 360 / count;
+    let active = 0;
+    let wheelLocked = false;
+    let pointerStartY = null;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const signedDistance = (index) => {
+      let distance = ((index - active) % count + count) % count;
+      if (distance > count / 2) distance -= count;
+      return distance;
+    };
+
+    const render = () => {
+      cylinder.style.setProperty('--wheel-rotation', `${-active * step}deg`);
+      words.forEach((word, index) => {
+        const distance = signedDistance(index);
+        const depth = Math.abs(distance) === 0 ? 'front' : Math.abs(distance) === 1 ? 'near' : 'back';
+        word.dataset.depth = depth;
+      });
+      if (live) live.textContent = words[active]?.textContent || '';
+    };
+
+    const rotate = (direction) => {
+      active = (active + direction + count) % count;
+      render();
+    };
+
+    wheel.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+      event.preventDefault();
+      rotate(event.key === 'ArrowDown' ? 1 : -1);
+    });
+
+    const hero = wheel.closest('.pcf-hero');
+    hero?.addEventListener('wheel', (event) => {
+      if (reducedMotion || wheelLocked || Math.abs(event.deltaY) < 10) return;
+      wheelLocked = true;
+      rotate(event.deltaY > 0 ? 1 : -1);
+      window.setTimeout(() => { wheelLocked = false; }, 760);
+    }, {passive: true});
+
+    hero?.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' || event.target.closest('a,button')) return;
+      pointerStartY = event.clientY;
+    }, {passive: true});
+
+    hero?.addEventListener('pointerup', (event) => {
+      if (pointerStartY === null) return;
+      const delta = event.clientY - pointerStartY;
+      pointerStartY = null;
+      if (Math.abs(delta) < 42) return;
+      rotate(delta < 0 ? 1 : -1);
+    }, {passive: true});
+
+    render();
+  }
+</script>
+
