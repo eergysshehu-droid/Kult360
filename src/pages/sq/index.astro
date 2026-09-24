@@ -11,22 +11,43 @@ const language = 'sq';
 <BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en','sq']}>
   <section class="hero container-wide">
     <div class="hero__copy">
-      <div class="hero__topline"><p class="eyebrow">{copy.heroEyebrow.sq}</p><span>Shkodër · Shqipëri</span></div>
+      <p class="eyebrow">{copy.heroEyebrow.sq}</p>
       <h1>{copy.heroTitle.sq}</h1>
-      <div class="hero__foot"><p class="hero__lede">{copy.heroBody.sq}</p><div class="hero__actions"><a class="button button--solid" href="/sq/projects/">{copy.exploreProjects.sq}<span aria-hidden="true">↗</span></a><a class="button button--text" href="/sq/get-involved/">{copy.getInvolved.sq}<span aria-hidden="true">→</span></a></div></div>
+      <p class="hero__lede">{copy.heroBody.sq}</p>
+      <div class="hero__actions"><a class="button button--solid" href="/sq/projects/">{copy.exploreProjects.sq}</a><a class="button button--text" href="/sq/get-involved/">{copy.getInvolved.sq} →</a></div>
     </div>
-    <figure class="hero__media"><div class="hero__image-frame"><img src="/media/projects/terminal.jpg" alt="TERMINAL — Europe Week 2026, stacioni i vjetër hekurudhor i Shkodrës" fetchpriority="high" /></div><figcaption><span>TERMINAL</span><span>Europe Week 2026 · Shkodër</span></figcaption></figure>
+    <figure class="hero__media">
+      <div class="hero__image-frame"><img src="/media/projects/terminal.jpg" alt="TERMINAL — Europe Week 2026, stacioni i vjetër hekurudhor i Shkodrës" fetchpriority="high" /></div>
+      <figcaption><span>TERMINAL · Europe Week 2026</span><span>Shkodër</span></figcaption>
+    </figure>
   </section>
 
-  <section class="home-section home-section--projects container-wide"><div class="section-kicker"><span>01</span><h2>{copy.featuredProjects.sq}</h2><a href="/sq/projects/">Të gjitha <span aria-hidden="true">↗</span></a></div><div class="project-grid project-grid--featured">{featuredProjects.map((project, index) => <ProjectCard {project} {language} {index} priority={index === 0} />)}</div></section>
+  <section class="home-section container-wide">
+    <div class="section-kicker"><h2>{copy.featuredProjects.sq}</h2><a href="/sq/projects/">Të gjitha →</a></div>
+    <div class="project-grid project-grid--featured">{featuredProjects.slice(0,4).map((project, index) => <ProjectCard {project} {language} {index} priority={index === 0} />)}</div>
+  </section>
 
-  <section class="home-section home-section--ink"><div class="container-wide"><div class="section-kicker section-kicker--inverse"><span>02</span><h2>{copy.focusAreas.sq}</h2><p>Katër fusha. Një ekosistem kulturor.</p></div><div class="pillar-list">{strategicPillars.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><i aria-hidden="true">↗</i></article>)}</div></div></section>
+  <section class="home-section home-section--ink">
+    <div class="container-wide">
+      <div class="section-kicker section-kicker--inverse"><h2>{copy.focusAreas.sq}</h2><p>Katër fusha të lidhura të punës kulturore.</p></div>
+      <div class="pillar-list">{strategicPillars.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3></article>)}</div>
+    </div>
+  </section>
 
-  <section class="home-section home-section--journal container-wide"><div class="section-kicker"><span>03</span><h2>{copy.journal.sq}</h2><a href="/sq/journal/">Ditari <span aria-hidden="true">↗</span></a></div><div class="journal-grid">{featuredJournal.map((record, index) => <JournalCard {record} {language} {index} />)}</div></section>
+  <section class="home-section container-wide">
+    <div class="section-kicker"><h2>{copy.journal.sq}</h2><a href="/sq/journal/">Ditari →</a></div>
+    <div class="journal-grid">{featuredJournal.slice(0,3).map((record, index) => <JournalCard {record} {language} {index} />)}</div>
+  </section>
 
-  <section class="home-section people-home container-wide"><div class="section-kicker"><span>04</span><h2>{copy.people.sq}</h2><a href="/sq/about/">Rreth nesh <span aria-hidden="true">↗</span></a></div><div class="people-list">{people.map((person, index) => <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}><span class="person-row__index">{String(index + 1).padStart(2, '0')}</span><span class="person-row__name">{person.name}</span><span class="person-row__role">{person.role}</span><span class="person-row__arrow" aria-hidden="true">↗</span></a>)}</div></section>
+  <section class="home-section container-wide">
+    <div class="section-kicker"><h2>{copy.people.sq}</h2><a href="/sq/about/">Rreth nesh →</a></div>
+    <div class="people-list">{people.slice(0,4).map((person) => <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}><span class="person-row__name">{person.name}</span><span class="person-row__role">{person.role}</span><span class="person-row__arrow" aria-hidden="true">→</span></a>)}</div>
+  </section>
 
-  <section class="home-section partner-home container-wide"><div class="section-kicker"><span>05</span><h2>{copy.partners.sq}</h2><p>Referenca të zgjedhura nga arkivi publik</p></div><div class="partner-index">{partners.slice(0, 18).map((partner, index) => <span><b>{String(index + 1).padStart(2, '0')}</b>{partner.name}</span>)}</div></section>
+  <section class="home-section container-wide partner-home">
+    <div class="section-kicker"><h2>{copy.partners.sq}</h2></div>
+    <div class="partner-index">{partners.slice(0,8).map((partner) => <span>{partner.name}</span>)}</div>
+  </section>
 
-  <section class="join-section"><div class="container-wide join-section__inner"><p class="eyebrow">KULT360</p><h2>Kultura rritet përmes pjesëmarrjes.</h2><a class="button button--light" href="/sq/get-involved/">{copy.getInvolved.sq} <span aria-hidden="true">↗</span></a></div></section>
+  <section class="join-section"><div class="container-wide join-section__inner"><h2>Kultura rritet përmes pjesëmarrjes.</h2><a class="button button--light" href="/sq/get-involved/">{copy.getInvolved.sq} →</a></div></section>
 </BaseLayout>

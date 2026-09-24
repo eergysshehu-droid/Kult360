@@ -11,39 +11,43 @@ const language = 'en';
 <BaseLayout title={homePage.heading.en} description={homePage.description.en} {language} path="/" translations={['en','sq']}>
   <section class="hero container-wide">
     <div class="hero__copy">
-      <div class="hero__topline"><p class="eyebrow">{copy.heroEyebrow.en}</p><span>Shkodër · Albania</span></div>
+      <p class="eyebrow">{copy.heroEyebrow.en}</p>
       <h1>{copy.heroTitle.en}</h1>
-      <div class="hero__foot"><p class="hero__lede">{copy.heroBody.en}</p><div class="hero__actions"><a class="button button--solid" href="/projects/">{copy.exploreProjects.en}<span aria-hidden="true">↗</span></a><a class="button button--text" href="/get-involved/">{copy.getInvolved.en}<span aria-hidden="true">→</span></a></div></div>
+      <p class="hero__lede">{copy.heroBody.en}</p>
+      <div class="hero__actions"><a class="button button--solid" href="/projects/">{copy.exploreProjects.en}</a><a class="button button--text" href="/get-involved/">{copy.getInvolved.en} →</a></div>
     </div>
-    <figure class="hero__media"><div class="hero__image-frame"><img src="/media/projects/terminal.jpg" alt="TERMINAL — Europe Week 2026 at the old Shkodra railway station" fetchpriority="high" /></div><figcaption><span>TERMINAL</span><span>Europe Week 2026 · Shkodra</span></figcaption></figure>
+    <figure class="hero__media">
+      <div class="hero__image-frame"><img src="/media/projects/terminal.jpg" alt="TERMINAL — Europe Week 2026 at the old Shkodra railway station" fetchpriority="high" /></div>
+      <figcaption><span>TERMINAL · Europe Week 2026</span><span>Shkodër</span></figcaption>
+    </figure>
   </section>
 
-  <section class="home-section home-section--projects container-wide">
-    <div class="section-kicker"><span>01</span><h2>{copy.featuredProjects.en}</h2><a href="/projects/">All projects <span aria-hidden="true">↗</span></a></div>
-    <div class="project-grid project-grid--featured">{featuredProjects.map((project, index) => <ProjectCard {project} {language} {index} priority={index === 0} />)}</div>
+  <section class="home-section container-wide">
+    <div class="section-kicker"><h2>{copy.featuredProjects.en}</h2><a href="/projects/">All projects →</a></div>
+    <div class="project-grid project-grid--featured">{featuredProjects.slice(0,4).map((project, index) => <ProjectCard {project} {language} {index} priority={index === 0} />)}</div>
   </section>
 
   <section class="home-section home-section--ink">
     <div class="container-wide">
-      <div class="section-kicker section-kicker--inverse"><span>02</span><h2>{copy.focusAreas.en}</h2><p>Four fields. One cultural ecosystem.</p></div>
-      <div class="pillar-list">{strategicPillars.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><i aria-hidden="true">↗</i></article>)}</div>
+      <div class="section-kicker section-kicker--inverse"><h2>{copy.focusAreas.en}</h2><p>Four connected fields of cultural work.</p></div>
+      <div class="pillar-list">{strategicPillars.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3></article>)}</div>
     </div>
   </section>
 
-  <section class="home-section home-section--journal container-wide">
-    <div class="section-kicker"><span>03</span><h2>{copy.journal.en}</h2><a href="/journal/">Journal <span aria-hidden="true">↗</span></a></div>
-    <div class="journal-grid">{featuredJournal.map((record, index) => <JournalCard {record} {language} {index} />)}</div>
+  <section class="home-section container-wide">
+    <div class="section-kicker"><h2>{copy.journal.en}</h2><a href="/journal/">Journal →</a></div>
+    <div class="journal-grid">{featuredJournal.slice(0,3).map((record, index) => <JournalCard {record} {language} {index} />)}</div>
   </section>
 
-  <section class="home-section people-home container-wide">
-    <div class="section-kicker"><span>04</span><h2>{copy.people.en}</h2><a href="/about/">About <span aria-hidden="true">↗</span></a></div>
-    <div class="people-list">{people.map((person, index) => <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}><span class="person-row__index">{String(index + 1).padStart(2, '0')}</span><span class="person-row__name">{person.name}</span><span class="person-row__role">{person.role}</span><span class="person-row__arrow" aria-hidden="true">↗</span></a>)}</div>
+  <section class="home-section container-wide">
+    <div class="section-kicker"><h2>{copy.people.en}</h2><a href="/about/">About →</a></div>
+    <div class="people-list">{people.slice(0,4).map((person) => <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}><span class="person-row__name">{person.name}</span><span class="person-row__role">{person.role}</span><span class="person-row__arrow" aria-hidden="true">→</span></a>)}</div>
   </section>
 
-  <section class="home-section partner-home container-wide">
-    <div class="section-kicker"><span>05</span><h2>{copy.partners.en}</h2><p>Selected public archive references</p></div>
-    <div class="partner-index">{partners.slice(0, 18).map((partner, index) => <span><b>{String(index + 1).padStart(2, '0')}</b>{partner.name}</span>)}</div>
+  <section class="home-section container-wide partner-home">
+    <div class="section-kicker"><h2>{copy.partners.en}</h2></div>
+    <div class="partner-index">{partners.slice(0,8).map((partner) => <span>{partner.name}</span>)}</div>
   </section>
 
-  <section class="join-section"><div class="container-wide join-section__inner"><p class="eyebrow">KULT360</p><h2>Culture grows through participation.</h2><a class="button button--light" href="/get-involved/">{copy.getInvolved.en} <span aria-hidden="true">↗</span></a></div></section>
+  <section class="join-section"><div class="container-wide join-section__inner"><h2>Culture grows through participation.</h2><a class="button button--light" href="/get-involved/">{copy.getInvolved.en} →</a></div></section>
 </BaseLayout>

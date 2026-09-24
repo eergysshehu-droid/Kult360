@@ -4,16 +4,27 @@ interface Props {language: Language}
 const {language} = Astro.props;
 ---
 <footer class="site-footer">
-  <div class="container-wide footer-lead">
-    <p class="eyebrow">KULT360 Foundation</p>
-    <a class="footer-mark" href={localizedPath('/', language)} aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>KULT<span>360</span></a>
-    <p class="footer-lead__line">{language === 'sq' ? 'Art · Të drejta · Edukim · Trashëgimi' : 'Art · Rights · Education · Heritage'}</p>
+  <div class="container-wide footer-top">
+    <a class="footer-mark" href={localizedPath('/', language)}>KULT<span>360</span></a>
+    <p>{language === 'sq' ? 'Kulturë · Barazi · Komunitet' : 'Culture · Equality · Community'}</p>
   </div>
-  <div class="container-wide footer-visual" aria-hidden="true"><img src="/media/home/community.jpg" alt="" loading="lazy" decoding="async" /></div>
   <div class="container-wide footer-grid">
-    <div><p class="meta">{language === 'sq' ? 'Fondacioni' : 'Foundation'}</p><p>{language === 'sq' ? 'Një platformë kulturore për praktikë artistike, pjesëmarrje dhe komunitet.' : 'A cultural platform for artistic practice, participation and community.'}</p></div>
-    <div><p class="meta">{language === 'sq' ? 'Kontakt' : 'Contact'}</p><a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a><a href={`tel:${siteConfig.organization.phone?.replace(/\s/g,'')}`}>{siteConfig.organization.phone}</a><p>{siteConfig.organization.address}</p></div>
-    <div><p class="meta">Social</p><a href={siteConfig.social.instagram}>Instagram ↗</a><a href={siteConfig.social.facebook}>Facebook ↗</a><a href={siteConfig.social.youtube}>YouTube ↗</a></div>
+    <div>
+      <p class="meta">{language === 'sq' ? 'Fondacioni' : 'Foundation'}</p>
+      <p>{language === 'sq' ? 'Art · Të drejta · Edukim · Trashëgimi' : 'Art · Rights · Education · Heritage'}</p>
+    </div>
+    <div>
+      <p class="meta">{language === 'sq' ? 'Kontakt' : 'Contact'}</p>
+      <a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a>
+      <a href={`tel:${siteConfig.organization.phone?.replace(/\s/g,'')}`}>{siteConfig.organization.phone}</a>
+      <p>{siteConfig.organization.address}</p>
+    </div>
+    <div>
+      <p class="meta">Social</p>
+      <a href={siteConfig.social.instagram}>Instagram ↗</a>
+      <a href={siteConfig.social.facebook}>Facebook ↗</a>
+      <a href={siteConfig.social.youtube}>YouTube ↗</a>
+    </div>
   </div>
-  <div class="container-wide footer-bottom"><span>© {new Date().getFullYear()} KULT360</span><span>{language === 'sq' ? 'Kulturë · Barazi · Komunitet' : 'Culture · Equality · Community'}</span></div>
+  <div class="container-wide footer-bottom"><span>© {new Date().getFullYear()} KULT360</span><span>Shkodër · Albania</span></div>
 </footer>

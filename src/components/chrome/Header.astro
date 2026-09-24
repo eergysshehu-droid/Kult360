@@ -5,7 +5,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import MobileNavigation from './MobileNavigation.astro';
 interface Props {language: Language; path: string; translations: readonly Language[]}
 const {language, path, translations} = Astro.props;
-const navSlugs = ['about','programs','projects','journal','media','get-involved'];
+const navSlugs = ['about','programs','projects','journal','get-involved'];
 const items = shellPages.filter(({slug}) => navSlugs.includes(slug));
 const normalizedPath = path.replace(/^\/sq\/?/, '/');
 const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
@@ -13,9 +13,8 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
 <header class="site-header">
   <div class="container-wide site-header__inner">
     <a class="wordmark" href={localizedPath('/', language)} aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>
-      <span class="wordmark__kult">KULT</span><span class="wordmark__360">360</span>
+      KULT<span class="wordmark__360">360</span>
     </a>
-    <p class="site-header__descriptor" aria-hidden="true">Foundation<br />Culture · Community</p>
     <nav class="desktop-navigation" aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
       <ul>{items.map((item) => <li><a href={localizedPath(`/${item.slug}/`, language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
     </nav>

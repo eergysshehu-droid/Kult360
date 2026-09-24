@@ -4,14 +4,14 @@ import {localizedPath, type Language} from '../../lib/site-config';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 interface Props {language: Language; path: string; translations: readonly Language[]}
 const {language, path, translations} = Astro.props;
-const navSlugs = ['about','programs','projects','journal','media','get-involved'];
+const navSlugs = ['about','programs','projects','journal','get-involved'];
 const items = shellPages.filter(({slug}) => navSlugs.includes(slug));
 const normalizedPath = path.replace(/^\/sq\/?/, '/');
 const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
 ---
 <div class="mobile-navigation" data-mobile-nav>
   <button class="menu-trigger" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false">
-    <span>{language === 'sq' ? 'Menu' : 'Menu'}</span><span class="menu-trigger__mark" aria-hidden="true"><i></i><i></i></span>
+    <span>Menu</span><span class="menu-trigger__mark" aria-hidden="true"><i></i><i></i></span>
   </button>
   <dialog class="menu-dialog" id="mobile-menu" aria-labelledby="mobile-menu-title">
     <div class="menu-dialog__panel">
@@ -20,9 +20,9 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
         <button class="menu-close" type="button" aria-label={language === 'sq' ? 'Mbyll menunë' : 'Close menu'}>×</button>
       </div>
       <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
-        <ul class="menu-list">{items.map((item, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><a href={localizedPath(`/${item.slug}/`, language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
+        <ul class="menu-list">{items.map((item) => <li><a href={localizedPath(`/${item.slug}/`, language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
       </nav>
-      <div class="menu-dialog__foot"><LanguageSwitcher {language} {path} {translations} /><a href="mailto:office@kult360.com">office@kult360.com ↗</a></div>
+      <div class="menu-dialog__foot"><LanguageSwitcher {language} {path} {translations} /><a href="mailto:office@kult360.com">office@kult360.com</a></div>
     </div>
   </dialog>
 </div>
@@ -33,10 +33,10 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
     const dialog = root.querySelector<HTMLDialogElement>('.menu-dialog');
     if (!trigger || !closeButton || !dialog) return;
     const close = () => dialog.close();
-    trigger.addEventListener('click', () => {dialog.showModal();trigger.setAttribute('aria-expanded','true');document.documentElement.classList.add('menu-open');closeButton.focus();});
+    trigger.addEventListener('click', () => { dialog.showModal(); trigger.setAttribute('aria-expanded','true'); document.documentElement.classList.add('menu-open'); closeButton.focus(); });
     closeButton.addEventListener('click', close);
-    dialog.addEventListener('click', (event) => {if (event.target === dialog) close();});
-    dialog.addEventListener('close', () => {trigger.setAttribute('aria-expanded','false');document.documentElement.classList.remove('menu-open');trigger.focus();});
-    dialog.addEventListener('cancel', () => close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) close(); });
+    dialog.addEventListener('close', () => { trigger.setAttribute('aria-expanded','false'); document.documentElement.classList.remove('menu-open'); trigger.focus(); });
+    dialog.addEventListener('cancel', close);
   });
 </script>
