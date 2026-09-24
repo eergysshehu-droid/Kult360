@@ -1407,3 +1407,164 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
     transition: none;
   }
 }
+
+
+/* KULT360 FINAL HEADER + 3D WORD WHEEL POLISH */
+/* Larger desktop brand/navigation, with transparent inverse logo on dark hero and black mark on light pages. */
+.brand-lockup {
+  width: clamp(8.7rem, 9.6vw, 9.9rem);
+  min-height: auto;
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: visible;
+}
+.brand-lockup__mark {
+  display: grid;
+  width: 100%;
+  line-height: 0;
+}
+.brand-lockup__logo {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity .22s ease;
+}
+.brand-lockup__logo--light { opacity: 0; pointer-events: none; }
+.brand-lockup__logo--dark { opacity: 1; mix-blend-mode: multiply; }
+body:has(.pcf-hero) .brand-lockup__logo--dark { opacity: 0; }
+body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
+.site-header__inner { min-height: 4.75rem; }
+.desktop-navigation ul { gap: clamp(.95rem, 1.35vw, 1.4rem); }
+.desktop-navigation a,
+.language-switcher a {
+  font-size: .72rem;
+  letter-spacing: .062em;
+  font-weight: 820;
+}
+.desktop-navigation a { opacity: .78; }
+.mobile-brand {
+  width: 8.7rem;
+  min-height: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+.mobile-brand img { width: 100%; height: auto; }
+
+/* True cylindrical typography: one wheel rotates, words do not slide independently. */
+.pcf-hero__headline {
+  align-items: baseline;
+  gap: .085em;
+}
+.pcf-hero__word-cycle {
+  --wheel-radius: clamp(3.45rem, 4.05vw, 4.45rem);
+  position: relative;
+  display: inline-block;
+  width: 11.6ch;
+  height: .93em;
+  line-height: .93;
+  color: var(--experience-yellow);
+  text-align: left;
+  vertical-align: baseline;
+  perspective: 980px;
+  perspective-origin: 34% 50%;
+  transform-style: preserve-3d;
+  outline: none;
+}
+.pcf-hero__word-cycle::after { content: none !important; animation: none !important; }
+.pcf-hero__word-cylinder {
+  --wheel-rotation: 0deg;
+  position: absolute;
+  inset: auto auto -.005em 0;
+  width: 100%;
+  height: 1em;
+  transform-style: preserve-3d;
+  transform-origin: left bottom;
+  transform: rotateX(var(--wheel-rotation));
+  transition: transform 880ms cubic-bezier(.18,.78,.18,1);
+  will-change: transform;
+}
+.pcf-hero__word {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: max-content;
+  white-space: nowrap;
+  color: rgb(216 193 112 / 32%);
+  font: inherit;
+  font-weight: inherit;
+  line-height: .93;
+  letter-spacing: inherit;
+  transform-origin: left bottom;
+  transform: rotateX(var(--word-angle)) translateZ(var(--wheel-radius));
+  backface-visibility: hidden;
+  opacity: 0;
+  filter: blur(2.4px) brightness(.6);
+  transition: opacity 520ms ease, filter 620ms ease, color 520ms ease, text-shadow 520ms ease;
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+}
+.pcf-hero__word[data-depth='front'] {
+  z-index: 3;
+  color: var(--experience-yellow);
+  opacity: 1;
+  filter: blur(0) brightness(1);
+  text-shadow: 0 0 1.2rem rgb(240 207 34 / 7%);
+}
+.pcf-hero__word[data-depth='near'] {
+  z-index: 2;
+  color: rgb(212 193 130 / 31%);
+  opacity: .24;
+  filter: blur(.75px) brightness(.72);
+}
+.pcf-hero__word[data-depth='back'] {
+  z-index: 1;
+  opacity: 0;
+  filter: blur(3px) brightness(.45);
+}
+.pcf-hero__word-cycle:focus-visible {
+  border-radius: .08em;
+  box-shadow: 0 0 0 .025em rgb(240 207 34 / 50%);
+}
+
+@media (max-width: 70rem) {
+  .brand-lockup { width: 8.35rem; }
+  .desktop-navigation a,
+  .language-switcher a { font-size: .68rem; }
+  .pcf-hero__word-cycle {
+    --wheel-radius: clamp(3rem, 4.8vw, 3.75rem);
+    width: 11.4ch;
+  }
+}
+
+@media (max-width: 44rem) {
+  body:has(.pcf-hero) .brand-lockup,
+  body:has(.program-detail__hero) .brand-lockup,
+  .brand-lockup {
+    width: 7.9rem;
+    padding: 0;
+  }
+  .pcf-hero__headline {
+    gap: .075em;
+    font-size: clamp(2.05rem, 9.2vw, 3.35rem);
+    letter-spacing: -.058em;
+  }
+  .pcf-hero__word-cycle {
+    --wheel-radius: clamp(2.35rem, 11vw, 3rem);
+    width: 11.5ch;
+    perspective: 760px;
+  }
+  .pcf-hero__word[data-depth='near'] {
+    opacity: .18;
+    filter: blur(.65px) brightness(.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcf-hero__word-cylinder { transition: none !important; }
+  .pcf-hero__word { transition: none !important; }
+}
