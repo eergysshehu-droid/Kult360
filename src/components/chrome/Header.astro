@@ -3,6 +3,7 @@ import {shellPages} from '../../content/shell-pages';
 import {localizedPath, type Language} from '../../lib/site-config';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import MobileNavigation from './MobileNavigation.astro';
+
 interface Props {language: Language; path: string; translations: readonly Language[]}
 const {language, path, translations} = Astro.props;
 const navSlugs = ['about','programs','projects','journal','get-involved'];
@@ -12,11 +13,11 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
 ---
 <header class="site-header">
   <div class="container-wide site-header__inner">
-    <a class="wordmark" href={localizedPath('/', language)} aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>
-      KULT<span class="wordmark__360">360</span>
+    <a class="brand-lockup" href={localizedPath('/', language)} aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>
+      <img src="/media/brand/kult360-logo.png" alt="KULT360" />
     </a>
     <nav class="desktop-navigation" aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
-      <ul>{items.map((item) => <li><a href={localizedPath(`/${item.slug}/`, language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
+      <ul>{items.map((item) => <li><a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
     </nav>
     <div class="desktop-language"><LanguageSwitcher {language} {path} {translations} /></div>
     <MobileNavigation {language} {path} {translations} />
