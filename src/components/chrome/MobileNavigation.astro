@@ -2,6 +2,7 @@
 import {shellPages} from '../../content/shell-pages';
 import {localizedPath, type Language} from '../../lib/site-config';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+
 interface Props {language: Language; path: string; translations: readonly Language[]}
 const {language, path, translations} = Astro.props;
 const navSlugs = ['about','programs','projects','journal','get-involved'];
@@ -16,11 +17,13 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
   <dialog class="menu-dialog" id="mobile-menu" aria-labelledby="mobile-menu-title">
     <div class="menu-dialog__panel">
       <div class="menu-dialog__header">
-        <p class="wordmark wordmark--inverse" id="mobile-menu-title">KULT<span class="wordmark__360">360</span></p>
+        <a class="mobile-brand" href={localizedPath('/', language)} id="mobile-menu-title">
+          <img src="/media/brand/kult360-logo.png" alt="KULT360" />
+        </a>
         <button class="menu-close" type="button" aria-label={language === 'sq' ? 'Mbyll menunë' : 'Close menu'}>×</button>
       </div>
       <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
-        <ul class="menu-list">{items.map((item) => <li><a href={localizedPath(`/${item.slug}/`, language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
+        <ul class="menu-list">{items.map((item) => <li><a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
       </nav>
       <div class="menu-dialog__foot"><LanguageSwitcher {language} {path} {translations} /><a href="mailto:office@kult360.com">office@kult360.com</a></div>
     </div>
