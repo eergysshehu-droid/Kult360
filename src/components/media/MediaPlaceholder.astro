@@ -1,0 +1,5 @@
+---
+interface Props {label?: string}
+const {label = 'Media pending migration'} = Astro.props;
+---
+<div class="media-placeholder" role="img" aria-label={label}></div>

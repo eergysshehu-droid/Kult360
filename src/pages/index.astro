@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/ui/SectionHeader.astro';
+import MediaPlaceholder from '../components/media/MediaPlaceholder.astro';
+import {homePage} from '../content/shell-pages';
+const language = 'en';
+---
+<BaseLayout title={homePage.heading.en} description={homePage.description.en} {language} path="/" translations={['en', 'sq']}>
+  <section class="container home-intro">
+    <SectionHeader eyebrow="Phase 1" heading={homePage.heading.en} description={homePage.description.en} />
+    <MediaPlaceholder />
+  </section>
+</BaseLayout>

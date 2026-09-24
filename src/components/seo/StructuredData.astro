@@ -1,0 +1,6 @@
+---
+import {serializeSchemas} from '../../lib/seo';
+interface Props {schemas: Array<Record<string, unknown>>}
+const {schemas} = Astro.props;
+---
+<script is:inline type="application/ld+json" set:html={serializeSchemas(schemas)}></script>

@@ -1,0 +1,22 @@
+---
+import {shellPages} from '../../content/shell-pages';
+import {localizedPath, type Language} from '../../lib/site-config';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import MobileNavigation from './MobileNavigation.astro';
+interface Props {language: Language; path: string; translations: readonly Language[]}
+const {language, path, translations} = Astro.props;
+const navSlugs = ['about', 'programs', 'projects', 'events', 'journal', 'media', 'get-involved'];
+const items = shellPages.filter(({slug}) => navSlugs.includes(slug));
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="wordmark" href={localizedPath('/', language)} aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>KULT360</a>
+    <nav class="desktop-navigation" aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
+      <ul>
+        {items.map((item) => <li><a href={localizedPath(`/${item.slug}/`, language)}>{item.label[language]}</a></li>)}
+      </ul>
+    </nav>
+    <div class="desktop-language"><LanguageSwitcher {language} {path} {translations} /></div>
+    <MobileNavigation {language} {path} {translations} />
+  </div>
+</header>

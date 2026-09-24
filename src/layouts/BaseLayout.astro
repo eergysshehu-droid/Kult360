@@ -1,0 +1,35 @@
+---
+import Header from '../components/chrome/Header.astro';
+import Footer from '../components/chrome/Footer.astro';
+import SeoHead from '../components/seo/SeoHead.astro';
+import StructuredData from '../components/seo/StructuredData.astro';
+import {organizationSchema, websiteSchema, webPageSchema} from '../lib/seo';
+import type {BaseLayoutProps} from './types';
+import '../styles/tokens.css';
+import '../styles/reset.css';
+import '../styles/global.css';
+import '../styles/typography.css';
+import '../styles/utilities.css';
+
+type Props = BaseLayoutProps;
+const {title, description, language, path, translations = [language], noindex = false, about = false, schemas = []} = Astro.props;
+const structuredData = [organizationSchema(), websiteSchema(), webPageSchema({title, description, path, language, about}), ...schemas];
+---
+<!doctype html>
+<html lang={language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f1e8" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <SeoHead {title} {description} {language} {path} {translations} {noindex} />
+    <StructuredData schemas={structuredData} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{language === 'sq' ? 'Kalo te përmbajtja' : 'Skip to content'}</a>
+    <Header {language} {path} {translations} />
+    <main id="main-content" tabindex="-1"><slot /></main>
+    <Footer {language} />
+  </body>
+</html>

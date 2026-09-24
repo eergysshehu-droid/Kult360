@@ -1,0 +1,21 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import MediaPlaceholder from '../media/MediaPlaceholder.astro';
+import {localizedPath, type Language} from '../../lib/site-config';
+import type {ShellPageDefinition} from '../../content/shell-pages';
+interface Props {page: ShellPageDefinition; language: Language}
+const {page, language} = Astro.props;
+const path = localizedPath(`/${page.slug}/`, language);
+---
+<ListingLayout
+  title={page.heading[language]}
+  description={page.description[language]}
+  {language}
+  {path}
+  translations={['en', 'sq']}
+  about={page.slug === 'about'}
+>
+  <SectionHeader eyebrow="KULT360" heading={page.heading[language]} description={page.description[language]} />
+  <MediaPlaceholder label={language === 'sq' ? 'Media në pritje të migrimit' : 'Media pending migration'} />
+</ListingLayout>

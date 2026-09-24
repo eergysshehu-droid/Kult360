@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+import MediaPlaceholder from '../../components/media/MediaPlaceholder.astro';
+import {homePage} from '../../content/shell-pages';
+const language = 'sq';
+---
+<BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en', 'sq']}>
+  <section class="container home-intro">
+    <SectionHeader eyebrow="Faza 1" heading={homePage.heading.sq} description={homePage.description.sq} />
+    <MediaPlaceholder label="Media në pritje të migrimit" />
+  </section>
+</BaseLayout>

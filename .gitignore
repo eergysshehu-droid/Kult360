@@ -1,0 +1,21 @@
+node_modules/
+dist/
+studio-dist/
+design-preview/
+.astro/
+.sanity/
+.wrangler/
+.wrangler-dry-run/
+.env
+.env.*
+!.env.example
+instagram-media.json
+*.log
+test-results/
+playwright-report/
+
+# Local migration baseline archive
+Ergysshehuportofolio-main (3).zip
+
+# Local migration baseline archive
+Ergysshehuportofolio-main (3).zip

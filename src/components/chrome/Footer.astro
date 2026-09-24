@@ -1,0 +1,11 @@
+---
+import {siteConfig, type Language} from '../../lib/site-config';
+interface Props {language: Language}
+const {language} = Astro.props;
+---
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>{siteConfig.name}</p>
+    <p>{language === 'sq' ? 'Themel i përkohshëm — Faza 1' : 'Temporary foundation — Phase 1'}</p>
+  </div>
+</footer>
