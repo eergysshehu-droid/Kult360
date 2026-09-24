@@ -1568,3 +1568,179 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   .pcf-hero__word-cylinder { transition: none !important; }
   .pcf-hero__word { transition: none !important; }
 }
+
+
+/* KULT360 MOBILE MENU + TEAM RAIL REFINEMENT */
+/* Make the mobile menu read as a deliberate dark layer, with a clearer icon-only trigger. */
+@media (max-width: 56rem) {
+  .menu-trigger {
+    position: relative;
+    width: 3.45rem;
+    min-width: 3.45rem;
+    height: 3.45rem;
+    min-height: 3.45rem;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    border-radius: 50%;
+    background: rgb(4 4 4 / 58%);
+    border-color: rgb(255 255 255 / 42%);
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 8%),
+      0 0 0 1px rgb(240 207 34 / 8%);
+  }
+
+  .menu-trigger::before {
+    content: '';
+    position: absolute;
+    z-index: 4;
+    width: .8rem;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    background: var(--experience-yellow);
+    transform: translate(-50%, -.16rem);
+    box-shadow: 0 .32rem 0 var(--experience-yellow);
+    opacity: .95;
+  }
+
+  .menu-trigger::after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    width: .42rem;
+    height: .42rem;
+    top: .25rem;
+    right: .28rem;
+    border-radius: 50%;
+    background: var(--experience-yellow);
+    box-shadow: 0 0 0 .2rem rgb(240 207 34 / 10%);
+  }
+
+  .menu-orbit--trigger {
+    width: 2.95rem;
+    opacity: .86;
+  }
+
+  .menu-dialog {
+    background:
+      linear-gradient(to bottom, rgb(8 8 7 / 4%) 0%, rgb(5 5 4 / 26%) 52%, rgb(0 0 0 / 70%) 100%),
+      radial-gradient(circle at 78% 43%, rgb(251 167 26 / 13%), transparent 24rem),
+      #060605;
+  }
+
+  .menu-dialog__panel {
+    min-height: 100svh;
+    padding-bottom: max(1.2rem, env(safe-area-inset-bottom));
+  }
+
+  .menu-dialog__body {
+    min-height: 0;
+  }
+
+  .menu-dialog__signal {
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .menu-dialog__signal p {
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: .25rem;
+    overflow: visible;
+    white-space: nowrap;
+    font-size: .54rem;
+    line-height: 1.35;
+    letter-spacing: .115em;
+    text-align: center;
+  }
+
+  .menu-dialog__foot {
+    position: relative;
+    z-index: 3;
+    padding-top: .9rem;
+    border-top: 1px solid rgb(255 255 255 / 10%);
+  }
+}
+
+/* Directors/team: one compact horizontal rail, so the final member never drops alone. */
+.pcf-people .container-wide {
+  overflow: visible;
+}
+
+.pcf-people-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(13.75rem, 18vw, 16.25rem);
+  grid-template-columns: none;
+  gap: .85rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: .65rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: .15rem;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(9 9 8 / 24%) transparent;
+}
+
+.pcf-people-grid::-webkit-scrollbar {
+  height: 5px;
+}
+
+.pcf-people-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pcf-people-grid::-webkit-scrollbar-thumb {
+  background: rgb(9 9 8 / 24%);
+  border-radius: 999px;
+}
+
+.pcf-person-card {
+  scroll-snap-align: start;
+}
+
+.pcf-person-card__media {
+  aspect-ratio: 4 / 4.8;
+}
+
+.pcf-person-card__copy {
+  min-height: 3.1rem;
+}
+
+@media (max-width: 44rem) {
+  .pcf-people {
+    padding-block: 3.8rem 4.2rem;
+  }
+
+  .pcf-people-grid {
+    grid-auto-columns: min(61vw, 13.25rem);
+    gap: .72rem;
+    margin-right: calc((100vw - 100%) * -1);
+    padding-right: 1rem;
+    padding-bottom: .8rem;
+  }
+
+  .pcf-person-card {
+    gap: .58rem;
+  }
+
+  .pcf-person-card__media {
+    border-radius: 10px;
+  }
+
+  .pcf-person-card__copy strong {
+    font-size: .86rem;
+  }
+
+  .pcf-person-card__copy span {
+    font-size: .63rem;
+    line-height: 1.3;
+  }
+}
