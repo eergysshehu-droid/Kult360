@@ -1,3 +1,5 @@
+import {localWixMedia} from './wix-media';
+
 type RichNode = {
   type?: string;
   nodes?: RichNode[];
@@ -32,8 +34,11 @@ const safeColor = (value: unknown): string | undefined => {
 
 const wixMediaUrl = (src: any): string | undefined => {
   if (!src) return undefined;
+  const local = localWixMedia(src);
+  if (local) return local;
   const raw = String(src.url || src.id || '').trim();
   if (!raw) return undefined;
+  if (raw.includes('static.wixstatic.com') || /\.(?:jpe?g|png|webp|avif|gif)(?:[?#]|$)/i.test(raw)) return undefined;
   if (/^https?:\/\//i.test(raw)) return raw;
   if (raw.startsWith('video/')) return 'https://video.wixstatic.com/' + raw;
   if (raw.startsWith('media/')) return 'https://static.wixstatic.com/' + raw;

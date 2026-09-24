@@ -13,7 +13,7 @@ for (const route of routes) {
     await expect(page.locator('html')).toHaveAttribute('lang', route.startsWith('/sq/') ? 'sq' : 'en');
     await expect(page.locator('main')).toHaveCount(1);
     await expect(page.locator('h1')).toHaveCount(1);
-    await expect(page.getByText('KULT360', {exact: true}).first()).toBeVisible();
+    await expect(page.getByRole('link', {name: /KULT360/}).first()).toBeVisible();
     expect(errors).toEqual([]);
   });
 }

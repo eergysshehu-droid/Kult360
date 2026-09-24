@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PartnerMarquee from '../../components/content/PartnerMarquee.astro';
 import {copy} from '../../content/site-copy';
 import {
   featuredJournal,
@@ -27,20 +28,32 @@ const projectSelection = projects.filter((project) =>
   ['project-terminal-europe-week-2026','project-qyteti-brenda-oborrit','project-luzatart-culture'].includes(project.id)
 );
 const storySelection = journal.filter((record) => journalImage(record)).slice(0, 8);
+const programmeSummaries = [
+  'Mbështesim artistët me mjete praktike, rrjete më të forta dhe hapësirë për punë ambicioze.',
+  'Mbrojmë të drejtat kulturore, qasjen e barabartë dhe lirinë për të krijuar e marrë pjesë.',
+  'E hapim kulturën për më shumë njerëz përmes mësimit gjithëpërfshirës dhe shkëmbimit.',
+  'E mbajmë trashëgiminë e gjallë, duke ndërtuar të ardhme kulturore të qëndrueshme.'
+];
 ---
 <BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en','sq']}>
   <section class="pcf-hero pcf-hero--black">
+    <div class="pcf-hero__orbit-art" aria-hidden="true"><img src="/media/brand/kult360-orbit-source.png" alt="" /></div>
     <div class="container-wide pcf-hero__inner">
       <p class="pcf-kicker">Fondacioni KULT360 · Shqipëri</p>
 
       <div class="pcf-hero__headline-wrap">
-        <h1 class="pcf-hero__headline" aria-label="Kultura është e gjallë, kujtesë, lëvizje dhe dialog">
+        <h1 class="pcf-hero__headline" aria-label="Kultura është komunitet, trashëgimi, kujtesë, edukim, barazi, art, muzikë, natyrë dhe digjitalitet">
           <span class="pcf-hero__prefix">Kultura është</span>
           <span class="pcf-hero__word-cycle" aria-hidden="true">
-            <b>e gjallë.</b>
+            <b>komunitet.</b>
+            <b>trashëgimi.</b>
             <b>kujtesë.</b>
-            <b>lëvizje.</b>
-            <b>dialog.</b>
+            <b>edukim.</b>
+            <b>barazi.</b>
+            <b>art.</b>
+            <b>muzikë.</b>
+            <b>natyrë.</b>
+            <b>digjitalitet.</b>
           </span>
         </h1>
       </div>
@@ -55,7 +68,7 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
     </div>
   </section>
 
-  <section class="pcf-intro">
+  <section class="pcf-intro" id="foundation-intro">
     <div class="container-wide pcf-intro__grid">
       <p class="pcf-label">Rreth fondacionit</p>
       <h2>Ndërtojmë ura dialogu përmes artit dhe trashëgimisë, duke lidhur komunitetet për një të ardhme kulturore më të barabartë.</h2>
@@ -103,7 +116,7 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
             <div class="pcf-programme-card__body">
               <span>{String(index + 1).padStart(2,'0')}</span>
               <h3>{item.title}</h3>
-              {item.summary && <p>{item.summary}</p>}
+              <p>{item.summary || programmeSummaries[index]}</p>
               <span class="pcf-mini-link">Zbulo <i aria-hidden="true">↗</i></span>
             </div>
           </a>
@@ -150,12 +163,13 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
           <p class="pcf-signals__intro">Histori, ide dhe perspektiva që lëvizin nëpër rrjetin tonë kulturor.</p>
         </div>
         <div class="pcf-rail-controls" data-story-controls>
-          <button type="button" data-story-prev aria-label="Historitë e mëparshme">←</button>
-          <button type="button" data-story-next aria-label="Historitë e tjera">→</button>
+          <button type="button" data-story-prev aria-label="Historitë e mëparshme" aria-controls="story-rail">←</button>
+          <span class="pcf-rail-progress" aria-hidden="true"><i data-story-progress></i></span>
+          <button type="button" data-story-next aria-label="Historitë e tjera" aria-controls="story-rail">→</button>
         </div>
       </div>
 
-      <div class="pcf-story-rail" data-story-rail>
+      <div class="pcf-story-rail" data-story-rail id="story-rail" aria-label="Historitë e Journal të KULT360">
         {storySelection.map((record, index) => {
           const image = journalImage(record);
           return (
@@ -213,11 +227,9 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
       <div class="pcf-partners__copy">
         <p class="pcf-label">Partnerë &amp; bashkëpunëtorë</p>
         <h2>Kultura rritet përmes lidhjeve.</h2>
-        <p class="pcf-partners__note">Logot dhe mbështetësit historikë janë marrë nga arkivi publik KULT360 në Wix.</p>
+        <p class="pcf-partners__note">Një rrjet në rritje institucionesh, organizatash kulturore dhe bashkëpunëtorësh të pavarur.</p>
       </div>
-      <figure class="pcf-partner-wall">
-        <img src="https://static.wixstatic.com/media/b6f73a_3479026901e04553a687f2801d92c22e~mv2.jpg" alt="Logot e partnerëve dhe bashkëpunëtorëve të KULT360" loading="lazy" decoding="async" />
-      </figure>
+      <PartnerMarquee {language} />
     </div>
   </section>
 
@@ -228,14 +240,4 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
       <a class="pcf-button pcf-button--dark" href="/sq/get-involved/"><span>Zbulo si të mbështesësh</span><i aria-hidden="true">↗</i></a>
     </div>
   </section>
-
-  <script>
-    const rail = document.querySelector<HTMLElement>('[data-story-rail]');
-    const controls = document.querySelector<HTMLElement>('[data-story-controls]');
-    if (rail && controls) {
-      const amount = () => Math.max(280, rail.clientWidth * 0.72);
-      controls.querySelector('[data-story-prev]')?.addEventListener('click', () => rail.scrollBy({left: -amount(), behavior: 'smooth'}));
-      controls.querySelector('[data-story-next]')?.addEventListener('click', () => rail.scrollBy({left: amount(), behavior: 'smooth'}));
-    }
-  </script>
 </BaseLayout>

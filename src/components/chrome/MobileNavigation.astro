@@ -12,19 +12,26 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
 ---
 <div class="mobile-navigation" data-mobile-nav>
   <button class="menu-trigger" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false">
-    <span>Menu</span><span class="menu-trigger__mark" aria-hidden="true"><i></i><i></i></span>
+    <span class="menu-orbit menu-orbit--trigger" aria-hidden="true"><img src="/media/brand/kult360-orbit-source.png" alt="" /></span>
+    <span class="menu-trigger__label">Menu</span>
   </button>
   <dialog class="menu-dialog" id="mobile-menu" aria-labelledby="mobile-menu-title">
     <div class="menu-dialog__panel">
       <div class="menu-dialog__header">
-        <a class="mobile-brand" href={localizedPath('/', language)} id="mobile-menu-title">
+        <a class="mobile-brand" href={localizedPath('/', language)} id="mobile-menu-title" aria-label={language === 'sq' ? 'KULT360, kreu' : 'KULT360, home'}>
           <img src="/media/brand/kult360-logo.png" alt="KULT360" />
         </a>
         <button class="menu-close" type="button" aria-label={language === 'sq' ? 'Mbyll menunë' : 'Close menu'}>×</button>
       </div>
-      <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
-        <ul class="menu-list">{items.map((item) => <li><a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
-      </nav>
+      <div class="menu-dialog__body">
+        <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
+          <ul class="menu-list">{items.map((item, index) => <li><span aria-hidden="true">0{index + 1}</span><a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
+        </nav>
+        <div class="menu-dialog__signal" aria-hidden="true">
+          <span class="menu-orbit menu-orbit--large"><img src="/media/brand/kult360-orbit-source.png" alt="" /></span>
+          <p>Culture · Equality · Communities</p>
+        </div>
+      </div>
       <div class="menu-dialog__foot"><LanguageSwitcher {language} {path} {translations} /><a href="mailto:office@kult360.com">office@kult360.com</a></div>
     </div>
   </dialog>

@@ -25,6 +25,7 @@ import chunk23 from '../content/wix-blog/chunk-23.b64?raw';
 import {gunzipSync} from 'node:zlib';
 import {Buffer} from 'node:buffer';
 import metadata from '../content/data/wix-blog-meta.json';
+import {localWixMedia} from './wix-media';
 
 const encoded = [chunk00, chunk01, chunk02, chunk03, chunk04, chunk05, chunk06, chunk07, chunk08, chunk09, chunk10, chunk11, chunk12, chunk13, chunk14, chunk15, chunk16, chunk17, chunk18, chunk19, chunk20, chunk21, chunk22, chunk23].join('');
 const sourcePosts = JSON.parse(
@@ -41,7 +42,7 @@ export const wixJournalRecords = sourcePosts.map((post: any) => {
     .map((id: string) => meta.categories[id])
     .filter(Boolean) as string[];
   const sourceUrl = post.url?.base && post.url?.path ? post.url.base + post.url.path : null;
-  const heroUrl = post.heroImage?.url || post.media?.wixMedia?.image?.url || null;
+  const heroUrl = localWixMedia(post.heroImage) || localWixMedia(post.media?.wixMedia?.image) || null;
 
   return {
     id: 'wix-' + post.id,

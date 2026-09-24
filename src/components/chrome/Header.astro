@@ -25,4 +25,5 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
     <div class="desktop-language"><LanguageSwitcher {language} {path} {translations} /></div>
     <MobileNavigation {language} {path} {translations} />
   </div>
+  <span class="site-progress" data-page-progress aria-hidden="true"></span>
 </header>

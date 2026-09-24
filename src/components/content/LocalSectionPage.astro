@@ -3,6 +3,7 @@ import ListingLayout from '../../layouts/ListingLayout.astro';
 import SectionHeader from '../ui/SectionHeader.astro';
 import ProjectCard from './ProjectCard.astro';
 import JournalCard from './JournalCard.astro';
+import PartnerMarquee from './PartnerMarquee.astro';
 import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
 import {events, formatDate, initiatives, journal, opportunities, people, projectImage, projects, strategicPillars} from '../../lib/content';
 import type {ShellPageDefinition} from '../../content/shell-pages';
@@ -147,11 +148,9 @@ const t = {
     <section class="partner-strip partner-strip--logos ruled-section">
       <div class="partner-strip__head">
         <p class="meta">{language === 'sq' ? 'Partnerë & bashkëpunëtorë' : 'Partners & collaborators'}</p>
-        <p>{language === 'sq' ? 'Logo nga arkivi publik KULT360 në Wix.' : 'Logo artwork from KULT360’s public Wix archive.'}</p>
+        <p>{language === 'sq' ? 'Rrjeti historik i partnerëve dhe bashkëpunëtorëve KULT360.' : 'KULT360’s historic network of partners and collaborators.'}</p>
       </div>
-      <figure class="partner-strip__logo-wall">
-        <img src="https://static.wixstatic.com/media/b6f73a_3479026901e04553a687f2801d92c22e~mv2.jpg" alt={language === 'sq' ? 'Logot e partnerëve KULT360' : 'KULT360 partner logos'} loading="lazy" decoding="async" />
-      </figure>
+      <PartnerMarquee {language} />
     </section>
   )}
 </ListingLayout>
