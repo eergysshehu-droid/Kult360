@@ -97,17 +97,17 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
 
       <div class="pcf-programme-grid">
         {strategicPillars.map((item, index) => (
-          <article class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]}>
-            <div class="pcf-programme-card__media">
+          <a class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]} href="/programs/">
+            <div class="pcf-programme-card__media" aria-hidden="true">
               <img src={programmeImages[index % programmeImages.length]} alt="" loading="lazy" decoding="async" />
             </div>
             <div class="pcf-programme-card__body">
               <span>{String(index + 1).padStart(2,'0')}</span>
               <h3>{item.title}</h3>
               {item.summary && <p>{item.summary}</p>}
-              <a class="pcf-mini-link" href="/programs/">Discover ↗</a>
+              <span class="pcf-mini-link">Discover <i aria-hidden="true">↗</i></span>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
@@ -125,16 +125,17 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
           const image = projectImage(project);
           const href = '/projects/' + projectSlug(project) + '/';
           return (
-            <article class:list={['pcf-project-card', index === 0 && 'pcf-project-card--lead']}>
-              <a class="pcf-project-card__media" href={href}>
+            <a class:list={['pcf-project-card', index === 0 && 'pcf-project-card--lead']} href={href}>
+              <div class="pcf-project-card__media">
                 {image && <img src={image} alt="" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />}
-              </a>
+              </div>
               <div class="pcf-project-card__copy">
                 <p>{project.location || project.kind.replaceAll('_',' ')}</p>
-                <h3><a href={href}>{project.title}</a></h3>
+                <h3>{project.title}</h3>
                 {project.summary && <p>{project.summary}</p>}
+                <span class="pcf-card-action">Open project <i aria-hidden="true">↗</i></span>
               </div>
-            </article>
+            </a>
           );
         })}
       </div>
@@ -159,17 +160,17 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
         {storySelection.map((record, index) => {
           const image = journalImage(record);
           return (
-            <article class="pcf-story-card">
-              <a class="pcf-story-card__media" href={'/journal/' + journalSlug(record) + '/'}>
+            <a class="pcf-story-card" href={'/journal/' + journalSlug(record) + '/'}>
+              <div class="pcf-story-card__media">
                 {image && <img src={image} alt="" loading="lazy" decoding="async" />}
                 <span>{String(index + 1).padStart(2,'0')}</span>
-              </a>
+              </div>
               <div class="pcf-story-card__copy">
                 <p>{[record.category, record.read_time].filter(Boolean).join(' · ') || 'Journal'}</p>
-                <h3><a href={'/journal/' + journalSlug(record) + '/'}>{record.title}</a></h3>
+                <h3>{record.title}</h3>
                 <span>{record.author || 'KULT360 Journal'}</span>
               </div>
-            </article>
+            </a>
           );
         })}
       </div>
@@ -210,8 +211,14 @@ const storySelection = journal.filter((record) => journalImage(record)).slice(0,
 
   <section class="pcf-partners">
     <div class="container-wide pcf-partners__grid">
-      <div><p class="pcf-label">Partners &amp; collaborators</p><h2>Culture grows through connection.</h2></div>
-      <div class="pcf-partners__names">{partners.slice(0,12).map((partner) => <span>{partner.name}</span>)}</div>
+      <div class="pcf-partners__copy">
+        <p class="pcf-label">Partners &amp; collaborators</p>
+        <h2>Culture grows through connection.</h2>
+        <p class="pcf-partners__note">Historic partner and supporter marks are drawn from KULT360’s public Wix archive.</p>
+      </div>
+      <figure class="pcf-partner-wall">
+        <img src="https://static.wixstatic.com/media/b6f73a_3479026901e04553a687f2801d92c22e~mv2.jpg" alt="KULT360 partner and collaborator logos" loading="lazy" decoding="async" />
+      </figure>
     </div>
   </section>
 
