@@ -1,0 +1,7 @@
+id: pillar-education
+role: strategic_pillar
+alt_or_label: CULTURE & INCLUSIVE EDUCATION
+rendition_url: https://static.wixstatic.com/media/ac2b9c_022eef5304cb4d8c85bd42da676d0130~mv2.jpg/v1/fill/w_225%2Ch_224%2Cq_90%2Cenc_avif%2Cquality_auto/ac2b9c_022eef5304d8c85bd42da676d0130~mv2.jpg
+original_url: https://static.wixstatic.com/media/ac2b9c_022eef5304cb4d8c85bd42da676d0130~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

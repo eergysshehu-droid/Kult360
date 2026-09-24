@@ -1,0 +1,61 @@
+[
+  {
+    "from": "project-terminal-europe-week-2026",
+    "to": [
+      "person-eda-zari",
+      "person-ergys-shehu",
+      "person-eda-elbasani",
+      "person-teufik-bashi",
+      "European Union",
+      "EU Delegation in Albania",
+      "Europe House"
+    ],
+    "type": "participants_and_supporters"
+  },
+  {
+    "from": "project-luzatart-culture",
+    "to": [
+      "Kalo Foundation",
+      "Kalo Gallery",
+      "Eda Zari",
+      "Eda Elbasani",
+      "Henning Jung",
+      "AJS Trio"
+    ],
+    "type": "partners_and_participants"
+  },
+  {
+    "from": "project-save-blue-heart-europe",
+    "to": [
+      "Eda Zari",
+      "Elina Duni",
+      "Patagonia",
+      "Riverwatch",
+      "EcoAlbania"
+    ],
+    "type": "artists_and_supporters"
+  },
+  {
+    "from": "project-jazz-wine-2017",
+    "to": [
+      "Bashkia Himarë",
+      "GIZ Albania",
+      "Agency South Coastal Region Albania",
+      "Kantina Çobo",
+      "Kantina Nurellari",
+      "Kantina Belba",
+      "Kantina Kokomani",
+      "Kaba Music Records",
+      "Botimpex",
+      "Symbiotic"
+    ],
+    "type": "partners_and_sponsors"
+  },
+  {
+    "from": "event-qyteti-brenda-oborrit-2026",
+    "to": [
+      "project-qyteti-brenda-oborrit"
+    ],
+    "type": "event_of_project"
+  }
+]

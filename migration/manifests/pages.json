@@ -1,0 +1,151 @@
+[
+  {
+    "id": "page-home",
+    "title": "KULT360 Foundation | Empowering Albanian Artists & Culture",
+    "source_url": "https://www.kult360.com/",
+    "legacy_path": "/",
+    "content_type": "home",
+    "language": "mixed_en_sq",
+    "summary": "Homepage presenting the TERMINAL / Europe Week 2026 artistic intervention, foundation philosophy and four strategic pillars, recent journal items, projects, team, testimonials, partner/collaborator area and contact details.",
+    "key_sections": [
+      "TERMINAL / Europe Week 2026",
+      "Testimonials",
+      "Our Focus Areas",
+      "Blog",
+      "Projects",
+      "Our Team",
+      "Our Partners & Collaborators",
+      "Contact/footer"
+    ],
+    "status": "verified_public"
+  },
+  {
+    "id": "page-about",
+    "title": "ABOUT | KULT360",
+    "source_url": "https://www.kult360.com/about",
+    "legacy_path": "/about",
+    "content_type": "about",
+    "language": "en",
+    "summary": "About page with the public team roster and foundation contact/footer information.",
+    "key_sections": [
+      "Our Team",
+      "Support CTA",
+      "Contact/footer"
+    ],
+    "status": "verified_public"
+  },
+  {
+    "id": "page-lab",
+    "title": "KULT 360 LAB",
+    "source_url": "https://www.kult360.com/stories-conversations",
+    "legacy_path": "/stories-conversations",
+    "content_type": "lab",
+    "language": "unknown",
+    "summary": "Public navigation exposes KULT 360 LAB at this URL. The crawler could resolve the URL from the homepage navigation but did not return page body content.",
+    "key_sections": [],
+    "status": "url_verified_body_pending"
+  },
+  {
+    "id": "page-gallery",
+    "title": "GALLERY",
+    "source_url": "https://www.kult360.com/copy-of-culture-inclusive-education",
+    "legacy_path": "/copy-of-culture-inclusive-education",
+    "content_type": "gallery",
+    "language": "unknown",
+    "summary": "Public navigation exposes a gallery at this legacy Wix path. The crawler resolved the URL but did not return the page body.",
+    "key_sections": [],
+    "status": "url_verified_body_pending"
+  },
+  {
+    "id": "page-blog",
+    "title": "BLOG",
+    "source_url": "https://www.kult360.com/blog",
+    "legacy_path": "/blog",
+    "content_type": "journal_index",
+    "language": "mostly_sq",
+    "summary": "Legacy Wix blog index. Article inventory is represented separately in journal.json. New site terminology should be Journal.",
+    "key_sections": [
+      "Posts",
+      "Categories"
+    ],
+    "status": "url_verified_body_partially_indexed"
+  },
+  {
+    "id": "page-get-involved",
+    "title": "GET INVOLVED | KULT360",
+    "source_url": "https://www.kult360.com/get-involved",
+    "legacy_path": "/get-involved",
+    "content_type": "get_involved",
+    "language": "en",
+    "summary": "Participation/support page offering support as an individual, corporation or foundation, with a donation CTA and repetition of the four strategic pillars.",
+    "key_sections": [
+      "Join Our Community",
+      "Support pathways",
+      "Donate CTA",
+      "Focus areas",
+      "Contact/footer"
+    ],
+    "status": "verified_public"
+  },
+  {
+    "id": "page-donate",
+    "title": "DONATE | KULT360",
+    "source_url": "https://www.kult360.com/donate",
+    "legacy_path": "/donate",
+    "content_type": "support",
+    "language": "en",
+    "summary": "Donation page with one-time, monthly and yearly frequency options, amount input in Lekë, optional comment and contact/footer information.",
+    "key_sections": [
+      "Support Our Artists",
+      "Donation form",
+      "Contact/footer"
+    ],
+    "status": "verified_public"
+  },
+  {
+    "id": "page-heritage",
+    "title": "HERITAGE | KULT360",
+    "source_url": "https://www.kult360.com/general-6",
+    "legacy_path": "/general-6",
+    "content_type": "program_landing",
+    "language": "en",
+    "summary": "Heritage page introducing preservation, revival and redefinition of Albanian and regional heritage, but currently containing three obvious Wix placeholder blocks labelled Small Title.",
+    "key_sections": [
+      "Our Roots, Our Future",
+      "Three placeholder content blocks"
+    ],
+    "status": "verified_public_needs_editorial_cleanup"
+  },
+  {
+    "id": "page-qyteti-brenda-oborrit",
+    "title": "Qyteti Brenda Oborrit | KULT360",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "legacy_path": "/qytetibrendaoborrit",
+    "content_type": "event",
+    "language": "sq_en",
+    "summary": "Event page for KULT360's one-year cultural impact gathering at Oborri Tirana on 28 August 2026 at 19:30, also summarizing current initiatives and inviting institutional/corporate/philanthropic partnership.",
+    "key_sections": [
+      "Event invitation",
+      "One Year Of Cultural Impact",
+      "Core initiatives",
+      "Partner invitation"
+    ],
+    "status": "verified_public"
+  },
+  {
+    "id": "page-contact",
+    "title": "Contact / footer contact block",
+    "source_url": "https://www.kult360.com/",
+    "legacy_path": null,
+    "content_type": "contact",
+    "language": "en",
+    "summary": "Contact information is publicly repeated in the footer: Tirana, Albania; Rr. Kavajes; +355 69 33 10 202; office@kult360.com; Instagram, Facebook and YouTube links.",
+    "key_sections": [
+      "Address",
+      "Phone",
+      "Email",
+      "Social links"
+    ],
+    "status": "verified_as_shared_footer_not_distinct_page"
+  }
+]

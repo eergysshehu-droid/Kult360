@@ -1,0 +1,7 @@
+id: journal-bossa
+role: blog_thumbnail
+alt_or_label: Fajin e ka Bossa Nova.
+rendition_url: https://static.wixstatic.com/media/f4598e_aa1821a525c14d5a868e63c2e28998c4~mv2.jpg/v1/fill/w_229%2Ch_229%2Cfp_0.50_0.50%2Cq_90%2Cenc_avif%2Cquality_auto/f4598e_aa1821a525c14d5a868e63c2e28998c4~mv2.webp
+original_url: https://static.wixstatic.com/media/f4598e_aa1821a525c14d5a868e63c2e28998c4~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

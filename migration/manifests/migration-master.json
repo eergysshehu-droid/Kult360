@@ -1,0 +1,35 @@
+{
+  "phase": "2",
+  "source_site": "https://www.kult360.com/",
+  "retrieved_at": "2026-09-24",
+  "scope": "public website content and asset inventory only",
+  "counts": {
+    "pages": 10,
+    "people": 5,
+    "projects_or_recognitions": 11,
+    "programs_and_initiatives": 6,
+    "events": 7,
+    "journal_items": 31,
+    "opportunities": 4,
+    "testimonials": 3,
+    "partners_named": 20,
+    "asset_urls": 46,
+    "documents": 0,
+    "media_embeds": 2,
+    "proposed_redirects": 28
+  },
+  "completeness": {
+    "homepage": "high",
+    "about_team_roster": "high",
+    "projects_on_homepage": "high",
+    "qyteti_brenda_oborrit": "high",
+    "journal_inventory": "medium_high",
+    "journal_full_bodies": "not_embedded",
+    "lab_page_body": "pending",
+    "gallery_page_body": "pending",
+    "team_biographies": "pending_missing_public_profile_text",
+    "raw_asset_binaries": "pending_local_fetch_script",
+    "documents_pdfs": "none_discovered"
+  },
+  "important_note": "Accuracy was prioritized over invented completeness. Missing data is explicit. Full public article bodies are not bundled; use an owned Wix export or user-provided source to migrate complete text."
+}

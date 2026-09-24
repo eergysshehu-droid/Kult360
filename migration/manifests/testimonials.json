@@ -1,0 +1,29 @@
+[
+  {
+    "id": "testimonial-silvio-gonzato",
+    "name": "Silvio Gonzato",
+    "role": "Ambassador of the European Union to Albania",
+    "source_url": "https://www.kult360.com/",
+    "context": "TERMINAL – Vini re, Vini re / Europe Week 2026",
+    "quote_excerpt": "The source praises the project for reflecting the goals of Europe Week 2026 around understanding perspectives and finding shared ground.",
+    "migration_note": "Use original wording only after rights/editorial review."
+  },
+  {
+    "id": "testimonial-herbie-hancock",
+    "name": "Herbie Hancock",
+    "role": "UNESCO Goodwill Ambassador for Intercultural Dialogue; Chairman, Thelonious Monk Institute of Jazz (as stated on source site)",
+    "source_url": "https://www.kult360.com/",
+    "context": "International Jazz Day",
+    "quote_excerpt": "The source thanks Eda Zari for steadfast support and looks forward to future collaboration on International Jazz Day.",
+    "migration_note": "Verify the original letter/permission before republishing as an institutional testimonial."
+  },
+  {
+    "id": "testimonial-ulrich-eichelmann",
+    "name": "Ulrich Eichelmann",
+    "role": "CEO, Riverwatch",
+    "source_url": "https://www.kult360.com/",
+    "context": "Vjosa Concert / art and activism",
+    "quote_excerpt": "The source highlights Eda Zari's combination of art and activism, environmental protection and ability to mobilize people across fields.",
+    "migration_note": "Verify original letter/permission before republication."
+  }
+]

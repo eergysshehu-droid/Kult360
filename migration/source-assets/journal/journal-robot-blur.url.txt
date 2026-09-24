@@ -1,0 +1,7 @@
+id: journal-robot-blur
+role: blog_thumbnail_blurred
+alt_or_label: Artist apo Robot?
+rendition_url: https://static.wixstatic.com/media/f4598e_09acb84ca6a64f09bc00a1c0d0080193~mv2.webp/v1/fill/w_251%2Ch_250%2Cal_c%2Cq_30%2Cblur_30%2Cenc_avif%2Cquality_auto/f4598e_09acb84ca6a64f09bc00a1c0d0080193~mv2.webp
+original_url: https://static.wixstatic.com/media/f4598e_09acb84ca6a64f09bc00a1c0d0080193~mv2.webp
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

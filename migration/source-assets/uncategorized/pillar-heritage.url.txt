@@ -1,0 +1,7 @@
+id: pillar-heritage
+role: strategic_pillar
+alt_or_label: HERITAGE & SUSTAINABILITY
+rendition_url: https://static.wixstatic.com/media/ac2b9c_09b4e414c6b543c6a2ec3f04ce31560b~mv2.jpg/v1/fill/w_224%2Ch_224%2Cq_90%2Cenc_avif%2Cquality_auto/ac2b9c_09b4e414c6b543c6a2ec3f04ce31560b~mv2.jpg
+original_url: https://static.wixstatic.com/media/ac2b9c_09b4e414c6b543c6a2ec3f04ce31560b~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

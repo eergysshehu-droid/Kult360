@@ -1,0 +1,63 @@
+{
+  "observed_primary": [
+    {
+      "label": "HOME",
+      "url": "https://www.kult360.com/"
+    },
+    {
+      "label": "ABOUT",
+      "url": "https://www.kult360.com/about"
+    },
+    {
+      "label": "KULT 360 LAB",
+      "url": "https://www.kult360.com/stories-conversations"
+    },
+    {
+      "label": "GALLERY",
+      "url": "https://www.kult360.com/copy-of-culture-inclusive-education"
+    },
+    {
+      "label": "BLOG",
+      "url": "https://www.kult360.com/blog"
+    },
+    {
+      "label": "CONTACT",
+      "url": "https://www.kult360.com/",
+      "note": "Crawler resolves the nav item to the homepage; likely section/anchor behavior."
+    }
+  ],
+  "observed_secondary_or_cta": [
+    {
+      "label": "Get Involved",
+      "url": "https://www.kult360.com/get-involved"
+    },
+    {
+      "label": "Donate",
+      "url": "https://www.kult360.com/donate"
+    }
+  ],
+  "observed_social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/kult360/"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/kult360"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/%40Kult360"
+    }
+  ],
+  "proposed_v2": [
+    "Home",
+    "About",
+    "Programs",
+    "Projects",
+    "Journal",
+    "Media",
+    "Get Involved"
+  ],
+  "note": "Proposed V2 labels come from the approved migration direction; they are not claims about the existing Wix navigation."
+}

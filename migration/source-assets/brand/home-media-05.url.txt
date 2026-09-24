@@ -1,0 +1,7 @@
+id: home-media-05
+role: brand_or_home_visual
+alt_or_label: 
+rendition_url: https://static.wixstatic.com/media/b6f73a_6c581690bf564ab5a6b050e9bd2f7a37~mv2.png/v1/fill/w_278%2Ch_137%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/b6f73a_6c581690bf564ab5a6b050e9bd2f7a37~mv2.png
+original_url: https://static.wixstatic.com/media/b6f73a_6c581690bf564ab5a6b050e9bd2f7a37~mv2.png
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch
