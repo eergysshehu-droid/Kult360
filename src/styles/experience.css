@@ -1797,3 +1797,268 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     overflow: hidden;
   }
 }
+
+
+/* KULT360 FINAL MOBILE QA PASS 2026-09-25 */
+
+/* --- Brand lockup: correct source-canvas crop and correct inverse variant --- */
+.brand-lockup__mark > img.brand-lockup__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100.8%;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: none !important;
+}
+
+body:has(.program-detail__hero) .brand-lockup__logo--dark,
+body:has(.pcf-hero) .brand-lockup__logo--dark {
+  opacity: 0 !important;
+}
+
+body:has(.program-detail__hero) .brand-lockup__logo--light,
+body:has(.pcf-hero) .brand-lockup__logo--light {
+  opacity: 1 !important;
+}
+
+/* --- 3D wheel geometry: cancel cylinder radius at the parent so the front word
+       lands exactly on the "Culture is" baseline instead of magnifying/shifting. --- */
+.pcf-hero__word-cylinder {
+  transform:
+    translateZ(calc(-1 * var(--wheel-radius)))
+    rotateX(var(--wheel-rotation)) !important;
+}
+
+.pcf-hero__word[data-depth='near'] {
+  opacity: .12;
+  filter: blur(.7px) brightness(.68);
+}
+
+.pcf-hero__word[data-depth='back'] {
+  opacity: 0;
+}
+
+/* --- Programme hero: visible editorial watermark rather than near-black text --- */
+.program-detail__title-grid h1 {
+  color: rgb(255 255 255 / 36%) !important;
+  text-shadow: 0 .08em .55em rgb(0 0 0 / 18%);
+}
+
+/* --- Mobile refinements from the visual QA screenshots --- */
+@media (max-width: 44rem) {
+  .site-header__inner {
+    min-height: 4.15rem !important;
+  }
+
+  body:has(.pcf-hero) .brand-lockup,
+  body:has(.program-detail__hero) .brand-lockup,
+  .brand-lockup {
+    width: 9.15rem !important;
+    min-width: 9.15rem !important;
+  }
+
+  /* Clear icon-only menu: preserve the orbit, add a restrained three-line cue. */
+  .menu-trigger {
+    width: 3.2rem !important;
+    min-width: 3.2rem !important;
+    height: 3.2rem !important;
+    min-height: 3.2rem !important;
+    padding: .14rem !important;
+  }
+
+  .menu-trigger::before {
+    content: '' !important;
+    position: absolute !important;
+    z-index: 5 !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 1.36rem !important;
+    height: 1.36rem !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background:
+      linear-gradient(var(--experience-yellow), var(--experience-yellow)) 50% 31% / 56% 1px no-repeat,
+      linear-gradient(var(--experience-yellow), var(--experience-yellow)) 50% 50% / 42% 1px no-repeat,
+      linear-gradient(var(--experience-yellow), var(--experience-yellow)) 50% 69% / 56% 1px no-repeat,
+      rgb(4 4 4 / 76%) !important;
+    box-shadow: 0 0 0 1px rgb(240 207 34 / 30%) !important;
+  }
+
+  .menu-trigger::after {
+    width: .4rem !important;
+    height: .4rem !important;
+    top: .18rem !important;
+    right: .18rem !important;
+    background: var(--experience-yellow) !important;
+    box-shadow: 0 0 0 .18rem rgb(240 207 34 / 10%) !important;
+  }
+
+  /* Homepage hero must remain one sentence on mobile. */
+  .pcf-hero__inner {
+    padding-top: 5.15rem !important;
+  }
+
+  .pcf-hero__headline-wrap {
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  .pcf-hero__headline {
+    display: flex !important;
+    width: 100% !important;
+    align-items: baseline !important;
+    justify-content: flex-start !important;
+    justify-items: initial !important;
+    gap: .08em !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+    font-size: clamp(2.05rem, 8.3vw, 2.65rem) !important;
+    line-height: .92 !important;
+    letter-spacing: -.058em !important;
+  }
+
+  html[lang='sq'] .pcf-hero__headline {
+    font-size: clamp(1.82rem, 7.35vw, 2.35rem) !important;
+  }
+
+  .pcf-hero__prefix {
+    flex: 0 0 auto !important;
+    font-size: 1em !important;
+    line-height: .92 !important;
+    letter-spacing: inherit !important;
+    text-transform: none !important;
+  }
+
+  .pcf-hero__word-cycle {
+    --wheel-radius: 2.45rem !important;
+    flex: 1 1 auto !important;
+    width: 11.6ch !important;
+    min-width: 0 !important;
+    height: .94em !important;
+    line-height: .92 !important;
+    perspective: 860px !important;
+    perspective-origin: left 50% !important;
+  }
+
+  .pcf-hero__word-cylinder {
+    inset: auto auto 0 0 !important;
+    height: .94em !important;
+  }
+
+  .pcf-hero__word {
+    line-height: .92 !important;
+  }
+
+  .pcf-hero__word[data-depth='near'] {
+    opacity: .085 !important;
+    filter: blur(.65px) brightness(.62) !important;
+  }
+
+  /* Editorial scale: strong, but not poster-sized on a phone. */
+  .pcf-intro h2 {
+    max-width: 14.5ch !important;
+    font-size: clamp(2.05rem, 8.8vw, 2.8rem) !important;
+    line-height: .98 !important;
+  }
+
+  .pcf-programmes .pcf-section-head h2 {
+    max-width: 14ch !important;
+    font-size: clamp(2.2rem, 9.6vw, 3rem) !important;
+    line-height: .96 !important;
+  }
+
+  .pcf-programme-card {
+    min-height: 14.75rem !important;
+  }
+
+  .pcf-programme-card__body h3 {
+    max-width: 13ch !important;
+    font-size: clamp(1.65rem, 7.4vw, 2.05rem) !important;
+    line-height: .96 !important;
+  }
+
+  /* Programs listing cards. */
+  .program-page-card {
+    min-height: 18.5rem !important;
+    padding: 1.15rem !important;
+    gap: 1.25rem !important;
+  }
+
+  .program-page-card h2 {
+    max-width: 13ch !important;
+    font-size: clamp(1.95rem, 8.7vw, 2.7rem) !important;
+    line-height: .94 !important;
+  }
+
+  /* Programme detail hero: shorter header, legible watermark, calmer composition. */
+  .program-detail__hero {
+    min-height: 43rem !important;
+  }
+
+  .program-detail__hero-inner {
+    padding-top: 5.35rem !important;
+    padding-bottom: 1.15rem !important;
+  }
+
+  .program-detail__title-grid {
+    gap: 1rem !important;
+  }
+
+  .program-detail__title-grid h1 {
+    max-width: 10.5ch !important;
+    font-size: clamp(2.85rem, 12.2vw, 4.05rem) !important;
+    line-height: .82 !important;
+    color: rgb(255 255 255 / 43%) !important;
+  }
+
+  .program-detail__summary {
+    max-width: 23rem !important;
+    font-size: .96rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .program-detail__orbit {
+    opacity: .32 !important;
+  }
+
+  /* Project archive: show image + information within one phone viewport more often. */
+  .project-grid {
+    gap: 2.25rem !important;
+  }
+
+  .project-card__media,
+  .program-detail__project-grid .project-card__media {
+    aspect-ratio: 16 / 10 !important;
+    max-height: 18rem !important;
+  }
+
+  .project-card__media img,
+  .program-detail__project-grid .project-card__media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  /* Menu lower half and footer information stay readable and within the viewport. */
+  .menu-dialog {
+    background:
+      linear-gradient(to bottom, rgb(8 8 7 / 3%) 0%, rgb(4 4 3 / 30%) 48%, rgb(0 0 0 / 88%) 100%),
+      radial-gradient(circle at 78% 42%, rgb(251 167 26 / 12%), transparent 21rem),
+      #050504 !important;
+  }
+
+  .menu-dialog__signal p {
+    white-space: normal !important;
+    max-width: 18rem !important;
+    font-size: .52rem !important;
+    line-height: 1.45 !important;
+    letter-spacing: .105em !important;
+  }
+
+  .menu-dialog__foot {
+    padding-bottom: max(.25rem, env(safe-area-inset-bottom)) !important;
+  }
+}
