@@ -303,3 +303,185 @@ body:has(.pcf-hero) .brand-lockup{
     font-size:clamp(2.55rem,11.5vw,4rem);
   }
 }
+
+
+/* === Brand + footer correction === */
+.brand-lockup{
+  width:9.2rem;
+  min-height:auto;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+}
+.brand-lockup__mark{
+  position:relative;
+  display:block;
+  width:100%;
+  height:2rem;
+  overflow:hidden;
+}
+.brand-lockup__base,
+.brand-lockup__accent{
+  position:absolute;
+  inset:50% 0 auto;
+  width:100%;
+  height:auto;
+  transform:translateY(-50%);
+  display:block;
+}
+body:not(:has(.pcf-hero)) .brand-lockup__base{
+  filter:brightness(0);
+}
+body:not(:has(.pcf-hero)) .brand-lockup__accent{
+  clip-path:inset(0 15% 0 47%);
+}
+body:has(.pcf-hero) .brand-lockup__base{
+  filter:none;
+}
+body:has(.pcf-hero) .brand-lockup__accent{
+  display:none;
+}
+body:has(.pcf-hero) .brand-lockup,
+body:not(:has(.pcf-hero)) .brand-lockup{
+  width:9.2rem;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+}
+
+.footer-v2__top{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:2rem;
+  align-items:center;
+  padding-block:1.65rem;
+  border-bottom:1px solid #ffffff2d;
+}
+.footer-v2__logo{
+  position:relative;
+  width:9.4rem;
+  height:2.15rem;
+  overflow:hidden;
+  display:block;
+}
+.footer-v2__logo img{
+  position:absolute;
+  inset:50% 0 auto;
+  width:100%;
+  height:auto;
+  transform:translateY(-50%);
+  display:block;
+}
+.footer-v2__tagline{
+  margin:0;
+  justify-self:center;
+  color:#c7c3ba;
+  font-size:.76rem;
+}
+.footer-v2__social{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:.48rem;
+}
+.footer-v2__social a{
+  width:2.45rem;
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  border:1px solid #ffffff4a;
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
+}
+.footer-v2__social a:hover{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+  transform:translateY(-2px);
+}
+.footer-v2__social svg{
+  width:1.05rem;
+  height:1.05rem;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.footer-v2__social a:nth-child(2) svg path,
+.footer-v2__social a:nth-child(3) svg path:first-child{
+  fill:currentColor;
+  stroke:none;
+}
+.footer-v2__social .footer-v2__play{
+  fill:var(--pcf-ink);
+  stroke:none;
+}
+.footer-v2__grid{
+  grid-template-columns:1.25fr 1fr .72fr;
+  padding-block:1.75rem;
+}
+.footer-v2__quick{
+  justify-self:end;
+  min-width:9rem;
+}
+.footer-v2__bottom{
+  padding-block:.85rem 1rem;
+}
+
+/* Remove old footer-brand layout when the new top rail is present */
+.footer-v2__brand{display:none}
+
+/* Person pages: no migration diagnostics as visual content */
+.person-detail + .detail-body:empty{
+  display:none;
+}
+.person-detail{
+  margin-bottom:1.6rem;
+}
+.person-detail + .detail-body{
+  margin-inline:0;
+  width:auto;
+}
+.person-detail + .detail-body .button{
+  min-height:2.55rem;
+  font-size:.64rem;
+}
+
+@media(max-width:44rem){
+  .brand-lockup,
+  body:not(:has(.pcf-hero)) .brand-lockup,
+  body:has(.pcf-hero) .brand-lockup{
+    width:7.6rem;
+  }
+  .brand-lockup__mark{height:1.72rem}
+
+  .footer-v2__top{
+    grid-template-columns:1fr auto;
+    gap:1rem;
+  }
+  .footer-v2__tagline{
+    grid-column:1 / -1;
+    grid-row:2;
+    justify-self:start;
+  }
+  .footer-v2__social{
+    grid-column:2;
+    grid-row:1;
+  }
+  .footer-v2__logo{
+    width:8rem;
+    height:1.8rem;
+  }
+  .footer-v2__grid{
+    grid-template-columns:1fr;
+  }
+  .footer-v2__quick{
+    justify-self:start;
+  }
+}
