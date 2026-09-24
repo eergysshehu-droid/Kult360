@@ -1,0 +1,83 @@
+{
+  "purpose": "Compare Phase 3 conceptual mapping to actual Phase 1 Studio schemas before any import generator is written.",
+  "target_types": {
+    "article": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "event": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "impactRecord": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "mediaAsset": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "navigation": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "opportunity": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "organization": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "page": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "partner": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "person": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "program": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "project": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "redirect": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "siteSettings": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "supportCampaign": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    },
+    "testimonial": {
+      "expected": true,
+      "field_mapping_status": "must_compare_with_actual_studio_schema"
+    }
+  },
+  "non_negotiable_fields_for_mediaAsset": [
+    "source/provenance",
+    "rights status",
+    "credit",
+    "alt text or explicit alt pending status",
+    "original legacy URL or Wix media ID where available"
+  ],
+  "non_negotiable_fields_for_content": [
+    "stable migration id",
+    "source URL where available",
+    "language/source language",
+    "migration/review status"
+  ],
+  "localization_rule": "Preserve source-language content. Missing EN/SQ variants remain empty/pending; do not machine-fill silently."
+}

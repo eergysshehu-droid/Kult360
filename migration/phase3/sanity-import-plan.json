@@ -1,0 +1,51 @@
+{
+  "phase": "3",
+  "mode": "mapping_and_review_only",
+  "sanity_write_allowed": false,
+  "rule": "Do not connect to or write to any Sanity dataset in Phase 3.",
+  "expected_document_types": [
+    "siteSettings",
+    "navigation",
+    "organization",
+    "page",
+    "person",
+    "governanceGroup",
+    "program",
+    "project",
+    "event",
+    "article",
+    "author",
+    "opportunity",
+    "labInitiative",
+    "gallery",
+    "mediaAsset",
+    "partner",
+    "testimonial",
+    "impactRecord",
+    "resource",
+    "supportCampaign",
+    "legalPage",
+    "redirect"
+  ],
+  "import_order_after_review": [
+    "organization/siteSettings",
+    "partners/people",
+    "programs/projects",
+    "events",
+    "media assets",
+    "articles",
+    "opportunities/testimonials",
+    "pages/navigation",
+    "redirects"
+  ],
+  "gates_before_generating_import_ndjson": [
+    "Compare this mapping against the actual Phase 1 Studio schema field names and validation rules.",
+    "Resolve high-priority review queue items or explicitly mark records draft-only.",
+    "Confirm KULT360 Sanity project/dataset is new and not photographer CMS.",
+    "Confirm media rights and credit fields for assets selected for publication.",
+    "Source full Journal bodies for any article intended to publish.",
+    "Review EN/SQ translation status; do not auto-invent translations.",
+    "Approve redirect targets and canonical slugs."
+  ],
+  "draft_policy": "Incomplete but useful metadata may become Sanity drafts only after schema review. Never publish incomplete or unverified records automatically."
+}

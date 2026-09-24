@@ -1,0 +1,723 @@
+[
+  {
+    "from": "k360.recognition-herbie-hancock-unesco",
+    "relation": "people",
+    "source_value": "person-eda-zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.recognition-herbie-hancock-unesco",
+    "relation": "partners_or_related",
+    "source_value": "UNESCO",
+    "to": "k360.partner-unesco",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.recognition-herbie-hancock-unesco",
+    "relation": "partners_or_related",
+    "source_value": "Thelonious Monk Institute of Jazz",
+    "to": "k360.partner-thelonious-monk-institute-of-jazz",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "people",
+    "source_value": "Ergys Shehu",
+    "to": "k360.person-ergys-shehu",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "people",
+    "source_value": "Eda Elbasani",
+    "to": "k360.person-eda-elbasani",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "people",
+    "source_value": "Rhani Krija",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "people",
+    "source_value": "Ermal Rodi",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "people",
+    "source_value": "Teufik Bashi",
+    "to": "k360.person-teufik-bashi",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "partners_or_related",
+    "source_value": "European Union",
+    "to": "k360.partner-european-union",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "partners_or_related",
+    "source_value": "EU Delegation in Albania",
+    "to": "k360.partner-eu-delegation-in-albania",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-terminal-europe-week-2026",
+    "relation": "partners_or_related",
+    "source_value": "Europe House",
+    "to": "k360.partner-europe-house",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-luzatart-culture",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-luzatart-culture",
+    "relation": "people",
+    "source_value": "Eda Elbasani",
+    "to": "k360.person-eda-elbasani",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-luzatart-culture",
+    "relation": "people",
+    "source_value": "Henning Jung",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-luzatart-culture",
+    "relation": "people",
+    "source_value": "AJS Trio",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-luzatart-culture",
+    "relation": "partners_or_related",
+    "source_value": "Kalo Foundation",
+    "to": "k360.partner-kalo-foundation",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-luzatart-culture",
+    "relation": "partners_or_related",
+    "source_value": "Kalo Gallery",
+    "to": "k360.partner-kalo-gallery",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-artist-hub-lab",
+    "relation": "people",
+    "source_value": "Mark Joggerst",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-artist-hub-lab",
+    "relation": "partners_or_related",
+    "source_value": "Institute of Music and Media, Düsseldorf",
+    "to": null,
+    "status": "external_entity_unmodeled"
+  },
+  {
+    "from": "k360.project-artist-hub-lab",
+    "relation": "partners_or_related",
+    "source_value": "Neon Media Prod., Cologne",
+    "to": null,
+    "status": "external_entity_unmodeled"
+  },
+  {
+    "from": "k360.project-literary-voices-heine-poradeci",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-literary-voices-heine-poradeci",
+    "relation": "people",
+    "source_value": "Arbër Selmani",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-literary-voices-heine-poradeci",
+    "relation": "people",
+    "source_value": "Visar Kuçi",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-literary-voices-heine-poradeci",
+    "relation": "people",
+    "source_value": "Eda Elbasani",
+    "to": "k360.person-eda-elbasani",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "people",
+    "source_value": "Ardian Cerga",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "people",
+    "source_value": "Gent Rushi",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "people",
+    "source_value": "Eda Elbasani",
+    "to": "k360.person-eda-elbasani",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "people",
+    "source_value": "Ergys Shehu",
+    "to": "k360.person-ergys-shehu",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "partners_or_related",
+    "source_value": "Shëndeverë Tirana",
+    "to": null,
+    "status": "external_entity_unmodeled"
+  },
+  {
+    "from": "k360.project-open-spaces-lost-culture",
+    "relation": "partners_or_related",
+    "source_value": "Muharrem Çobo",
+    "to": null,
+    "status": "external_entity_unmodeled"
+  },
+  {
+    "from": "k360.project-save-blue-heart-europe",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-save-blue-heart-europe",
+    "relation": "people",
+    "source_value": "Elina Duni",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-save-blue-heart-europe",
+    "relation": "partners_or_related",
+    "source_value": "Patagonia",
+    "to": "k360.partner-patagonia",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-save-blue-heart-europe",
+    "relation": "partners_or_related",
+    "source_value": "Riverwatch",
+    "to": "k360.partner-riverwatch",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-save-blue-heart-europe",
+    "relation": "partners_or_related",
+    "source_value": "EcoAlbania",
+    "to": "k360.partner-ecoalbania",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-no-chemical-waste",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-no-chemical-waste",
+    "relation": "people",
+    "source_value": "Elina Duni",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Hayden Chisholm",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Martin Sasse Trio",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Marialy Pacheco",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Aly Keïta",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Gent Rushi",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Ermal Rodi",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "people",
+    "source_value": "Ethnist Kuartet",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Bashkia Himarë",
+    "to": "k360.partner-bashkia-himare",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "GIZ Albania",
+    "to": "k360.partner-giz-albania",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Agency South Coastal Region Albania",
+    "to": "k360.partner-agency-south-coastal-region-albania",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Kantina Çobo",
+    "to": "k360.partner-kantina-cobo",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Kantina Nurellari",
+    "to": "k360.partner-kantina-nurellari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Kantina Belba",
+    "to": "k360.partner-kantina-belba",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Kantina Kokomani",
+    "to": "k360.partner-kantina-kokomani",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Kaba Music Records",
+    "to": "k360.partner-kaba-music-records",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Botimpex",
+    "to": "k360.partner-botimpex",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2017",
+    "relation": "partners_or_related",
+    "source_value": "Symbiotic",
+    "to": "k360.partner-symbiotic",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Hans Lüdemann Trio",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Ilir Bajri Quartett",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Sebastian Studnitzky Trio",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Albanian Saxophon Quartett",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Dejan Terzic Trio",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "people",
+    "source_value": "Dren Abazi & Zig Zag Orchestra",
+    "to": null,
+    "status": "external_person_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "partners_or_related",
+    "source_value": "National Museum Onufri",
+    "to": null,
+    "status": "external_entity_unmodeled"
+  },
+  {
+    "from": "k360.project-jazz-wine-2014",
+    "relation": "partners_or_related",
+    "source_value": "National Ethnographic Museum",
+    "to": null,
+    "status": "external_entity_unmodeled"
+  },
+  {
+    "from": "k360.event-qyteti-brenda-oborrit-2026",
+    "relation": "related_project",
+    "source_value": "project-qyteti-brenda-oborrit",
+    "to": "k360.project-qyteti-brenda-oborrit",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.event-terminal-europe-week-2026",
+    "relation": "related_project",
+    "source_value": "project-terminal-europe-week-2026",
+    "to": "k360.project-terminal-europe-week-2026",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.event-luzatart-2025",
+    "relation": "related_project",
+    "source_value": "project-luzatart-culture",
+    "to": "k360.project-luzatart-culture",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.event-literary-voices-2023",
+    "relation": "related_project",
+    "source_value": "project-literary-voices-heine-poradeci",
+    "to": "k360.project-literary-voices-heine-poradeci",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.event-open-spaces-2023",
+    "relation": "related_project",
+    "source_value": "project-open-spaces-lost-culture",
+    "to": "k360.project-open-spaces-lost-culture",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.event-jazz-wine-2017",
+    "relation": "related_project",
+    "source_value": "project-jazz-wine-2017",
+    "to": "k360.project-jazz-wine-2017",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.event-jazz-wine-2014",
+    "relation": "related_project",
+    "source_value": "project-jazz-wine-2014",
+    "to": "k360.project-jazz-wine-2014",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-01",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-02",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-03",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-04",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-05",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-06",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-07",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-08",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-09",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-10",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-11",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-12",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-13",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-14",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-15",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-16",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-17",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-18",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-19",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-20",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-21",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-22",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-23",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-24",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-25",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-26",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-27",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-28",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-29",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-30",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  },
+  {
+    "from": "k360.journal-31",
+    "relation": "author",
+    "source_value": "Eda Zari",
+    "to": "k360.person-eda-zari",
+    "status": "resolved"
+  }
+]
