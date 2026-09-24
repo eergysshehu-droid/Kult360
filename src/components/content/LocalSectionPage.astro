@@ -24,11 +24,53 @@ const t = {
 
   {page.slug === 'about' && (
     <>
-      <section class="editorial-statement ruled-section">
-        <p class="display-copy">{language === 'sq' ? 'KULT360 ndërton hapësira ku arti, edukimi, të drejtat dhe trashëgimia lidhen me praktikën kulturore.' : 'KULT360 connects artistic practice with education, rights, heritage and cultural participation.'}</p>
+      <section class="about-v4 ruled-section">
+        <div class="about-v4__row">
+          <p class="about-v4__label">{language === 'sq' ? 'Rreth nesh' : 'About us'}</p>
+          <div>
+            <h2>{language === 'sq' ? 'Një fondacion i ndërtuar nga artistët, për artistët.' : 'A Foundation Built by Artists, For Artists.'}</h2>
+            <p>{language === 'sq'
+              ? 'Fondacioni KULT360 është një organizatë jofitimprurëse e përkushtuar ndaj forcimit të sektorit kulturor. Ne lidhim talentin lokal me skenën ndërkombëtare, fuqizojmë artistët, promovojmë të drejtat dhe përdorim kulturën si mjet për përfshirje demokratike dhe sociale.'
+              : 'KULT360 Foundation is a non-profit organization dedicated to strengthening the cultural sector. We bridge local talent with the international arena, empower artists, advance rights, and use culture as a tool for democratic social inclusion.'}</p>
+          </div>
+        </div>
+
+        <div class="about-v4__row">
+          <p class="about-v4__label">{language === 'sq' ? 'Vizioni ynë' : 'Our vision'}</p>
+          <div>
+            <blockquote>{language === 'sq'
+              ? '“Një shoqëri ku arti shërben si instrument kyç për zhvillimin shoqëror dhe fuqizimin e komuniteteve të margjinalizuara.”'
+              : '“A society where art serves as the key instrument for social development and the empowerment of marginalized communities.”'}</blockquote>
+            <p>{language === 'sq'
+              ? 'Ne veprojmë si një urë mes Shqipërisë dhe arenës ndërkombëtare, duke mbështetur krijimtarinë, zanatet dhe artin për një të ardhme të ndërtuar mbi kujtesën kolektive dhe dinjitetin.'
+              : 'We act as a bridge between Albania and the international arena, championing creative practice, crafts and art to build a future grounded in collective memory and dignity.'}</p>
+          </div>
+        </div>
+
+        <div class="about-v4__pillars">
+          <div class="about-v4__pillars-head">
+            <p class="about-v4__label">{language === 'sq' ? 'Shtyllat strategjike' : 'Strategic pillars'}</p>
+            <h2>{language === 'sq' ? 'Ndikojmë jetën shoqërore përmes katër veprimeve kryesore.' : 'Influencing social life through four key actions.'}</h2>
+          </div>
+          <div class="about-v4__pillar-grid">
+            {[
+              [language === 'sq' ? 'Mbështetja e artistëve' : 'Supporting Artists', language === 'sq' ? 'Hapësira fizike dhe digjitale për të promovuar dhe shitur drejtpërdrejt punën krijuese.' : 'Physical and digital spaces that promote and bring creative work directly to the public.'],
+              [language === 'sq' ? 'Ndryshim shoqëror' : 'Social Change', language === 'sq' ? 'Ndikim në politika përmes aktivizmit kulturor dhe mjedisor.' : 'Driving policy through dedicated cultural and environmental activism.'],
+              [language === 'sq' ? 'Hapësira publike' : 'Public Spaces', language === 'sq' ? 'Shndërrimi i vendeve statike në platforma të gjalla për shprehje artistike dhe advokim.' : 'Turning static locations into vibrant platforms for artistic expression and advocacy.'],
+              [language === 'sq' ? 'Fuqi ligjore' : 'Legal Power', language === 'sq' ? 'Edukimi mbi të drejtën e autorit dhe pronësinë intelektuale.' : 'Education focused on copyright protection and intellectual property rights.']
+            ].map((item, index) => (
+              <article>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{item[0]}</h3>
+                <p>{item[1]}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
+
       <section class="ruled-section">
-        <div class="section-kicker"><span>01</span><h2>{language === 'sq' ? 'Ekipi publik' : 'Public team'}</h2></div>
+        <div class="section-kicker"><span>01</span><h2>{language === 'sq' ? 'Ekipi' : 'Team'}</h2></div>
         <div class="people-list">
           {people.map((person) => (
             <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}>
