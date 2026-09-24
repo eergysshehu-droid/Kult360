@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import {copy} from '../../content/site-copy';
 import {
   featuredJournal,
+  journal,
   journalImage,
   journalSlug,
   partners,
@@ -17,32 +18,40 @@ import {localizedPath} from '../../lib/site-config';
 import {homePage} from '../../content/shell-pages';
 
 const language = 'sq';
-const programmeImages = ['/media/projects/artist-hub.jpg','/media/projects/blue-heart.jpg','/media/projects/literary-voices.jpg','/media/projects/luzatart.jpg'];
+const programmeImages = [
+  '/media/projects/artist-hub.jpg',
+  '/media/projects/blue-heart.jpg',
+  '/media/projects/literary-voices.jpg',
+  '/media/projects/luzatart.jpg'
+];
 const projectSelection = projects.filter((project) =>
   ['project-terminal-europe-week-2026','project-qyteti-brenda-oborrit','project-luzatart-culture'].includes(project.id)
 );
-const storySelection = featuredJournal.slice(0, 6);
+const storySelection = journal.filter((record) => journalImage(record)).slice(0, 8);
 ---
 <BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en','sq']}>
-  <section class="pcf-hero">
-    <div class="pcf-hero__media" aria-hidden="true">
-      <img src="/media/projects/terminal.jpg" alt="" fetchpriority="high" />
-    </div>
-    <div class="pcf-hero__veil"></div>
-    <div class="pcf-hero__content container-wide">
+  <section class="pcf-hero pcf-hero--black">
+    <div class="container-wide pcf-hero__inner">
       <p class="pcf-kicker">Fondacioni KULT360 · Shqipëri</p>
-      <h1>
-        <span>Kultura është</span>
-        <span class="pcf-hero__word-cycle" aria-label="kujtesë, lëvizje, dialog dhe një e ardhme e përbashkët">
-          <b>kujtesë.</b>
-          <b>lëvizje.</b>
-          <b>dialog.</b>
-          <b>e ardhmja jonë.</b>
-        </span>
-      </h1>
+
+      <div class="pcf-hero__headline-wrap">
+        <h1 class="pcf-hero__headline" aria-label="Kultura është e gjallë, kujtesë, lëvizje dhe dialog">
+          <span class="pcf-hero__prefix">Kultura është</span>
+          <span class="pcf-hero__word-cycle" aria-hidden="true">
+            <b>e gjallë.</b>
+            <b>kujtesë.</b>
+            <b>lëvizje.</b>
+            <b>dialog.</b>
+          </span>
+        </h1>
+      </div>
+
       <div class="pcf-hero__bottom">
         <p>{copy.heroBody.sq}</p>
-        <a href="/sq/about/">Njih KULT360 ↗</a>
+        <div class="pcf-hero__actions">
+          <a class="pcf-button pcf-button--light" href="/sq/projects/"><span>Shiko projektet</span><i aria-hidden="true">↗</i></a>
+          <a class="pcf-button pcf-button--ghost" href="/sq/about/"><span>Rreth KULT360</span><i aria-hidden="true">→</i></a>
+        </div>
       </div>
     </div>
   </section>
@@ -50,10 +59,10 @@ const storySelection = featuredJournal.slice(0, 6);
   <section class="pcf-intro">
     <div class="container-wide pcf-intro__grid">
       <p class="pcf-label">Rreth fondacionit</p>
-      <h2>Jemi një fondacion kulturor i pavarur që lidh praktikën artistike, të drejtat, edukimin, trashëgiminë dhe komunitetet.</h2>
+      <h2>Ndërtojmë ura dialogu përmes artit dhe trashëgimisë, duke lidhur komunitetet për një të ardhme kulturore më të barabartë.</h2>
       <div class="pcf-intro__aside">
-        <p>Krijojmë hapësirë që artistët, idetë dhe komunitetet të takohen — në Shqipëri, në diasporë dhe në Europë.</p>
-        <a class="pcf-text-link" href="/sq/about/">Rreth nesh ↗</a>
+        <p>Jemi një fondacion i pavarur që lidh kulturën me zhvillimin dhe promovon artin si një katalizator jetik për progresin shoqëror.</p>
+        <a class="pcf-text-link" href="/sq/about/">Zbulo punën tonë ↗</a>
       </div>
     </div>
   </section>
@@ -69,7 +78,7 @@ const storySelection = featuredJournal.slice(0, 6);
           <a href={'/sq/journal/' + journalSlug(record) + '/'}>
             <span>{record.category || 'Journal'}</span>
             <strong>{record.title}</strong>
-            <em>{record.read_time || 'Read'}</em>
+            <em>{record.read_time || 'Lexo'}</em>
           </a>
         ))}
       </div>
@@ -80,20 +89,23 @@ const storySelection = featuredJournal.slice(0, 6);
     <div class="container-wide">
       <div class="pcf-section-head pcf-section-head--wide">
         <div>
-          <p class="pcf-label">Çfarë bëjmë</p>
-          <h2>Katër fusha të lidhura të veprimit kulturor.</h2>
+          <p class="pcf-label">Veprim 360°</p>
+          <h2>Katër fusha të lidhura të punës kulturore.</h2>
         </div>
-        <p>Programet tona u përgjigjen realiteteve të artistëve dhe komuniteteve sot, duke ndërtuar kapacitete kulturore afatgjata.</p>
+        <p>Fushat tona janë të dallueshme, por funksionojnë si një ekosistem: artistë, të drejta, edukim dhe trashëgimi e gjallë.</p>
       </div>
+
       <div class="pcf-programme-grid">
         {strategicPillars.map((item, index) => (
           <article class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]}>
-            <div class="pcf-programme-card__media"><img src={programmeImages[index % programmeImages.length]} alt="" loading="lazy" decoding="async" /></div>
+            <div class="pcf-programme-card__media">
+              <img src={programmeImages[index % programmeImages.length]} alt="" loading="lazy" decoding="async" />
+            </div>
             <div class="pcf-programme-card__body">
               <span>{String(index + 1).padStart(2,'0')}</span>
               <h3>{item.title}</h3>
               {item.summary && <p>{item.summary}</p>}
-              <a href="/sq/programs/">Më shumë ↗</a>
+              <a class="pcf-mini-link" href="/sq/programs/">Zbulo ↗</a>
             </div>
           </article>
         ))}
@@ -103,17 +115,20 @@ const storySelection = featuredJournal.slice(0, 6);
 
   <section class="pcf-projects">
     <div class="container-wide">
-      <div class="pcf-section-head pcf-section-head--light">
+      <div class="pcf-section-head">
         <div><p class="pcf-label">Projekte të zgjedhura</p><h2>Kultura në veprim.</h2></div>
         <a class="pcf-text-link" href="/sq/projects/">Të gjitha projektet ↗</a>
       </div>
+
       <div class="pcf-project-grid">
         {projectSelection.map((project, index) => {
           const image = projectImage(project);
           const href = '/sq/projects/' + projectSlug(project) + '/';
           return (
             <article class:list={['pcf-project-card', index === 0 && 'pcf-project-card--lead']}>
-              <a class="pcf-project-card__media" href={href}>{image && <img src={image} alt="" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />}</a>
+              <a class="pcf-project-card__media" href={href}>
+                {image && <img src={image} alt="" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />}
+              </a>
               <div class="pcf-project-card__copy">
                 <p>{project.location || project.kind.replaceAll('_',' ')}</p>
                 <h3><a href={href}>{project.title}</a></h3>
@@ -126,38 +141,54 @@ const storySelection = featuredJournal.slice(0, 6);
     </div>
   </section>
 
-  <section class="pcf-stories">
+  <section class="pcf-signals">
     <div class="container-wide">
-      <div class="pcf-stories__heading">
-        <p>Zbulo histori, ide dhe debate kulturore që formësojnë punën tonë.</p>
-        <h2>Kultura është —</h2>
+      <div class="pcf-signals__head">
+        <div>
+          <p class="pcf-label">Journal / perspektiva</p>
+          <h2>Ide në qarkullim.</h2>
+          <p class="pcf-signals__intro">Ese, zëra dhe sinjale kulturore që lëvizin nëpër rrjetin tonë.</p>
+        </div>
+        <div class="pcf-rail-controls" data-story-controls>
+          <button type="button" data-story-prev aria-label="Historitë e mëparshme">←</button>
+          <button type="button" data-story-next aria-label="Historitë e tjera">→</button>
+        </div>
       </div>
-      <div class="pcf-story-grid">
+
+      <div class="pcf-story-rail" data-story-rail>
         {storySelection.map((record, index) => {
           const image = journalImage(record);
           return (
-            <a class:list={['pcf-story-card','pcf-story-card--' + ((index % 4) + 1)]} href={'/sq/journal/' + journalSlug(record) + '/'}>
-              {image && <img src={image} alt="" loading="lazy" decoding="async" />}
-              <span class="pcf-story-card__shade"></span>
-              <div>
-                <strong>— {record.title}</strong>
+            <article class="pcf-story-card">
+              <a class="pcf-story-card__media" href={'/sq/journal/' + journalSlug(record) + '/'}>
+                {image && <img src={image} alt="" loading="lazy" decoding="async" />}
+                <span>{String(index + 1).padStart(2,'0')}</span>
+              </a>
+              <div class="pcf-story-card__copy">
+                <p>{[record.category, record.read_time].filter(Boolean).join(' · ') || 'Journal'}</p>
+                <h3><a href={'/sq/journal/' + journalSlug(record) + '/'}>{record.title}</a></h3>
                 <span>{record.author || 'KULT360 Journal'}</span>
               </div>
-            </a>
+            </article>
           );
         })}
       </div>
-      <a class="pcf-stories__all" href="/sq/journal/">Zbulo të gjitha historitë ↗</a>
+
+      <div class="pcf-signals__foot">
+        <p>Rrëshqit ose përdor shigjetat për të lëvizur në arkiv.</p>
+        <a class="pcf-text-link" href="/sq/journal/">Hap Journal ↗</a>
+      </div>
     </div>
   </section>
 
   <section class="pcf-people">
     <div class="container-wide">
       <div class="pcf-section-head pcf-section-head--wide">
-        <div><p class="pcf-label">Ekipi ynë</p><h2>Njih njerëzit pas KULT360.</h2></div>
-        <p>Artistë, producentë, komunikues dhe profesionistë të kulturës që e ndërtojnë fondacionin së bashku.</p>
+        <div><p class="pcf-label">Ekipi ynë</p><h2>Njerëzit pas KULT360.</h2></div>
+        <p>Artistë, producentë, komunikues dhe profesionistë të kulturës që e formësojnë fondacionin së bashku.</p>
       </div>
-      <div class="pcf-people-track">
+
+      <div class="pcf-people-grid">
         {people.map((person) => {
           const image = personImage(person);
           return (
@@ -165,7 +196,11 @@ const storySelection = featuredJournal.slice(0, 6);
               <div class="pcf-person-card__media">
                 {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
               </div>
-              <div><strong>{person.name}</strong><span>{person.role}</span></div>
+              <div class="pcf-person-card__copy">
+                <strong>{person.name}</strong>
+                <span>{person.role}</span>
+                <i aria-hidden="true">↗</i>
+              </div>
             </a>
           );
         })}
@@ -184,7 +219,17 @@ const storySelection = featuredJournal.slice(0, 6);
     <div class="container-wide">
       <p class="pcf-label">Bëhu pjesë</p>
       <h2>Bëhu pjesë e një komuniteti që formëson të ardhmen e kulturës.</h2>
-      <a href="/sq/get-involved/">Zbulo si të mbështesësh ↗</a>
+      <a class="pcf-button pcf-button--dark" href="/sq/get-involved/"><span>Zbulo si të mbështesësh</span><i aria-hidden="true">↗</i></a>
     </div>
   </section>
+
+  <script>
+    const rail = document.querySelector<HTMLElement>('[data-story-rail]');
+    const controls = document.querySelector<HTMLElement>('[data-story-controls]');
+    if (rail && controls) {
+      const amount = () => Math.max(280, rail.clientWidth * 0.72);
+      controls.querySelector('[data-story-prev]')?.addEventListener('click', () => rail.scrollBy({left: -amount(), behavior: 'smooth'}));
+      controls.querySelector('[data-story-next]')?.addEventListener('click', () => rail.scrollBy({left: amount(), behavior: 'smooth'}));
+    }
+  </script>
 </BaseLayout>
