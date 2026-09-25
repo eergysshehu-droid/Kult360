@@ -34,21 +34,21 @@
     "bio_status": "Full profile content supplied directly by KULT360."
   },
   {
-    "id": "person-eros-dibra",
-    "name": "Eros Dibra",
-    "role": "Director, Arts & Education",
-    "source_url": "https://www.kult360.com/erosdibra",
-    "legacy_path": "/erosdibra",
-    "profile_status": "foundation_profile_supplied",
-    "bio": null,
-    "bio_status": "Full profile content supplied directly by KULT360."
-  },
-  {
     "id": "person-teufik-bashi",
     "name": "Teufik Bashi",
     "role": "Director of Finance & Resources",
     "source_url": "https://www.kult360.com/teufikbashi",
     "legacy_path": "/teufikbashi",
+    "profile_status": "foundation_profile_supplied",
+    "bio": null,
+    "bio_status": "Full profile content supplied directly by KULT360."
+  },
+  {
+    "id": "person-eros-dibra",
+    "name": "Eros Dibra",
+    "role": "Director, Arts & Education",
+    "source_url": "https://www.kult360.com/erosdibra",
+    "legacy_path": "/erosdibra",
     "profile_status": "foundation_profile_supplied",
     "bio": null,
     "bio_status": "Full profile content supplied directly by KULT360."
