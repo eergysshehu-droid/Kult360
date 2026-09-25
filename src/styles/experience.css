@@ -6207,3 +6207,146 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     animation: none !important;
   }
 }
+
+
+/* =========================================================
+   HERO WHEEL + MOBILE RAIL FINAL REFINEMENT
+   ========================================================= */
+
+/* The rotating word behaves like a real wheel:
+   next terms approach from above with transparency, while the previous term
+   fades downward and disappears. */
+.pcf-hero__word-cycle {
+  overflow: visible !important;
+  isolation: isolate;
+}
+
+.pcf-hero__word[data-position='front'] {
+  z-index: 5 !important;
+  color: var(--experience-yellow) !important;
+  opacity: 1 !important;
+  filter: blur(0) brightness(1) !important;
+  text-shadow: 0 0 1.1rem rgb(240 207 34 / 8%);
+}
+
+.pcf-hero__word[data-position='incoming'] {
+  z-index: 4 !important;
+  color: rgb(240 207 34 / 72%) !important;
+  opacity: .28 !important;
+  filter: blur(.38px) brightness(.82) !important;
+}
+
+.pcf-hero__word[data-position='incoming-far'] {
+  z-index: 3 !important;
+  color: rgb(240 207 34 / 48%) !important;
+  opacity: .09 !important;
+  filter: blur(1.15px) brightness(.62) !important;
+}
+
+.pcf-hero__word[data-position='outgoing'] {
+  z-index: 2 !important;
+  color: rgb(240 207 34 / 34%) !important;
+  opacity: .055 !important;
+  filter: blur(1.35px) brightness(.52) !important;
+}
+
+.pcf-hero__word[data-position='back'] {
+  z-index: 1 !important;
+  opacity: 0 !important;
+  filter: blur(3px) brightness(.4) !important;
+}
+
+.pcf-hero__word-cylinder {
+  transition: transform 1150ms cubic-bezier(.14,.82,.16,1) !important;
+}
+
+/* Leadership order remains visually anchored at the start of the rail. */
+.pcf-people-grid {
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth;
+}
+
+.pcf-person-card {
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always;
+}
+
+.pcf-person-card:nth-child(1) .pcf-person-card__media,
+.pcf-person-card:nth-child(2) .pcf-person-card__media {
+  border-color: rgb(9 9 8 / 28%);
+}
+
+/* Journal rail: on phone show one complete story at a time.
+   No thin vertical-looking slice from the next card. */
+@media (max-width: 44rem) {
+  .pcf-story-rail {
+    grid-auto-columns: 100% !important;
+    gap: 0 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding-bottom: 0 !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+
+  .pcf-story-rail::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .pcf-story-card {
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow: hidden !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always;
+  }
+
+  .pcf-story-card__media {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .pcf-hero__word[data-position='incoming'] {
+    opacity: .34 !important;
+    filter: blur(.3px) brightness(.84) !important;
+  }
+
+  .pcf-hero__word[data-position='incoming-far'] {
+    opacity: .105 !important;
+    filter: blur(1px) brightness(.62) !important;
+  }
+
+  .pcf-hero__word[data-position='outgoing'] {
+    opacity: .04 !important;
+    filter: blur(1.5px) brightness(.48) !important;
+  }
+
+  .pcf-hero__word-cylinder {
+    transition-duration: 1220ms !important;
+  }
+
+  .pcf-people-grid {
+    scroll-behavior: smooth;
+  }
+
+  .pcf-person-card:nth-child(1)::before,
+  .pcf-person-card:nth-child(2)::before {
+    content: '';
+    display: block;
+    height: 2px;
+    margin-bottom: -.42rem;
+    background: var(--section-yellow);
+    opacity: .8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcf-hero__word[data-position='incoming'],
+  .pcf-hero__word[data-position='incoming-far'],
+  .pcf-hero__word[data-position='outgoing'] {
+    opacity: 0 !important;
+  }
+}
