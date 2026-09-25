@@ -96,7 +96,7 @@
 
     const startClock = () => {
       window.clearInterval(clock);
-      if (document.hidden) return;
+      if (document.hidden || reducedMotion) return;
       clock = window.setInterval(advance, stepMs);
     };
 
