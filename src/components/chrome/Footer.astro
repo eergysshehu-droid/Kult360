@@ -36,10 +36,20 @@ const {language} = Astro.props;
       <p>{siteConfig.organization.address}</p>
     </div>
     <div class="footer-v2__quick">
-      <p class="foundation-label">{language === 'sq' ? 'Lidhje' : 'Explore'}</p>
+      <p class="foundation-label">{language === 'sq' ? 'Eksploro' : 'Explore'}</p>
+      <a href={localizedPath('/about/', language)}>{language === 'sq' ? 'Rreth nesh' : 'About'} ↗</a>
+      <a href={localizedPath('/programs/', language)}>{language === 'sq' ? 'Programet' : 'Programs'} ↗</a>
       <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Projektet' : 'Projects'} ↗</a>
       <a href={localizedPath('/journal/', language)}>Journal ↗</a>
       <a href={localizedPath('/get-involved/', language)}>{language === 'sq' ? 'Përfshihu' : 'Get involved'} ↗</a>
+    </div>
+    <div class="footer-v2__quick footer-v2__policies">
+      <p class="foundation-label">{language === 'sq' ? 'Informacion' : 'Information'}</p>
+      <a href={localizedPath('/contact/', language)}>{language === 'sq' ? 'Kontakt' : 'Contact'}</a>
+      <a href={localizedPath('/privacy/', language)}>{language === 'sq' ? 'Privatësia' : 'Privacy'}</a>
+      <a href={localizedPath('/cookies/', language)}>Cookies</a>
+      <a href={localizedPath('/terms/', language)}>{language === 'sq' ? 'Kushtet' : 'Terms'}</a>
+      <a href={localizedPath('/accessibility/', language)}>{language === 'sq' ? 'Aksesueshmëria' : 'Accessibility'}</a>
     </div>
   </div>
 
