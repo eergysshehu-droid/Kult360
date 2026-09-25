@@ -309,8 +309,56 @@ const initiativeThemeLink: Record<string,string> = {
     </section>
   )}
 
-  {page.slug === 'lab' && <section class="empty-record ruled-section"><p class="display-copy">KULT360 LAB</p><p>{t.archive}</p></section>}
-  {page.slug === 'resources' && <section class="empty-record ruled-section"><p>{t.archive}</p></section>}
+  {page.slug === 'lab' && (
+    <section class="lab-page ruled-section">
+      <div class="lab-page__intro">
+        <p class="meta">KULT360 LAB</p>
+        <h2>{language === 'sq' ? 'Një hapësirë për të provuar si mund të funksionojë kultura ndryshe.' : 'A space for testing how culture can work differently.'}</h2>
+        <p>{language === 'sq'
+          ? 'LAB-i bashkon eksperimentimin artistik, mësimin profesional, shkëmbimin dhe dokumentimin. Nuk është një disiplinë e vetme; është mënyra jonë për të provuar formate të reja përpara se ato të bëhen projekte më të mëdha.'
+          : 'The LAB brings together artistic experimentation, professional learning, exchange and documentation. It is not one discipline; it is a way to test new formats before they grow into larger projects.'}</p>
+      </div>
+      <div class="lab-page__modes">
+        {[
+          [language === 'sq' ? 'Prototipo' : 'Prototype', language === 'sq' ? 'Provo ide, formate dhe mënyra të reja pune në shkallë të vogël.' : 'Test ideas, formats and new ways of working at a smaller scale.'],
+          [language === 'sq' ? 'Shkëmbe' : 'Exchange', language === 'sq' ? 'Lidh artistë, edukatorë dhe partnerë për të ndarë praktikë dhe dije.' : 'Bring artists, educators and partners together to exchange practice and knowledge.'],
+          [language === 'sq' ? 'Dokumento' : 'Document', language === 'sq' ? 'Ruaj procesin, materialet dhe mësimet që mund të përdoren përsëri.' : 'Preserve process, material and learning that can be used again.']
+        ].map((item,index) => (
+          <article><span>0{index + 1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>
+        ))}
+      </div>
+      <div class="lab-page__links">
+        <a href={localizedPath('/themes/artists-practice/', language)}>{language === 'sq' ? 'Artistë & Praktikë' : 'Artists & Practice'} ↗</a>
+        <a href={localizedPath('/themes/digital-culture-media/', language)}>{language === 'sq' ? 'Kulturë Digjitale & Media' : 'Digital Culture & Media'} ↗</a>
+      </div>
+    </section>
+  )}
+
+  {page.slug === 'resources' && (
+    <section class="resources-page ruled-section">
+      <div class="resources-page__intro">
+        <p class="meta">{language === 'sq' ? 'Burime publike' : 'Public resources'}</p>
+        <h2>{language === 'sq' ? 'Dije praktike që lidhet me punën kulturore.' : 'Practical knowledge connected to cultural work.'}</h2>
+        <p>{language === 'sq'
+          ? 'Kjo hapësirë do të rritet gradualisht me materiale publike. Për momentin organizon dy fusha që KULT360 po zhvillon në mënyrë të dukshme në punën e tij.'
+          : 'This space will grow gradually with public material. For now it organises two areas already visible in KULT360’s work.'}</p>
+      </div>
+      <div class="resources-page__grid">
+        <a href={localizedPath('/themes/rights-access/', language)}>
+          <span>01</span>
+          <h3>{language === 'sq' ? 'Të drejtat e artistit' : 'Artist rights'}</h3>
+          <p>{language === 'sq' ? 'Autorësi, pronësi intelektuale, qasje kulturore dhe zë publik.' : 'Authorship, intellectual property, cultural access and public voice.'}</p>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a href={localizedPath('/themes/heritage-memory/', language)}>
+          <span>02</span>
+          <h3>{language === 'sq' ? 'Tingull, trashëgimi & arkiv' : 'Sound, heritage & archive'}</h3>
+          <p>{language === 'sq' ? 'Dokumentim, kujtesë, tingull dhe forma digjitale të ruajtjes.' : 'Documentation, memory, sound and digital forms of preservation.'}</p>
+          <i aria-hidden="true">↗</i>
+        </a>
+      </div>
+    </section>
+  )}
 
   {page.slug === 'contact' && (
     <section class="contact-grid ruled-section">
