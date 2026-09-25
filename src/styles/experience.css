@@ -8011,421 +8011,330 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
 /* =========================================================
    FINAL KULT360 360-DIAL HERO
-   Reference direction: horizontal "Culture is" + precision orbital reel.
+   Editorial statement connected to a precision 360 selector.
    ========================================================= */
-
-.pcf-hero--dial {
-  position: relative;
-  overflow: hidden !important;
-  isolation: isolate;
-  min-height: 94svh;
+.pcf-hero--dial{
+  position:relative;
+  overflow:hidden!important;
+  isolation:isolate;
+  min-height:90svh;
   background:
-    radial-gradient(circle at 82% 47%, rgb(240 207 34 / 11%), transparent 28rem),
-    radial-gradient(circle at 105% 48%, rgb(240 207 34 / 8%), transparent 42rem),
-    linear-gradient(180deg, #090a08 0%, #090a08 62%, #070807 100%);
+    radial-gradient(circle at 83% 48%,rgb(240 207 34 / 5.5%),transparent 25rem),
+    radial-gradient(circle at 105% 50%,rgb(240 207 34 / 3.5%),transparent 39rem),
+    linear-gradient(180deg,#090a08 0%,#090a08 64%,#070807 100%);
 }
-
-.pcf-hero--dial::before {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  pointer-events: none;
+.pcf-hero--dial::before{
+  content:'';
+  position:absolute;
+  z-index:0;
+  inset:0;
+  pointer-events:none;
   background:
-    radial-gradient(circle at 94% 48%, transparent 0 17rem, rgb(240 207 34 / 3%) 17.1rem 17.25rem, transparent 17.35rem),
-    radial-gradient(circle at 94% 48%, transparent 0 23rem, rgb(240 207 34 / 2.4%) 23.1rem 23.2rem, transparent 23.3rem);
+    radial-gradient(circle at 93% 49%,transparent 0 17rem,rgb(240 207 34 / 2.2%) 17.08rem 17.16rem,transparent 17.24rem),
+    radial-gradient(circle at 93% 49%,transparent 0 23rem,rgb(255 255 255 / 1.8%) 23.08rem 23.16rem,transparent 23.24rem);
 }
-
-.pcf-hero--dial .pcf-hero__inner {
-  position: relative;
-  z-index: 7;
-  min-height: 94svh;
-  grid-template-rows: auto 1fr auto;
-  padding-top: 7.15rem;
-  padding-bottom: 1.35rem;
+.pcf-hero--dial .pcf-hero__inner{
+  position:relative;
+  z-index:7;
+  min-height:90svh;
+  grid-template-rows:auto 1fr auto;
+  padding-top:clamp(6.25rem,8vh,7.2rem);
+  padding-bottom:1.4rem;
 }
-
-.pcf-hero__headline-wrap--dial {
-  position: relative;
-  z-index: 8;
-  width: min(46rem, 47vw);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: center;
-  transform: translateY(-.2rem);
+.pcf-hero__headline-wrap--dial{
+  position:relative;
+  z-index:10;
+  width:min(58rem,64vw);
+  display:flex;
+  align-items:center;
+  align-self:center;
+  transform:translateY(-.2rem);
 }
-
-.pcf-hero__headline--dial {
-  display: block !important;
-  width: auto !important;
-  margin: 0 !important;
-  color: #f8f6f0 !important;
-  font-family: var(--font-sans) !important;
-  font-size: clamp(3.35rem, 6.8vw, 7rem) !important;
-  font-weight: 720 !important;
-  line-height: .88 !important;
-  letter-spacing: -.071em !important;
-  white-space: nowrap !important;
-  text-align: left !important;
-  filter: drop-shadow(0 .08em .28em rgb(0 0 0 / 20%));
+.pcf-hero__headline--dial{
+  display:flex!important;
+  align-items:baseline!important;
+  gap:.18em!important;
+  width:auto!important;
+  max-width:min(100%,58rem)!important;
+  margin:0!important;
+  color:#f8f6f0!important;
+  font-family:var(--font-sans)!important;
+  font-size:clamp(3.5rem,6.15vw,6.45rem)!important;
+  font-weight:720!important;
+  line-height:.9!important;
+  letter-spacing:-.068em!important;
+  white-space:nowrap!important;
+  text-align:left!important;
+  filter:drop-shadow(0 .08em .28em rgb(0 0 0 / 20%));
 }
-
-.pcf-hero__dial-stage {
-  --dial-radius: min(28vw, 25rem);
-  position: absolute;
-  z-index: 3;
-  top: 49%;
-  right: -28vw;
-  width: min(62rem, 64vw);
-  aspect-ratio: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
+.pcf-hero__dial-prefix{flex:0 0 auto}
+.pcf-hero__dial-live{
+  position:relative;
+  z-index:12;
+  flex:0 0 auto;
+  padding-right:.08em;
+  color:var(--experience-yellow);
+  background:#090a08;
+  font-size:.5em;
+  font-weight:820;
+  line-height:1;
+  letter-spacing:-.035em;
+  text-transform:uppercase;
+  text-shadow:0 0 1rem rgb(240 207 34 / 12%);
+  transform:translateY(-.07em);
+  opacity:1;
+  filter:blur(0);
+  transition:opacity 260ms ease,filter 340ms ease,transform 340ms cubic-bezier(.2,.72,.2,1);
 }
-
-.pcf-hero__dial-glow {
-  position: absolute;
-  inset: -12%;
-  border-radius: 50%;
+.pcf-hero__dial-live.is-changing{
+  opacity:0;
+  filter:blur(4px);
+  transform:translateY(.08em);
+}
+.pcf-hero__dial-stage{
+  --dial-radius:min(25vw,23rem);
+  position:absolute;
+  z-index:3;
+  top:49%;
+  right:-12vw;
+  width:min(58rem,56vw);
+  aspect-ratio:1;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.pcf-hero__dial-glow{
+  position:absolute;
+  inset:-10%;
+  border-radius:50%;
   background:
-    radial-gradient(circle at 35% 45%, rgb(240 207 34 / 7%), transparent 31%),
-    radial-gradient(circle at center, transparent 41%, rgb(240 207 34 / 4%) 58%, transparent 73%);
-  filter: blur(10px);
+    radial-gradient(circle at 35% 45%,rgb(240 207 34 / 4.5%),transparent 31%),
+    radial-gradient(circle at center,transparent 42%,rgb(240 207 34 / 2.8%) 58%,transparent 73%);
+  filter:blur(10px);
 }
-
-.pcf-hero__dial-rings {
-  position: absolute;
-  inset: 0;
-  overflow: visible;
-  border-radius: 50%;
+.pcf-hero__dial-rings{
+  position:absolute;
+  inset:0;
+  overflow:visible;
+  border-radius:50%;
   background:
     radial-gradient(circle at center,
       transparent 0 25%,
-      rgb(240 207 34 / 8%) 25.1% 25.35%,
-      transparent 25.45% 39%,
-      rgb(255 255 255 / 6%) 39.1% 39.25%,
-      transparent 39.35% 54%,
-      rgb(240 207 34 / 9%) 54.1% 54.25%,
-      transparent 54.35% 69%,
-      rgb(255 255 255 / 5%) 69.1% 69.24%,
-      transparent 69.34% 84%,
-      rgb(240 207 34 / 8%) 84.1% 84.28%,
-      transparent 84.38%);
+      rgb(240 207 34 / 6.5%) 25.1% 25.3%,
+      transparent 25.4% 39%,
+      rgb(255 255 255 / 5%) 39.1% 39.24%,
+      transparent 39.34% 54%,
+      rgb(240 207 34 / 7%) 54.1% 54.24%,
+      transparent 54.34% 69%,
+      rgb(255 255 255 / 4%) 69.1% 69.22%,
+      transparent 69.32% 84%,
+      rgb(240 207 34 / 6%) 84.1% 84.24%,
+      transparent 84.34%);
 }
-
-.pcf-hero__dial-rings::before,
-.pcf-hero__dial-rings::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
+.pcf-hero__dial-rings::before,.pcf-hero__dial-rings::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
 }
-
-.pcf-hero__dial-rings::before {
-  inset: 4%;
-  border: 1px solid rgb(240 207 34 / 18%);
-  box-shadow:
-    0 0 0 2.1rem rgb(240 207 34 / 1.5%),
-    0 0 0 5rem rgb(240 207 34 / 1%);
+.pcf-hero__dial-rings::before{
+  inset:4%;
+  border:1px solid rgb(240 207 34 / 14%);
+  box-shadow:0 0 0 2rem rgb(240 207 34 / 1.2%),0 0 0 4.7rem rgb(240 207 34 / .8%);
 }
-
-.pcf-hero__dial-rings::after {
-  inset: 18%;
-  border: 1px solid rgb(255 255 255 / 7%);
+.pcf-hero__dial-rings::after{inset:18%;border:1px solid rgb(255 255 255 / 5%)}
+.pcf-hero__dial-ticks{
+  position:absolute;
+  inset:9.5%;
+  border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgb(240 207 34 / 32%) 0deg .7deg,transparent .7deg 40deg);
+  -webkit-mask:radial-gradient(circle,transparent 0 70%,#000 70.5% 72%,transparent 72.5%);
+  mask:radial-gradient(circle,transparent 0 70%,#000 70.5% 72%,transparent 72.5%);
+  opacity:.62;
 }
-
-.pcf-hero__dial-ticks {
-  position: absolute;
-  inset: 9.5%;
-  border-radius: 50%;
-  background:
-    repeating-conic-gradient(
-      from 0deg,
-      rgb(240 207 34 / 42%) 0deg .75deg,
-      transparent .75deg 40deg
-    );
-  -webkit-mask: radial-gradient(circle, transparent 0 70%, #000 70.5% 72%, transparent 72.5%);
-  mask: radial-gradient(circle, transparent 0 70%, #000 70.5% 72%, transparent 72.5%);
-  opacity: .7;
+.pcf-hero__dial-rotor{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:0;
+  height:0;
+  transform-origin:0 0;
+  transition:transform 980ms cubic-bezier(.16,.82,.18,1);
+  will-change:transform;
 }
-
-.pcf-hero__dial-rotor {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
-  transform-origin: 0 0;
-  transition: transform 980ms cubic-bezier(.16,.82,.18,1);
-  will-change: transform;
+.pcf-hero__dial-rotor.is-instant{transition:none!important}
+.pcf-hero__dial-item{
+  position:absolute;
+  left:0;
+  top:0;
+  width:0;
+  height:0;
+  transform-origin:0 0;
+  transform:rotate(var(--item-angle)) translateX(var(--dial-radius));
 }
-
-.pcf-hero__dial-rotor.is-instant {
-  transition: none !important;
+.pcf-hero__dial-item-upright{
+  position:absolute;
+  left:0;
+  top:0;
+  display:flex;
+  align-items:center;
+  gap:.52rem;
+  min-width:max-content;
+  transform-origin:0 0;
+  transform:translateY(-50%) rotate(calc(var(--dial-turn) - var(--item-angle)));
+  transition:transform 980ms cubic-bezier(.16,.82,.18,1),opacity 320ms ease,filter 320ms ease;
 }
-
-.pcf-hero__dial-item {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  transform-origin: 0 0;
-  transform: rotate(var(--item-angle)) translateX(var(--dial-radius));
+.pcf-hero__dial-rotor.is-instant .pcf-hero__dial-item-upright{transition:none!important}
+.pcf-hero__dial-dot{
+  flex:0 0 auto;
+  width:.42rem;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:#756f60;
+  box-shadow:0 0 0 1px rgb(255 255 255 / 4%);
+  opacity:.35;
+  transition:background 260ms ease,box-shadow 260ms ease,transform 260ms ease,opacity 260ms ease;
 }
-
-.pcf-hero__dial-item-upright {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  gap: .58rem;
-  min-width: max-content;
-  transform-origin: 0 0;
-  transform:
-    translateY(-50%)
-    rotate(calc(var(--dial-turn) - var(--item-angle)));
-  transition:
-    transform 980ms cubic-bezier(.16,.82,.18,1),
-    opacity 300ms ease,
-    filter 300ms ease;
+.pcf-hero__dial-label{
+  display:block;
+  color:#cfc7b6;
+  font-family:var(--font-sans);
+  font-size:clamp(.68rem,.92vw,.86rem);
+  font-weight:760;
+  line-height:1;
+  letter-spacing:.025em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transform:scale(var(--label-scale,1));
+  transform-origin:left center;
+  opacity:0;
+  filter:blur(.35px);
+  transition:color 300ms ease,opacity 300ms ease,filter 300ms ease;
 }
-
-.pcf-hero__dial-rotor.is-instant .pcf-hero__dial-item-upright {
-  transition: none !important;
+.pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-dot{
+  background:var(--experience-yellow);
+  opacity:1;
+  transform:scale(1.2);
+  box-shadow:0 0 0 .15rem rgb(240 207 34 / 9%),0 0 .9rem rgb(240 207 34 / 46%);
 }
-
-.pcf-hero__dial-dot {
-  flex: 0 0 auto;
-  width: .46rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #77705f;
-  box-shadow: 0 0 0 1px rgb(255 255 255 / 5%);
-  transition: background 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+.pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-label{opacity:0}
+.pcf-hero__dial-item[data-dial-state='near-prev'] .pcf-hero__dial-label,
+.pcf-hero__dial-item[data-dial-state='near-next'] .pcf-hero__dial-label{opacity:.2;filter:blur(0)}
+.pcf-hero__dial-item[data-dial-state='near-prev'] .pcf-hero__dial-dot,
+.pcf-hero__dial-item[data-dial-state='near-next'] .pcf-hero__dial-dot{opacity:.38}
+.pcf-hero__dial-item[data-dial-state='far-prev'] .pcf-hero__dial-label,
+.pcf-hero__dial-item[data-dial-state='far-next'] .pcf-hero__dial-label{opacity:.065}
+.pcf-hero__dial-item[data-dial-state='far-prev'] .pcf-hero__dial-dot,
+.pcf-hero__dial-item[data-dial-state='far-next'] .pcf-hero__dial-dot{opacity:.18}
+.pcf-hero__dial-item[data-dial-state='hidden'] .pcf-hero__dial-item-upright{opacity:0}
+.pcf-hero__dial-core{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:50%;
+  width:45%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:clamp(.85rem,1.15vw,1.2rem) solid var(--experience-yellow);
+  background:radial-gradient(circle at center,#d8a116 0 11.5%,#e6ad1d 11.7% 14%,#080906 14.3% 38%,rgb(240 207 34 / 3%) 38.2% 40%,#070806 40.3% 100%);
+  box-shadow:0 0 0 1px rgb(240 207 34 / 16%),0 0 2.2rem rgb(240 207 34 / 4%);
 }
-
-.pcf-hero__dial-label {
-  display: block;
-  color: rgb(226 220 205 / 42%);
-  font-family: var(--font-sans);
-  font-size: clamp(.7rem, 1vw, .92rem);
-  font-weight: 760;
-  line-height: 1;
-  letter-spacing: .025em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transform: scale(var(--label-scale, 1));
-  transform-origin: left center;
-  transition: color 260ms ease, opacity 260ms ease, text-shadow 260ms ease;
+.pcf-hero__dial-core::before,.pcf-hero__dial-core::after{content:'';position:absolute;border-radius:50%;pointer-events:none}
+.pcf-hero__dial-core::before{inset:-34%;border:1px solid rgb(240 207 34 / 12%)}
+.pcf-hero__dial-core::after{inset:-64%;border:1px solid rgb(255 255 255 / 4%)}
+.pcf-hero__dial-selector{
+  position:absolute;
+  z-index:9;
+  left:calc(50% - var(--dial-radius));
+  top:50%;
+  width:0;
+  height:0;
 }
-
-.pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-dot {
-  background: var(--experience-yellow);
-  transform: scale(1.22);
-  box-shadow:
-    0 0 0 .16rem rgb(240 207 34 / 10%),
-    0 0 1rem rgb(240 207 34 / 55%);
+.pcf-hero__dial-beam{
+  position:absolute;
+  right:0;
+  top:0;
+  width:clamp(8rem,22vw,21rem);
+  height:1px;
+  transform:translateY(-50%);
+  background:linear-gradient(90deg,transparent 0%,rgb(240 207 34 / 16%) 45%,var(--experience-yellow) 100%);
+  box-shadow:0 0 .55rem rgb(240 207 34 / 7%);
 }
-
-.pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-label {
-  color: var(--experience-yellow);
-  opacity: 1;
-  text-shadow: 0 0 1.1rem rgb(240 207 34 / 28%);
+.pcf-hero__dial-arrow{
+  position:absolute;
+  left:-1.55rem;
+  top:0;
+  width:0;
+  height:0;
+  transform:translateY(-50%);
+  border-top:.3rem solid transparent;
+  border-bottom:.3rem solid transparent;
+  border-left:.54rem solid var(--experience-yellow);
+  filter:drop-shadow(0 0 .38rem rgb(240 207 34 / 22%));
 }
-
-.pcf-hero__dial-core {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  width: 47%;
-  aspect-ratio: 1;
-  transform: translate(-50%,-50%);
-  border-radius: 50%;
-  border: clamp(.9rem, 1.3vw, 1.35rem) solid var(--experience-yellow);
-  background:
-    radial-gradient(circle at center,
-      #d89a18 0 12%,
-      #eba91e 12.2% 14.5%,
-      #080906 14.8% 37%,
-      rgb(240 207 34 / 4%) 37.2% 39%,
-      #070806 39.3% 100%);
-  box-shadow:
-    0 0 0 1px rgb(240 207 34 / 18%),
-    0 0 2.6rem rgb(240 207 34 / 5%);
+.pcf-hero__dial-lock{
+  position:absolute;
+  left:0;
+  top:0;
+  width:.64rem;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:var(--experience-yellow);
+  box-shadow:0 0 0 .18rem rgb(240 207 34 / 8%),0 0 .85rem rgb(240 207 34 / 40%);
 }
+.pcf-hero--dial .pcf-hero__bottom{position:relative;z-index:10}
 
-.pcf-hero__dial-core::before,
-.pcf-hero__dial-core::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
+@media(max-width:70rem){
+  .pcf-hero__dial-stage{--dial-radius:29vw;right:-16vw;width:64vw}
+  .pcf-hero__headline-wrap--dial{width:60vw}
+  .pcf-hero__headline--dial{font-size:clamp(3rem,6vw,5.4rem)!important}
+  .pcf-hero__dial-live{font-size:.52em}
 }
-
-.pcf-hero__dial-core::before {
-  inset: -34%;
-  border: 1px solid rgb(240 207 34 / 15%);
-}
-
-.pcf-hero__dial-core::after {
-  inset: -64%;
-  border: 1px solid rgb(255 255 255 / 5%);
-}
-
-.pcf-hero__dial-selector {
-  position: absolute;
-  z-index: 8;
-  left: calc(50% - var(--dial-radius));
-  top: 50%;
-  width: 0;
-  height: 0;
-}
-
-.pcf-hero__dial-beam {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: min(35vw, 31rem);
-  height: 1px;
-  transform: translateY(-50%);
-  background:
-    linear-gradient(90deg, transparent 0%, rgb(240 207 34 / 50%) 34%, var(--experience-yellow) 100%);
-  box-shadow: 0 0 .7rem rgb(240 207 34 / 12%);
-}
-
-.pcf-hero__dial-arrow {
-  position: absolute;
-  left: -1.82rem;
-  top: 0;
-  width: 0;
-  height: 0;
-  transform: translateY(-50%);
-  border-top: .35rem solid transparent;
-  border-bottom: .35rem solid transparent;
-  border-left: .62rem solid var(--experience-yellow);
-  filter: drop-shadow(0 0 .45rem rgb(240 207 34 / 28%));
-}
-
-.pcf-hero__dial-lock {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: .68rem;
-  aspect-ratio: 1;
-  transform: translate(-50%,-50%);
-  border-radius: 50%;
-  background: var(--experience-yellow);
-  box-shadow:
-    0 0 0 .2rem rgb(240 207 34 / 10%),
-    0 0 1rem rgb(240 207 34 / 50%);
-}
-
-.pcf-hero--dial .pcf-hero__bottom {
-  position: relative;
-  z-index: 10;
-}
-
-@media (max-width: 70rem) {
-  .pcf-hero__dial-stage {
-    --dial-radius: 31vw;
-    right: -34vw;
-    width: 72vw;
+@media(max-width:44rem){
+  .pcf-hero--dial{min-height:91svh!important}
+  .pcf-hero--dial .pcf-hero__inner{
+    min-height:91svh!important;
+    padding-top:4.85rem!important;
+    padding-bottom:1.15rem!important;
   }
-
-  .pcf-hero__headline-wrap--dial {
-    width: 50vw;
+  .pcf-hero__dial-stage{
+    --dial-radius:34vw;
+    top:48%;
+    right:-20vw;
+    width:88vw;
+    max-width:none;
   }
-
-  .pcf-hero__headline--dial {
-    font-size: clamp(3rem, 6.4vw, 5.7rem) !important;
+  .pcf-hero__headline-wrap--dial{
+    width:74vw!important;
+    align-self:center!important;
+    transform:translateY(-.15rem)!important;
   }
-}
-
-@media (max-width: 44rem) {
-  .pcf-hero--dial {
-    min-height: 100svh !important;
+  .pcf-hero__headline--dial{
+    width:max-content!important;
+    max-width:74vw!important;
+    gap:.14em!important;
+    font-size:clamp(2rem,8.45vw,2.78rem)!important;
+    font-weight:720!important;
+    line-height:.92!important;
+    letter-spacing:-.06em!important;
+    white-space:nowrap!important;
   }
-
-  .pcf-hero--dial .pcf-hero__inner {
-    min-height: 100svh !important;
-    padding-top: 4.9rem !important;
-    padding-bottom: 1.15rem !important;
-  }
-
-  .pcf-hero__dial-stage {
-    --dial-radius: 41vw;
-    top: 47.5%;
-    right: -43vw;
-    width: 92vw;
-    max-width: none;
-  }
-
-  .pcf-hero__headline-wrap--dial {
-    width: 48vw !important;
-    align-self: center !important;
-    transform: translateY(-.1rem) !important;
-  }
-
-  .pcf-hero__headline--dial {
-    width: auto !important;
-    max-width: none !important;
-    font-size: clamp(2rem, 8.1vw, 2.72rem) !important;
-    font-weight: 720 !important;
-    line-height: .9 !important;
-    letter-spacing: -.071em !important;
-    white-space: nowrap !important;
-  }
-
-  html[lang='sq'] .pcf-hero__headline--dial {
-    font-size: clamp(1.62rem, 6.55vw, 2.18rem) !important;
-  }
-
-  .pcf-hero__dial-beam {
-    width: 31vw;
-  }
-
-  .pcf-hero__dial-arrow {
-    left: -1.45rem;
-    border-top-width: .29rem;
-    border-bottom-width: .29rem;
-    border-left-width: .5rem;
-  }
-
-  .pcf-hero__dial-lock {
-    width: .58rem;
-  }
-
-  .pcf-hero__dial-dot {
-    width: .36rem;
-  }
-
-  .pcf-hero__dial-item-upright {
-    gap: .42rem;
-  }
-
-  .pcf-hero__dial-label {
-    font-size: clamp(.52rem, 2.25vw, .72rem);
-    letter-spacing: .02em;
-  }
-
-  .pcf-hero__dial-core {
-    width: 46%;
-    border-width: .78rem;
-  }
-
-  .pcf-hero--dial::before {
+  html[lang='sq'] .pcf-hero__headline--dial{font-size:clamp(2rem,8.45vw,2.78rem)!important}
+  .pcf-hero__dial-live{font-size:.58em;letter-spacing:-.02em}
+  .pcf-hero__dial-beam{width:23vw}
+  .pcf-hero__dial-arrow{left:-1.15rem;border-top-width:.24rem;border-bottom-width:.24rem;border-left-width:.42rem}
+  .pcf-hero__dial-lock{width:.54rem}
+  .pcf-hero__dial-dot{width:.34rem}
+  .pcf-hero__dial-item-upright{gap:.38rem}
+  .pcf-hero__dial-label{font-size:clamp(.5rem,2.05vw,.68rem);letter-spacing:.015em}
+  .pcf-hero__dial-core{width:44%;border-width:.68rem}
+  .pcf-hero--dial::before{
     background:
-      radial-gradient(circle at 98% 48%, transparent 0 10rem, rgb(240 207 34 / 3%) 10.1rem 10.18rem, transparent 10.28rem),
-      radial-gradient(circle at 98% 48%, transparent 0 14rem, rgb(240 207 34 / 2.4%) 14.1rem 14.18rem, transparent 14.28rem);
+      radial-gradient(circle at 98% 48%,transparent 0 9rem,rgb(240 207 34 / 2.3%) 9.08rem 9.15rem,transparent 9.24rem),
+      radial-gradient(circle at 98% 48%,transparent 0 13rem,rgb(255 255 255 / 1.6%) 13.08rem 13.15rem,transparent 13.24rem);
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .pcf-hero__dial-rotor,
-  .pcf-hero__dial-item-upright {
-    transition-duration: 1ms !important;
-  }
+@media(prefers-reduced-motion:reduce){
+  .pcf-hero__dial-rotor,.pcf-hero__dial-item-upright,.pcf-hero__dial-live{transition-duration:1ms!important}
 }

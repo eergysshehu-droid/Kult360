@@ -48,7 +48,7 @@ const programmeLinks = [
   '/programs/culture-inclusive-education/',
   '/programs/heritage-sustainability/'
 ];
-const heroWords = ['nature.','art.','communities.','heritage.','memory.','education.','equality.','music.','digitality.'];
+const heroWords = ['Nature','Art','Communities','Heritage','Memory','Education','Equality','Music','Digitality'];
 ---
 <BaseLayout title={homePage.heading.en} description={homePage.description.en} {language} path="/" translations={['en','sq']}>
   <section class="pcf-hero pcf-hero--black pcf-hero--dial">
@@ -59,17 +59,24 @@ const heroWords = ['nature.','art.','communities.','heritage.','memory.','educat
         <div
           class="pcf-hero__dial-rotor"
           data-dial-rotor
-          style="--dial-turn: 160deg; transform: rotate(-160deg);"
+          style="--dial-turn: 0deg; transform: rotate(0deg);"
         >
-          {heroWords.map((word, index) => {
-            const label = word.replace(/\.$/, '');
+          {heroWords.map((label, index) => {
             const angle = 180 + index * 40;
             const scale = label.length > 11 ? .76 : label.length > 9 ? .84 : label.length > 7 ? .91 : 1;
+            const offset = index % heroWords.length;
+            const state =
+              offset === 0 ? 'active' :
+              offset === 1 ? 'near-next' :
+              offset === heroWords.length - 1 ? 'near-prev' :
+              offset === 2 ? 'far-next' :
+              offset === heroWords.length - 2 ? 'far-prev' :
+              'hidden';
             return (
               <span
                 class="pcf-hero__dial-item"
                 data-dial-index={index}
-                data-dial-state={index === 4 ? 'active' : 'inactive'}
+                data-dial-state={state}
                 style={`--item-angle: ${angle}deg; --label-scale: ${scale};`}
               >
                 <span class="pcf-hero__dial-item-upright">
@@ -97,10 +104,10 @@ const heroWords = ['nature.','art.','communities.','heritage.','memory.','educat
       <p class="pcf-kicker">KULT360 Foundation · Albania</p>
 
       <div class="pcf-hero__headline-wrap pcf-hero__headline-wrap--dial">
-        <h1 class="pcf-hero__headline pcf-hero__headline--dial" aria-label="Culture is nature, art, communities, heritage, memory, education, equality, music and digitality">
-          <span>Culture is</span>
+        <h1 class="pcf-hero__headline pcf-hero__headline--dial" aria-label="Culture is Nature, Art, Communities, Heritage, Memory, Education, Equality, Music and Digitality">
+          <span class="pcf-hero__dial-prefix">Culture is</span>
+          <span class="pcf-hero__dial-live" data-dial-live aria-live="polite">NATURE</span>
         </h1>
-        <span class="pcf-symbol-live" data-dial-live aria-live="polite">memory.</span>
       </div>
 
       <div class="pcf-hero__bottom">
@@ -327,18 +334,46 @@ const heroWords = ['nature.','art.','communities.','heritage.','memory.','educat
   if (heroDial && dialRotor && dialItems.length) {
     const count = dialItems.length;
     const stepDeg = 360 / count;
-    const stepMs = 4000;
+    const stepMs = 4100;
     const motionMs = 980;
-    let active = Math.min(4, count - 1);
+    let active = 0;
     let clock = 0;
     let settleTimer = 0;
+    let liveTimer = 0;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const setActiveLabel = () => {
+    const stateFor = (index: number) => {
+      const delta = (index - active + count) % count;
+      if (delta === 0) return 'active';
+      if (delta === 1) return 'near-next';
+      if (delta === count - 1) return 'near-prev';
+      if (delta === 2) return 'far-next';
+      if (delta === count - 2) return 'far-prev';
+      return 'hidden';
+    };
+
+    const labelFor = (index: number) =>
+      (dialItems[index]?.querySelector<HTMLElement>('.pcf-hero__dial-label')?.textContent || '').trim().toUpperCase();
+
+    const setDialStates = () => {
       dialItems.forEach((item, index) => {
-        item.dataset.dialState = index === active ? 'active' : 'inactive';
+        item.dataset.dialState = stateFor(index);
       });
-      if (dialLive) dialLive.textContent = (dialItems[active]?.textContent || '').trim() + '.';
+    };
+
+    const setLiveLabel = (animate = true) => {
+      if (!dialLive) return;
+      window.clearTimeout(liveTimer);
+      if (!animate || reducedMotion) {
+        dialLive.textContent = labelFor(active);
+        dialLive.classList.remove('is-changing');
+        return;
+      }
+      dialLive.classList.add('is-changing');
+      liveTimer = window.setTimeout(() => {
+        dialLive.textContent = labelFor(active);
+        requestAnimationFrame(() => dialLive.classList.remove('is-changing'));
+      }, 390);
     };
 
     const setRotation = (animate = true) => {
@@ -351,10 +386,10 @@ const heroWords = ['nature.','art.','communities.','heritage.','memory.','educat
 
     const advance = () => {
       window.clearTimeout(settleTimer);
-      dialItems.forEach((item) => item.dataset.dialState = 'inactive');
       active = (active + 1) % count;
+      setLiveLabel(!reducedMotion);
       setRotation(!reducedMotion);
-      settleTimer = window.setTimeout(setActiveLabel, reducedMotion ? 0 : motionMs);
+      settleTimer = window.setTimeout(setDialStates, reducedMotion ? 0 : Math.round(motionMs * .72));
     };
 
     const startClock = () => {
@@ -367,15 +402,18 @@ const heroWords = ['nature.','art.','communities.','heritage.','memory.','educat
       if (document.hidden) {
         window.clearInterval(clock);
         window.clearTimeout(settleTimer);
+        window.clearTimeout(liveTimer);
       } else {
         setRotation(false);
-        setActiveLabel();
+        setDialStates();
+        setLiveLabel(false);
         startClock();
       }
     });
 
     setRotation(false);
-    setActiveLabel();
+    setDialStates();
+    setLiveLabel(false);
     startClock();
   }
 
