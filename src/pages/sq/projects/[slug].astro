@@ -1,19 +1,7 @@
 ---
-import DetailLayout from '../../../layouts/DetailLayout.astro';
-import {projectImage, projectSlug, projects, terminalGallery} from '../../../lib/content';
-import {localizedPath} from '../../../lib/site-config';
+import ProjectDetailPage from '../../../components/content/ProjectDetailPage.astro';
+import {projectSlug, projects} from '../../../lib/content';
 export const getStaticPaths = () => projects.map((project) => ({params:{slug:projectSlug(project)}, props:{project}}));
 const {project} = Astro.props;
-const language = 'sq';
-const image = projectImage(project);
-const date = project.date || project.date_range?.start;
-const people = project.people ?? [];
-const partnersOrRelated = project.partners_or_related ?? [];
 ---
-<DetailLayout title={project.title} description={project.summary || project.title} {language} path={`/sq/projects/${projectSlug(project)}/`} translations={['en','sq']}>
-  <header class="detail-hero"><p class="eyebrow">Arkivi i projektit</p><h1>{project.title}</h1><div class="detail-meta"><span>{project.kind.replaceAll('_',' ')}</span>{date && <span>{date}</span>}{project.location && <span>{project.location}</span>}</div></header>
-  {image && <figure class="detail-cover"><img src={image} alt="" fetchpriority="high" /></figure>}
-  <div class="detail-body"><p class="display-copy" lang="en">{project.summary}</p><p class="source-note">Përmbledhja ruhet në gjuhën e burimit derisa të miratohet përkthimi editorial.</p>{people.length > 0 && <section><h2>Persona</h2><p>{people.join(' · ')}</p></section>}{partnersOrRelated.length > 0 && <section><h2>Partnerë & të lidhur</h2><p>{partnersOrRelated.join(' · ')}</p></section>}</div>
-  {project.id === 'project-terminal-europe-week-2026' && <section class="detail-gallery">{terminalGallery.map((src) => <img src={src} alt="" loading="lazy" decoding="async" />)}</section>}
-  <nav class="detail-back"><a href={localizedPath('/projects/', language)}>← Të gjitha projektet</a></nav>
-</DetailLayout>
+<ProjectDetailPage {project} language="sq" />
