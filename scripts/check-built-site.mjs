@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 const slugs = ['', 'about', 'programs', 'projects', 'events', 'journal', 'media', 'people', 'opportunities', 'lab', 'resources', 'get-involved', 'support', 'contact'];
 const routes = slugs.flatMap((slug) => [slug ? `/${slug}/` : '/', slug ? `/sq/${slug}/` : '/sq/']);
 const fileFor = (route) => route === '/' ? 'dist/index.html' : `dist${route}index.html`;
-const forbidden = [/46mghxoy/i, /ergyss?\s*shehu/i, /data-home-stack/i, /home-stack/i];
+const forbidden = [/46mghxoy/i, /data-home-stack/i, /home-stack/i, /\/portfolio\//i];
 
 for (const route of routes) {
   const html = await readFile(fileFor(route), 'utf8');
