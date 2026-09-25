@@ -57,13 +57,25 @@ const relatedThemes = cultureThemes.filter((theme) => theme.relatedProgramSlugs.
           <span>{language === 'sq' ? 'Tre parime pune' : 'Three working principles'}</span>
         </div>
         <div class="program-detail__principle-grid">
-          {program.principles.map((principle, index) => (
-            <article>
-              <span>0{index + 1}</span>
-              <h3>{principle.title[language]}</h3>
-              <p>{principle.body[language]}</p>
-            </article>
-          ))}
+          {program.principles.map((principle, index) => {
+            const href = program.slug === 'heritage-sustainability' && index === 1
+              ? localizedPath('/programs/heritage-sustainability/listen-to-place/', language)
+              : undefined;
+            return href ? (
+              <a class="program-detail__principle-card program-detail__principle-card--link" href={href}>
+                <span>0{index + 1}</span>
+                <h3>{principle.title[language]}</h3>
+                <p>{principle.body[language]}</p>
+                <i aria-hidden="true">↗</i>
+              </a>
+            ) : (
+              <article class="program-detail__principle-card">
+                <span>0{index + 1}</span>
+                <h3>{principle.title[language]}</h3>
+                <p>{principle.body[language]}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
