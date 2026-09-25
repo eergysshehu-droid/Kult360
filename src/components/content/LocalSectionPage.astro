@@ -131,7 +131,7 @@ const initiativeThemeLink: Record<string,string> = {
 };
 ---
 <ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
-  {!['about','contact'].includes(page.slug) && (
+  {!['about','contact','get-involved'].includes(page.slug) && (
     <section class:list={['section-intro', policy && 'section-intro--policy']}>
       <SectionHeader eyebrow="KULT360" heading={page.heading[language]} description={page.description[language]} />
     </section>
