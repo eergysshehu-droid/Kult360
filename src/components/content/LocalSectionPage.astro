@@ -18,6 +18,73 @@ const t = {
   archive: language === 'sq' ? 'Përmbajtja e plotë e disa regjistrave mbetet në rishikim editorial.' : 'Full body content for some records remains under editorial review.',
   contact: language === 'sq' ? 'Na kontakto' : 'Contact us'
 };
+
+const websitePolicies = {
+  privacy: {
+    eyebrow: language === 'sq' ? 'Privatësia' : 'Privacy',
+    intro: language === 'sq'
+      ? 'Ky njoftim shpjegon në mënyrë të thjeshtë si trajtojmë informacionin që na dërgoni përmes faqes ose kur na kontaktoni drejtpërdrejt.'
+      : 'This notice explains, in plain language, how we handle information you send through the website or when you contact us directly.',
+    sections: language === 'sq' ? [
+      ['Çfarë mund të marrim', 'Kur na shkruani ose na kontaktoni, mund të marrim emrin, adresën e emailit dhe informacionin që zgjidhni të ndani. Ofruesit teknikë të hostimit dhe sigurisë mund të gjenerojnë regjistra bazë teknikë për funksionimin e faqes.'],
+      ['Si e përdorim', 'E përdorim informacionin për t’ju përgjigjur, për të menaxhuar komunikimin që keni kërkuar dhe për të operuar e mbrojtur faqen.'],
+      ['Ndarja e informacionit', 'Nuk shesim të dhëna personale. Informacioni mund t’u vihet në dispozicion ofruesve teknikë vetëm kur është e nevojshme për funksionimin e shërbimit.'],
+      ['Pyetje', 'Për pyetje mbi privatësinë ose për të kërkuar korrigjimin e informacionit që na keni dërguar, kontaktoni office@kult360.com.']
+    ] : [
+      ['What we may receive', 'When you write to or contact us, we may receive your name, email address and any information you choose to share. Hosting and security providers may generate basic technical logs needed to operate the website.'],
+      ['How we use it', 'We use information to respond to you, manage communications you requested, and operate and protect the website.'],
+      ['Sharing', 'We do not sell personal information. Information may be available to technical service providers only where needed to operate the service.'],
+      ['Questions', 'For privacy questions or to request correction of information you sent us, contact office@kult360.com.']
+    ]
+  },
+  cookies: {
+    eyebrow: 'Cookies',
+    intro: language === 'sq'
+      ? 'KULT360 synon një faqe të thjeshtë dhe pa gjurmim të panevojshëm.'
+      : 'KULT360 aims to keep this website simple and free from unnecessary tracking.',
+    sections: language === 'sq' ? [
+      ['Cookies të faqes', 'Ndërtimi aktual i faqes nuk përdor me qëllim cookies reklamimi ose profilizimi nga KULT360. Funksione teknike thelbësore mund të ofrohen nga infrastruktura e hostimit.'],
+      ['Shërbime të jashtme', 'Kur ndiqni një lidhje drejt një platforme të jashtme, ajo platformë mund të përdorë cookies sipas politikave të veta.'],
+      ['Ndryshime', 'Nëse në të ardhmen shtojmë analitikë, media të integruara ose teknologji të tjera që kërkojnë zgjedhjen tuaj, do ta përditësojmë këtë njoftim dhe mekanizmin e pëlqimit kur kërkohet.']
+    ] : [
+      ['Website cookies', 'The current site build does not intentionally use KULT360 advertising or profiling cookies. Essential technical functions may be provided by the hosting infrastructure.'],
+      ['External services', 'When you follow a link to an external platform, that platform may use cookies under its own policies.'],
+      ['Changes', 'If we later add analytics, embedded media or other technologies that require a choice, we will update this notice and provide consent controls where required.']
+    ]
+  },
+  terms: {
+    eyebrow: language === 'sq' ? 'Kushtet e përdorimit' : 'Terms of use',
+    intro: language === 'sq'
+      ? 'Këto kushte mbulojnë përdorimin e faqes publike KULT360. Ato nuk publikojnë dokumentet e brendshme ose rregullat e qeverisjes së Fondacionit.'
+      : 'These terms cover use of the public KULT360 website. They do not publish the Foundation’s internal governance documents or rules.',
+    sections: language === 'sq' ? [
+      ['Përmbajtja', 'Përmbajtja publikohet për informacion, komunikim kulturor dhe dokumentim të punës publike të KULT360.'],
+      ['E drejta e autorit', 'Tekstet, fotografitë, videot, grafikat dhe materialet e tjera i përkasin KULT360 ose autorëve dhe partnerëve të kredituar, sipas rastit. Mos i ripublikoni ose përdorni komercialisht pa leje, përveç rasteve të lejuara nga ligji.'],
+      ['Lidhje të jashtme', 'Lidhjet drejt faqeve të tjera ofrohen për lehtësi. KULT360 nuk kontrollon përmbajtjen ose praktikat e privatësisë së faqeve të jashtme.'],
+      ['Përditësime', 'Përmbajtja dhe këto kushte mund të përditësohen ndërsa faqja zhvillohet.']
+    ] : [
+      ['Content', 'Content is published for information, cultural communication and documentation of KULT360’s public work.'],
+      ['Copyright', 'Text, photography, video, graphics and other material belong to KULT360 or to credited creators and partners, as applicable. Do not republish or use them commercially without permission except where allowed by law.'],
+      ['External links', 'Links to other websites are provided for convenience. KULT360 does not control the content or privacy practices of external sites.'],
+      ['Updates', 'Content and these terms may be updated as the website develops.']
+    ]
+  },
+  accessibility: {
+    eyebrow: language === 'sq' ? 'Aksesueshmëria' : 'Accessibility',
+    intro: language === 'sq'
+      ? 'Ne duam që KULT360 të jetë i qartë, i lexueshëm dhe i përdorshëm nga sa më shumë njerëz.'
+      : 'We want KULT360 to be clear, readable and usable by as many people as possible.',
+    sections: language === 'sq' ? [
+      ['Qasja jonë', 'Po punojmë për kontrast të qartë, navigim me tastierë, fokus të dukshëm, tekst alternativ dhe respektim të preferencës për lëvizje të reduktuar.'],
+      ['Na ndihmoni ta përmirësojmë', 'Nëse hasni një pengesë në përdorimin e faqes ose një material që nuk mund ta aksesoni, na shkruani në office@kult360.com dhe na tregoni faqen ose problemin.']
+    ] : [
+      ['Our approach', 'We are working toward clear contrast, keyboard navigation, visible focus states, meaningful alternative text and respect for reduced-motion preferences.'],
+      ['Help us improve', 'If you encounter a barrier or material you cannot access, email office@kult360.com and tell us which page or issue you encountered.']
+    ]
+  }
+} as const;
+
+const policy = page.slug in websitePolicies ? websitePolicies[page.slug as keyof typeof websitePolicies] : undefined;
 ---
 <ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
   <section class="section-intro">
@@ -30,10 +97,10 @@ const t = {
         <div class="about-v4__row">
           <p class="about-v4__label">{language === 'sq' ? 'Rreth nesh' : 'About us'}</p>
           <div>
-            <h2>{language === 'sq' ? 'Një fondacion i ndërtuar nga artistët, për artistët.' : 'A Foundation Built by Artists, For Artists.'}</h2>
+            <h2>{language === 'sq' ? 'Kultura si urë. Artistët në qendër.' : 'Culture as a bridge. Artists at the centre.'}</h2>
             <p>{language === 'sq'
-              ? 'Fondacioni KULT360 është një organizatë jofitimprurëse e përkushtuar ndaj forcimit të sektorit kulturor. Ne lidhim talentin lokal me skenën ndërkombëtare, fuqizojmë artistët, promovojmë të drejtat dhe përdorim kulturën si mjet për përfshirje demokratike dhe sociale.'
-              : 'KULT360 Foundation is a non-profit organization dedicated to strengthening the cultural sector. We bridge local talent with the international arena, empower artists, advance rights, and use culture as a tool for democratic social inclusion.'}</p>
+              ? 'KULT360 është një fondacion i pavarur që lidh kulturën me zhvillimin shoqëror. Ne ndërtojmë ura përmes artit dhe trashëgimisë, duke lidhur talentin vendas, diasporën, komunitetet dhe partnerët ndërkombëtarë.'
+              : 'KULT360 is an independent foundation connecting culture with social development. We build bridges through art and heritage, bringing together local talent, the diaspora, communities and international partners.'}</p>
           </div>
         </div>
 
@@ -41,11 +108,11 @@ const t = {
           <p class="about-v4__label">{language === 'sq' ? 'Vizioni ynë' : 'Our vision'}</p>
           <div>
             <blockquote>{language === 'sq'
-              ? '“Një shoqëri ku arti shërben si instrument kyç për zhvillimin shoqëror dhe fuqizimin e komuniteteve të margjinalizuara.”'
-              : '“A society where art serves as the key instrument for social development and the empowerment of marginalized communities.”'}</blockquote>
+              ? '“Një peizazh kulturor ku artistët mund të krijojnë me dinjitet, trashëgimia mbetet e gjallë dhe komunitetet marrin pjesë në formësimin e së ardhmes.”'
+              : '“A cultural landscape where artists can work with dignity, heritage stays alive and communities take part in shaping the future.”'}</blockquote>
             <p>{language === 'sq'
-              ? 'Ne veprojmë si një urë mes Shqipërisë dhe arenës ndërkombëtare, duke mbështetur krijimtarinë, zanatet dhe artin për një të ardhme të ndërtuar mbi kujtesën kolektive dhe dinjitetin.'
-              : 'We act as a bridge between Albania and the international arena, championing creative practice, crafts and art to build a future grounded in collective memory and dignity.'}</p>
+              ? 'Vizioni ynë është kulturë e gjallë: krijimtari që lëviz mes vendeve dhe brezave, ruan kujtesën, hap dialog dhe krijon lidhje të reja.'
+              : 'Our vision is living culture: creative work that moves across places and generations, carries memory, opens dialogue and creates new connections.'}</p>
           </div>
         </div>
 
@@ -134,8 +201,54 @@ const t = {
     <section class="people-grid ruled-section">{people.map((person) => <article><p class="meta">{person.role}</p><h2><a href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}>{person.name}</a></h2></article>)}</section>
   )}
 
-  {(page.slug === 'opportunities' || page.slug === 'get-involved' || page.slug === 'support') && (
+  {(page.slug === 'opportunities' || page.slug === 'support') && (
     <section class="opportunity-grid ruled-section">{opportunities.map((item) => <article><p class="meta">{item.kind}</p><h2>{item.title}</h2>{item.summary && <p>{item.summary}</p>}</article>)}</section>
+  )}
+
+  {page.slug === 'get-involved' && (
+    <>
+      <section class="institutional-invite ruled-section">
+        <div class="institutional-invite__intro">
+          <p class="meta">{language === 'sq' ? 'Punoni me KULT360' : 'Work with KULT360'}</p>
+          <h2>{language === 'sq' ? 'Le të ndërtojmë diçka me vlerë, së bashku.' : 'Let’s build something meaningful, together.'}</h2>
+          <p>{language === 'sq'
+            ? 'Bashkëpunojmë me institucione kulturore, fondacione, kompani, artistë dhe komunitete që ndajnë interesin për kulturën, të drejtat, edukimin, trashëgiminë dhe qëndrueshmërinë.'
+            : 'We collaborate with cultural institutions, foundations, companies, artists and communities that share an interest in culture, rights, education, heritage and sustainability.'}</p>
+        </div>
+        <div class="institutional-invite__routes">
+          {[
+            [language === 'sq' ? 'Për individë' : 'For individuals', language === 'sq' ? 'Mbështetni, merrni pjesë ose sillni një ide.' : 'Support, participate or bring an idea.', 'Individual enquiry'],
+            [language === 'sq' ? 'Për organizata & kompani' : 'For organisations & companies', language === 'sq' ? 'Krijoni një bashkëpunim kulturor, prodhim ose mbështetje në natyrë.' : 'Build a cultural collaboration, production or in-kind partnership.', 'Organisation partnership'],
+            [language === 'sq' ? 'Për fondacione & institucione' : 'For foundations & institutions', language === 'sq' ? 'Bashkëzhvilloni programe, shkëmbime dhe projekte me ndikim publik.' : 'Co-develop programmes, exchanges and projects with public value.', 'Institutional collaboration']
+          ].map((item, index) => (
+            <a class="institutional-route" href={`mailto:${siteConfig.organization.email}?subject=${encodeURIComponent(item[2])}`}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div><h3>{item[0]}</h3><p>{item[1]}</p></div>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+        <div class="institutional-invite__contact">
+          <p>{language === 'sq' ? 'Keni diçka konkrete në mendje?' : 'Have something specific in mind?'}</p>
+          <a class="pcf-button pcf-button--dark" href={`mailto:${siteConfig.organization.email}?subject=${encodeURIComponent('KULT360 collaboration')}`}><span>{language === 'sq' ? 'Nis një bisedë' : 'Start a conversation'}</span><i aria-hidden="true">↗</i></a>
+        </div>
+      </section>
+    </>
+  )}
+
+  {policy && (
+    <section class="policy-page ruled-section">
+      <div class="policy-page__intro">
+        <p class="meta">{policy.eyebrow}</p>
+        <p>{policy.intro}</p>
+      </div>
+      <div class="policy-page__sections">
+        {policy.sections.map((section) => (
+          <article><h2>{section[0]}</h2><p>{section[1]}</p></article>
+        ))}
+      </div>
+      <p class="policy-page__note">{language === 'sq' ? 'Përditësuar: 25 shtator 2026 · Politika e faqes publike.' : 'Updated: 25 September 2026 · Public website policy.'}</p>
+    </section>
   )}
 
   {page.slug === 'lab' && <section class="empty-record ruled-section"><p class="display-copy">KULT360 LAB</p><p>{t.archive}</p></section>}
@@ -148,7 +261,7 @@ const t = {
     </section>
   )}
 
-  {page.slug !== 'contact' && page.slug !== 'media' && (
+  {!['contact','media','privacy','cookies','terms','accessibility'].includes(page.slug) && (
     <section class="partner-strip partner-strip--logos ruled-section">
       <div class="partner-strip__head">
         <p class="meta">{language === 'sq' ? 'Partnerë & bashkëpunëtorë' : 'Partners & collaborators'}</p>
