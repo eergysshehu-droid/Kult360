@@ -1,0 +1,213 @@
+---
+import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
+
+interface Props {language: Language}
+const {language} = Astro.props;
+---
+<section class="contact-v2__hero ruled-section">
+        <p class="contact-v2__eyebrow">KULT360 · {language === 'sq' ? 'Kontakt' : 'Contact'}</p>
+        <div class="contact-v2__hero-grid">
+          <h1>{language === 'sq' ? 'Niseni me një bisedë.' : 'Start with a conversation.'}</h1>
+          <div>
+            <p class="contact-v2__lead">{language === 'sq'
+              ? 'Na shkruani për bashkëpunime, projekte, partneritete, media ose pyetje të përgjithshme.'
+              : 'Write to us about collaborations, projects, partnerships, media or general enquiries.'}</p>
+            <p>{language === 'sq'
+              ? 'Zgjidhni arsyen e kontaktit dhe na jepni aq kontekst sa duhet. Mesazhi do t’i shkojë ekipit të KULT360.'
+              : 'Choose what you are contacting us about and give us the context we need. Your message will go to the KULT360 team.'}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-v2__details ruled-section">
+        <div class="contact-v2__details-head">
+          <p>{language === 'sq' ? 'Na gjeni' : 'Reach us'}</p>
+          <h2>{language === 'sq' ? 'Të dhënat publike të kontaktit.' : 'Public contact details.'}</h2>
+        </div>
+
+        <div class="contact-v2__detail-grid">
+          <a href={`mailto:${siteConfig.organization.email}`}>
+            <span>{language === 'sq' ? 'Shkruani' : 'Write'}</span>
+            <strong>{siteConfig.organization.email}</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a href={`tel:${siteConfig.organization.phone.replace(/\s+/g,'')}`}>
+            <span>{language === 'sq' ? 'Telefononi' : 'Call'}</span>
+            <strong>{siteConfig.organization.phone}</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rr.%20Kavajes%2C%20Tirana%2C%20Albania" target="_blank" rel="noreferrer">
+            <span>{language === 'sq' ? 'Vizitoni' : 'Visit'}</span>
+            <strong>{siteConfig.organization.address}</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact-v2__main ruled-section">
+        <div class="contact-v2__form-intro">
+          <p>{language === 'sq' ? 'Dërgoni një mesazh' : 'Send a message'}</p>
+          <h2>{language === 'sq' ? 'Na tregoni çfarë keni në mendje.' : 'Tell us what you have in mind.'}</h2>
+          <p>{language === 'sq'
+            ? 'Përdorni formularin për pyetje të përgjithshme, propozime projektesh, partneritete, media ose mundësi bashkëpunimi.'
+            : 'Use the form for general questions, project proposals, partnerships, media enquiries or opportunities to collaborate.'}</p>
+        </div>
+
+        <form class="contact-v2__form" data-contact-form data-language={language} novalidate>
+          <div class="contact-v2__field contact-v2__field--full">
+            <label for={`contact-inquiry-${language}`}>{language === 'sq' ? 'Arsyeja e kontaktit' : 'What are you contacting us about?'}</label>
+            <select id={`contact-inquiry-${language}`} name="inquiry" required>
+              <option value="">{language === 'sq' ? 'Zgjidhni një opsion' : 'Choose one'}</option>
+              <option value="General enquiry">{language === 'sq' ? 'Pyetje e përgjithshme' : 'General enquiry'}</option>
+              <option value="Partnership / collaboration">{language === 'sq' ? 'Partneritet / bashkëpunim' : 'Partnership / collaboration'}</option>
+              <option value="Artist / project proposal">{language === 'sq' ? 'Artist / propozim projekti' : 'Artist / project proposal'}</option>
+              <option value="Press / media">{language === 'sq' ? 'Shtyp / media' : 'Press / media'}</option>
+              <option value="Support / funding">{language === 'sq' ? 'Mbështetje / financim' : 'Support / funding'}</option>
+              <option value="Other">{language === 'sq' ? 'Tjetër' : 'Other'}</option>
+            </select>
+          </div>
+
+          <div class="contact-v2__field">
+            <label for={`contact-name-${language}`}>{language === 'sq' ? 'Emri' : 'Name'}</label>
+            <input id={`contact-name-${language}`} name="name" type="text" autocomplete="name" required maxlength="120" />
+          </div>
+
+          <div class="contact-v2__field">
+            <label for={`contact-email-${language}`}>Email</label>
+            <input id={`contact-email-${language}`} name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" />
+          </div>
+
+          <div class="contact-v2__field">
+            <label for={`contact-organisation-${language}`}>{language === 'sq' ? 'Organizata / institucioni' : 'Organisation / institution'} <span>{language === 'sq' ? 'opsionale' : 'optional'}</span></label>
+            <input id={`contact-organisation-${language}`} name="organisation" type="text" autocomplete="organization" maxlength="160" />
+          </div>
+
+          <div class="contact-v2__field">
+            <label for={`contact-phone-${language}`}>{language === 'sq' ? 'Telefon' : 'Phone'} <span>{language === 'sq' ? 'opsional' : 'optional'}</span></label>
+            <input id={`contact-phone-${language}`} name="phone" type="tel" autocomplete="tel" maxlength="60" />
+          </div>
+
+          <div class="contact-v2__field contact-v2__field--full">
+            <label for={`contact-message-${language}`}>{language === 'sq' ? 'Mesazhi' : 'Message'}</label>
+            <textarea id={`contact-message-${language}`} name="message" rows="7" required minlength="10" maxlength="6000" placeholder={language === 'sq' ? 'Na jepni pak kontekst për idenë, projektin ose pyetjen tuaj…' : 'Give us a little context about your idea, project or question…'}></textarea>
+          </div>
+
+          <div class="contact-v2__honeypot" aria-hidden="true">
+            <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <label class="contact-v2__consent">
+            <input name="consent" type="checkbox" required />
+            <span>{language === 'sq'
+              ? <>E kuptoj që KULT360 do t’i përdorë këto të dhëna për t’iu përgjigjur mesazhit tim. Shihni <a href={localizedPath('/privacy/', language)}>Privatësinë</a>.</>
+              : <>I understand KULT360 will use these details to respond to my message. See our <a href={localizedPath('/privacy/', language)}>Privacy notice</a>.</>}</span>
+          </label>
+
+          <div class="contact-v2__submit-row">
+            <button class="pcf-button pcf-button--dark" type="submit">
+              <span>{language === 'sq' ? 'Dërgo mesazhin' : 'Send message'}</span>
+              <i aria-hidden="true">↗</i>
+            </button>
+            <p class="contact-v2__status" data-contact-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <aside class="contact-v2__aside">
+          <div>
+            <span>{language === 'sq' ? 'Për përgjigje më të qartë' : 'For a clearer reply'}</span>
+            <p>{language === 'sq'
+              ? 'Përfshini emrin e projektit ose organizatës, afatin nëse ka, vendin dhe çfarë lloj bashkëpunimi po kërkoni.'
+              : 'Include the project or organisation name, any relevant deadline, location and the kind of collaboration you are looking for.'}</p>
+          </div>
+          <div>
+            <span>{language === 'sq' ? 'Rrjete sociale' : 'Social'}</span>
+            <nav aria-label={language === 'sq' ? 'Rrjetet sociale' : 'Social links'}>
+              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer">Instagram ↗</a>
+              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer">Facebook ↗</a>
+              <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer">YouTube ↗</a>
+            </nav>
+          </div>
+        </aside>
+      </section>
+
+<script>
+  const contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm instanceof HTMLFormElement) {
+    const status = contactForm.querySelector('[data-contact-status]');
+    const submit = contactForm.querySelector('button[type="submit"]');
+    const language = contactForm.dataset.language === 'sq' ? 'sq' : 'en';
+    const startedAt = Date.now();
+
+    const setStatus = (message, state = '') => {
+      if (!(status instanceof HTMLElement)) return;
+      status.textContent = message;
+      status.dataset.state = state;
+    };
+
+    const mailFallback = (data) => {
+      const subject = `KULT360 — ${data.inquiry || 'Website enquiry'}`;
+      const body = [
+        `Name: ${data.name || ''}`,
+        `Email: ${data.email || ''}`,
+        data.organisation ? `Organisation: ${data.organisation}` : '',
+        data.phone ? `Phone: ${data.phone}` : '',
+        `Enquiry: ${data.inquiry || ''}`,
+        '',
+        data.message || ''
+      ].filter(Boolean).join('\n');
+      window.location.href = `mailto:office@kult360.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      const formData = new FormData(contactForm);
+      const payload = {
+        name: String(formData.get('name') || ''),
+        email: String(formData.get('email') || ''),
+        organisation: String(formData.get('organisation') || ''),
+        phone: String(formData.get('phone') || ''),
+        inquiry: String(formData.get('inquiry') || ''),
+        message: String(formData.get('message') || ''),
+        website: String(formData.get('website') || ''),
+        language,
+        page: window.location.href,
+        startedAt
+      };
+
+      if (submit instanceof HTMLButtonElement) submit.disabled = true;
+      setStatus(language === 'sq' ? 'Po dërgohet…' : 'Sending…', 'pending');
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          setStatus(language === 'sq' ? 'Mesazhi u dërgua. Faleminderit.' : 'Message sent. Thank you.', 'success');
+          return;
+        }
+
+        if ([404, 405, 503].includes(response.status)) {
+          setStatus(language === 'sq' ? 'Po hapim email-in tuaj si mënyrë alternative…' : 'Opening your email app as a fallback…', 'fallback');
+          window.setTimeout(() => mailFallback(payload), 350);
+          return;
+        }
+
+        const result = await response.json().catch(() => null);
+        setStatus(result?.error || (language === 'sq' ? 'Kontrolloni fushat dhe provoni përsëri.' : 'Please check the fields and try again.'), 'error');
+      } catch {
+        setStatus(language === 'sq' ? 'Po hapim email-in tuaj si mënyrë alternative…' : 'Opening your email app as a fallback…', 'fallback');
+        window.setTimeout(() => mailFallback(payload), 350);
+      } finally {
+        if (submit instanceof HTMLButtonElement) submit.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style is:global>.contact-v2__hero{padding-top:clamp(4rem,6vw,6.5rem);padding-bottom:clamp(3.8rem,6vw,6rem);}.contact-v2__eyebrow,.contact-v2__details-head>p,.contact-v2__form-intro>p:first-child{margin:0;color:#716c63;font-size:.61rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;}.contact-v2__hero-grid{display:grid;grid-template-columns:minmax(14rem,.5fr) minmax(0,1fr);gap:clamp(2rem,6vw,7rem);align-items:start;margin-top:1.5rem;}.contact-v2__hero h1{margin:0;max-width:7ch;font-family:var(--font-sans);font-size:clamp(3.1rem,5.5vw,5.7rem);font-weight:680;line-height:.9;letter-spacing:-.06em;}.contact-v2__hero-grid>div{width:min(100%,45rem);}.contact-v2__lead{margin:0;max-width:21ch;font-size:clamp(1.55rem,2.7vw,2.55rem);font-weight:620;line-height:1.08;letter-spacing:-.038em;}.contact-v2__hero-grid>div>p:last-child{margin:1.2rem 0 0;max-width:41rem;color:#59554e;font-size:.96rem;line-height:1.68;}.contact-v2__details{padding-block:clamp(3.6rem,5.5vw,5.3rem);}.contact-v2__details-head{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:1rem 2rem;align-items:end;margin-bottom:1.4rem;}.contact-v2__details-head h2{margin:0;max-width:15ch;font-family:var(--font-sans);font-size:clamp(2rem,3.4vw,3.4rem);line-height:.96;letter-spacing:-.05em;}.contact-v2__detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgb(9 9 8 / 18%);border-left:1px solid rgb(9 9 8 / 18%);}.contact-v2__detail-grid>a{position:relative;min-height:10rem;display:grid;align-content:space-between;gap:1rem;padding:1rem;color:inherit;border-right:1px solid rgb(9 9 8 / 18%);border-bottom:1px solid rgb(9 9 8 / 18%);text-decoration:none;transition:background .22s ease,color .22s ease;}.contact-v2__detail-grid>a:hover,.contact-v2__detail-grid>a:focus-visible{color:#fff;background:#11110f;}.contact-v2__detail-grid span{color:#716c63;font-size:.59rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;}.contact-v2__detail-grid>a:hover span,.contact-v2__detail-grid>a:focus-visible span{color:rgb(255 255 255 / 60%)}.contact-v2__detail-grid strong{max-width:20rem;font-size:clamp(1.05rem,1.55vw,1.35rem);font-weight:600;line-height:1.25;}.contact-v2__detail-grid i{position:absolute;right:1rem;top:1rem;font-style:normal;}.contact-v2__main{display:grid;grid-template-columns:minmax(12rem,.33fr) minmax(0,1fr) minmax(13rem,.34fr);gap:clamp(1.5rem,4vw,4rem);align-items:start;padding-block:clamp(4rem,7vw,6.5rem);}.contact-v2__form-intro{position:sticky;top:7rem;display:grid;gap:.8rem;}.contact-v2__form-intro h2{margin:0;max-width:12ch;font-family:var(--font-sans);font-size:clamp(2rem,3.5vw,3.5rem);line-height:.96;letter-spacing:-.052em;}.contact-v2__form-intro>p:last-child{margin:0;max-width:22rem;color:#625e56;font-size:.82rem;line-height:1.58;}.contact-v2__form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .8rem;padding:1.1rem;border:1px solid rgb(9 9 8 / 18%);border-radius:12px;background:#eeeae2;}.contact-v2__field{min-width:0;display:grid;gap:.42rem;}.contact-v2__field--full{grid-column:1/-1}.contact-v2__field label{color:#5f5b54;font-size:.62rem;font-weight:800;letter-spacing:.055em;text-transform:uppercase;}.contact-v2__field label span{color:#8b867d;font-weight:600;text-transform:none;}.contact-v2__field input,.contact-v2__field select,.contact-v2__field textarea{width:100%;min-width:0;border:1px solid rgb(9 9 8 / 20%);border-radius:8px;outline:0;color:#11110f;background:#faf8f3;font:inherit;font-size:.88rem;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;}.contact-v2__field input,.contact-v2__field select{min-height:3rem;padding:0 .85rem;}.contact-v2__field textarea{min-height:11rem;resize:vertical;padding:.8rem .85rem;line-height:1.55;}.contact-v2__field input:focus,.contact-v2__field select:focus,.contact-v2__field textarea:focus{border-color:#11110f;background:#fff;box-shadow:0 0 0 3px rgb(240 207 34 / 14%);}.contact-v2__field textarea::placeholder{color:#969087}.contact-v2__honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}.contact-v2__consent{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:.65rem;align-items:start;color:#625e56;font-size:.72rem;line-height:1.48;}.contact-v2__consent input{width:1rem;height:1rem;margin-top:.13rem;accent-color:#11110f;}.contact-v2__consent a{color:inherit;font-weight:760;text-underline-offset:.15em;}.contact-v2__submit-row{grid-column:1/-1;display:flex;align-items:center;gap:1rem;padding-top:.3rem;}.contact-v2__submit-row .pcf-button{min-width:12rem;border:1px solid #11110f;}.contact-v2__submit-row .pcf-button:disabled{opacity:.55;cursor:wait;}.contact-v2__status{margin:0;min-height:1.3em;color:#625e56;font-size:.72rem;line-height:1.45;}.contact-v2__status[data-state='success']{color:#365d3c}.contact-v2__status[data-state='error']{color:#8a2f2b}.contact-v2__aside{display:grid;gap:1.4rem;padding-top:.15rem;}.contact-v2__aside>div{padding-top:.8rem;border-top:1px solid rgb(9 9 8 / 18%);}.contact-v2__aside span{display:block;margin-bottom:.55rem;color:#716c63;font-size:.59rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;}.contact-v2__aside p{margin:0;color:#5e5952;font-size:.78rem;line-height:1.58;}.contact-v2__aside nav{display:grid;}.contact-v2__aside nav a{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;color:inherit;border-bottom:1px solid rgb(9 9 8 / 12%);font-size:.77rem;font-weight:700;text-decoration:none;}@media(max-width:68rem){.contact-v2__main{grid-template-columns:minmax(11rem,.35fr) minmax(0,1fr);}.contact-v2__aside{grid-column:2;}}@media(max-width:54rem){.contact-v2__hero-grid,.contact-v2__details-head,.contact-v2__main{grid-template-columns:1fr;}.contact-v2__form-intro{position:static;}.contact-v2__aside{grid-column:auto;grid-template-columns:repeat(2,minmax(0,1fr));}}@media(max-width:44rem){.contact-v2__hero{padding-top:2.8rem;padding-bottom:3rem;}.contact-v2__hero-grid{gap:1.15rem;margin-top:1rem;}.contact-v2__hero h1{max-width:9ch;font-size:clamp(2.55rem,11vw,3.35rem);line-height:.93;}.contact-v2__lead{max-width:22ch;font-size:clamp(1.3rem,6vw,1.7rem);}.contact-v2__hero-grid>div>p:last-child{font-size:.9rem;line-height:1.6;}.contact-v2__details{padding-block:2.8rem;}.contact-v2__details-head{gap:.55rem;margin-bottom:1rem;}.contact-v2__details-head h2{font-size:clamp(1.85rem,8.5vw,2.45rem);}.contact-v2__detail-grid{grid-template-columns:1fr;}.contact-v2__detail-grid>a{min-height:6.5rem;}.contact-v2__main{gap:1.5rem;padding-block:3rem;}.contact-v2__form-intro{gap:.6rem;}.contact-v2__form-intro h2{max-width:15ch;font-size:clamp(1.9rem,8.5vw,2.45rem);}.contact-v2__form{grid-template-columns:1fr;gap:.85rem;padding:.85rem;border-radius:10px;}.contact-v2__field,.contact-v2__field--full{grid-column:1;}.contact-v2__field input,.contact-v2__field select{min-height:3.2rem;}.contact-v2__field textarea{min-height:10rem;}.contact-v2__consent,.contact-v2__submit-row{grid-column:1;}.contact-v2__submit-row{display:grid;gap:.65rem;}.contact-v2__submit-row .pcf-button{width:100%;}.contact-v2__aside{grid-template-columns:1fr;gap:1rem;}}</style>

@@ -4,8 +4,10 @@ import SectionHeader from '../ui/SectionHeader.astro';
 import ProjectCard from './ProjectCard.astro';
 import JournalCard from './JournalCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
+import AboutPage from './AboutPage.astro';
+import ContactPage from './ContactPage.astro';
 import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
-import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, personImage, personSlug, projectImage, projects} from '../../lib/content';
+import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, projectImage, projects} from '../../lib/content';
 import {programFocusAreas} from '../../content/program-focus';
 import {cultureThemes} from '../../content/themes';
 import type {ShellPageDefinition} from '../../content/shell-pages';
@@ -131,8 +133,6 @@ const initiativeThemeLink: Record<string,string> = {
   'initiative-artist-rights': 'rights-access',
   'initiative-sound-heritage-library': 'heritage-memory'
 };
-const president = people.find((person) => person.role.toLowerCase().includes('president')) || people[0];
-const directors = people.filter((person) => person.id !== president?.id);
 ---
 <ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
   {!['about','contact'].includes(page.slug) && (
@@ -141,139 +141,7 @@ const directors = people.filter((person) => person.id !== president?.id);
     </section>
   )}
 
-  {page.slug === 'about' && (
-    <>
-      <section class="about-v5 ruled-section">
-        <header class="about-v5__hero">
-          <p class="about-v5__eyebrow">KULT360 Foundation · Albania</p>
-          <div class="about-v5__hero-grid">
-            <h1>{language === 'sq' ? 'Rreth KULT360' : 'About KULT360'}</h1>
-            <div>
-              <p class="about-v5__lead">{language === 'sq' ? 'Kultura si urë. Artistët në qendër.' : 'Culture as a bridge. Artists at the centre.'}</p>
-              <p>{language === 'sq'
-                ? 'KULT360 është një fondacion i pavarur që lidh kulturën me zhvillimin shoqëror. Ne ndërtojmë ura përmes artit dhe trashëgimisë, duke lidhur talentin vendas, diasporën, komunitetet dhe partnerët ndërkombëtarë.'
-                : 'KULT360 is an independent foundation connecting culture with social development. We build bridges through art and heritage, bringing together local talent, the diaspora, communities and international partners.'}</p>
-            </div>
-          </div>
-        </header>
-      </section>
-
-      <section class="about-v5__leadership ruled-section">
-        <div class="about-v5__section-head">
-          <div>
-            <p>{language === 'sq' ? 'Udhëheqja' : 'Leadership'}</p>
-            <h2>{language === 'sq' ? 'Njerëzit që drejtojnë KULT360.' : 'The people leading KULT360.'}</h2>
-          </div>
-          <a href={localizedPath('/people/', language)}>{language === 'sq' ? 'Shiko të gjithë ekipin' : 'View all people'} ↗</a>
-        </div>
-
-        {president && (
-          <a class="about-v5__president" href={localizedPath(`/people/${personSlug(president)}/`, language)}>
-            <div class="about-v5__president-media">
-              {personImage(president)
-                ? <img src={personImage(president)} alt={president.name} loading="lazy" decoding="async" />
-                : <span>{president.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
-            </div>
-            <div class="about-v5__president-copy">
-              <p>{language === 'sq' ? 'Presidenca / Bordi' : 'President / Board'}</p>
-              <h3>{president.name}</h3>
-              <span>{president.role}</span>
-              <i aria-hidden="true">↗</i>
-            </div>
-          </a>
-        )}
-
-        <div class="about-v5__directors-head">
-          <p>{language === 'sq' ? 'Drejtuesit' : 'Directors'}</p>
-          <span>{language === 'sq' ? 'Drejtimi ekzekutiv dhe programor' : 'Executive and programme leadership'}</span>
-        </div>
-
-        <div class="about-v5__director-grid">
-          {directors.map((person) => (
-            <a href={localizedPath(`/people/${personSlug(person)}/`, language)}>
-              <div class="about-v5__director-media">
-                {personImage(person)
-                  ? <img src={personImage(person)} alt={person.name} loading="lazy" decoding="async" />
-                  : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
-              </div>
-              <div class="about-v5__director-copy">
-                <strong>{person.name}</strong>
-                <span>{person.role}</span>
-                <i aria-hidden="true">↗</i>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section class="about-v5__vision ruled-section">
-        <p class="about-v5__label">{language === 'sq' ? 'Vizioni ynë' : 'Our vision'}</p>
-        <div>
-          <blockquote>{language === 'sq'
-            ? '“Një peizazh kulturor ku artistët mund të krijojnë me dinjitet, trashëgimia mbetet e gjallë dhe komunitetet marrin pjesë në formësimin e së ardhmes.”'
-            : '“A cultural landscape where artists can work with dignity, heritage stays alive and communities take part in shaping the future.”'}</blockquote>
-          <p>{language === 'sq'
-            ? 'Vizioni ynë është kulturë e gjallë: krijimtari që lëviz mes vendeve dhe brezave, ruan kujtesën, hap dialog dhe krijon lidhje të reja.'
-            : 'Our vision is living culture: creative work that moves across places and generations, carries memory, opens dialogue and creates new connections.'}</p>
-        </div>
-      </section>
-
-      <section class="about-v5__pillars ruled-section">
-        <div class="about-v5__section-head">
-          <div>
-            <p>{language === 'sq' ? 'Shtyllat strategjike' : 'Strategic pillars'}</p>
-            <h2>{language === 'sq' ? 'Katër mënyra si e kthejmë misionin në veprim.' : 'Four ways we turn the mission into action.'}</h2>
-          </div>
-        </div>
-        <div class="about-v5__pillar-grid">
-          {[
-            [language === 'sq' ? 'Mbështetja e artistëve' : 'Supporting Artists', language === 'sq' ? 'Hapësira fizike dhe digjitale për të promovuar dhe shitur drejtpërdrejt punën krijuese.' : 'Physical and digital spaces that promote and bring creative work directly to the public.'],
-            [language === 'sq' ? 'Ndryshim shoqëror' : 'Social Change', language === 'sq' ? 'Ndikim në politika përmes aktivizmit kulturor dhe mjedisor.' : 'Driving policy through dedicated cultural and environmental activism.'],
-            [language === 'sq' ? 'Hapësira publike' : 'Public Spaces', language === 'sq' ? 'Shndërrimi i vendeve statike në platforma të gjalla për shprehje artistike dhe advokim.' : 'Turning static locations into vibrant platforms for artistic expression and advocacy.'],
-            [language === 'sq' ? 'Fuqi ligjore' : 'Legal Power', language === 'sq' ? 'Edukimi mbi të drejtën e autorit dhe pronësinë intelektuale.' : 'Education focused on copyright protection and intellectual property rights.']
-          ].map((item, index) => (
-            <article>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{item[0]}</h3>
-              <p>{item[1]}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="about-v5__connect">
-        <div class="about-v5__connect-intro">
-          <p>{language === 'sq' ? 'Lidhu me KULT360' : 'Connect with KULT360'}</p>
-          <h2>{language === 'sq' ? 'Bashkëpunim, partneritet apo një bisedë e parë.' : 'Collaborate, partner, or start a conversation.'}</h2>
-          <div class="about-v5__connect-actions">
-            <a class="pcf-button pcf-button--light" href={localizedPath('/get-involved/', language)}>
-              <span>{language === 'sq' ? 'Përfshihu' : 'Get involved'}</span><i aria-hidden="true">↗</i>
-            </a>
-            <a class="pcf-button pcf-button--ghost" href={localizedPath('/contact/', language)}>
-              <span>{language === 'sq' ? 'Faqja e kontaktit' : 'Contact page'}</span><i aria-hidden="true">→</i>
-            </a>
-          </div>
-        </div>
-
-        <div class="about-v5__contact-grid">
-          <a href={`mailto:${siteConfig.organization.email}`}>
-            <span>{language === 'sq' ? 'Email' : 'Email'}</span>
-            <strong>{siteConfig.organization.email}</strong>
-            <i aria-hidden="true">↗</i>
-          </a>
-          <a href={`tel:${siteConfig.organization.phone.replace(/\s+/g,'')}`}>
-            <span>{language === 'sq' ? 'Telefon' : 'Phone'}</span>
-            <strong>{siteConfig.organization.phone}</strong>
-            <i aria-hidden="true">↗</i>
-          </a>
-          <div>
-            <span>{language === 'sq' ? 'Zyra' : 'Office'}</span>
-            <strong>{siteConfig.organization.address}</strong>
-          </div>
-        </div>
-      </section>
-    </>
-  )}
+  {page.slug === 'about' && <AboutPage {language} />}
 
   {page.slug === 'programs' && (
     <>
@@ -493,135 +361,7 @@ const directors = people.filter((person) => person.id !== president?.id);
     </section>
   )}
 
-  {page.slug === 'contact' && (
-    <>
-      <section class="contact-v2__hero ruled-section">
-        <p class="contact-v2__eyebrow">KULT360 · {language === 'sq' ? 'Kontakt' : 'Contact'}</p>
-        <div class="contact-v2__hero-grid">
-          <h1>{language === 'sq' ? 'Niseni me një bisedë.' : 'Start with a conversation.'}</h1>
-          <div>
-            <p class="contact-v2__lead">{language === 'sq'
-              ? 'Na shkruani për bashkëpunime, projekte, partneritete, media ose pyetje të përgjithshme.'
-              : 'Write to us about collaborations, projects, partnerships, media or general enquiries.'}</p>
-            <p>{language === 'sq'
-              ? 'Zgjidhni arsyen e kontaktit dhe na jepni aq kontekst sa duhet. Mesazhi do t’i shkojë ekipit të KULT360.'
-              : 'Choose what you are contacting us about and give us the context we need. Your message will go to the KULT360 team.'}</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-v2__details ruled-section">
-        <div class="contact-v2__details-head">
-          <p>{language === 'sq' ? 'Na gjeni' : 'Reach us'}</p>
-          <h2>{language === 'sq' ? 'Të dhënat publike të kontaktit.' : 'Public contact details.'}</h2>
-        </div>
-
-        <div class="contact-v2__detail-grid">
-          <a href={`mailto:${siteConfig.organization.email}`}>
-            <span>{language === 'sq' ? 'Shkruani' : 'Write'}</span>
-            <strong>{siteConfig.organization.email}</strong>
-            <i aria-hidden="true">↗</i>
-          </a>
-          <a href={`tel:${siteConfig.organization.phone.replace(/\s+/g,'')}`}>
-            <span>{language === 'sq' ? 'Telefononi' : 'Call'}</span>
-            <strong>{siteConfig.organization.phone}</strong>
-            <i aria-hidden="true">↗</i>
-          </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Rr.%20Kavajes%2C%20Tirana%2C%20Albania" target="_blank" rel="noreferrer">
-            <span>{language === 'sq' ? 'Vizitoni' : 'Visit'}</span>
-            <strong>{siteConfig.organization.address}</strong>
-            <i aria-hidden="true">↗</i>
-          </a>
-        </div>
-      </section>
-
-      <section class="contact-v2__main ruled-section">
-        <div class="contact-v2__form-intro">
-          <p>{language === 'sq' ? 'Dërgoni një mesazh' : 'Send a message'}</p>
-          <h2>{language === 'sq' ? 'Na tregoni çfarë keni në mendje.' : 'Tell us what you have in mind.'}</h2>
-          <p>{language === 'sq'
-            ? 'Përdorni formularin për pyetje të përgjithshme, propozime projektesh, partneritete, media ose mundësi bashkëpunimi.'
-            : 'Use the form for general questions, project proposals, partnerships, media enquiries or opportunities to collaborate.'}</p>
-        </div>
-
-        <form class="contact-v2__form" data-contact-form data-language={language} novalidate>
-          <div class="contact-v2__field contact-v2__field--full">
-            <label for={`contact-inquiry-${language}`}>{language === 'sq' ? 'Arsyeja e kontaktit' : 'What are you contacting us about?'}</label>
-            <select id={`contact-inquiry-${language}`} name="inquiry" required>
-              <option value="">{language === 'sq' ? 'Zgjidhni një opsion' : 'Choose one'}</option>
-              <option value="General enquiry">{language === 'sq' ? 'Pyetje e përgjithshme' : 'General enquiry'}</option>
-              <option value="Partnership / collaboration">{language === 'sq' ? 'Partneritet / bashkëpunim' : 'Partnership / collaboration'}</option>
-              <option value="Artist / project proposal">{language === 'sq' ? 'Artist / propozim projekti' : 'Artist / project proposal'}</option>
-              <option value="Press / media">{language === 'sq' ? 'Shtyp / media' : 'Press / media'}</option>
-              <option value="Support / funding">{language === 'sq' ? 'Mbështetje / financim' : 'Support / funding'}</option>
-              <option value="Other">{language === 'sq' ? 'Tjetër' : 'Other'}</option>
-            </select>
-          </div>
-
-          <div class="contact-v2__field">
-            <label for={`contact-name-${language}`}>{language === 'sq' ? 'Emri' : 'Name'}</label>
-            <input id={`contact-name-${language}`} name="name" type="text" autocomplete="name" required maxlength="120" />
-          </div>
-
-          <div class="contact-v2__field">
-            <label for={`contact-email-${language}`}>Email</label>
-            <input id={`contact-email-${language}`} name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" />
-          </div>
-
-          <div class="contact-v2__field">
-            <label for={`contact-organisation-${language}`}>{language === 'sq' ? 'Organizata / institucioni' : 'Organisation / institution'} <span>{language === 'sq' ? 'opsionale' : 'optional'}</span></label>
-            <input id={`contact-organisation-${language}`} name="organisation" type="text" autocomplete="organization" maxlength="160" />
-          </div>
-
-          <div class="contact-v2__field">
-            <label for={`contact-phone-${language}`}>{language === 'sq' ? 'Telefon' : 'Phone'} <span>{language === 'sq' ? 'opsional' : 'optional'}</span></label>
-            <input id={`contact-phone-${language}`} name="phone" type="tel" autocomplete="tel" maxlength="60" />
-          </div>
-
-          <div class="contact-v2__field contact-v2__field--full">
-            <label for={`contact-message-${language}`}>{language === 'sq' ? 'Mesazhi' : 'Message'}</label>
-            <textarea id={`contact-message-${language}`} name="message" rows="7" required minlength="10" maxlength="6000" placeholder={language === 'sq' ? 'Na jepni pak kontekst për idenë, projektin ose pyetjen tuaj…' : 'Give us a little context about your idea, project or question…'}></textarea>
-          </div>
-
-          <div class="contact-v2__honeypot" aria-hidden="true">
-            <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-          </div>
-
-          <label class="contact-v2__consent">
-            <input name="consent" type="checkbox" required />
-            <span>{language === 'sq'
-              ? <>E kuptoj që KULT360 do t’i përdorë këto të dhëna për t’iu përgjigjur mesazhit tim. Shihni <a href={localizedPath('/privacy/', language)}>Privatësinë</a>.</>
-              : <>I understand KULT360 will use these details to respond to my message. See our <a href={localizedPath('/privacy/', language)}>Privacy notice</a>.</>}</span>
-          </label>
-
-          <div class="contact-v2__submit-row">
-            <button class="pcf-button pcf-button--dark" type="submit">
-              <span>{language === 'sq' ? 'Dërgo mesazhin' : 'Send message'}</span>
-              <i aria-hidden="true">↗</i>
-            </button>
-            <p class="contact-v2__status" data-contact-status role="status" aria-live="polite"></p>
-          </div>
-        </form>
-
-        <aside class="contact-v2__aside">
-          <div>
-            <span>{language === 'sq' ? 'Për përgjigje më të qartë' : 'For a clearer reply'}</span>
-            <p>{language === 'sq'
-              ? 'Përfshini emrin e projektit ose organizatës, afatin nëse ka, vendin dhe çfarë lloj bashkëpunimi po kërkoni.'
-              : 'Include the project or organisation name, any relevant deadline, location and the kind of collaboration you are looking for.'}</p>
-          </div>
-          <div>
-            <span>{language === 'sq' ? 'Rrjete sociale' : 'Social'}</span>
-            <nav aria-label={language === 'sq' ? 'Rrjetet sociale' : 'Social links'}>
-              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer">Instagram ↗</a>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer">Facebook ↗</a>
-              <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer">YouTube ↗</a>
-            </nav>
-          </div>
-        </aside>
-      </section>
-    </>
-  )}
+  {page.slug === 'contact' && <ContactPage {language} />}
 
   {!['contact','media','privacy','cookies','terms','accessibility'].includes(page.slug) && (
     <section class="partner-strip partner-strip--logos ruled-section">
@@ -633,83 +373,5 @@ const directors = people.filter((person) => person.id !== president?.id);
     </section>
   )}
 
-<script>
-  const contactForm = document.querySelector('[data-contact-form]');
-  if (contactForm instanceof HTMLFormElement) {
-    const status = contactForm.querySelector('[data-contact-status]');
-    const submit = contactForm.querySelector('button[type="submit"]');
-    const language = contactForm.dataset.language === 'sq' ? 'sq' : 'en';
-    const startedAt = Date.now();
 
-    const setStatus = (message, state = '') => {
-      if (!(status instanceof HTMLElement)) return;
-      status.textContent = message;
-      status.dataset.state = state;
-    };
-
-    const mailFallback = (data) => {
-      const subject = `KULT360 — ${data.inquiry || 'Website enquiry'}`;
-      const body = [
-        `Name: ${data.name || ''}`,
-        `Email: ${data.email || ''}`,
-        data.organisation ? `Organisation: ${data.organisation}` : '',
-        data.phone ? `Phone: ${data.phone}` : '',
-        `Enquiry: ${data.inquiry || ''}`,
-        '',
-        data.message || ''
-      ].filter(Boolean).join('\n');
-      window.location.href = `mailto:office@kult360.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    };
-
-    contactForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      if (!contactForm.reportValidity()) return;
-
-      const formData = new FormData(contactForm);
-      const payload = {
-        name: String(formData.get('name') || ''),
-        email: String(formData.get('email') || ''),
-        organisation: String(formData.get('organisation') || ''),
-        phone: String(formData.get('phone') || ''),
-        inquiry: String(formData.get('inquiry') || ''),
-        message: String(formData.get('message') || ''),
-        website: String(formData.get('website') || ''),
-        language,
-        page: window.location.href,
-        startedAt
-      };
-
-      if (submit instanceof HTMLButtonElement) submit.disabled = true;
-      setStatus(language === 'sq' ? 'Po dërgohet…' : 'Sending…', 'pending');
-
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          setStatus(language === 'sq' ? 'Mesazhi u dërgua. Faleminderit.' : 'Message sent. Thank you.', 'success');
-          return;
-        }
-
-        if ([404, 405, 503].includes(response.status)) {
-          setStatus(language === 'sq' ? 'Po hapim email-in tuaj si mënyrë alternative…' : 'Opening your email app as a fallback…', 'fallback');
-          window.setTimeout(() => mailFallback(payload), 350);
-          return;
-        }
-
-        const result = await response.json().catch(() => null);
-        setStatus(result?.error || (language === 'sq' ? 'Kontrolloni fushat dhe provoni përsëri.' : 'Please check the fields and try again.'), 'error');
-      } catch {
-        setStatus(language === 'sq' ? 'Po hapim email-in tuaj si mënyrë alternative…' : 'Opening your email app as a fallback…', 'fallback');
-        window.setTimeout(() => mailFallback(payload), 350);
-      } finally {
-        if (submit instanceof HTMLButtonElement) submit.disabled = false;
-      }
-    });
-  }
-</script>
 </ListingLayout>
