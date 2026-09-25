@@ -60,20 +60,30 @@ const path = localizedPath(`/journal/${journalSlug(record)}/`, language);
     </div>
 
     {record.source_url && (
-      <div class="container-wide journal-detail-v2__source">
-        <p>{language === 'sq' ? 'Ky artikull është ruajtur nga arkivi publik i KULT360.' : 'This article is preserved from KULT360’s public archive.'}</p>
-        <a href={record.source_url} rel="noreferrer">{language === 'sq' ? 'Publikimi origjinal' : 'Original publication'} ↗</a>
-      </div>
+      <section class="journal-detail-v2__source-band" aria-label={language === 'sq' ? 'Burimi i artikullit' : 'Article source'}>
+        <div class="container-wide journal-detail-v2__source">
+          <div>
+            <span class="journal-detail-v2__source-index" aria-hidden="true">ARCHIVE</span>
+            <p>{language === 'sq' ? 'Ky artikull është ruajtur nga arkivi publik i KULT360.' : 'This article is preserved from KULT360’s public archive.'}</p>
+          </div>
+          <a href={record.source_url} rel="noreferrer">{language === 'sq' ? 'Publikimi origjinal' : 'Original publication'} ↗</a>
+        </div>
+      </section>
     )}
 
     {related.length > 0 && (
-      <section class="container-wide journal-detail-v2__related">
-        <div class="journal-detail-v2__section-head">
-          <div><p>{language === 'sq' ? 'Lexo më tej' : 'Read next'}</p><h2>{language === 'sq' ? 'Më shumë nga Journal.' : 'More from the Journal.'}</h2></div>
-          <a href={localizedPath('/journal/', language)}>{language === 'sq' ? 'Të gjitha historitë' : 'All stories'} ↗</a>
-        </div>
-        <div class="journal-detail-v2__related-grid">
-          {related.map((item) => <JournalCard record={item} {language} />)}
+      <section class="journal-detail-v2__related-band" aria-labelledby="journal-related-title">
+        <div class="container-wide journal-detail-v2__related">
+          <div class="journal-detail-v2__section-head">
+            <div>
+              <p>{language === 'sq' ? 'Lexo më tej' : 'Read next'}</p>
+              <h2 id="journal-related-title">{language === 'sq' ? 'Më shumë nga Journal.' : 'More from the Journal.'}</h2>
+            </div>
+            <a href={localizedPath('/journal/', language)}>{language === 'sq' ? 'Të gjitha historitë' : 'All stories'} ↗</a>
+          </div>
+          <div class="journal-detail-v2__related-grid">
+            {related.map((item) => <JournalCard record={item} {language} />)}
+          </div>
         </div>
       </section>
     )}
