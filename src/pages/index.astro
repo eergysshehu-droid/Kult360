@@ -368,19 +368,51 @@ const heroWordStep = 360 / heroWords.length;
 
   const teamRail = document.querySelector('[data-team-rail]');
   if (teamRail instanceof HTMLElement) {
-    const resetTeamRail = () => { teamRail.scrollLeft = 0; };
+    let teamRailTouched = false;
+    let teamRailEntryLocked = false;
+
+    const resetTeamRail = () => {
+      teamRail.scrollTo({left: 0, top: 0, behavior: 'auto'});
+    };
+
     const resetSequence = () => {
+      if (teamRailTouched) return;
       resetTeamRail();
       requestAnimationFrame(() => {
         resetTeamRail();
         requestAnimationFrame(resetTeamRail);
       });
-      window.setTimeout(resetTeamRail, 120);
-      window.setTimeout(resetTeamRail, 420);
+      window.setTimeout(resetTeamRail, 80);
+      window.setTimeout(resetTeamRail, 220);
+      window.setTimeout(resetTeamRail, 650);
     };
+
+    const markTeamRailTouched = () => {
+      teamRailTouched = true;
+    };
+
+    teamRail.addEventListener('pointerdown', markTeamRailTouched, {passive: true});
+    teamRail.addEventListener('touchstart', markTeamRailTouched, {passive: true});
+    teamRail.addEventListener('wheel', markTeamRailTouched, {passive: true});
+
     resetSequence();
     window.addEventListener('load', resetSequence, {once: true});
-    window.addEventListener('pageshow', resetSequence, {passive: true});
+    window.addEventListener('pageshow', () => {
+      teamRailTouched = false;
+      teamRailEntryLocked = false;
+      resetSequence();
+    }, {passive: true});
+
+    if ('IntersectionObserver' in window) {
+      const teamObserver = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (!entry?.isIntersecting || teamRailEntryLocked || teamRailTouched) return;
+        teamRailEntryLocked = true;
+        resetSequence();
+        window.setTimeout(resetSequence, 350);
+      }, {threshold: 0.18});
+      teamObserver.observe(teamRail);
+    }
   }
 </script>
 
