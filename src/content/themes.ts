@@ -5,6 +5,7 @@ type LocalizedText = Record<Language, string>;
 export interface ThemeLens {
   title: LocalizedText;
   body: LocalizedText;
+  article?: LocalizedText[];
 }
 
 export interface CultureTheme {
@@ -88,9 +89,69 @@ export const cultureThemes: CultureTheme[] = [
       sq: 'Punëtoritë, bisedat, takimet dhe shkëmbimi ndërbrezor e kthejnë veprimtarinë kulturore në një mjedis të përbashkët mësimi. Pjesëmarrja trajtohet si kontribut, jo si prani pasive.'
     },
     lenses: [
-      {title:{en:'Make',sq:'Krijo'},body:{en:'Hands-on processes make ideas tangible and memorable.',sq:'Proceset praktike i bëjnë idetë të prekshme dhe të paharrueshme.'}},
-      {title:{en:'Exchange',sq:'Shkëmbe'},body:{en:'Artists, educators and communities contribute different forms of knowledge.',sq:'Artistët, edukatorët dhe komunitetet sjellin forma të ndryshme dijeje.'}},
-      {title:{en:'Include',sq:'Përfshi'},body:{en:'Welcoming formats create more entry points into cultural life.',sq:'Formatet mikpritëse krijojnë më shumë pika hyrjeje në jetën kulturore.'}}
+      {
+        title:{en:'Learn by making',sq:'Mëso duke krijuar'},
+        body:{
+          en:'Hands-on artistic processes turn abstract questions into material experience, giving people room to test, revise and understand through practice.',
+          sq:'Proceset artistike praktike i kthejnë pyetjet abstrakte në përvojë konkrete, duke krijuar hapësirë për të provuar, rishikuar dhe kuptuar përmes praktikës.'
+        },
+        article:[
+          {
+            en:'In cultural learning, making is not simply the final activity after an idea has been explained. It is part of how the idea is understood. Working with image, sound, movement, text, objects or digital tools lets participants test a question in real time, notice what changes when a material resists, and discover forms of knowledge that rarely appear in a lecture.',
+            sq:'Në mësimin kulturor, krijimi nuk është thjesht aktiviteti i fundit pasi një ide është shpjeguar. Ai është pjesë e mënyrës si ideja kuptohet. Puna me imazh, tingull, lëvizje, tekst, objekte ose mjete digjitale u lejon pjesëmarrësve ta provojnë një pyetje në kohë reale, të vërejnë çfarë ndryshon kur materiali kundërshton dhe të zbulojnë forma dijeje që rrallë shfaqen në një leksion.'
+          },
+          {
+            en:'This approach values process as much as outcome. Sketches, rehearsals, prototypes and unsuccessful attempts become evidence of thinking rather than mistakes to hide. Artists and educators can guide the process without prescribing one correct result, leaving room for curiosity, experimentation and different ways of learning.',
+            sq:'Kjo qasje i jep procesit po aq vlerë sa rezultatit. Skicat, provat, prototipet dhe përpjekjet që nuk funksionojnë bëhen dëshmi e të menduarit dhe jo gabime për t’u fshehur. Artistët dhe edukatorët mund ta udhëheqin procesin pa diktuar një rezultat të vetëm të saktë, duke lënë hapësirë për kuriozitet, eksperimentim dhe mënyra të ndryshme të të nxënit.'
+          },
+          {
+            en:'For KULT360, learning by making means designing workshops and cultural encounters where participants leave with more than information. They gain a method: observe, try, discuss, adjust and make again. That method can travel into artistic practice, education and everyday civic life.',
+            sq:'Për KULT360, të mësuarit përmes krijimit do të thotë të projektojmë punëtori dhe takime kulturore ku pjesëmarrësit largohen me më shumë se informacion. Ata fitojnë një metodë: vëzhgo, provo, diskuto, përshtat dhe krijo sërish. Kjo metodë mund të kalojë në praktikën artistike, arsim dhe jetën e përditshme qytetare.'
+          }
+        ]
+      },
+      {
+        title:{en:'Exchange knowledge',sq:'Shkëmbe dije'},
+        body:{
+          en:'Artists, educators and communities meet as peers, bringing distinct experience, methods and local knowledge into the same conversation.',
+          sq:'Artistët, edukatorët dhe komunitetet takohen si të barabartë, duke sjellë në të njëjtën bisedë përvoja, metoda dhe dije lokale të ndryshme.'
+        },
+        article:[
+          {
+            en:'Cultural knowledge does not live in one institution or profession. It can be found in studios and classrooms, but also in archives, neighbourhoods, family memory, craft practices and lived experience. Meaningful exchange begins when these sources are treated as contributions rather than placed in a fixed hierarchy.',
+            sq:'Dija kulturore nuk jeton vetëm në një institucion apo profesion. Ajo gjendet në studio dhe klasa, por edhe në arkiva, lagje, kujtesë familjare, praktika zejtare dhe përvojë të jetuar. Shkëmbimi me kuptim fillon kur këto burime trajtohen si kontribute dhe jo vendosen në një hierarki të pandryshueshme.'
+          },
+          {
+            en:'A strong exchange format gives people enough structure to listen, compare and question without turning the encounter into a one-way presentation. Artists can share process, educators can frame context, and communities can add knowledge that changes the reading of a work or a place. Documentation and clear attribution help that knowledge travel without losing where it came from.',
+            sq:'Një format i mirë shkëmbimi u jep njerëzve strukturë të mjaftueshme për të dëgjuar, krahasuar dhe pyetur, pa e kthyer takimin në një prezantim njëkahësh. Artistët mund të ndajnë procesin, edukatorët mund të vendosin kontekstin dhe komunitetet mund të sjellin dije që ndryshon mënyrën si lexohet një vepër ose një vend. Dokumentimi dhe atribuimi i qartë ndihmojnë që kjo dije të qarkullojë pa humbur origjinën e saj.'
+          },
+          {
+            en:'For KULT360, exchange is reciprocal. Invited experts are not only speakers, and local participants are not only an audience. Each encounter should leave something usable behind: a method, a note, a recording, a new relationship, a sharper question or the beginning of a collaboration. In this way, knowledge exchange becomes cultural infrastructure rather than a single event.',
+            sq:'Për KULT360, shkëmbimi është i ndërsjellë. Ekspertët e ftuar nuk janë vetëm folës dhe pjesëmarrësit lokalë nuk janë vetëm publik. Çdo takim duhet të lërë pas diçka të përdorshme: një metodë, një shënim, një regjistrim, një marrëdhënie të re, një pyetje më të qartë ose fillimin e një bashkëpunimi. Në këtë mënyrë, shkëmbimi i dijes bëhet infrastrukturë kulturore dhe jo vetëm një ngjarje e vetme.'
+          }
+        ]
+      },
+      {
+        title:{en:'Open participation',sq:'Hap pjesëmarrjen'},
+        body:{
+          en:'Welcoming formats create several ways to enter cultural life, contribute and remain part of the process.',
+          sq:'Formatet mikpritëse krijojnë disa mënyra për të hyrë në jetën kulturore, për të kontribuar dhe për të mbetur pjesë e procesit.'
+        },
+        article:[
+          {
+            en:'Participation is not created by simply opening the door. It is designed through practical choices: where an activity happens, when it takes place, how much it costs, what language is used and whether people understand what is expected of them. These details can determine who feels invited before the artistic programme even begins.',
+            sq:'Pjesëmarrja nuk krijohet vetëm duke hapur derën. Ajo projektohet përmes zgjedhjeve praktike: ku zhvillohet një aktivitet, kur ndodh, sa kushton, çfarë gjuhe përdoret dhe nëse njerëzit e kuptojnë çfarë pritet prej tyre. Këto hollësi mund të përcaktojnë se kush ndihet i ftuar përpara se programi artistik të fillojë.'
+          },
+          {
+            en:'Inclusive cultural formats offer more than one way to take part. Someone may want to make, another to speak, another to observe first, respond privately or return later. Giving participants different entry points can widen access without forcing everyone into the same behaviour or level of visibility.',
+            sq:'Formatet kulturore gjithëpërfshirëse ofrojnë më shumë se një mënyrë pjesëmarrjeje. Dikush mund të dëshirojë të krijojë, dikush të flasë, një tjetër të vëzhgojë fillimisht, të përgjigjet privatisht ose të rikthehet më vonë. Ofrimi i pikave të ndryshme të hyrjes mund ta zgjerojë qasjen pa i detyruar të gjithë në të njëjtën sjellje ose nivel dukshmërie.'
+          },
+          {
+            en:'The aim is not to erase difference, but to create a common frame where different ages, backgrounds and levels of experience can contribute with dignity. When participation is treated as part of the artistic and educational design, audiences can become collaborators and cultural spaces can become places of belonging.',
+            sq:'Qëllimi nuk është të fshihen dallimet, por të krijohet një kornizë e përbashkët ku mosha, prejardhje dhe nivele të ndryshme përvoje mund të kontribuojnë me dinjitet. Kur pjesëmarrja trajtohet si pjesë e dizajnit artistik dhe edukativ, publiku mund të bëhet bashkëpunëtor dhe hapësirat kulturore mund të bëhen vende përkatësie.'
+          }
+        ]
+      }
     ],
     relatedProjectIds:['project-artist-hub-lab','project-literary-voices-heine-poradeci','project-luzatart-culture'],
     relatedProgramSlugs:['culture-inclusive-education','advancing-equity-rights'],
