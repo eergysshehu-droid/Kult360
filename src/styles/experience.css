@@ -2231,6 +2231,11 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
 /* KULT360 INSTITUTIONAL CLARITY + PUBLIC POLICY PASS */
 
 /* Clear click language: cards, rows and actions always read as interactive. */
+:where(a,button,summary,[role='button']) {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 a:is(
   .pcf-programme-card,
   .pcf-project-card,
@@ -2243,7 +2248,25 @@ a:is(
   .pcf-button
 ) {
   cursor: pointer;
-  -webkit-tap-highlight-color: rgb(240 207 34 / 16%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover:none) {
+  :where(a,button,summary,[role='button']):focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.brand-lockup:focus-visible,
+.mobile-brand:focus-visible,
+.menu-trigger:focus-visible,
+.menu-close:focus-visible {
+  outline: none;
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 2px var(--pcf-paper),
+    0 0 0 4px var(--experience-yellow);
 }
 
 a:is(
