@@ -24,37 +24,32 @@ const {language} = Astro.props;
     </nav>
   </div>
 
-  <div class="container-wide footer-v2__grid">
-    <div>
-      <p class="foundation-label">{language === 'sq' ? 'Fondacioni' : 'Foundation'}</p>
-      <p>{language === 'sq' ? 'Art · Të drejta · Edukim · Trashëgimi' : 'Art · Rights · Education · Heritage'}</p>
-    </div>
-    <div>
+  <div class="container-wide footer-v2__compact">
+    <div class="footer-v2__contact">
       <p class="foundation-label">{language === 'sq' ? 'Kontakt' : 'Contact'}</p>
-      <a href={'mailto:' + siteConfig.organization.email}>{siteConfig.organization.email}</a>
-      <a href={'tel:' + siteConfig.organization.phone?.replace(/\s/g,'')}>{siteConfig.organization.phone}</a>
-      <p>{siteConfig.organization.address}</p>
+      <a class="footer-v2__contact-primary" href={'mailto:' + siteConfig.organization.email}>{siteConfig.organization.email}</a>
+      <div class="footer-v2__contact-meta">
+        <a href={'tel:' + siteConfig.organization.phone?.replace(/\s/g,'')}>{siteConfig.organization.phone}</a>
+        <span>{siteConfig.organization.address}</span>
+      </div>
     </div>
-    <div class="footer-v2__quick">
-      <p class="foundation-label">{language === 'sq' ? 'Eksploro' : 'Explore'}</p>
-      <a href={localizedPath('/about/', language)}>{language === 'sq' ? 'Rreth nesh' : 'About'} ↗</a>
-      <a href={localizedPath('/programs/', language)}>{language === 'sq' ? 'Programet' : 'Programs'} ↗</a>
-      <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Projektet' : 'Projects'} ↗</a>
-      <a href={localizedPath('/journal/', language)}>Journal ↗</a>
-      <a href={localizedPath('/get-involved/', language)}>{language === 'sq' ? 'Përfshihu' : 'Get involved'} ↗</a>
-    </div>
-    <div class="footer-v2__quick footer-v2__policies">
-      <p class="foundation-label">{language === 'sq' ? 'Informacion' : 'Information'}</p>
-      <a href={localizedPath('/contact/', language)}>{language === 'sq' ? 'Kontakt' : 'Contact'}</a>
+
+    <nav class="footer-v2__nav" aria-label={language === 'sq' ? 'Lidhje kryesore' : 'Footer navigation'}>
+      <a href={localizedPath('/about/', language)}>{language === 'sq' ? 'Rreth nesh' : 'About'} <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/programs/', language)}>{language === 'sq' ? 'Programet' : 'Programs'} <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Projektet' : 'Projects'} <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/journal/', language)}>Journal <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/get-involved/', language)}>{language === 'sq' ? 'Përfshihu' : 'Get involved'} <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+
+  <div class="container-wide footer-v2__bottom">
+    <span>© {new Date().getFullYear()} KULT360 Foundation · Albania</span>
+    <nav class="footer-v2__legal" aria-label={language === 'sq' ? 'Informacion ligjor i faqes' : 'Website information'}>
       <a href={localizedPath('/privacy/', language)}>{language === 'sq' ? 'Privatësia' : 'Privacy'}</a>
       <a href={localizedPath('/cookies/', language)}>Cookies</a>
       <a href={localizedPath('/terms/', language)}>{language === 'sq' ? 'Kushtet' : 'Terms'}</a>
       <a href={localizedPath('/accessibility/', language)}>{language === 'sq' ? 'Aksesueshmëria' : 'Accessibility'}</a>
-    </div>
-  </div>
-
-  <div class="container-wide footer-v2__bottom">
-    <span>© {new Date().getFullYear()} KULT360 Foundation</span>
-    <span>Albania · Europe</span>
+    </nav>
   </div>
 </footer>
