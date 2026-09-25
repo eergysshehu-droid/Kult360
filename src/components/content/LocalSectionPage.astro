@@ -120,6 +120,13 @@ const websitePolicies = {
 const policy = page.slug in websitePolicies ? websitePolicies[page.slug as keyof typeof websitePolicies] : undefined;
 const journalFeature = journal.find((record) => record.featured && journalImage(record)) || journal.find((record) => journalImage(record)) || journal[0];
 const journalRest = journalFeature ? journal.filter((record) => record.id !== journalFeature.id) : journal;
+const journalFeatureTitleClass = journalFeature
+  ? (journalFeature.title.trim().length > 105
+      ? 'journal-feature__card--title-very-long'
+      : journalFeature.title.trim().length > 70
+        ? 'journal-feature__card--title-long'
+        : undefined)
+  : undefined;
 const initiativeThemeLink: Record<string,string> = {
   'initiative-artist-rights': 'rights-access',
   'initiative-sound-heritage-library': 'heritage-memory'
@@ -332,7 +339,7 @@ const directors = people.filter((person) => person.id !== president?.id);
       {journalFeature && (
         <section class="journal-feature ruled-section">
           <div class="journal-feature__label"><span>01</span><p>{language === 'sq' ? 'Në fokus' : 'Featured story'}</p></div>
-          <a class="journal-feature__card" href={localizedPath(`/journal/${journalSlug(journalFeature)}/`, language)}>
+          <a class:list={['journal-feature__card', journalFeatureTitleClass]} href={localizedPath(`/journal/${journalSlug(journalFeature)}/`, language)}>
             {journalImage(journalFeature) && <div class="journal-feature__media"><img src={journalImage(journalFeature)} alt="" fetchpriority="high" decoding="async" /></div>}
             <div class="journal-feature__copy">
               <p class="meta">{[journalFeature.category || 'Journal', journalFeature.author, journalFeature.read_time].filter(Boolean).join(' · ')}</p>

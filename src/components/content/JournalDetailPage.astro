@@ -25,10 +25,16 @@ const sourceLang = record.language?.toLowerCase();
 const sourceLangDiffers = !!sourceLang && sourceLang !== language;
 const date = formatDate(record.first_published_date || record.published_date, language);
 const path = localizedPath(`/journal/${journalSlug(record)}/`, language);
+const titleLength = record.title.trim().length;
+const titleClass = titleLength > 105
+  ? 'journal-detail-v2__header--title-very-long'
+  : titleLength > 70
+    ? 'journal-detail-v2__header--title-long'
+    : undefined;
 ---
 <BaseLayout title={record.title} {description} {language} {path} translations={['en','sq']}>
   <article class="journal-detail-v2">
-    <header class="container-wide journal-detail-v2__header">
+    <header class:list={['container-wide','journal-detail-v2__header',titleClass]}>
       <a class="journal-detail-v2__back" href={localizedPath('/journal/', language)}>← Journal</a>
       <div class="journal-detail-v2__meta">
         <p>{record.category || 'Journal'}</p>
