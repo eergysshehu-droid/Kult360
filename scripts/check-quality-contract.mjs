@@ -21,8 +21,8 @@ for (const file of files) {
 }
 
 const styleBudgets = {
-  'src/styles/experience.css': {lines: 8500, important: 700},
-  'src/styles/refinement-v3.css': {lines: 1800, important: 95},
+  'src/styles/experience.css': {lines: 7950, important: 560},
+  'src/styles/refinement-v3.css': {lines: 1760, important: 95},
   'src/styles/foundation-v2.css': {lines: 800, important: 0},
   'src/styles/global.css': {lines: 520, important: 0},
   'src/styles/reset.css': {lines: 100, important: 0},
