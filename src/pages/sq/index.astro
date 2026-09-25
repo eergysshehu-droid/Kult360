@@ -34,6 +34,12 @@ const programmeSummaries = [
   'E hapim kulturën për më shumë njerëz përmes mësimit gjithëpërfshirës dhe shkëmbimit.',
   'E mbajmë trashëgiminë e gjallë, duke ndërtuar të ardhme kulturore të qëndrueshme.'
 ];
+const programmeLinks = [
+  '/sq/programs/art-professional-empowerment/',
+  '/sq/programs/advancing-equity-rights/',
+  '/sq/programs/culture-inclusive-education/',
+  '/sq/programs/heritage-sustainability/'
+];
 const heroWords = ['natyrë.','art.','komunitet.','trashëgimi.','kujtesë.','edukim.','barazi.','muzikë.','digjitalitet.'];
 const heroWordStep = 360 / heroWords.length;
 ---
@@ -118,7 +124,7 @@ const heroWordStep = 360 / heroWords.length;
 
       <div class="pcf-programme-grid">
         {strategicPillars.map((item, index) => (
-          <a class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]} href="/sq/programs/">
+          <a class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]} href={programmeLinks[index]}>
             <div class="pcf-programme-card__media" aria-hidden="true">
               <img src={programmeImages[index % programmeImages.length]} alt="" loading="lazy" decoding="async" />
             </div>
