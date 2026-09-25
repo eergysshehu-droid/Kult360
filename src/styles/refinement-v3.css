@@ -19,7 +19,7 @@ body:not(:has(.pcf-hero)) .brand-lockup{
   border-radius:.2rem;
 }
 body:has(.pcf-hero) .brand-lockup{
-  width:7.4rem;
+  width:9.8rem;
   min-height:auto;
   padding:0;
   background:transparent;
@@ -27,8 +27,12 @@ body:has(.pcf-hero) .brand-lockup{
   border-radius:0;
 }
 .brand-lockup img{width:100%;height:auto;display:block;filter:none}
-.site-header__inner{min-height:4.25rem}
-.desktop-navigation a,.language-switcher a{min-height:2.35rem}
+.site-header__inner{min-height:5rem}
+.desktop-navigation a,.language-switcher a{
+  min-height:2.5rem;
+  font-size:.76rem;
+  letter-spacing:.055em;
+}
 
 /* Hero */
 .pcf-hero,.pcf-hero__inner{min-height:82svh}
@@ -886,6 +890,13 @@ body:not(:has(.pcf-hero)) .brand-lockup{
 }
 
 @media(max-width:44rem){
+  body:has(.pcf-hero) .brand-lockup,
+  .brand-lockup{
+    width:8.35rem;
+  }
+  .site-header__inner{
+    min-height:4.65rem;
+  }
   .container-wide{
     width:min(calc(100% - 1.25rem),94rem) !important;
   }

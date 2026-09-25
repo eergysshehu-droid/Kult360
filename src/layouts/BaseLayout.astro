@@ -119,6 +119,17 @@ const structuredData = [organizationSchema(), websiteSchema(), webPageSchema({ti
         previous.addEventListener('click', () => move(-1));
         next.addEventListener('click', () => move(1));
         rail.addEventListener('scroll', updateRail, {passive: true});
+        rail.addEventListener('wheel', (event) => {
+          if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+          const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
+          if (max <= 2) return;
+          const direction = Math.sign(event.deltaY);
+          const atStart = rail.scrollLeft <= 2;
+          const atEnd = rail.scrollLeft >= max - 2;
+          if ((direction < 0 && atStart) || (direction > 0 && atEnd)) return;
+          event.preventDefault();
+          rail.scrollBy({left: event.deltaY, behavior: 'auto'});
+        }, {passive: false});
         rail.addEventListener('keydown', (event) => {
           if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
           event.preventDefault();

@@ -7543,6 +7543,47 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   align-self:center;
   transform:translateY(-.2rem);
 }
+@media(min-width:70.01rem){
+  .pcf-hero__headline-wrap--dial{
+    width:min(60rem,66vw);
+  }
+  .pcf-hero__headline--dial{
+    width:100%!important;
+    max-width:none!important;
+    align-items:center!important;
+    gap:0!important;
+  }
+  .pcf-hero__dial-live{
+    margin-left:.26em;
+    background:transparent;
+  }
+  .pcf-hero__headline--dial::after{
+    content:'';
+    flex:1 1 auto;
+    min-width:3.5rem;
+    height:1px;
+    margin-left:.72rem;
+    align-self:center;
+    background:linear-gradient(90deg,rgb(240 207 34 / 8%),rgb(240 207 34 / 46%) 70%,var(--experience-yellow));
+    box-shadow:0 0 .45rem rgb(240 207 34 / 7%);
+  }
+  .pcf-hero__dial-beam{display:none}
+  .pcf-hero__dial-arrow{
+    left:-.48rem;
+    border-top-width:.18rem;
+    border-bottom-width:.18rem;
+    border-left-width:.34rem;
+    opacity:.84;
+  }
+  .pcf-hero__dial-lock{
+    width:.56rem;
+  }
+  .pcf-hero__dial-stage{
+    top:49%;
+    right:-10vw;
+    width:min(56rem,54vw);
+  }
+}
 .pcf-hero__headline--dial{
   display:flex!important;
   align-items:baseline!important;
@@ -7916,4 +7957,49 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
 @media(prefers-reduced-motion:reduce){
   .pcf-hero__dial-rotor,.pcf-hero__dial-item-upright,.pcf-hero__dial-live{transition-duration:1ms!important}
+}
+
+/* Partners — balanced editorial logo band */
+@media(min-width:68.01rem){
+  .pcf-partners{
+    padding-block:clamp(4.2rem,6vw,6rem);
+  }
+  .pcf-partners__grid{
+    grid-template-columns:minmax(16rem,.58fr) minmax(0,1.42fr);
+    gap:clamp(2rem,4vw,4.5rem);
+    align-items:center;
+  }
+  .pcf-partners__copy{
+    align-self:center;
+    padding-right:1rem;
+  }
+  .pcf-partners__copy h2{
+    max-width:9ch;
+    font-size:clamp(2.4rem,3.6vw,3.8rem);
+  }
+  .pcf-partners__note{
+    max-width:22rem;
+    font-size:.8rem;
+  }
+  .partner-marquee{
+    width:100%;
+    min-height:17rem;
+    display:flex;
+    align-items:center;
+    border-radius:14px;
+    box-shadow:0 10px 36px rgb(9 9 8 / 5%);
+  }
+  .partner-marquee__track{
+    align-items:center;
+  }
+  .partner-marquee__set{
+    align-items:center;
+    padding:1rem .7rem;
+  }
+  .partner-marquee__item{
+    height:clamp(12.5rem,15vw,14.5rem);
+  }
+  .partner-marquee__item--network,
+  .partner-marquee__item--eu{width:clamp(20rem,28vw,26rem)}
+  .partner-marquee__item--delegation{width:clamp(12rem,16vw,15rem)}
 }
