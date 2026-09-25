@@ -34,6 +34,12 @@ const programmeSummaries = [
   'Opening culture to more people through inclusive learning, exchange and shared knowledge.',
   'Keeping living heritage active while building sustainable cultural futures.'
 ];
+const programmeLinks = [
+  '/programs/art-professional-empowerment/',
+  '/programs/advancing-equity-rights/',
+  '/programs/culture-inclusive-education/',
+  '/programs/heritage-sustainability/'
+];
 const heroWords = ['nature.','art.','communities.','heritage.','memory.','education.','equality.','music.','digitality.'];
 const heroWordStep = 360 / heroWords.length;
 ---
@@ -118,7 +124,7 @@ const heroWordStep = 360 / heroWords.length;
 
       <div class="pcf-programme-grid">
         {strategicPillars.map((item, index) => (
-          <a class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]} href="/programs/">
+          <a class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]} href={programmeLinks[index]}>
             <div class="pcf-programme-card__media" aria-hidden="true">
               <img src={programmeImages[index % programmeImages.length]} alt="" loading="lazy" decoding="async" />
             </div>
@@ -244,9 +250,13 @@ const heroWordStep = 360 / heroWords.length;
 
   <section class="pcf-join">
     <div class="container-wide">
-      <p class="pcf-label">Take part</p>
-      <h2>Join a community shaping the future of culture.</h2>
-      <a class="pcf-button pcf-button--dark" href="/get-involved/"><span>Discover ways to support</span><i aria-hidden="true">↗</i></a>
+      <p class="pcf-label">Work with KULT360</p>
+      <h2>Culture grows through connection.</h2>
+      <p class="pcf-join__lede">We collaborate with cultural institutions, foundations, organisations, artists and communities to build work that travels, connects and lasts.</p>
+      <div class="pcf-join__actions">
+        <a class="pcf-button pcf-button--dark" href="/get-involved/"><span>Partner with KULT360</span><i aria-hidden="true">↗</i></a>
+        <a class="pcf-button pcf-button--outline-dark" href="/contact/"><span>Contact us</span><i aria-hidden="true">→</i></a>
+      </div>
     </div>
   </section>
 </BaseLayout>
