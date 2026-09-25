@@ -6350,3 +6350,122 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     opacity: 0 !important;
   }
 }
+
+
+/* =========================================================
+   HERO WORD DEPTH DISSOLVE — ONLY THE ACTIVE WORD RESTS VISIBLE
+   ========================================================= */
+
+/* At rest there are no ghost words. The next word exists only during the
+   rotation itself: hidden in depth, dissolving into focus as it reaches front. */
+.pcf-hero__word[data-position='front']:not([data-transition]) {
+  z-index: 5 !important;
+  color: var(--experience-yellow) !important;
+  opacity: 1 !important;
+  filter: blur(0) brightness(1) !important;
+  text-shadow: 0 0 1rem rgb(240 207 34 / 7%) !important;
+}
+
+.pcf-hero__word[data-position='back']:not([data-transition]) {
+  z-index: 1 !important;
+  opacity: 0 !important;
+  filter: blur(2.6px) brightness(.42) !important;
+  text-shadow: none !important;
+}
+
+.pcf-hero__word[data-transition='incoming'] {
+  z-index: 6 !important;
+  color: var(--experience-yellow) !important;
+  animation: kultWordArrive 1280ms cubic-bezier(.16,.78,.16,1) both !important;
+}
+
+.pcf-hero__word[data-transition='outgoing'] {
+  z-index: 5 !important;
+  color: var(--experience-yellow) !important;
+  animation: kultWordLeave 1280ms cubic-bezier(.22,.7,.16,1) both !important;
+}
+
+.pcf-hero__word-cylinder {
+  transition:
+    transform 1280ms cubic-bezier(.16,.78,.16,1) !important;
+}
+
+@keyframes kultWordArrive {
+  0% {
+    opacity: 0;
+    filter: blur(2.8px) brightness(.42);
+    text-shadow: none;
+  }
+  24% {
+    opacity: 0;
+    filter: blur(2.1px) brightness(.5);
+    text-shadow: none;
+  }
+  46% {
+    opacity: .08;
+    filter: blur(1.35px) brightness(.62);
+    text-shadow: none;
+  }
+  68% {
+    opacity: .42;
+    filter: blur(.62px) brightness(.82);
+    text-shadow: 0 0 1.4rem rgb(240 207 34 / 3%);
+  }
+  86% {
+    opacity: .86;
+    filter: blur(.16px) brightness(.96);
+    text-shadow: 0 0 1.15rem rgb(240 207 34 / 6%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    text-shadow: 0 0 1rem rgb(240 207 34 / 7%);
+  }
+}
+
+@keyframes kultWordLeave {
+  0% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    text-shadow: 0 0 1rem rgb(240 207 34 / 7%);
+  }
+  24% {
+    opacity: .9;
+    filter: blur(.1px) brightness(.96);
+  }
+  50% {
+    opacity: .4;
+    filter: blur(.68px) brightness(.76);
+    text-shadow: none;
+  }
+  72% {
+    opacity: .09;
+    filter: blur(1.5px) brightness(.56);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(2.8px) brightness(.42);
+    text-shadow: none;
+  }
+}
+
+@media (max-width: 44rem) {
+  .pcf-hero__word[data-position='back']:not([data-transition]) {
+    opacity: 0 !important;
+  }
+
+  .pcf-hero__word[data-transition='incoming'],
+  .pcf-hero__word[data-transition='outgoing'] {
+    animation-duration: 1320ms !important;
+  }
+
+  .pcf-hero__word-cylinder {
+    transition-duration: 1320ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcf-hero__word[data-transition] {
+    animation: none !important;
+  }
+}
