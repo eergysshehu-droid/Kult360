@@ -311,16 +311,33 @@ const initiativeThemeLink: Record<string,string> = {
   )}
 
   {policy && (
-    <section class="policy-page ruled-section">
+    <section class={`policy-page ruled-section ${page.slug === 'privacy' ? 'policy-page--privacy' : ''}`}>
       <div class="policy-page__intro">
         <p class="meta">{policy.eyebrow}</p>
         <p>{policy.intro}</p>
+        {page.slug === 'privacy' && (
+          <div class="policy-page__identity">
+            <div><span>{language === 'sq' ? 'Kontrolluesi' : 'Controller'}</span><strong>{siteConfig.organization.legalName || 'KULT360 Foundation'}</strong></div>
+            <div><span>{language === 'sq' ? 'Kuadri' : 'Framework'}</span><strong>{language === 'sq' ? 'Ligji 124/2024 · GDPR kur zbatohet' : 'Law 124/2024 · GDPR where applicable'}</strong></div>
+            <div><span>{language === 'sq' ? 'Kontakt' : 'Contact'}</span><strong><a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a></strong></div>
+            <div><span>{language === 'sq' ? 'Përditësuar' : 'Updated'}</span><strong>25.09.2026</strong></div>
+          </div>
+        )}
       </div>
       <div class="policy-page__sections">
         {policy.sections.map((section) => (
           <article><h2>{section[0]}</h2><p>{section[1]}</p></article>
         ))}
       </div>
+      {page.slug === 'privacy' && (
+        <div class="policy-page__authority">
+          <span>{language === 'sq' ? 'Autoriteti mbikëqyrës' : 'Supervisory authority'}</span>
+          <a href="https://idp.al/ankohu/" target="_blank" rel="noreferrer">
+            {language === 'sq' ? 'Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale' : 'Commissioner for the Right to Information and Protection of Personal Data'}
+            <i aria-hidden="true">↗</i>
+          </a>
+        </div>
+      )}
       <p class="policy-page__note">{language === 'sq' ? 'Përditësuar: 25 shtator 2026 · Politika e faqes publike.' : 'Updated: 25 September 2026 · Public website policy.'}</p>
     </section>
   )}
