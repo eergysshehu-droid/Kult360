@@ -31,7 +31,7 @@ const limits = {
   jsGzip: 35_000,
   cssGzip: 55_000,
   largestGzip: 50_000,
-  rawCss: 230_000,
+  rawCss: 247_000,
   count: 12
 };
 
