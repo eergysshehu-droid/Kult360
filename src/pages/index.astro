@@ -284,12 +284,16 @@ const heroWordStep = 360 / heroWords.length;
       cylinder.style.setProperty('--wheel-rotation', `${-active * step}deg`);
       words.forEach((word, index) => {
         const distance = signedDistance(index);
-        const depth = Math.abs(distance) === 0 ? 'front' : Math.abs(distance) === 1 ? 'near' : 'back';
-        word.dataset.depth = depth;
+        word.dataset.depth = distance === 0 ? 'front' : Math.abs(distance) <= 2 ? 'near' : 'back';
+        word.dataset.position =
+          distance === 0 ? 'front' :
+          distance === 1 ? 'incoming' :
+          distance === 2 ? 'incoming-far' :
+          distance === -1 ? 'outgoing' :
+          'back';
       });
       if (live) live.textContent = words[active]?.textContent || '';
     };
-
     const scheduleAutoplay = () => {
       window.clearTimeout(autoplayTimer);
       if (reducedMotion || document.hidden) return;
@@ -335,9 +339,19 @@ const heroWordStep = 360 / heroWords.length;
 
   const teamRail = document.querySelector('[data-team-rail]');
   if (teamRail instanceof HTMLElement) {
-    const resetTeamRail = () => teamRail.scrollTo({left: 0, behavior: 'auto'});
-    window.requestAnimationFrame(resetTeamRail);
-    window.addEventListener('pageshow', resetTeamRail, {passive: true});
+    const resetTeamRail = () => { teamRail.scrollLeft = 0; };
+    const resetSequence = () => {
+      resetTeamRail();
+      requestAnimationFrame(() => {
+        resetTeamRail();
+        requestAnimationFrame(resetTeamRail);
+      });
+      window.setTimeout(resetTeamRail, 120);
+      window.setTimeout(resetTeamRail, 420);
+    };
+    resetSequence();
+    window.addEventListener('load', resetSequence, {once: true});
+    window.addEventListener('pageshow', resetSequence, {passive: true});
   }
 </script>
 
