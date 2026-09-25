@@ -5,13 +5,20 @@ interface Props {record: JournalRecord; language: Language; index?: number}
 const {record, language} = Astro.props;
 const image = journalImage(record);
 const href = localizedPath(`/journal/${journalSlug(record)}/`, language);
+const sourceLang = record.language?.toLowerCase();
+const sourceLangDiffers = !!sourceLang && sourceLang !== language;
 ---
 <article class="journal-card">
   <a class="journal-card__link" href={href} aria-label={record.title}>
-    {image && <div class="journal-card__media"><img src={image} alt="" loading="lazy" decoding="async" /></div>}
+    <div class:list={['journal-card__media', !image && 'journal-card__media--fallback']}>
+      {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span class="journal-card__fallback" aria-hidden="true">360°</span>}
+    </div>
     <div class="journal-card__body">
-      <div class="journal-card__meta"><p class="meta">{[record.category, record.author, record.read_time].filter(Boolean).join(' · ')}</p></div>
-      <h3>{record.title}</h3>
+      <div class="journal-card__meta">
+        <p class="meta">{[record.category, record.author, record.read_time].filter(Boolean).join(' · ')}</p>
+        {sourceLangDiffers && <span>{sourceLang?.toUpperCase()}</span>}
+      </div>
+      <h3 lang={sourceLang || undefined}>{record.title}</h3>
       <span class="card-inline-action">{language === 'sq' ? 'Lexo artikullin' : 'Read article'} <i aria-hidden="true">↗</i></span>
     </div>
   </a>
