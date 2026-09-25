@@ -319,10 +319,10 @@ const heroWords = ['nature.','art.','communities.','heritage.','memory.','educat
   </section>
 </BaseLayout>
 <script>
-  const heroDial = document.querySelector('[data-hero-dial]');
-  const dialRotor = heroDial?.querySelector('[data-dial-rotor]');
-  const dialLive = document.querySelector('[data-dial-live]');
-  const dialItems = dialRotor ? Array.from(dialRotor.querySelectorAll('[data-dial-index]')) : [];
+  const heroDial = document.querySelector<HTMLElement>('[data-hero-dial]');
+  const dialRotor = heroDial?.querySelector<HTMLElement>('[data-dial-rotor]');
+  const dialLive = document.querySelector<HTMLElement>('[data-dial-live]');
+  const dialItems = dialRotor ? Array.from(dialRotor.querySelectorAll<HTMLElement>('[data-dial-index]')) : [];
 
   if (heroDial && dialRotor && dialItems.length) {
     const count = dialItems.length;
