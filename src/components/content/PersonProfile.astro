@@ -1,7 +1,8 @@
 ---
 import {getTeamProfile} from '../../content/team-profiles';
-import {personImage, type Person} from '../../lib/content';
-import type {Language} from '../../lib/site-config';
+import ProjectCard from './ProjectCard.astro';
+import {personImage, projects, type Person} from '../../lib/content';
+import {localizedPath, type Language} from '../../lib/site-config';
 
 interface Props {
   person: Person;
@@ -11,26 +12,33 @@ interface Props {
 const {person, language} = Astro.props;
 const profile = getTeamProfile(person.id);
 const image = personImage(person);
+const selectedProjects = projects.filter((project) => project.people?.includes(person.id)).slice(0, 4);
 const t = language === 'sq' ? {
   about: 'Profili',
   languages: 'Gjuhët',
   archive: 'Profili i arkivit',
   source: 'Përmbajtje e dhënë nga KULT360',
   portrait: 'Portreti do të shtohet',
-  biography: 'Biografia'
+  biography: 'Biografia',
+  focus: 'Fushat e fokusit',
+  selectedWork: 'Punë e përzgjedhur',
+  allProjects: 'Të gjitha projektet'
 } : {
   about: 'Profile',
   languages: 'Languages',
   archive: 'Archive profile',
   source: 'Content supplied by KULT360',
   portrait: 'Portrait to be added',
-  biography: 'Biography'
+  biography: 'Biography',
+  focus: 'Focus areas',
+  selectedWork: 'Selected work',
+  allProjects: 'All projects'
 };
 ---
 <div class="team-profile-page">
   <header class="team-profile-hero">
     <div class="team-profile-hero__copy">
-      <p class="eyebrow">KULT360 · {t.about}</p>
+      <p class="eyebrow">{language === 'sq' ? 'Ekipi' : 'People'} / {person.role}</p>
       <h1>{person.name}</h1>
       <p class="team-profile-role">{person.role}</p>
 
@@ -57,28 +65,43 @@ const t = language === 'sq' ? {
   {profile && (
     <>
       <section class="team-profile-bio">
-        <p class="team-profile-section-label">{t.biography}</p>
+        <p class="team-profile-section-label"><span>01</span>{t.biography}</p>
         <div class="team-profile-bio__copy">
           {profile.bio.map((paragraph) => <p>{paragraph}</p>)}
         </div>
       </section>
 
-      <section class="team-profile-highlights">
-        {profile.highlightColumns.map((column, index) => (
-          <article>
-            <span class="team-profile-index">{String(index + 1).padStart(2, '0')}</span>
-            <h2>{column.title}</h2>
-            <ul>
-              {column.items.map((item) => (
-                <li>
-                  {item.title && <strong>{item.title}:</strong>}
-                  <span>{item.body}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
+      <section class="team-profile-focus">
+        <div class="team-profile-section-kicker"><span>02</span><h2>{t.focus}</h2></div>
+        <div class="team-profile-highlights">
+          {profile.highlightColumns.map((column) => (
+            <article>
+              <h3>{column.title}</h3>
+              <ul>
+                {column.items.map((item) => (
+                  <li>
+                    {item.title && <strong>{item.title}:</strong>}
+                    <span>{item.body}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
+
+      {selectedProjects.length > 0 && (
+        <section class="team-profile-work">
+          <div class="team-profile-section-kicker team-profile-section-kicker--work">
+            <span>03</span>
+            <h2>{t.selectedWork}</h2>
+            <a href={localizedPath('/projects/', language)}>{t.allProjects} ↗</a>
+          </div>
+          <div class="team-profile-work__rail">
+            {selectedProjects.map((project) => <ProjectCard {project} {language} />)}
+          </div>
+        </section>
+      )}
 
       {profile.languages && (
         <section class="team-profile-languages">

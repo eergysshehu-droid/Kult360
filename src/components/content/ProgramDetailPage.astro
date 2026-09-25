@@ -16,7 +16,6 @@ const programIndex = programFocusAreas.findIndex((item) => item.slug === program
 const previous = programFocusAreas[(programIndex - 1 + programFocusAreas.length) % programFocusAreas.length];
 const next = programFocusAreas[(programIndex + 1) % programFocusAreas.length];
 const path = localizedPath(`/programs/${program.slug}/`, language);
-const words = program.title[language].split(' ');
 const relatedThemes = cultureThemes.filter((theme) => theme.relatedProgramSlugs.includes(program.slug));
 ---
 <BaseLayout title={program.title[language]} description={program.summary[language]} {language} {path} translations={['en', 'sq']}>
@@ -32,7 +31,7 @@ const relatedThemes = cultureThemes.filter((theme) => theme.relatedProgramSlugs.
         </div>
         <div class="program-detail__title-grid">
           <p class="program-detail__eyebrow">{language === 'sq' ? 'Fushë strategjike' : 'Strategic focus area'}</p>
-          <h1>{words.map((word) => <span>{word}</span>)}</h1>
+          <h1>{program.title[language]}</h1>
           <p class="program-detail__summary">{program.summary[language]}</p>
         </div>
         <a class="program-detail__scroll" href="#approach">

@@ -489,10 +489,12 @@ body:not(:has(.pcf-hero)) .brand-lockup{
 
 /* === Full leadership profiles supplied by KULT360 === */
 .team-profile-page{
-  width:min(100%,74rem);
+  width:min(100%,78rem);
   margin-inline:auto;
 }
 .team-profile-hero{
+  position:relative;
+  isolation:isolate;
   display:grid;
   grid-template-columns:minmax(0,1.08fr) minmax(18rem,.62fr);
   gap:clamp(2.2rem,5vw,5rem);
@@ -509,9 +511,9 @@ body:not(:has(.pcf-hero)) .brand-lockup{
   margin:0;
   max-width:11ch;
   font-family:var(--font-sans);
-  font-size:clamp(3.4rem,6.7vw,6.8rem);
-  line-height:.88;
-  letter-spacing:-.068em;
+  font-size:clamp(3.2rem,5.4vw,5.7rem);
+  line-height:.91;
+  letter-spacing:-.058em;
   font-weight:690;
 }
 .team-profile-role{
@@ -541,6 +543,8 @@ body:not(:has(.pcf-hero)) .brand-lockup{
   letter-spacing:.07em;
 }
 .team-profile-hero__media{
+  position:relative;
+  z-index:1;
   align-self:stretch;
   display:grid;
   place-items:center;
@@ -606,12 +610,50 @@ body:not(:has(.pcf-hero)) .brand-lockup{
 }
 .team-profile-bio__copy p+p{margin-top:1.35rem}
 
+.team-profile-section-label{
+  display:flex;
+  align-items:baseline;
+  gap:.7rem;
+}
+.team-profile-section-label>span,
+.team-profile-section-kicker>span{
+  color:var(--ref-yellow);
+  font-size:.6rem;
+  font-weight:850;
+  letter-spacing:.08em;
+}
+.team-profile-focus,
+.team-profile-work{
+  padding-block:clamp(3.8rem,6vw,5.5rem);
+  border-bottom:1px solid rgba(9,9,8,.18);
+}
+.team-profile-section-kicker{
+  display:grid;
+  grid-template-columns:3rem minmax(0,1fr) auto;
+  gap:1rem;
+  align-items:baseline;
+  padding-bottom:1rem;
+  border-bottom:1px solid rgba(9,9,8,.16);
+}
+.team-profile-section-kicker h2{
+  margin:0;
+  font-size:clamp(1.75rem,2.8vw,2.8rem);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
+.team-profile-section-kicker a{
+  color:inherit;
+  font-size:.62rem;
+  font-weight:820;
+  letter-spacing:.07em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
 .team-profile-highlights{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:1rem;
-  padding-block:clamp(3.8rem,6vw,5.5rem);
-  border-bottom:1px solid rgba(9,9,8,.18);
+  padding-top:1.2rem;
 }
 .team-profile-highlights article{
   position:relative;
@@ -621,19 +663,12 @@ body:not(:has(.pcf-hero)) .brand-lockup{
   border:1px solid rgba(9,9,8,.14);
   border-radius:12px;
 }
-.team-profile-index{
-  display:block;
-  margin-bottom:2.4rem;
-  color:var(--ref-muted);
-  font-size:.62rem;
-  font-weight:850;
-}
-.team-profile-highlights h2{
+.team-profile-highlights h3{
   margin:0 0 1.15rem;
   font-family:var(--font-sans);
-  font-size:clamp(1.6rem,2.5vw,2.5rem);
-  line-height:.96;
-  letter-spacing:-.045em;
+  font-size:clamp(1.45rem,2.2vw,2.15rem);
+  line-height:.98;
+  letter-spacing:-.04em;
   font-weight:650;
 }
 .team-profile-highlights ul{
@@ -655,6 +690,17 @@ body:not(:has(.pcf-hero)) .brand-lockup{
   color:#4f4b45;
   font-size:.8rem;
   line-height:1.45;
+}
+
+.team-profile-work__rail{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1rem;
+  padding-top:1.2rem;
+}
+.team-profile-work__rail .project-card__media{aspect-ratio:4/3}
+.team-profile-work__rail .project-card__body h3{
+  font-size:clamp(1.1rem,1.7vw,1.55rem);
 }
 
 .team-profile-languages{
@@ -784,7 +830,7 @@ body:not(:has(.pcf-hero)) .brand-lockup{
     padding-bottom:2.7rem;
   }
   .team-profile-hero h1{
-    font-size:clamp(3rem,15vw,4.7rem);
+    font-size:clamp(2.7rem,11.5vw,3.8rem);
   }
   .team-profile-hero__media{
     width:100%;
@@ -792,6 +838,26 @@ body:not(:has(.pcf-hero)) .brand-lockup{
   .team-profile-highlights{
     grid-template-columns:1fr;
   }
+  .team-profile-section-kicker{
+    grid-template-columns:2.4rem minmax(0,1fr);
+  }
+  .team-profile-section-kicker a{
+    grid-column:2;
+    justify-self:start;
+  }
+  .team-profile-work__rail{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:82%;
+    grid-template-columns:none;
+    gap:.8rem;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    padding-bottom:.4rem;
+  }
+  .team-profile-work__rail::-webkit-scrollbar{display:none}
+  .team-profile-work__rail>*{scroll-snap-align:start}
   .team-profile-section__grid{
     grid-template-columns:1fr;
   }
