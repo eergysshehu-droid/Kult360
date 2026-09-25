@@ -1,22 +1,7 @@
 ---
-import EditorialLayout from '../../../layouts/EditorialLayout.astro';
-import {journal, journalImage, journalSlug, formatDate} from '../../../lib/content';
-import {renderRichContent} from '../../../lib/rich-content';
-
+import JournalDetailPage from '../../../components/content/JournalDetailPage.astro';
+import {journal, journalSlug} from '../../../lib/content';
 export const getStaticPaths = () => journal.map((record) => ({params:{slug:journalSlug(record)}, props:{record}}));
 const {record} = Astro.props;
-const language = 'sq';
-const image = journalImage(record);
-const bodyHtml = renderRichContent(record.rich_content);
-const description = record.excerpt || record.content_text?.slice(0, 180) || (record.author ? 'Artikull nga ' + record.author : 'KULT360 Journal');
 ---
-<EditorialLayout title={record.title} {description} {language} path={'/sq/journal/' + journalSlug(record) + '/'} translations={['en','sq']}>
-  <header class="article-header">
-    <p class="eyebrow">{record.category || 'Journal'}</p>
-    <h1>{record.title}</h1>
-    <p class="article-byline">{[record.author, formatDate(record.first_published_date || record.published_date, language), record.read_time].filter(Boolean).join(' · ')}</p>
-  </header>
-  {image && <figure class="article-cover"><img src={image} alt="" fetchpriority="high" /></figure>}
-  {bodyHtml ? <div class="article-body rich-content" set:html={bodyHtml}></div> : <div class="article-body rich-content"><p>{record.content_text}</p></div>}
-  {record.source_url && <p class="article-source"><a href={record.source_url} rel="noreferrer">Publikimi origjinal në KULT360 ↗</a></p>}
-</EditorialLayout>
+<JournalDetailPage {record} language="sq" />
