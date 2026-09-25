@@ -8298,41 +8298,74 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding-top:4.85rem!important;
     padding-bottom:1.15rem!important;
   }
-  .pcf-hero__dial-stage{
-    --dial-radius:34vw;
-    top:48%;
-    right:-20vw;
-    width:88vw;
-    max-width:none;
-  }
+
+  /* On phones the sentence and the selector share one exact optical axis. */
   .pcf-hero__headline-wrap--dial{
-    width:74vw!important;
-    align-self:center!important;
-    transform:translateY(-.15rem)!important;
+    position:absolute!important;
+    left:clamp(1rem,4vw,1.25rem)!important;
+    top:44.25%!important;
+    width:72vw!important;
+    max-width:72vw!important;
+    align-self:auto!important;
+    transform:translateY(-50%)!important;
   }
   .pcf-hero__headline--dial{
+    align-items:center!important;
     width:max-content!important;
-    max-width:74vw!important;
-    gap:.14em!important;
-    font-size:clamp(2rem,8.45vw,2.78rem)!important;
+    max-width:72vw!important;
+    gap:.12em!important;
+    font-size:clamp(1.95rem,7.8vw,2.55rem)!important;
     font-weight:720!important;
     line-height:.92!important;
-    letter-spacing:-.06em!important;
+    letter-spacing:-.058em!important;
     white-space:nowrap!important;
   }
-  html[lang='sq'] .pcf-hero__headline--dial{font-size:clamp(2rem,8.45vw,2.78rem)!important}
-  .pcf-hero__dial-live{font-size:.58em;letter-spacing:-.02em}
-  .pcf-hero__dial-beam{width:23vw}
-  .pcf-hero__dial-arrow{left:-1.15rem;border-top-width:.24rem;border-bottom-width:.24rem;border-left-width:.42rem}
-  .pcf-hero__dial-lock{width:.54rem}
-  .pcf-hero__dial-dot{width:.34rem}
-  .pcf-hero__dial-item-upright{gap:.38rem}
-  .pcf-hero__dial-label{font-size:clamp(.5rem,2.05vw,.68rem);letter-spacing:.015em}
-  .pcf-hero__dial-core{width:44%;border-width:.68rem}
+  html[lang='sq'] .pcf-hero__headline--dial{
+    font-size:clamp(1.95rem,7.8vw,2.55rem)!important;
+  }
+  .pcf-hero__dial-live{
+    font-size:.55em;
+    letter-spacing:-.018em;
+    transform:none;
+  }
+  .pcf-hero__dial-live.is-changing{transform:translateY(.04em)}
+
+  /* Push the instrument farther right and align its centre with the sentence. */
+  .pcf-hero__dial-stage{
+    --dial-radius:32vw;
+    top:44.25%;
+    right:-28vw;
+    width:82vw;
+    max-width:none;
+  }
+  .pcf-hero__dial-beam{
+    width:clamp(2rem,8vw,2.8rem);
+  }
+  .pcf-hero__dial-arrow{
+    left:-.95rem;
+    border-top-width:.22rem;
+    border-bottom-width:.22rem;
+    border-left-width:.38rem;
+  }
+  .pcf-hero__dial-lock{width:.52rem}
+  .pcf-hero__dial-dot{width:.32rem}
+  .pcf-hero__dial-item-upright{gap:.34rem}
+  .pcf-hero__dial-label{
+    font-size:clamp(.48rem,1.9vw,.64rem);
+    letter-spacing:.012em;
+  }
+  .pcf-hero__dial-item[data-dial-state='near-prev'] .pcf-hero__dial-label,
+  .pcf-hero__dial-item[data-dial-state='near-next'] .pcf-hero__dial-label{opacity:.14}
+  .pcf-hero__dial-item[data-dial-state='far-prev'] .pcf-hero__dial-label,
+  .pcf-hero__dial-item[data-dial-state='far-next'] .pcf-hero__dial-label{opacity:.03}
+  .pcf-hero__dial-core{
+    width:42%;
+    border-width:.58rem;
+  }
   .pcf-hero--dial::before{
     background:
-      radial-gradient(circle at 98% 48%,transparent 0 9rem,rgb(240 207 34 / 2.3%) 9.08rem 9.15rem,transparent 9.24rem),
-      radial-gradient(circle at 98% 48%,transparent 0 13rem,rgb(255 255 255 / 1.6%) 13.08rem 13.15rem,transparent 13.24rem);
+      radial-gradient(circle at 102% 44%,transparent 0 9rem,rgb(240 207 34 / 2%) 9.08rem 9.15rem,transparent 9.24rem),
+      radial-gradient(circle at 102% 44%,transparent 0 13rem,rgb(255 255 255 / 1.4%) 13.08rem 13.15rem,transparent 13.24rem);
   }
 }
 @media(prefers-reduced-motion:reduce){
