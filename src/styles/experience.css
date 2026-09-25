@@ -7528,3 +7528,287 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 }
 
+
+
+/* =========================================================
+   KULT360 HERO — ORBITAL WORD COMPOSITION
+   The orbit is a fixed stage. Its artwork rotates in place while the
+   cultural word changes at the exact center every 40 degrees / 4 seconds.
+   ========================================================= */
+
+@keyframes kultSymbolSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes kultSymbolWordOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    filter: blur(0);
+  }
+  55% {
+    opacity: .45;
+    transform: translate(-50%,-50%) scale(.96);
+    filter: blur(1.4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(.84);
+    filter: blur(7px);
+  }
+}
+
+@keyframes kultSymbolWordIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(.76);
+    filter: blur(11px);
+  }
+  48% {
+    opacity: .18;
+    transform: translate(-50%,-50%) scale(.9);
+    filter: blur(5px);
+  }
+  82% {
+    opacity: .84;
+    transform: translate(-50%,-50%) scale(.99);
+    filter: blur(.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    filter: blur(0);
+  }
+}
+
+.pcf-hero--symbolic {
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+.pcf-hero--symbolic .pcf-hero__inner {
+  position: relative;
+  z-index: 3;
+}
+
+.pcf-hero__symbol-stage {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -6vw;
+  width: min(48rem, 52vw);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.pcf-hero__symbol-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgb(240 207 34 / 4%), transparent 42%),
+    #030303;
+  box-shadow:
+    inset 0 0 0 1px rgb(240 207 34 / 11%),
+    0 0 0 2.5rem rgb(240 207 34 / 1.4%),
+    0 0 5rem rgb(0 0 0 / 24%);
+}
+
+.pcf-hero__symbol-art {
+  position: absolute;
+  z-index: 1;
+  width: 235%;
+  max-width: none;
+  height: auto;
+  left: -63.3%;
+  top: -40.2%;
+  transform-origin: 48.2% 53.7%;
+  animation: kultSymbolSpin 36s linear infinite !important;
+  will-change: transform;
+  filter: saturate(.93) brightness(.94);
+}
+
+.pcf-hero__symbol-wordbox {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.pcf-hero__symbol-word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72%;
+  display: grid;
+  place-items: center;
+  color: var(--experience-yellow);
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(.84);
+  filter: blur(8px);
+  will-change: transform, opacity, filter;
+  text-shadow: 0 0 1.4rem rgb(240 207 34 / 11%);
+}
+
+.pcf-hero__symbol-word > span {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 3.25vw, 4rem);
+  font-weight: 760;
+  line-height: .92;
+  letter-spacing: -.055em;
+  transform: scale(var(--symbol-word-scale,1));
+}
+
+.pcf-hero__symbol-word[data-symbol-state='active']:not([data-symbol-motion]) {
+  z-index: 3;
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+  filter: blur(0);
+}
+
+.pcf-hero__symbol-word[data-symbol-state='hidden']:not([data-symbol-motion]) {
+  z-index: 1;
+  opacity: 0;
+}
+
+.pcf-hero__symbol-word[data-symbol-motion='out'] {
+  z-index: 3;
+  animation: kultSymbolWordOut 620ms cubic-bezier(.3,.72,.18,1) both;
+}
+
+.pcf-hero__symbol-word[data-symbol-motion='in'] {
+  z-index: 4;
+  animation: kultSymbolWordIn 820ms 60ms cubic-bezier(.16,.84,.18,1) both;
+}
+
+.pcf-hero__headline-wrap--symbolic {
+  position: relative;
+  z-index: 4;
+  width: min(47rem, 48vw);
+  align-self: center;
+  perspective: none !important;
+  transform: none !important;
+}
+
+.pcf-hero__headline--symbolic {
+  display: block !important;
+  width: 100%;
+  max-width: 8.5ch;
+  margin: 0;
+  font-size: clamp(3.55rem, 7vw, 7.15rem) !important;
+  line-height: .88 !important;
+  letter-spacing: -.067em !important;
+  filter: none !important;
+}
+
+.pcf-hero__prefix--symbolic {
+  display: block;
+  color: #f6f4ee;
+  white-space: nowrap;
+}
+
+.pcf-hero--symbolic::before {
+  right: -7rem;
+  width: min(43rem, 48vw);
+  opacity: .34;
+}
+
+.pcf-hero--symbolic .pcf-hero__bottom {
+  position: relative;
+  z-index: 6;
+}
+
+@media (max-width: 70rem) {
+  .pcf-hero__symbol-stage {
+    right: -8vw;
+    width: min(43rem, 56vw);
+  }
+
+  .pcf-hero__headline-wrap--symbolic {
+    width: 46vw;
+  }
+
+  .pcf-hero__headline--symbolic {
+    font-size: clamp(3.1rem, 6.7vw, 6rem) !important;
+  }
+}
+
+@media (max-width: 44rem) {
+  .pcf-hero--symbolic {
+    min-height: 86svh !important;
+  }
+
+  .pcf-hero--symbolic .pcf-hero__inner {
+    min-height: 86svh !important;
+    padding-top: 4.9rem !important;
+    padding-bottom: 1.15rem !important;
+  }
+
+  .pcf-hero__symbol-stage {
+    top: 47%;
+    right: -14vw;
+    width: 82vw;
+    max-width: none;
+    transform: translateY(-50%);
+  }
+
+  .pcf-hero__symbol-frame {
+    box-shadow:
+      inset 0 0 0 1px rgb(240 207 34 / 12%),
+      0 0 0 1.35rem rgb(240 207 34 / 1.4%),
+      0 0 3.2rem rgb(0 0 0 / 24%);
+  }
+
+  .pcf-hero__symbol-art {
+    width: 235%;
+    left: -63.3%;
+    top: -40.2%;
+    transform-origin: 48.2% 53.7%;
+    animation-duration: 36s !important;
+  }
+
+  .pcf-hero__symbol-word {
+    width: 64%;
+  }
+
+  .pcf-hero__symbol-word > span {
+    font-size: clamp(1.35rem, 7vw, 2.45rem);
+  }
+
+  .pcf-hero__headline-wrap--symbolic {
+    width: 46vw !important;
+    align-self: center !important;
+    transform: translateY(-.6rem) !important;
+  }
+
+  .pcf-hero__headline--symbolic {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(2rem, 7.35vw, 2.6rem) !important;
+    line-height: .92 !important;
+    text-align: left !important;
+    letter-spacing: -.055em !important;
+  }
+
+  html[lang='sq'] .pcf-hero__headline--symbolic {
+    font-size: clamp(1.72rem, 6.15vw, 2.18rem) !important;
+  }
+
+  .pcf-hero__prefix--symbolic {
+    white-space: normal;
+    max-width: 6ch;
+  }
+
+  .pcf-hero--symbolic .pcf-hero__bottom {
+    width: min(100%, 23rem);
+  }
+}
