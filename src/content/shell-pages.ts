@@ -35,7 +35,11 @@ export const shellPages = [
   page('resources', 'Resources', 'Burime', 'Resources and archive material will be published from reviewed local records.', 'Burimet dhe materialet e arkivit do të publikohen nga regjistrat lokalë të rishikuar.'),
   page('get-involved', 'Get involved', 'Përfshihu', 'Support KULT360 as an individual, corporation, foundation or institutional partner.', 'Mbështet KULT360 si individ, kompani, fondacion ose partner institucional.'),
   page('support', 'Support', 'Mbështet', 'Support pathways preserved from the public KULT360 site.', 'Mënyrat e mbështetjes të ruajtura nga faqja publike KULT360.'),
-  page('contact', 'Contact', 'Kontakt', 'Public contact details for KULT360 Foundation.', 'Të dhënat publike të kontaktit për Fondacionin KULT360.')
+  page('contact', 'Contact', 'Kontakt', 'Public contact details for KULT360 Foundation.', 'Të dhënat publike të kontaktit për Fondacionin KULT360.'),
+  page('privacy', 'Privacy', 'Privatësia', 'How KULT360 handles information submitted through this website.', 'Si i trajton KULT360 informacionet e dërguara përmes kësaj faqeje.'),
+  page('cookies', 'Cookies', 'Cookies', 'Information about cookies and similar website technologies.', 'Informacion mbi cookies dhe teknologji të ngjashme të faqes.'),
+  page('terms', 'Terms of use', 'Kushtet e përdorimit', 'Terms for using the KULT360 website and its public content.', 'Kushtet për përdorimin e faqes KULT360 dhe përmbajtjes së saj publike.'),
+  page('accessibility', 'Accessibility', 'Aksesueshmëria', 'KULT360’s commitment to a clearer and more accessible digital experience.', 'Angazhimi i KULT360 për një përvojë digjitale më të qartë dhe më të aksesueshme.')
 ] as const satisfies readonly ShellPageDefinition[];
 
 export const homePage = {
