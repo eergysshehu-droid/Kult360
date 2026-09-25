@@ -6887,3 +6887,164 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     font-size: .49rem !important;
   }
 }
+
+
+/* =========================================================
+   HERO WORD — SOFT DEPTH DISSOLVE
+   Only one word rests on screen. Transition reads as a subtle wheel turn,
+   without showing ghost words before they enter.
+   ========================================================= */
+
+.pcf-hero__word-cylinder {
+  transform: none !important;
+  transition: none !important;
+}
+
+.pcf-hero__word {
+  left: 0 !important;
+  bottom: 0 !important;
+  transform-origin: 50% 55% !important;
+  backface-visibility: visible !important;
+  will-change: transform, opacity, filter;
+}
+
+.pcf-hero__word[data-word-state='active']:not([data-transition]) {
+  z-index: 3 !important;
+  opacity: 1 !important;
+  color: var(--experience-yellow) !important;
+  filter: blur(0) brightness(1) !important;
+  text-shadow: 0 0 1rem rgb(240 207 34 / 6%) !important;
+}
+
+.pcf-hero__word[data-word-state='hidden']:not([data-transition]) {
+  z-index: 1 !important;
+  opacity: 0 !important;
+  filter: blur(8px) brightness(.5) !important;
+  text-shadow: none !important;
+}
+
+.pcf-hero__word[data-transition='out'][data-direction='forward'] {
+  z-index: 4 !important;
+  animation: kultWordSoftOutDown 820ms cubic-bezier(.32,.72,.2,1) both !important;
+}
+
+.pcf-hero__word[data-transition='in'][data-direction='forward'] {
+  z-index: 5 !important;
+  animation: kultWordSoftInFromDepth 940ms 95ms cubic-bezier(.16,.82,.18,1) both !important;
+}
+
+.pcf-hero__word[data-transition='out'][data-direction='backward'] {
+  z-index: 4 !important;
+  animation: kultWordSoftOutUp 820ms cubic-bezier(.32,.72,.2,1) both !important;
+}
+
+.pcf-hero__word[data-transition='in'][data-direction='backward'] {
+  z-index: 5 !important;
+  animation: kultWordSoftInFromDepthReverse 940ms 95ms cubic-bezier(.16,.82,.18,1) both !important;
+}
+
+@keyframes kultWordSoftOutDown {
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0) scale(1) rotateX(0);
+    filter: blur(0) brightness(1);
+  }
+  34% {
+    opacity: .78;
+    transform: translate3d(0,.08em,-10px) scale(.995) rotateX(2deg);
+    filter: blur(.15px) brightness(.96);
+  }
+  72% {
+    opacity: .22;
+    transform: translate3d(0,.32em,-72px) scale(.965) rotateX(8deg);
+    filter: blur(3.5px) brightness(.68);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0,.56em,-140px) scale(.93) rotateX(14deg);
+    filter: blur(9px) brightness(.48);
+  }
+}
+
+@keyframes kultWordSoftInFromDepth {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-.42em,-150px) scale(.91) rotateX(-16deg);
+    filter: blur(11px) brightness(.48);
+  }
+  24% {
+    opacity: .02;
+    transform: translate3d(0,-.34em,-120px) scale(.925) rotateX(-12deg);
+    filter: blur(9px) brightness(.54);
+  }
+  56% {
+    opacity: .28;
+    transform: translate3d(0,-.16em,-58px) scale(.96) rotateX(-6deg);
+    filter: blur(4.2px) brightness(.72);
+  }
+  82% {
+    opacity: .82;
+    transform: translate3d(0,-.035em,-10px) scale(.992) rotateX(-1deg);
+    filter: blur(.65px) brightness(.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0) scale(1) rotateX(0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes kultWordSoftOutUp {
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0) scale(1) rotateX(0);
+    filter: blur(0) brightness(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0,-.5em,-130px) scale(.93) rotateX(-13deg);
+    filter: blur(9px) brightness(.48);
+  }
+}
+
+@keyframes kultWordSoftInFromDepthReverse {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,.4em,-150px) scale(.91) rotateX(15deg);
+    filter: blur(11px) brightness(.48);
+  }
+  56% {
+    opacity: .3;
+    transform: translate3d(0,.15em,-58px) scale(.96) rotateX(6deg);
+    filter: blur(4.2px) brightness(.72);
+  }
+  82% {
+    opacity: .82;
+    transform: translate3d(0,.03em,-10px) scale(.992) rotateX(1deg);
+    filter: blur(.65px) brightness(.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0) scale(1) rotateX(0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@media (max-width: 44rem) {
+  .pcf-hero__word[data-transition='out'][data-direction='forward'],
+  .pcf-hero__word[data-transition='out'][data-direction='backward'] {
+    animation-duration: 760ms !important;
+  }
+
+  .pcf-hero__word[data-transition='in'][data-direction='forward'],
+  .pcf-hero__word[data-transition='in'][data-direction='backward'] {
+    animation-duration: 900ms !important;
+    animation-delay: 80ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcf-hero__word[data-transition] {
+    animation: none !important;
+  }
+}
