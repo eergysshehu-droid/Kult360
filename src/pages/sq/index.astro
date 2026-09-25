@@ -51,28 +51,56 @@ const programmeLinks = [
 const heroWords = ['natyrë.','art.','komunitet.','trashëgimi.','kujtesë.','edukim.','barazi.','muzikë.','digjitalitet.'];
 ---
 <BaseLayout title={homePage.heading.sq} description={homePage.description.sq} {language} path="/sq/" translations={['en','sq']}>
-  <section class="pcf-hero pcf-hero--black pcf-hero--symbolic">
-    <div class="pcf-hero__symbol-stage" aria-hidden="true">
-      <div class="pcf-hero__symbol-frame">
-        <img class="pcf-hero__symbol-art" src="/media/brand/kult360-orbit-source.png" alt="" />
-        <div class="pcf-hero__symbol-wordbox" data-symbol-words>
-          {heroWords.map((word, index) => (
-            <span class="pcf-hero__symbol-word" data-symbol-index={index}>
-              <span style={`--symbol-word-scale: ${word.length > 11 ? .72 : word.length > 9 ? .8 : word.length > 7 ? .9 : 1}`}>{word}</span>
-            </span>
-          ))}
+  <section class="pcf-hero pcf-hero--black pcf-hero--dial">
+    <div class="pcf-hero__dial-stage" data-hero-dial aria-hidden="true">
+      <div class="pcf-hero__dial-glow"></div>
+      <div class="pcf-hero__dial-rings">
+        <div class="pcf-hero__dial-ticks"></div>
+        <div
+          class="pcf-hero__dial-rotor"
+          data-dial-rotor
+          style="--dial-turn: 160deg; transform: rotate(-160deg);"
+        >
+          {heroWords.map((word, index) => {
+            const label = word.replace(/\.$/, '');
+            const angle = 180 + index * 40;
+            const scale = label.length > 11 ? .76 : label.length > 9 ? .84 : label.length > 7 ? .91 : 1;
+            return (
+              <span
+                class="pcf-hero__dial-item"
+                data-dial-index={index}
+                data-dial-state={index === 4 ? 'active' : 'inactive'}
+                style={`--item-angle: ${angle}deg; --label-scale: ${scale};`}
+              >
+                <span class="pcf-hero__dial-item-upright">
+                  <span class="pcf-hero__dial-dot"></span>
+                  <span class="pcf-hero__dial-label">{label}</span>
+                </span>
+              </span>
+            );
+          })}
         </div>
+
+        <div class="pcf-hero__dial-core" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+
+      <div class="pcf-hero__dial-selector" aria-hidden="true">
+        <span class="pcf-hero__dial-beam"></span>
+        <span class="pcf-hero__dial-arrow"></span>
+        <span class="pcf-hero__dial-lock"></span>
       </div>
     </div>
 
     <div class="container-wide pcf-hero__inner">
       <p class="pcf-kicker">Fondacioni KULT360 · Shqipëri</p>
 
-      <div class="pcf-hero__headline-wrap pcf-hero__headline-wrap--symbolic">
-        <h1 class="pcf-hero__headline pcf-hero__headline--symbolic" aria-label="Kultura është natyrë, art, komunitet, trashëgimi, kujtesë, edukim, barazi, muzikë dhe digjitalitet">
-          <span class="pcf-hero__prefix pcf-hero__prefix--symbolic">Kultura është</span>
+      <div class="pcf-hero__headline-wrap pcf-hero__headline-wrap--dial">
+        <h1 class="pcf-hero__headline pcf-hero__headline--dial" aria-label="Kultura është natyrë, art, komunitet, trashëgimi, kujtesë, edukim, barazi, muzikë dhe digjitalitet">
+          <span>Kultura është</span>
         </h1>
-        <span class="pcf-symbol-live" data-symbol-live aria-live="polite">natyrë.</span>
+        <span class="pcf-symbol-live" data-dial-live aria-live="polite">kujtesë.</span>
       </div>
 
       <div class="pcf-hero__bottom">
@@ -291,72 +319,64 @@ const heroWords = ['natyrë.','art.','komunitet.','trashëgimi.','kujtesë.','ed
   </section>
 </BaseLayout>
 <script>
-  const symbolStage = document.querySelector('[data-symbol-words]');
-  const symbolLive = document.querySelector('[data-symbol-live]');
-  const symbolWords = symbolStage ? Array.from(symbolStage.querySelectorAll('[data-symbol-index]')) : [];
+  const heroDial = document.querySelector('[data-hero-dial]');
+  const dialRotor = heroDial?.querySelector('[data-dial-rotor]');
+  const dialLive = document.querySelector('[data-dial-live]');
+  const dialItems = dialRotor ? Array.from(dialRotor.querySelectorAll('[data-dial-index]')) : [];
 
-  if (symbolStage && symbolWords.length) {
-    const count = symbolWords.length;
+  if (heroDial && dialRotor && dialItems.length) {
+    const count = dialItems.length;
+    const stepDeg = 360 / count;
     const stepMs = 4000;
-    const transitionMs = 860;
-    let active = 0;
-    let wordTimer = 0;
+    const motionMs = 980;
+    let active = Math.min(4, count - 1);
+    let clock = 0;
     let settleTimer = 0;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const settle = () => {
-      symbolWords.forEach((word, index) => {
-        word.dataset.symbolState = index === active ? 'active' : 'hidden';
-        delete word.dataset.symbolMotion;
+    const setActiveLabel = () => {
+      dialItems.forEach((item, index) => {
+        item.dataset.dialState = index === active ? 'active' : 'inactive';
       });
-      if (symbolLive) symbolLive.textContent = symbolWords[active]?.textContent || '';
+      if (dialLive) dialLive.textContent = (dialItems[active]?.textContent || '').trim() + '.';
     };
 
-    const showNext = () => {
-      const outgoing = active;
-      const incoming = (active + 1) % count;
+    const setRotation = (animate = true) => {
+      const turn = active * stepDeg;
+      if (!animate) dialRotor.classList.add('is-instant');
+      dialRotor.style.setProperty('--dial-turn', `${turn}deg`);
+      dialRotor.style.transform = `rotate(-${turn}deg)`;
+      if (!animate) requestAnimationFrame(() => dialRotor.classList.remove('is-instant'));
+    };
 
-      if (reducedMotion) {
-        active = incoming;
-        settle();
-        return;
-      }
-
+    const advance = () => {
       window.clearTimeout(settleTimer);
-
-      symbolWords.forEach((word, index) => {
-        word.dataset.symbolState = 'hidden';
-        delete word.dataset.symbolMotion;
-        if (index === outgoing) {
-          word.dataset.symbolState = 'active';
-          word.dataset.symbolMotion = 'out';
-        } else if (index === incoming) {
-          word.dataset.symbolMotion = 'in';
-        }
-      });
-
-      active = incoming;
-      settleTimer = window.setTimeout(settle, transitionMs);
+      dialItems.forEach((item) => item.dataset.dialState = 'inactive');
+      active = (active + 1) % count;
+      setRotation(!reducedMotion);
+      settleTimer = window.setTimeout(setActiveLabel, reducedMotion ? 0 : motionMs);
     };
 
-    const startWordClock = () => {
-      window.clearInterval(wordTimer);
+    const startClock = () => {
+      window.clearInterval(clock);
       if (document.hidden) return;
-      wordTimer = window.setInterval(showNext, stepMs);
+      clock = window.setInterval(advance, stepMs);
     };
 
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        window.clearInterval(wordTimer);
+        window.clearInterval(clock);
         window.clearTimeout(settleTimer);
       } else {
-        settle();
-        startWordClock();
+        setRotation(false);
+        setActiveLabel();
+        startClock();
       }
     });
 
-    settle();
-    startWordClock();
+    setRotation(false);
+    setActiveLabel();
+    startClock();
   }
 
   const teamRail = document.querySelector('[data-team-rail]');
