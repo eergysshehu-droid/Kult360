@@ -1,6 +1,6 @@
 /* KULT360 interaction and responsive finish — deliberately small, loaded last. */
 :root {
-  --experience-yellow: #f0cf22;
+  --experience-yellow: #faa719;
   --experience-orange: #ed9d68;
   --experience-ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -53,7 +53,7 @@ body:has(.pcf-hero) .site-header.is-scrolled {
   isolation: isolate;
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 22%, rgb(240 207 34 / 13%), transparent 25rem),
+    radial-gradient(circle at 78% 22%, rgb(250 167 25 / 13%), transparent 25rem),
     radial-gradient(circle at 18% 80%, rgb(237 157 104 / 8%), transparent 22rem),
     var(--pcf-ink);
 }
@@ -81,7 +81,7 @@ body:has(.pcf-hero) .site-header.is-scrolled {
   aspect-ratio: 1;
   left: 8vw;
   top: 24%;
-  border-color: rgb(240 207 34 / 26%);
+  border-color: rgb(250 167 25 / 26%);
 }
 .pcf-hero__inner {
   position: relative;
@@ -137,7 +137,7 @@ body:has(.pcf-hero) .site-header.is-scrolled {
 }
 .pcf-update-list a:hover,
 .pcf-update-list a:focus-visible {
-  background: rgb(240 207 34 / 13%);
+  background: rgb(250 167 25 / 13%);
   padding-left: 1.1rem;
 }
 .pcf-update-list a:hover::after,
@@ -211,7 +211,7 @@ body:has(.pcf-hero) .site-header.is-scrolled {
 }
 .pcf-person-card__media:has(> span) {
   background:
-    radial-gradient(circle at 72% 28%, transparent 0 2.6rem, rgb(240 207 34 / 35%) 2.64rem 2.7rem, transparent 2.74rem),
+    radial-gradient(circle at 72% 28%, transparent 0 2.6rem, rgb(250 167 25 / 35%) 2.64rem 2.7rem, transparent 2.74rem),
     radial-gradient(circle at 72% 28%, transparent 0 4.6rem, rgb(255 255 255 / 15%) 4.64rem 4.7rem, transparent 4.74rem),
     #161614;
 }
@@ -704,7 +704,7 @@ body:has(.pcf-hero) .brand-lockup__accent {
   background: #030303;
   opacity: .42;
   transform: translateY(-50%);
-  box-shadow: 0 0 0 3rem rgb(240 207 34 / 2%), 0 0 0 7rem rgb(255 255 255 / 1.5%);
+  box-shadow: 0 0 0 3rem rgb(250 167 25 / 2%), 0 0 0 7rem rgb(255 255 255 / 1.5%);
   pointer-events: none;
 }
 .pcf-hero__orbit-art img {
@@ -877,7 +877,7 @@ body:has(.place-essay__hero) .brand-lockup {
 .menu-trigger:hover,
 .menu-trigger:focus-visible {
   background: transparent;
-  box-shadow: 0 0 0 .28rem rgb(240 207 34 / 24%);
+  box-shadow: 0 0 0 .28rem rgb(250 167 25 / 24%);
 }
 .menu-orbit--trigger {
   width: 100%;
@@ -1526,7 +1526,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   color: var(--experience-yellow);
   opacity: 1;
   filter: blur(0) brightness(1);
-  text-shadow: 0 0 1.2rem rgb(240 207 34 / 7%);
+  text-shadow: 0 0 1.2rem rgb(250 167 25 / 7%);
 }
 .pcf-hero__word[data-depth='near'] {
   z-index: 2;
@@ -1541,7 +1541,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
 }
 .pcf-hero__word-cycle:focus-visible {
   border-radius: .08em;
-  box-shadow: 0 0 0 .025em rgb(240 207 34 / 50%);
+  box-shadow: 0 0 0 .025em rgb(250 167 25 / 50%);
 }
 @media (max-width: 70rem) {
   .brand-lockup { width: 8.35rem; }
@@ -1596,7 +1596,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     border-color: rgb(255 255 255 / 42%);
     box-shadow:
       inset 0 0 0 1px rgb(255 255 255 / 8%),
-      0 0 0 1px rgb(240 207 34 / 8%);
+      0 0 0 1px rgb(250 167 25 / 8%);
   }
   .menu-trigger::before {
     content: '';
@@ -1621,7 +1621,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     right: .28rem;
     border-radius: 50%;
     background: var(--experience-yellow);
-    box-shadow: 0 0 0 .2rem rgb(240 207 34 / 10%);
+    box-shadow: 0 0 0 .2rem rgb(250 167 25 / 10%);
   }
   .menu-orbit--trigger {
     width: 2.95rem;
@@ -1847,7 +1847,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
       linear-gradient(var(--experience-yellow), var(--experience-yellow)) 50% 50% / 42% 1px no-repeat,
       linear-gradient(var(--experience-yellow), var(--experience-yellow)) 50% 69% / 56% 1px no-repeat,
       rgb(4 4 4 / 76%) !important;
-    box-shadow: 0 0 0 1px rgb(240 207 34 / 30%) !important;
+    box-shadow: 0 0 0 1px rgb(250 167 25 / 30%) !important;
   }
   .menu-trigger::after {
     width: .4rem !important;
@@ -1855,7 +1855,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     top: .18rem !important;
     right: .18rem !important;
     background: var(--experience-yellow) !important;
-    box-shadow: 0 0 0 .18rem rgb(240 207 34 / 10%) !important;
+    box-shadow: 0 0 0 .18rem rgb(250 167 25 / 10%) !important;
   }
   /* Homepage hero must remain one sentence on mobile. */
   .pcf-hero__inner {
@@ -2005,7 +2005,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
 .menu-dialog {
   padding: 0 !important;
   background:
-    radial-gradient(circle at 78% 38%, rgb(240 207 34 / 9%), transparent 24rem),
+    radial-gradient(circle at 78% 38%, rgb(250 167 25 / 9%), transparent 24rem),
     linear-gradient(180deg, rgb(8 8 7 / 62%), rgb(2 2 2 / 84%)) !important;
   -webkit-backdrop-filter: blur(30px) saturate(128%) contrast(104%);
   backdrop-filter: blur(30px) saturate(128%) contrast(104%);
@@ -2020,7 +2020,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
   padding: 0 !important;
   gap: 0 !important;
   background:
-    linear-gradient(118deg, rgb(255 255 255 / 4%), transparent 30%, rgb(240 207 34 / 3%) 63%, transparent 84%);
+    linear-gradient(118deg, rgb(255 255 255 / 4%), transparent 30%, rgb(250 167 25 / 3%) 63%, transparent 84%);
 }
 .menu-dialog__header {
   width: min(calc(100% - 1.25rem), 94rem);
@@ -2096,7 +2096,7 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
 @media (max-width: 44rem) {
   .menu-dialog {
     background:
-      radial-gradient(circle at 76% 39%, rgb(240 207 34 / 10%), transparent 18rem),
+      radial-gradient(circle at 76% 39%, rgb(250 167 25 / 10%), transparent 18rem),
       linear-gradient(180deg, rgb(7 7 6 / 68%), rgb(1 1 1 / 90%)) !important;
     -webkit-backdrop-filter: blur(34px) saturate(132%);
     backdrop-filter: blur(34px) saturate(132%);
@@ -2306,7 +2306,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   transition: transform .25s var(--experience-ease), background .25s ease, color .25s ease;
 }
 .institutional-route:hover {
-  background: rgb(240 207 34 / 10%);
+  background: rgb(250 167 25 / 10%);
 }
 .institutional-route:hover i,
 .institutional-route:focus-visible i {
@@ -3285,7 +3285,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .project-card__media--poster,
 .project-card__media--archive {
   background:
-    radial-gradient(circle at 50% 45%, rgb(240 207 34 / 7%), transparent 18rem),
+    radial-gradient(circle at 50% 45%, rgb(250 167 25 / 7%), transparent 18rem),
     #ece8df;
 }
 .project-card__media--poster img,
@@ -4487,7 +4487,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   display: grid;
   place-items: center;
   background:
-    radial-gradient(circle at 72% 38%, rgb(240 207 34 / 22%), transparent 32%),
+    radial-gradient(circle at 72% 38%, rgb(250 167 25 / 22%), transparent 32%),
     repeating-radial-gradient(circle at 72% 38%, transparent 0 2.8rem, rgb(9 9 8 / 8%) 2.85rem 2.95rem),
     #e9e5dc;
 }
@@ -4829,7 +4829,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   --section-paper: #f6f3eb;
   --section-stone: #e7e2d8;
   --section-ink: #171715;
-  --section-yellow: #f0cf22;
+  --section-yellow: #faa719;
 }
 /* Article source is a compact transition band, not part of the prose. */
 .journal-detail-v2__source-band {
@@ -4902,10 +4902,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   top: clamp(2rem, 5vw, 5rem);
   width: clamp(18rem, 34vw, 34rem);
   aspect-ratio: 1;
-  border: 1px solid rgb(240 207 34 / 42%);
+  border: 1px solid rgb(250 167 25 / 42%);
   border-radius: 50%;
   box-shadow:
-    0 0 0 2.8rem rgb(240 207 34 / 5%),
+    0 0 0 2.8rem rgb(250 167 25 / 5%),
     0 0 0 6rem rgb(255 255 255 / 2.5%);
   pointer-events: none;
 }
@@ -5367,7 +5367,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-hero {
   min-height: 92svh;
   background:
-    radial-gradient(circle at 77% 47%, rgb(240 207 34 / 8%), transparent 23rem),
+    radial-gradient(circle at 77% 47%, rgb(250 167 25 / 8%), transparent 23rem),
     linear-gradient(180deg, #0a0a08 0%, #0b0b08 58%, #090907 100%);
 }
 .pcf-hero__inner {
@@ -5393,8 +5393,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   opacity: .58;
   background: transparent;
   box-shadow:
-    0 0 0 1px rgb(240 207 34 / 8%),
-    0 0 0 4rem rgb(240 207 34 / 1.6%);
+    0 0 0 1px rgb(250 167 25 / 8%),
+    0 0 0 4rem rgb(250 167 25 / 1.6%);
 }
 .pcf-hero__orbit-art img {
   top: -35%;
@@ -5979,23 +5979,23 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: var(--experience-yellow) !important;
   opacity: 1 !important;
   filter: blur(0) brightness(1) !important;
-  text-shadow: 0 0 1.1rem rgb(240 207 34 / 8%);
+  text-shadow: 0 0 1.1rem rgb(250 167 25 / 8%);
 }
 .pcf-hero__word[data-position='incoming'] {
   z-index: 4 !important;
-  color: rgb(240 207 34 / 72%) !important;
+  color: rgb(250 167 25 / 72%) !important;
   opacity: .28 !important;
   filter: blur(.38px) brightness(.82) !important;
 }
 .pcf-hero__word[data-position='incoming-far'] {
   z-index: 3 !important;
-  color: rgb(240 207 34 / 48%) !important;
+  color: rgb(250 167 25 / 48%) !important;
   opacity: .09 !important;
   filter: blur(1.15px) brightness(.62) !important;
 }
 .pcf-hero__word[data-position='outgoing'] {
   z-index: 2 !important;
-  color: rgb(240 207 34 / 34%) !important;
+  color: rgb(250 167 25 / 34%) !important;
   opacity: .055 !important;
   filter: blur(1.35px) brightness(.52) !important;
 }
@@ -6643,8 +6643,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   isolation:isolate;
   min-height:90svh;
   background:
-    radial-gradient(circle at 83% 48%,rgb(240 207 34 / 5.5%),transparent 25rem),
-    radial-gradient(circle at 105% 50%,rgb(240 207 34 / 3.5%),transparent 39rem),
+    radial-gradient(circle at 83% 48%,rgb(250 167 25 / 5.5%),transparent 25rem),
+    radial-gradient(circle at 105% 50%,rgb(250 167 25 / 3.5%),transparent 39rem),
     linear-gradient(180deg,#090a08 0%,#090a08 64%,#070807 100%);
 }
 .pcf-hero--dial::before{
@@ -6654,7 +6654,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(circle at 93% 49%,transparent 0 17rem,rgb(240 207 34 / 2.2%) 17.08rem 17.16rem,transparent 17.24rem),
+    radial-gradient(circle at 93% 49%,transparent 0 17rem,rgb(250 167 25 / 2.2%) 17.08rem 17.16rem,transparent 17.24rem),
     radial-gradient(circle at 93% 49%,transparent 0 23rem,rgb(255 255 255 / 1.8%) 23.08rem 23.16rem,transparent 23.24rem);
 }
 .pcf-hero--dial .pcf-hero__inner{
@@ -6695,8 +6695,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     height:1px;
     margin-left:.72rem;
     align-self:center;
-    background:linear-gradient(90deg,rgb(240 207 34 / 8%),rgb(240 207 34 / 46%) 70%,var(--experience-yellow));
-    box-shadow:0 0 .45rem rgb(240 207 34 / 7%);
+    background:linear-gradient(90deg,rgb(250 167 25 / 8%),rgb(250 167 25 / 46%) 70%,var(--experience-yellow));
+    box-shadow:0 0 .45rem rgb(250 167 25 / 7%);
   }
   .pcf-hero__dial-beam{display:none}
   .pcf-hero__dial-arrow{
@@ -6749,7 +6749,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing:inherit;
   text-transform:none;
   white-space:nowrap;
-  text-shadow:0 0 1rem rgb(240 207 34 / 12%);
+  text-shadow:0 0 1rem rgb(250 167 25 / 12%);
   transform:none;
   opacity:1;
   filter:blur(0);
@@ -6792,8 +6792,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   inset:-10%;
   border-radius:50%;
   background:
-    radial-gradient(circle at 35% 45%,rgb(240 207 34 / 4.5%),transparent 31%),
-    radial-gradient(circle at center,transparent 42%,rgb(240 207 34 / 2.8%) 58%,transparent 73%);
+    radial-gradient(circle at 35% 45%,rgb(250 167 25 / 4.5%),transparent 31%),
+    radial-gradient(circle at center,transparent 42%,rgb(250 167 25 / 2.8%) 58%,transparent 73%);
   filter:blur(10px);
 }
 .pcf-hero__dial-rings{
@@ -6804,15 +6804,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background:
     radial-gradient(circle at center,
       transparent 0 25%,
-      rgb(240 207 34 / 6.5%) 25.1% 25.3%,
+      rgb(250 167 25 / 6.5%) 25.1% 25.3%,
       transparent 25.4% 39%,
       rgb(255 255 255 / 5%) 39.1% 39.24%,
       transparent 39.34% 54%,
-      rgb(240 207 34 / 7%) 54.1% 54.24%,
+      rgb(250 167 25 / 7%) 54.1% 54.24%,
       transparent 54.34% 69%,
       rgb(255 255 255 / 4%) 69.1% 69.22%,
       transparent 69.32% 84%,
-      rgb(240 207 34 / 6%) 84.1% 84.24%,
+      rgb(250 167 25 / 6%) 84.1% 84.24%,
       transparent 84.34%);
 }
 .pcf-hero__dial-rings::before,.pcf-hero__dial-rings::after{
@@ -6823,15 +6823,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 }
 .pcf-hero__dial-rings::before{
   inset:4%;
-  border:1px solid rgb(240 207 34 / 14%);
-  box-shadow:0 0 0 2rem rgb(240 207 34 / 1.2%),0 0 0 4.7rem rgb(240 207 34 / .8%);
+  border:1px solid rgb(250 167 25 / 14%);
+  box-shadow:0 0 0 2rem rgb(250 167 25 / 1.2%),0 0 0 4.7rem rgb(250 167 25 / .8%);
 }
 .pcf-hero__dial-rings::after{inset:18%;border:1px solid rgb(255 255 255 / 5%)}
 .pcf-hero__dial-ticks{
   position:absolute;
   inset:9.5%;
   border-radius:50%;
-  background:repeating-conic-gradient(from 0deg,rgb(240 207 34 / 32%) 0deg .7deg,transparent .7deg 40deg);
+  background:repeating-conic-gradient(from 0deg,rgb(250 167 25 / 32%) 0deg .7deg,transparent .7deg 40deg);
   -webkit-mask:radial-gradient(circle,transparent 0 70%,#000 70.5% 72%,transparent 72.5%);
   mask:radial-gradient(circle,transparent 0 70%,#000 70.5% 72%,transparent 72.5%);
   opacity:.62;
@@ -6899,7 +6899,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background:var(--experience-yellow);
   opacity:1;
   transform:scale(1.2);
-  box-shadow:0 0 0 .15rem rgb(240 207 34 / 9%),0 0 .9rem rgb(240 207 34 / 46%);
+  box-shadow:0 0 0 .15rem rgb(250 167 25 / 9%),0 0 .9rem rgb(250 167 25 / 46%);
 }
 .pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-label{opacity:0}
 .pcf-hero__dial-item[data-dial-state='near-prev'] .pcf-hero__dial-label,
@@ -6921,11 +6921,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   transform:translate(-50%,-50%);
   border-radius:50%;
   border:clamp(.85rem,1.15vw,1.2rem) solid var(--experience-yellow);
-  background:radial-gradient(circle at center,#d8a116 0 11.5%,#e6ad1d 11.7% 14%,#080906 14.3% 38%,rgb(240 207 34 / 3%) 38.2% 40%,#070806 40.3% 100%);
-  box-shadow:0 0 0 1px rgb(240 207 34 / 16%),0 0 2.2rem rgb(240 207 34 / 4%);
+  background:radial-gradient(circle at center,#d8a116 0 11.5%,#e6ad1d 11.7% 14%,#080906 14.3% 38%,rgb(250 167 25 / 3%) 38.2% 40%,#070806 40.3% 100%);
+  box-shadow:0 0 0 1px rgb(250 167 25 / 16%),0 0 2.2rem rgb(250 167 25 / 4%);
 }
 .pcf-hero__dial-core::before,.pcf-hero__dial-core::after{content:'';position:absolute;border-radius:50%;pointer-events:none}
-.pcf-hero__dial-core::before{inset:-34%;border:1px solid rgb(240 207 34 / 12%)}
+.pcf-hero__dial-core::before{inset:-34%;border:1px solid rgb(250 167 25 / 12%)}
 .pcf-hero__dial-core::after{inset:-64%;border:1px solid rgb(255 255 255 / 4%)}
 .pcf-hero__dial-selector{
   position:absolute;
@@ -6942,8 +6942,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   width:clamp(8rem,22vw,21rem);
   height:1px;
   transform:translateY(-50%);
-  background:linear-gradient(90deg,transparent 0%,rgb(240 207 34 / 16%) 45%,var(--experience-yellow) 100%);
-  box-shadow:0 0 .55rem rgb(240 207 34 / 7%);
+  background:linear-gradient(90deg,transparent 0%,rgb(250 167 25 / 16%) 45%,var(--experience-yellow) 100%);
+  box-shadow:0 0 .55rem rgb(250 167 25 / 7%);
 }
 .pcf-hero__dial-arrow{
   position:absolute;
@@ -6955,7 +6955,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-top:.3rem solid transparent;
   border-bottom:.3rem solid transparent;
   border-left:.54rem solid var(--experience-yellow);
-  filter:drop-shadow(0 0 .38rem rgb(240 207 34 / 22%));
+  filter:drop-shadow(0 0 .38rem rgb(250 167 25 / 22%));
 }
 .pcf-hero__dial-lock{
   position:absolute;
@@ -6966,7 +6966,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:var(--experience-yellow);
-  box-shadow:0 0 0 .18rem rgb(240 207 34 / 8%),0 0 .85rem rgb(240 207 34 / 40%);
+  box-shadow:0 0 0 .18rem rgb(250 167 25 / 8%),0 0 .85rem rgb(250 167 25 / 40%);
 }
 .pcf-hero--dial .pcf-hero__bottom{position:relative;z-index:10}
 @media(max-width:70rem){
@@ -7032,8 +7032,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     margin-left:.38rem;
     margin-right:0;
     align-self:center;
-    background:linear-gradient(90deg,rgb(240 207 34 / 8%),rgb(240 207 34 / 62%) 76%,var(--experience-yellow));
-    box-shadow:0 0 .42rem rgb(240 207 34 / 6%);
+    background:linear-gradient(90deg,rgb(250 167 25 / 8%),rgb(250 167 25 / 62%) 76%,var(--experience-yellow));
+    box-shadow:0 0 .42rem rgb(250 167 25 / 6%);
   }
   /* Keep only roughly half of the instrument visible on phones. */
   .pcf-hero__dial-stage{
@@ -7055,7 +7055,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
   .pcf-hero__dial-lock{
     width:.5rem;
-    box-shadow:0 0 0 .12rem rgb(240 207 34 / 7%),0 0 .65rem rgb(240 207 34 / 34%);
+    box-shadow:0 0 0 .12rem rgb(250 167 25 / 7%),0 0 .65rem rgb(250 167 25 / 34%);
   }
   .pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-dot{opacity:0}
   .pcf-hero__dial-dot{width:.31rem}
@@ -7074,7 +7074,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
   .pcf-hero--dial::before{
     background:
-      radial-gradient(circle at 108% 44%,transparent 0 8.5rem,rgb(240 207 34 / 1.8%) 8.58rem 8.65rem,transparent 8.74rem),
+      radial-gradient(circle at 108% 44%,transparent 0 8.5rem,rgb(250 167 25 / 1.8%) 8.58rem 8.65rem,transparent 8.74rem),
       radial-gradient(circle at 108% 44%,transparent 0 12.5rem,rgb(255 255 255 / 1.25%) 12.58rem 12.65rem,transparent 12.74rem);
   }
 }

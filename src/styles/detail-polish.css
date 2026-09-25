@@ -243,7 +243,7 @@ body:has(.place-essay__hero) .brand-lockup{
   overflow:hidden;
   color:#fff;
   background:
-    radial-gradient(circle at 88% 50%,rgb(240 207 34 / 14%),transparent 20rem),
+    radial-gradient(circle at 88% 50%,rgb(250 167 25 / 14%),transparent 20rem),
     #0a0a08;
   border-top:4px solid var(--experience-yellow);
 }
@@ -254,10 +254,10 @@ body:has(.place-essay__hero) .brand-lockup{
   top:50%;
   width:28rem;
   aspect-ratio:1;
-  border:1px solid rgb(240 207 34 / 20%);
+  border:1px solid rgb(250 167 25 / 20%);
   border-radius:50%;
   transform:translateY(-50%);
-  box-shadow:0 0 0 4rem rgb(240 207 34 / 4%),0 0 0 8rem rgb(240 207 34 / 2%);
+  box-shadow:0 0 0 4rem rgb(250 167 25 / 4%),0 0 0 8rem rgb(250 167 25 / 2%);
   pointer-events:none;
 }
 .continuation-cta__inner{

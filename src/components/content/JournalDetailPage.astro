@@ -20,7 +20,7 @@ const related = journal
     return {candidate, score};
   })
   .sort((a,b) => b.score - a.score)
-  .slice(0,3)
+  .slice(0,4)
   .map((item) => item.candidate);
 const sourceLang = record.language?.toLowerCase();
 const sourceLangDiffers = !!sourceLang && sourceLang !== language;
@@ -35,7 +35,9 @@ const titleClass = titleLength > 105
 ---
 <BaseLayout title={record.title} {description} {language} {path} translations={['en','sq']}>
   <article class="journal-detail-v2">
-    <header class:list={['container-wide','journal-detail-v2__header',titleClass]}>
+    <section class="journal-detail-v3__lead">
+      <div class="container-wide journal-detail-v3__lead-grid">
+    <header class:list={['journal-detail-v2__header',titleClass]}>
       <a class="journal-detail-v2__back" href={localizedPath('/journal/', language)}>← Journal</a>
       <div class="journal-detail-v2__meta">
         <p>{record.category || 'Journal'}</p>
@@ -51,10 +53,12 @@ const titleClass = titleLength > 105
     </header>
 
     {image && (
-      <figure class="container-wide journal-detail-v2__cover">
+      <figure class="journal-detail-v2__cover">
         <img src={image} alt="" fetchpriority="high" decoding="async" />
       </figure>
     )}
+      </div>
+    </section>
 
     <div class="journal-detail-v2__body-wrap">
       <aside class="journal-detail-v2__rail">

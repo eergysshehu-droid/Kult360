@@ -8,6 +8,7 @@ import JournalCard from './JournalCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
 import AboutPage from './AboutPage.astro';
 import ContactPage from './ContactPage.astro';
+import GetInvolvedPage from './GetInvolvedPage.astro';
 import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
 import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, projectImage, projects} from '../../lib/content';
 import {programFocusAreas} from '../../content/program-focus';
@@ -35,7 +36,7 @@ const websitePolicies = {
       ['9. Të drejtat tuaja', 'Në varësi të ligjit dhe rrethanave, mund të kërkoni akses në të dhënat tuaja, korrigjimin e të dhënave të pasakta, fshirjen, kufizimin e përpunimit, kundërshtimin e përpunimit dhe, kur zbatohet, transferueshmërinë e të dhënave. Kur baza është pëlqimi, mund ta tërhiqni atë. Mund të kërkojmë informacion të arsyeshëm për verifikimin e identitetit përpara se t’i përgjigjemi një kërkese dhe do të veprojmë brenda afateve që parashikon legjislacioni i zbatueshëm.'],
       ['10. Fëmijët, fotografia dhe dokumentimi kulturor', 'Faqja publike nuk është krijuar për të mbledhur drejtpërdrejt të dhëna personale nga fëmijët pa bazë të përshtatshme ligjore. KULT360 mund të zhvillojë programe kulturore ose edukative me të mitur; në këto raste përdoren procedura dhe njoftime specifike, përfshirë prindin, kujdestarin ose institucionin përgjegjës kur kërkohet. Si fondacion kulturor, KULT360 mund të dokumentojë projekte, performanca dhe evente për arkivim, raportim dhe komunikim kulturor; përdorimi i imazhit ose zërit të personave të identifikueshëm duhet të mbështetet në bazën ligjore të përshtatshme për aktivitetin konkret.'],
       ['11. Siguria dhe vendimmarrja automatike', 'Përdorim masa teknike dhe organizative të arsyeshme për të mbrojtur informacionin nga aksesi, përdorimi, ndryshimi, humbja ose zbulimi i paautorizuar dhe kufizojmë aksesin te personat ose ofruesit që kanë nevojë legjitime për të. Asnjë sistem online nuk mund të garantojë siguri absolute. Faqja publike e KULT360 nuk përdor aktualisht vendimmarrje tërësisht automatike ose profilizim që prodhon efekte ligjore ose efekte të ngjashme të rëndësishme për vizitorët.'],
-      ['12. Kontakt, ankesa dhe përditësime', 'Për pyetje mbi privatësinë, për të ushtruar një të drejtë ose për të ngritur një shqetësim, shkruani në office@kult360.com. Nëse mendoni se përpunimi i të dhënave tuaja shkel legjislacionin shqiptar, keni të drejtë të paraqisni ankesë pranë Komisionerit për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale, pa kufizuar mjetet e tjera administrative ose gjyqësore. Këtë njoftim mund ta përditësojmë kur ndryshojnë shërbimet, teknologjitë, praktikat ose kërkesat ligjore. Ky është një dokument informues publik dhe nuk zëvendëson Statutin, politikat e brendshme ose njoftimet specifike të programeve.']
+      ['12. Kontakt dhe përditësime', 'Për pyetje mbi privatësinë, për të ushtruar një të drejtë ose për të ngritur një shqetësim, shkruani në office@kult360.com. Këtë njoftim mund ta përditësojmë kur ndryshojnë shërbimet, teknologjitë, praktikat ose kërkesat ligjore.']
     ] : [
       ['1. Who we are', 'KULT360 is a non-profit cultural foundation established in Albania. Where KULT360 determines the purposes and means of processing personal information, it acts as the data controller. This notice applies to the public website, communications you initiate through email or other published contact channels, and information you choose to send us about projects, partnerships, events, opportunities or other enquiries. Specific activities may be accompanied by additional privacy information.'],
       ['2. Information we may receive', 'Depending on how you interact with us, we may receive your name, email address, telephone number, the organisation you represent, correspondence, and documents or materials you choose to send. Hosting and security infrastructure may generate limited technical data such as IP address, browser or device type, request date and time, requested pages and technical or security logs. We do not ask for sensitive categories of personal data through the public website unless necessary for a defined activity and accompanied by appropriate information.'],
@@ -48,7 +49,7 @@ const websitePolicies = {
       ['9. Your rights', 'Depending on applicable law and the circumstances, you may have rights to request access to your personal information, correction of inaccurate information, erasure, restriction of processing, objection to processing and, where applicable, data portability. Where processing is based on consent, you may withdraw it. We may request reasonable information to verify identity before responding and will act within the time limits required by applicable law.'],
       ['10. Children, photography and cultural documentation', 'The public website is not designed to collect personal information directly from children without an appropriate legal basis. KULT360 may run cultural or educational programmes involving minors; those activities use programme-specific procedures and notices, including a parent, guardian or responsible institution where required. As a cultural foundation, KULT360 may document projects, performances and events for archival, reporting and cultural-communication purposes; the use of identifiable image or audio material must rely on an appropriate legal basis for the relevant activity.'],
       ['11. Security and automated decision-making', 'We use reasonable technical and organisational measures to protect information against unauthorised access, use, alteration, loss or disclosure and limit access to people or providers with a legitimate need. No online system can guarantee absolute security. The KULT360 public website does not currently use solely automated decision-making or profiling that produces legal or similarly significant effects for visitors.'],
-      ['12. Contact, complaints and updates', 'For privacy questions, to exercise a right or to raise a concern, email office@kult360.com. If you believe that processing of your personal information infringes Albanian data-protection law, you may lodge a complaint with the Commissioner for the Right to Information and Protection of Personal Data, without limiting other administrative or judicial remedies. We may update this notice when our services, technologies, practices or legal requirements change. This is a public information notice and does not replace the Foundation’s Statute, internal policies or programme-specific notices.']
+      ['12. Contact and updates', 'For privacy questions, to exercise a right or to raise a concern, email office@kult360.com. We may update this notice when our services, technologies, practices or legal requirements change.']
     ]
   },
   cookies: {
@@ -243,36 +244,7 @@ const initiativeThemeLink: Record<string,string> = {
     <section class="opportunity-grid ruled-section">{opportunities.map((item) => <article><p class="meta">{item.kind}</p><h2>{item.title}</h2>{item.summary && <p>{item.summary}</p>}</article>)}</section>
   )}
 
-  {page.slug === 'get-involved' && (
-    <>
-      <section class="institutional-invite ruled-section">
-        <div class="institutional-invite__intro">
-          <p class="meta">{language === 'sq' ? 'Punoni me KULT360' : 'Work with KULT360'}</p>
-          <h2>{language === 'sq' ? 'Le të ndërtojmë diçka me vlerë, së bashku.' : 'Let’s build something meaningful, together.'}</h2>
-          <p>{language === 'sq'
-            ? 'Bashkëpunojmë me institucione kulturore, fondacione, kompani, artistë dhe komunitete që ndajnë interesin për kulturën, të drejtat, edukimin, trashëgiminë dhe qëndrueshmërinë.'
-            : 'We collaborate with cultural institutions, foundations, companies, artists and communities that share an interest in culture, rights, education, heritage and sustainability.'}</p>
-        </div>
-        <div class="institutional-invite__routes">
-          {[
-            [language === 'sq' ? 'Për individë' : 'For individuals', language === 'sq' ? 'Mbështetni, merrni pjesë ose sillni një ide.' : 'Support, participate or bring an idea.', 'Individual enquiry'],
-            [language === 'sq' ? 'Për organizata & kompani' : 'For organisations & companies', language === 'sq' ? 'Krijoni një bashkëpunim kulturor, prodhim ose mbështetje në natyrë.' : 'Build a cultural collaboration, production or in-kind partnership.', 'Organisation partnership'],
-            [language === 'sq' ? 'Për fondacione & institucione' : 'For foundations & institutions', language === 'sq' ? 'Bashkëzhvilloni programe, shkëmbime dhe projekte me ndikim publik.' : 'Co-develop programmes, exchanges and projects with public value.', 'Institutional collaboration']
-          ].map((item, index) => (
-            <a class="institutional-route" href={`mailto:${siteConfig.organization.email}?subject=${encodeURIComponent(item[2])}`}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <div><h3>{item[0]}</h3><p>{item[1]}</p></div>
-              <i aria-hidden="true">↗</i>
-            </a>
-          ))}
-        </div>
-        <div class="institutional-invite__contact">
-          <p>{language === 'sq' ? 'Keni diçka konkrete në mendje?' : 'Have something specific in mind?'}</p>
-          <a class="pcf-button pcf-button--dark" href={`mailto:${siteConfig.organization.email}?subject=${encodeURIComponent('KULT360 collaboration')}`}><span>{language === 'sq' ? 'Nis një bisedë' : 'Start a conversation'}</span><i aria-hidden="true">↗</i></a>
-        </div>
-      </section>
-    </>
-  )}
+  {page.slug === 'get-involved' && <GetInvolvedPage {language} />}
 
   {policy && (
     <section class={`policy-page ruled-section ${page.slug === 'privacy' ? 'policy-page--privacy' : ''}`}>
@@ -293,15 +265,6 @@ const initiativeThemeLink: Record<string,string> = {
           <article><h2>{section[0]}</h2><p>{section[1]}</p></article>
         ))}
       </div>
-      {page.slug === 'privacy' && (
-        <div class="policy-page__authority">
-          <span>{language === 'sq' ? 'Autoriteti mbikëqyrës' : 'Supervisory authority'}</span>
-          <a href="https://idp.al/ankohu/" target="_blank" rel="noreferrer">
-            {language === 'sq' ? 'Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale' : 'Commissioner for the Right to Information and Protection of Personal Data'}
-            <i aria-hidden="true">↗</i>
-          </a>
-        </div>
-      )}
       <p class="policy-page__note">{language === 'sq' ? 'Përditësuar: 25 shtator 2026 · Politika e faqes publike.' : 'Updated: 25 September 2026 · Public website policy.'}</p>
     </section>
   )}

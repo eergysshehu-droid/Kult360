@@ -1,0 +1,96 @@
+:root{--brand-yellow:#faa719;--color-accent:#faa719}
+.pcf-hero,.continuation-cta,.program-detail,.theme-detail{--experience-yellow:#faa719;--pcf-yellow:#faa719;--section-yellow:#faa719;--ref-yellow:#faa719}
+
+/* Homepage hero — fixed selector axis, one dot, intact desktop dial. */
+.pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-dot{opacity:0!important}
+@media(min-width:70.01rem){
+  .pcf-hero__headline-wrap--dial{width:auto!important;max-width:72vw!important;overflow:visible!important}
+  .pcf-hero__headline--dial{position:relative;z-index:11;width:max-content!important;max-width:none!important;display:flex!important;align-items:center!important;gap:0!important;padding-right:.72rem;background:#090a08}
+  .pcf-hero__headline--dial::after{display:none!important}
+  .pcf-hero__dial-live{margin-left:.28em!important;background:transparent!important}
+  .pcf-hero__dial-stage{--dial-radius:min(20vw,18.5rem)!important;top:49%!important;right:clamp(1rem,2.4vw,3rem)!important;width:min(47rem,44vw)!important;max-width:47rem!important}
+  .pcf-hero__dial-beam{display:block!important;right:0!important;width:min(50rem,49vw)!important;height:1px!important;background:linear-gradient(90deg,transparent 0%,rgb(250 167 25 / 18%) 22%,rgb(250 167 25 / 62%) 78%,#faa719 100%)!important;box-shadow:0 0 .45rem rgb(250 167 25 / 10%)!important}
+  .pcf-hero__dial-arrow{left:-.56rem!important;border-top-width:.18rem!important;border-bottom-width:.18rem!important;border-left-width:.34rem!important;border-left-color:#faa719!important}
+  .pcf-hero__dial-lock{width:.58rem!important;background:#faa719!important;box-shadow:0 0 0 .13rem rgb(250 167 25 / 10%),0 0 .75rem rgb(250 167 25 / 30%)!important}
+  .pcf-hero__actions{display:flex!important;grid-template-columns:none!important;flex-wrap:wrap!important;gap:.55rem!important;width:auto!important}
+  .pcf-hero__actions .pcf-button{width:auto!important;min-width:11rem}
+}
+.pcf-hero__dial-core{border-color:#faa719!important;background:radial-gradient(circle at center,#faa719 0 11.5%,#d98c0f 11.7% 14%,#080906 14.3% 38%,rgb(250 167 25 / 3%) 38.2% 40%,#070806 40.3% 100%)!important}
+.pcf-hero__dial-arrow{border-left-color:#faa719!important}.pcf-hero__dial-lock,.pcf-hero__dial-dot{background:#faa719!important}
+.pcf-hero__dial-live{color:#faa719!important;text-shadow:0 0 1rem rgb(250 167 25 / 12%)!important}
+@media(max-width:44rem){.pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-dot{opacity:0!important}.pcf-hero__dial-lock{background:#faa719!important}.pcf-hero__headline--dial::after{background:linear-gradient(90deg,rgb(250 167 25 / 8%),rgb(250 167 25 / 58%) 76%,#faa719)!important}}
+
+/* Dark editorial heroes always use the white KULT360 lockup. */
+body:has(.program-detail__hero) .brand-lockup__logo--dark,
+body:has(.theme-detail__hero) .brand-lockup__logo--dark,
+body:has(.place-essay__hero) .brand-lockup__logo--dark{opacity:0!important}
+body:has(.program-detail__hero) .brand-lockup__logo--light,
+body:has(.theme-detail__hero) .brand-lockup__logo--light,
+body:has(.place-essay__hero) .brand-lockup__logo--light{opacity:1!important}
+
+/* Programme hero: keep orbit fully visible and composed even on 32" displays. */
+@media(min-width:70rem){
+  .program-detail__hero{min-height:clamp(38rem,72svh,47rem)!important}
+  .program-detail__orbit{right:clamp(1.5rem,3vw,4rem)!important;top:50%!important;width:min(38rem,34vw)!important;height:auto!important;aspect-ratio:1!important;overflow:visible!important;transform:translateY(-50%)!important;opacity:.72!important}
+  .program-detail__orbit img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;animation:kultOrbitDrift 26s linear infinite}
+  .program-detail__hero-inner{min-height:inherit!important;max-width:92rem!important}
+  .program-detail__title-grid{max-width:66rem!important}
+}
+@keyframes kultOrbitDrift{to{transform:rotate(360deg)}}
+
+/* Journal archive cards: equal geometry and consistent visual rhythm. */
+.journal-index--editorial{align-items:stretch!important}
+.journal-index--editorial .journal-card{height:100%;display:grid}
+.journal-index--editorial .journal-card__link{height:100%;display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+.journal-index--editorial .journal-card__media{aspect-ratio:4/3!important;min-height:0!important}
+.journal-index--editorial .journal-card__body{min-height:11.5rem;display:grid!important;grid-template-rows:auto 1fr auto!important;align-content:start}
+.journal-index--editorial .journal-card h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;min-height:4.25em;margin:0!important}
+.journal-index--editorial .journal-card--title-long h3,.journal-index--editorial .journal-card--title-very-long h3{font-size:clamp(1rem,1.25vw,1.22rem)!important}
+
+/* Journal story intro: image-led editorial hero, contained media. */
+.journal-detail-v3__lead{color:#f7f4ed;background:#11110f;border-top:3px solid #faa719}
+.journal-detail-v3__lead-grid{display:grid;grid-template-columns:minmax(20rem,.82fr) minmax(0,1.18fr);gap:clamp(2rem,4vw,4rem);align-items:center;padding-block:clamp(4.8rem,7vw,7rem)}
+.journal-detail-v3__lead .journal-detail-v2__header{width:auto!important;max-width:none!important;margin:0!important;padding:0!important;color:#f7f4ed}
+.journal-detail-v3__lead .journal-detail-v2__back,.journal-detail-v3__lead .journal-detail-v2__meta,.journal-detail-v3__lead .journal-detail-v2__byline{color:rgb(255 255 255 / 62%)!important}
+.journal-detail-v3__lead .journal-detail-v2__header h1{max-width:12ch!important;color:#fff!important;font-size:clamp(2.8rem,4.2vw,5rem)!important;line-height:.92!important}
+.journal-detail-v3__lead .journal-detail-v2__dek{max-width:34rem!important;color:rgb(255 255 255 / 72%)!important}
+.journal-detail-v3__lead .journal-detail-v2__cover{width:100%!important;min-width:0;margin:0!important;padding:clamp(.45rem,.8vw,.75rem)!important;background:#090a08!important;border:1px solid rgb(255 255 255 / 12%)!important;border-radius:10px!important}
+.journal-detail-v3__lead .journal-detail-v2__cover img{display:block!important;width:100%!important;height:min(68svh,46rem)!important;max-height:none!important;object-fit:contain!important;object-position:center!important;background:#090a08}
+
+/* Inline article media aligns to the reading column, never floats randomly. */
+.journal-detail-v2__body .rich-media,.journal-detail-v2__body>figure,.journal-detail-v2__body>img{width:min(100%,43rem)!important;margin:clamp(2.3rem,4vw,3.8rem) auto!important;padding:.5rem!important;background:#eeeae2!important;border:1px solid rgb(9 9 8 / 12%)!important}
+.journal-detail-v2__body .rich-media img,.journal-detail-v2__body>figure img,.journal-detail-v2__body>img{display:block!important;width:auto!important;max-width:100%!important;height:auto!important;max-height:68rem!important;margin-inline:auto!important;object-fit:contain!important;object-position:center!important}
+
+/* Related stories — stronger, image-led and equal-height. */
+.journal-detail-v2__related-band{color:#f7f4ed!important;background:#11110f!important;padding-block:clamp(4rem,7vw,6.5rem)!important}
+.journal-detail-v2__related .journal-detail-v2__section-head{border-color:rgb(255 255 255 / 18%)!important}
+.journal-detail-v2__related .journal-detail-v2__section-head p{color:#faa719!important}
+.journal-detail-v2__related .journal-detail-v2__section-head h2,.journal-detail-v2__related .journal-detail-v2__section-head a{color:#fff!important}
+.journal-detail-v2__related-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.8rem!important;align-items:stretch}
+.journal-detail-v2__related-grid .journal-card{height:100%}
+.journal-detail-v2__related-grid .journal-card__link{height:100%;display:grid;grid-template-rows:auto 1fr;overflow:hidden;color:#111!important;background:#f5f1e8;border-radius:10px;text-decoration:none}
+.journal-detail-v2__related-grid .journal-card__media{aspect-ratio:4/3!important;padding:.35rem!important;background:#0d0d0b!important}
+.journal-detail-v2__related-grid .journal-card__body{min-height:10.5rem;display:grid!important;grid-template-rows:auto 1fr auto!important;padding:.85rem!important}
+.journal-detail-v2__related-grid .journal-card h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;margin:0!important}
+
+/* Continuation: horizontal actions, high contrast, intact animated circle. */
+.continuation-cta{position:relative!important;overflow:hidden!important;color:#fff!important;background:#0a0a08!important;border-top:3px solid #faa719!important}
+.continuation-cta::after{display:none!important}
+.continuation-cta__inner{position:relative;z-index:1;display:grid!important;grid-template-columns:minmax(15rem,.6fr) minmax(0,1.4fr)!important;gap:clamp(2rem,5vw,5rem)!important;align-items:end!important;padding-block:clamp(4.2rem,6.5vw,6rem)!important}
+.continuation-cta__copy p{color:#faa719!important}.continuation-cta__copy h2{color:#fff!important;max-width:11ch!important;font-size:clamp(2.6rem,4.3vw,4.6rem)!important}.continuation-cta__copy>span{color:rgb(255 255 255 / 66%)!important}
+.continuation-cta__routes{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;border-top:1px solid rgb(255 255 255 / 22%)!important;border-left:1px solid rgb(255 255 255 / 16%)!important}
+.continuation-cta__routes a{min-height:8.5rem!important;display:grid!important;grid-template-columns:1fr auto!important;grid-template-rows:auto 1fr!important;gap:.8rem!important;align-items:start!important;padding:1rem!important;border-right:1px solid rgb(255 255 255 / 16%)!important;border-bottom:1px solid rgb(255 255 255 / 16%)!important}
+.continuation-cta__routes a span{grid-column:1;color:#faa719!important}.continuation-cta__routes a strong{align-self:end;color:#fff!important}.continuation-cta__routes a i{grid-column:2;grid-row:1/3;align-self:end;border-color:rgb(255 255 255 / 35%)!important}
+.continuation-cta__routes a:hover,.continuation-cta__routes a:focus-visible{padding-left:1rem!important;background:rgb(255 255 255 / 5%)!important}
+.continuation-cta__orbit{position:absolute;z-index:-1;right:clamp(1.2rem,2.5vw,3rem);top:50%;width:min(20rem,20vw);aspect-ratio:1;transform:translateY(-50%);border:1px solid rgb(250 167 25 / 24%);border-radius:50%;box-shadow:0 0 0 3.5rem rgb(250 167 25 / 4%),0 0 0 7rem rgb(250 167 25 / 2%);opacity:.55}
+.continuation-cta__orbit::before{content:'';position:absolute;inset:26%;border:1px solid rgb(250 167 25 / 32%);border-radius:50%}.continuation-cta__orbit span{position:absolute;left:-.3rem;top:50%;width:.6rem;aspect-ratio:1;border-radius:50%;background:#faa719;transform:translateY(-50%)}.continuation-cta__orbit i{position:absolute;inset:-1px;border-radius:50%;animation:continueOrbit 20s linear infinite}.continuation-cta__orbit i::after{content:'';position:absolute;left:50%;top:-.27rem;width:.54rem;aspect-ratio:1;border-radius:50%;background:#faa719}
+@keyframes continueOrbit{to{transform:rotate(360deg)}}
+
+/* Project archive: equal card bottoms and image frames. */
+.project-grid--curated{align-items:stretch!important}.project-grid--curated .project-card__link{grid-template-rows:auto 1fr!important}.project-grid--curated .project-card__body{min-height:13rem!important}.project-grid--curated .project-card__summary{-webkit-line-clamp:3!important}.project-grid--curated .card-inline-action{align-self:end}
+
+/* Wide displays: keep composition inside a designed publication width. */
+@media(min-width:118rem){.container-wide{max-width:94rem!important}.pcf-hero__dial-stage{right:calc((100vw - 94rem)/2)!important}.pcf-hero__dial-beam{width:min(58rem,45vw)!important}.program-detail__hero-inner{max-width:94rem!important}}
+@media(max-width:72rem){.journal-detail-v2__related-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.journal-detail-v3__lead-grid{grid-template-columns:1fr}.journal-detail-v3__lead .journal-detail-v2__cover img{height:auto!important;max-height:70svh!important}.continuation-cta__inner{grid-template-columns:1fr!important}.continuation-cta__routes{grid-template-columns:repeat(3,minmax(0,1fr))!important}.continuation-cta__orbit{right:2rem;width:16rem}}
+@media(max-width:44rem){.journal-detail-v2__related-grid{display:grid!important;grid-auto-flow:column!important;grid-auto-columns:82vw!important;grid-template-columns:none!important;overflow-x:auto!important;scroll-snap-type:x mandatory;padding-bottom:.5rem}.journal-detail-v2__related-grid .journal-card{scroll-snap-align:start}.continuation-cta__routes{grid-template-columns:1fr!important}.continuation-cta__routes a{min-height:5.4rem!important}.continuation-cta__orbit{right:-6rem;width:14rem;opacity:.32}.journal-detail-v3__lead-grid{padding-block:4rem}.journal-detail-v3__lead .journal-detail-v2__header h1{font-size:clamp(2.45rem,11vw,3.6rem)!important}}
+@media(prefers-reduced-motion:reduce){.program-detail__orbit img,.continuation-cta__orbit i{animation:none!important}}
