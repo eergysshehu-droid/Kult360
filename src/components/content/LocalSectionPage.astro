@@ -5,8 +5,9 @@ import ProjectCard from './ProjectCard.astro';
 import JournalCard from './JournalCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
 import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
-import {events, formatDate, initiatives, journal, opportunities, people, projectImage, projects} from '../../lib/content';
+import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, projectImage, projects} from '../../lib/content';
 import {programFocusAreas} from '../../content/program-focus';
+import {cultureThemes} from '../../content/themes';
 import type {ShellPageDefinition} from '../../content/shell-pages';
 
 interface Props {page: ShellPageDefinition; language: Language}
@@ -85,6 +86,12 @@ const websitePolicies = {
 } as const;
 
 const policy = page.slug in websitePolicies ? websitePolicies[page.slug as keyof typeof websitePolicies] : undefined;
+const journalFeature = journal.find((record) => record.featured && journalImage(record)) || journal.find((record) => journalImage(record)) || journal[0];
+const journalRest = journalFeature ? journal.filter((record) => record.id !== journalFeature.id) : journal;
+const initiativeThemeLink: Record<string,string> = {
+  'initiative-artist-rights': 'rights-access',
+  'initiative-sound-heritage-library': 'heritage-memory'
+};
 ---
 <ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
   <section class="section-intro">
@@ -167,9 +174,38 @@ const policy = page.slug in websitePolicies ? websitePolicies[page.slug as keyof
           </a>
         ))}
       </section>
-      <section class="ruled-section">
+      <section class="ruled-section programme-initiatives">
         <div class="section-kicker"><span>+</span><h2>{language === 'sq' ? 'Nisma' : 'Initiatives'}</h2></div>
-        <div class="two-column-list">{initiatives.map((item) => <article><h3>{item.title}</h3><p>{item.summary}</p></article>)}</div>
+        <div class="two-column-list">
+          {initiatives.map((item) => {
+            const themeSlug = initiativeThemeLink[item.id];
+            return themeSlug ? (
+              <a class="initiative-link-card" href={localizedPath(`/themes/${themeSlug}/`, language)}>
+                <div><h3>{item.title}</h3><p>{item.summary}</p></div>
+                <span>{language === 'sq' ? 'Eksploro temën' : 'Explore the theme'} ↗</span>
+              </a>
+            ) : (
+              <article><h3>{item.title}</h3><p>{item.summary}</p></article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section class="ruled-section programme-themes">
+        <div class="section-kicker"><span>06</span><h2>{language === 'sq' ? 'Tema që kalojnë përmes programeve' : 'Themes across our programmes'}</h2></div>
+        <p class="programme-themes__intro">{language === 'sq'
+          ? 'Këto tema lidhin programet tona dhe ndihmojnë të kuptohet si arti, të drejtat, mësimi, kujtesa, vendi dhe media takohen në praktikë.'
+          : 'These themes connect our programme areas and show how art, rights, learning, memory, place and media meet in practice.'}</p>
+        <div class="programme-theme-grid">
+          {cultureThemes.map((theme) => (
+            <a href={localizedPath(`/themes/${theme.slug}/`, language)} style={`--theme-accent:${theme.accent}`}>
+              <span>{theme.number}</span>
+              <h3>{theme.title[language]}</h3>
+              <p>{theme.summary[language]}</p>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
       </section>
     </>
   )}
@@ -183,9 +219,31 @@ const policy = page.slug in websitePolicies ? websitePolicies[page.slug as keyof
   )}
 
   {page.slug === 'journal' && (
-    <section class="journal-index ruled-section">
-      {journal.map((record) => <JournalCard {record} {language} />)}
-    </section>
+    <>
+      {journalFeature && (
+        <section class="journal-feature ruled-section">
+          <div class="journal-feature__label"><span>01</span><p>{language === 'sq' ? 'Në fokus' : 'Featured story'}</p></div>
+          <a class="journal-feature__card" href={localizedPath(`/journal/${journalSlug(journalFeature)}/`, language)}>
+            {journalImage(journalFeature) && <div class="journal-feature__media"><img src={journalImage(journalFeature)} alt="" fetchpriority="high" decoding="async" /></div>}
+            <div class="journal-feature__copy">
+              <p class="meta">{[journalFeature.category || 'Journal', journalFeature.author, journalFeature.read_time].filter(Boolean).join(' · ')}</p>
+              <h2>{journalFeature.title}</h2>
+              {journalFeature.excerpt && <p>{journalFeature.excerpt}</p>}
+              <span>{language === 'sq' ? 'Lexo historinë' : 'Read the story'} <i aria-hidden="true">↗</i></span>
+            </div>
+          </a>
+        </section>
+      )}
+      <section class="journal-library ruled-section">
+        <div class="journal-library__head">
+          <div><p class="meta">{language === 'sq' ? 'Arkivi' : 'The archive'}</p><h2>{language === 'sq' ? 'Histori, ide & perspektiva.' : 'Stories, ideas & perspectives.'}</h2></div>
+          <p>{language === 'sq' ? 'Shkrime nga rrjeti kulturor i KULT360, të ruajtura në gjuhën e publikimit të tyre kur përkthimi editorial nuk është ende i miratuar.' : 'Writing from the KULT360 cultural network, kept in its source language where an editorial translation is not yet approved.'}</p>
+        </div>
+        <div class="journal-index journal-index--editorial">
+          {journalRest.map((record) => <JournalCard {record} {language} />)}
+        </div>
+      </section>
+    </>
   )}
 
   {page.slug === 'media' && (
