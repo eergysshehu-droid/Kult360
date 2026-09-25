@@ -18,11 +18,14 @@ import {localizedPath} from '../lib/site-config';
 import {homePage} from '../content/shell-pages';
 
 const language = 'en';
-const leadershipIds = ['person-eda-zari','person-ergys-shehu'];
+const leadershipIds = ['person-eda-zari'];
+const directorIds = ['person-ergys-shehu','person-eda-elbasani','person-teufik-bashi','person-eros-dibra'];
 const leadership = people
   .filter((person) => leadershipIds.includes(person.id))
   .sort((a, b) => leadershipIds.indexOf(a.id) - leadershipIds.indexOf(b.id));
-const directors = people.filter((person) => !leadershipIds.includes(person.id));
+const directors = people
+  .filter((person) => directorIds.includes(person.id))
+  .sort((a, b) => directorIds.indexOf(a.id) - directorIds.indexOf(b.id));
 const programmeImages = [
   '/media/projects/artist-hub.jpg',
   '/media/projects/blue-heart.jpg',
@@ -222,17 +225,22 @@ const heroWordStep = 360 / heroWords.length;
         <p>Artists, producers, communicators and cultural practitioners shaping the foundation together.</p>
       </div>
 
-      <div class="pcf-leadership-grid" aria-label="KULT360 leadership">
+      <div class="pcf-leadership-head">
+        <p class="pcf-label">Leadership</p>
+      </div>
+
+      <div class="pcf-leadership-single" aria-label="KULT360 President">
         {leadership.map((person) => {
           const image = personImage(person);
           return (
-            <a class="pcf-person-card pcf-person-card--leadership" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
+            <a class="pcf-person-card pcf-person-card--president" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
               <div class="pcf-person-card__media">
                 {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
               </div>
               <div class="pcf-person-card__copy">
+                <span class="pcf-person-card__eyebrow">President / Chair of the Board</span>
                 <strong>{person.name}</strong>
-                <span>{person.role}</span>
+                <p>Institutional leadership and artistic vision of the foundation.</p>
                 <i aria-hidden="true">↗</i>
               </div>
             </a>
@@ -249,7 +257,7 @@ const heroWordStep = 360 / heroWords.length;
         {directors.map((person) => {
           const image = personImage(person);
           return (
-            <a class="pcf-person-card" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
+            <a class="pcf-person-card pcf-person-card--director" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
               <div class="pcf-person-card__media">
                 {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
               </div>
