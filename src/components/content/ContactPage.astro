@@ -138,13 +138,13 @@ const {language} = Astro.props;
     const language = contactForm.dataset.language === 'sq' ? 'sq' : 'en';
     const startedAt = Date.now();
 
-    const setStatus = (message, state = '') => {
+    const setStatus = (message: string, state = '') => {
       if (!(status instanceof HTMLElement)) return;
       status.textContent = message;
       status.dataset.state = state;
     };
 
-    const mailFallback = (data) => {
+    const mailFallback = (data: {inquiry: string; name: string; email: string; organisation: string; phone: string; message: string}) => {
       const subject = `KULT360 — ${data.inquiry || 'Website enquiry'}`;
       const body = [
         `Name: ${data.name || ''}`,
