@@ -437,22 +437,6 @@ body:not(:has(.pcf-hero)) .brand-lockup{
 /* Remove old footer-brand layout when the new top rail is present */
 .footer-v2__brand{display:none}
 
-/* Person pages: no migration diagnostics as visual content */
-.person-detail + .detail-body:empty{
-  display:none;
-}
-.person-detail{
-  margin-bottom:1.6rem;
-}
-.person-detail + .detail-body{
-  margin-inline:0;
-  width:auto;
-}
-.person-detail + .detail-body .button{
-  min-height:2.55rem;
-  font-size:.64rem;
-}
-
 @media(max-width:44rem){
   .brand-lockup,
   body:not(:has(.pcf-hero)) .brand-lockup,
