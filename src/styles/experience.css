@@ -6102,6 +6102,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .place-essay__chapter h2 {
   margin: 0 0 1.5rem;
   max-width: 15ch;
+  color: #f4f1e9;
   font-size: clamp(2.2rem, 3.7vw, 3.75rem);
   line-height: .92;
   letter-spacing: -.055em;

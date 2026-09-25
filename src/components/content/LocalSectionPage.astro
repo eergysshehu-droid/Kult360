@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard.astro';
 import JournalCard from './JournalCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
 import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
-import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, projectImage, projects} from '../../lib/content';
+import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, personImage, personSlug, projectImage, projects} from '../../lib/content';
 import {programFocusAreas} from '../../content/program-focus';
 import {cultureThemes} from '../../content/themes';
 import type {ShellPageDefinition} from '../../content/shell-pages';
@@ -124,69 +124,146 @@ const initiativeThemeLink: Record<string,string> = {
   'initiative-artist-rights': 'rights-access',
   'initiative-sound-heritage-library': 'heritage-memory'
 };
+const president = people.find((person) => person.role.toLowerCase().includes('president')) || people[0];
+const directors = people.filter((person) => person.id !== president?.id);
 ---
 <ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
-  <section class:list={['section-intro', policy && 'section-intro--policy']}>
-    <SectionHeader eyebrow="KULT360" heading={page.heading[language]} description={page.description[language]} />
-  </section>
+  {page.slug !== 'about' && (
+    <section class:list={['section-intro', policy && 'section-intro--policy']}>
+      <SectionHeader eyebrow="KULT360" heading={page.heading[language]} description={page.description[language]} />
+    </section>
+  )}
 
   {page.slug === 'about' && (
     <>
-      <section class="about-v4 ruled-section">
-        <div class="about-v4__row">
-          <p class="about-v4__label">{language === 'sq' ? 'Rreth nesh' : 'About us'}</p>
-          <div>
-            <h2>{language === 'sq' ? 'Kultura si urë. Artistët në qendër.' : 'Culture as a bridge. Artists at the centre.'}</h2>
-            <p>{language === 'sq'
-              ? 'KULT360 është një fondacion i pavarur që lidh kulturën me zhvillimin shoqëror. Ne ndërtojmë ura përmes artit dhe trashëgimisë, duke lidhur talentin vendas, diasporën, komunitetet dhe partnerët ndërkombëtarë.'
-              : 'KULT360 is an independent foundation connecting culture with social development. We build bridges through art and heritage, bringing together local talent, the diaspora, communities and international partners.'}</p>
+      <section class="about-v5 ruled-section">
+        <header class="about-v5__hero">
+          <p class="about-v5__eyebrow">KULT360 Foundation · Albania</p>
+          <div class="about-v5__hero-grid">
+            <h1>{language === 'sq' ? 'Rreth KULT360' : 'About KULT360'}</h1>
+            <div>
+              <p class="about-v5__lead">{language === 'sq' ? 'Kultura si urë. Artistët në qendër.' : 'Culture as a bridge. Artists at the centre.'}</p>
+              <p>{language === 'sq'
+                ? 'KULT360 është një fondacion i pavarur që lidh kulturën me zhvillimin shoqëror. Ne ndërtojmë ura përmes artit dhe trashëgimisë, duke lidhur talentin vendas, diasporën, komunitetet dhe partnerët ndërkombëtarë.'
+                : 'KULT360 is an independent foundation connecting culture with social development. We build bridges through art and heritage, bringing together local talent, the diaspora, communities and international partners.'}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="about-v4__row">
-          <p class="about-v4__label">{language === 'sq' ? 'Vizioni ynë' : 'Our vision'}</p>
-          <div>
-            <blockquote>{language === 'sq'
-              ? '“Një peizazh kulturor ku artistët mund të krijojnë me dinjitet, trashëgimia mbetet e gjallë dhe komunitetet marrin pjesë në formësimin e së ardhmes.”'
-              : '“A cultural landscape where artists can work with dignity, heritage stays alive and communities take part in shaping the future.”'}</blockquote>
-            <p>{language === 'sq'
-              ? 'Vizioni ynë është kulturë e gjallë: krijimtari që lëviz mes vendeve dhe brezave, ruan kujtesën, hap dialog dhe krijon lidhje të reja.'
-              : 'Our vision is living culture: creative work that moves across places and generations, carries memory, opens dialogue and creates new connections.'}</p>
-          </div>
-        </div>
-
-        <div class="about-v4__pillars">
-          <div class="about-v4__pillars-head">
-            <p class="about-v4__label">{language === 'sq' ? 'Shtyllat strategjike' : 'Strategic pillars'}</p>
-            <h2>{language === 'sq' ? 'Ndikojmë jetën shoqërore përmes katër veprimeve kryesore.' : 'Influencing social life through four key actions.'}</h2>
-          </div>
-          <div class="about-v4__pillar-grid">
-            {[
-              [language === 'sq' ? 'Mbështetja e artistëve' : 'Supporting Artists', language === 'sq' ? 'Hapësira fizike dhe digjitale për të promovuar dhe shitur drejtpërdrejt punën krijuese.' : 'Physical and digital spaces that promote and bring creative work directly to the public.'],
-              [language === 'sq' ? 'Ndryshim shoqëror' : 'Social Change', language === 'sq' ? 'Ndikim në politika përmes aktivizmit kulturor dhe mjedisor.' : 'Driving policy through dedicated cultural and environmental activism.'],
-              [language === 'sq' ? 'Hapësira publike' : 'Public Spaces', language === 'sq' ? 'Shndërrimi i vendeve statike në platforma të gjalla për shprehje artistike dhe advokim.' : 'Turning static locations into vibrant platforms for artistic expression and advocacy.'],
-              [language === 'sq' ? 'Fuqi ligjore' : 'Legal Power', language === 'sq' ? 'Edukimi mbi të drejtën e autorit dhe pronësinë intelektuale.' : 'Education focused on copyright protection and intellectual property rights.']
-            ].map((item, index) => (
-              <article>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <h3>{item[0]}</h3>
-                <p>{item[1]}</p>
-              </article>
-            ))}
-          </div>
-        </div>
+        </header>
       </section>
 
-      <section class="ruled-section">
-        <div class="section-kicker"><span>01</span><h2>{language === 'sq' ? 'Ekipi' : 'Team'}</h2></div>
-        <div class="people-list">
-          {people.map((person) => (
-            <a class="person-row" href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}>
-              <span>{person.name}</span><span>{person.role}</span><span aria-hidden="true">↗</span>
+      <section class="about-v5__leadership ruled-section">
+        <div class="about-v5__section-head">
+          <div>
+            <p>{language === 'sq' ? 'Udhëheqja' : 'Leadership'}</p>
+            <h2>{language === 'sq' ? 'Njerëzit që drejtojnë KULT360.' : 'The people leading KULT360.'}</h2>
+          </div>
+          <a href={localizedPath('/people/', language)}>{language === 'sq' ? 'Shiko të gjithë ekipin' : 'View all people'} ↗</a>
+        </div>
+
+        {president && (
+          <a class="about-v5__president" href={localizedPath(`/people/${personSlug(president)}/`, language)}>
+            <div class="about-v5__president-media">
+              {personImage(president)
+                ? <img src={personImage(president)} alt={president.name} loading="lazy" decoding="async" />
+                : <span>{president.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
+            </div>
+            <div class="about-v5__president-copy">
+              <p>{language === 'sq' ? 'Presidenca / Bordi' : 'President / Board'}</p>
+              <h3>{president.name}</h3>
+              <span>{president.role}</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+          </a>
+        )}
+
+        <div class="about-v5__directors-head">
+          <p>{language === 'sq' ? 'Drejtuesit' : 'Directors'}</p>
+          <span>{language === 'sq' ? 'Drejtimi ekzekutiv dhe programor' : 'Executive and programme leadership'}</span>
+        </div>
+
+        <div class="about-v5__director-grid">
+          {directors.map((person) => (
+            <a href={localizedPath(`/people/${personSlug(person)}/`, language)}>
+              <div class="about-v5__director-media">
+                {personImage(person)
+                  ? <img src={personImage(person)} alt={person.name} loading="lazy" decoding="async" />
+                  : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
+              </div>
+              <div class="about-v5__director-copy">
+                <strong>{person.name}</strong>
+                <span>{person.role}</span>
+                <i aria-hidden="true">↗</i>
+              </div>
             </a>
           ))}
         </div>
-        <p class="source-note">{t.teamNote}</p>
+      </section>
+
+      <section class="about-v5__vision ruled-section">
+        <p class="about-v5__label">{language === 'sq' ? 'Vizioni ynë' : 'Our vision'}</p>
+        <div>
+          <blockquote>{language === 'sq'
+            ? '“Një peizazh kulturor ku artistët mund të krijojnë me dinjitet, trashëgimia mbetet e gjallë dhe komunitetet marrin pjesë në formësimin e së ardhmes.”'
+            : '“A cultural landscape where artists can work with dignity, heritage stays alive and communities take part in shaping the future.”'}</blockquote>
+          <p>{language === 'sq'
+            ? 'Vizioni ynë është kulturë e gjallë: krijimtari që lëviz mes vendeve dhe brezave, ruan kujtesën, hap dialog dhe krijon lidhje të reja.'
+            : 'Our vision is living culture: creative work that moves across places and generations, carries memory, opens dialogue and creates new connections.'}</p>
+        </div>
+      </section>
+
+      <section class="about-v5__pillars ruled-section">
+        <div class="about-v5__section-head">
+          <div>
+            <p>{language === 'sq' ? 'Shtyllat strategjike' : 'Strategic pillars'}</p>
+            <h2>{language === 'sq' ? 'Katër mënyra si e kthejmë misionin në veprim.' : 'Four ways we turn the mission into action.'}</h2>
+          </div>
+        </div>
+        <div class="about-v5__pillar-grid">
+          {[
+            [language === 'sq' ? 'Mbështetja e artistëve' : 'Supporting Artists', language === 'sq' ? 'Hapësira fizike dhe digjitale për të promovuar dhe shitur drejtpërdrejt punën krijuese.' : 'Physical and digital spaces that promote and bring creative work directly to the public.'],
+            [language === 'sq' ? 'Ndryshim shoqëror' : 'Social Change', language === 'sq' ? 'Ndikim në politika përmes aktivizmit kulturor dhe mjedisor.' : 'Driving policy through dedicated cultural and environmental activism.'],
+            [language === 'sq' ? 'Hapësira publike' : 'Public Spaces', language === 'sq' ? 'Shndërrimi i vendeve statike në platforma të gjalla për shprehje artistike dhe advokim.' : 'Turning static locations into vibrant platforms for artistic expression and advocacy.'],
+            [language === 'sq' ? 'Fuqi ligjore' : 'Legal Power', language === 'sq' ? 'Edukimi mbi të drejtën e autorit dhe pronësinë intelektuale.' : 'Education focused on copyright protection and intellectual property rights.']
+          ].map((item, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{item[0]}</h3>
+              <p>{item[1]}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="about-v5__connect ruled-section">
+        <div class="about-v5__connect-intro">
+          <p>{language === 'sq' ? 'Lidhu me KULT360' : 'Connect with KULT360'}</p>
+          <h2>{language === 'sq' ? 'Bashkëpunim, partneritet apo një bisedë e parë.' : 'Collaborate, partner, or start a conversation.'}</h2>
+          <div class="about-v5__connect-actions">
+            <a class="pcf-button pcf-button--light" href={localizedPath('/get-involved/', language)}>
+              <span>{language === 'sq' ? 'Përfshihu' : 'Get involved'}</span><i aria-hidden="true">↗</i>
+            </a>
+            <a class="pcf-button pcf-button--ghost" href={localizedPath('/contact/', language)}>
+              <span>{language === 'sq' ? 'Faqja e kontaktit' : 'Contact page'}</span><i aria-hidden="true">→</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-v5__contact-grid">
+          <a href={`mailto:${siteConfig.organization.email}`}>
+            <span>{language === 'sq' ? 'Email' : 'Email'}</span>
+            <strong>{siteConfig.organization.email}</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a href={`tel:${siteConfig.organization.phone.replace(/\s+/g,'')}`}>
+            <span>{language === 'sq' ? 'Telefon' : 'Phone'}</span>
+            <strong>{siteConfig.organization.phone}</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <div>
+            <span>{language === 'sq' ? 'Zyra' : 'Office'}</span>
+            <strong>{siteConfig.organization.address}</strong>
+          </div>
+        </div>
       </section>
     </>
   )}
