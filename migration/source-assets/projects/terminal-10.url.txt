@@ -1,0 +1,7 @@
+id: terminal-10
+role: terminal_gallery
+alt_or_label: Vintage /Blueprints of a Nation's Railways, Albania.
+rendition_url: https://static.wixstatic.com/media/b6f73a_63cc29774233426082e5932363b3f8b2~mv2.jpeg/v1/fill/w_191%2Ch_191%2Cfp_0.51_0.29%2Cq_90%2Cenc_avif%2Cquality_auto/b6f73a_63cc29774233426082e5932363b3f8b2~mv2.jpeg
+original_url: https://static.wixstatic.com/media/b6f73a_63cc29774233426082e5932363b3f8b2~mv2.jpeg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

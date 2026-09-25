@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from './ProjectCard.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
+import {cultureThemes, type CultureTheme} from '../../content/themes';
+import {programFocusAreas} from '../../content/program-focus';
+import {projects} from '../../lib/content';
+import {localizedPath, type Language} from '../../lib/site-config';
+
+interface Props {theme: CultureTheme; language: Language}
+const {theme, language} = Astro.props;
+const relatedProjects = theme.relatedProjectIds
+  .map((id) => projects.find((project) => project.id === id))
+  .filter((project) => project !== undefined);
+const relatedPrograms = theme.relatedProgramSlugs
+  .map((slug) => programFocusAreas.find((program) => program.slug === slug))
+  .filter((program) => program !== undefined);
+const index = cultureThemes.findIndex((item) => item.slug === theme.slug);
+const previous = cultureThemes[(index - 1 + cultureThemes.length) % cultureThemes.length];
+const next = cultureThemes[(index + 1) % cultureThemes.length];
+const path = localizedPath(`/themes/${theme.slug}/`, language);
+---
+<BaseLayout title={theme.title[language]} description={theme.summary[language]} {language} {path} translations={['en','sq']}>
+  <article class="theme-detail" style={`--theme-accent:${theme.accent}`}>
+    <header class="theme-detail__hero">
+      <div class="theme-detail__orbit" aria-hidden="true"><img src="/media/brand/kult360-orbit-source.png" alt="" /></div>
+      <div class="container-wide theme-detail__hero-inner">
+        <div class="theme-detail__top">
+          <a href={localizedPath('/programs/', language)}>← {language === 'sq' ? 'Programet / Temat ndërsektoriale' : 'Programs / Cross-cutting themes'}</a>
+          <span>{theme.number} / 06</span>
+        </div>
+        <div class="theme-detail__title">
+          <p>{language === 'sq' ? 'Temë ndërsektoriale' : 'Cross-cutting theme'}</p>
+          <h1>{theme.title[language]}</h1>
+          <p>{theme.summary[language]}</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="container-wide theme-detail__statement">
+      <p class="theme-detail__label">{language === 'sq' ? 'Pse ka rëndësi' : 'Why it matters'}</p>
+      <div>
+        <h2>{theme.statement[language]}</h2>
+        <p>{theme.introduction[language]}</p>
+      </div>
+    </section>
+
+    <section class="theme-detail__lenses">
+      <div class="container-wide">
+        <div class="theme-detail__section-head">
+          <p>{language === 'sq' ? 'Si e shohim' : 'How we look at it'}</p>
+          <span>{language === 'sq' ? 'Tre lente pune' : 'Three working lenses'}</span>
+        </div>
+        <div class="theme-detail__lens-grid">
+          {theme.lenses.map((lens, lensIndex) => (
+            <article>
+              <span>0{lensIndex + 1}</span>
+              <h3>{lens.title[language]}</h3>
+              <p>{lens.body[language]}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {theme.lenses.some((lens) => lens.article?.length) && (
+      <section class="theme-detail__articles">
+        <div class="container-wide">
+          <div class="theme-detail__section-head">
+            <p>{language === 'sq' ? 'Shënime nga praktika' : 'Notes from practice'}</p>
+            <span>{language === 'sq' ? 'Mësim, shkëmbim dhe pjesëmarrje' : 'Learning, exchange and participation'}</span>
+          </div>
+          <div class="theme-detail__article-list">
+            {theme.lenses.map((lens, lensIndex) => lens.article?.length && (
+              <article class="theme-detail__article">
+                <div class="theme-detail__article-mark" aria-hidden="true">
+                  <span>{String(lensIndex + 1).padStart(2,'0')}</span>
+                </div>
+                <div class="theme-detail__article-copy">
+                  <p class="theme-detail__label">{language === 'sq' ? 'Lente pune' : 'Working lens'}</p>
+                  <h2>{lens.title[language]}</h2>
+                  {lens.article.map((paragraph) => <p>{paragraph[language]}</p>)}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {relatedPrograms.length > 0 && (
+      <section class="container-wide theme-detail__programs">
+        <div class="theme-detail__section-head">
+          <p>{language === 'sq' ? 'Lidhet me' : 'Connected to'}</p>
+          <span>{language === 'sq' ? 'Fusha programore' : 'Programme areas'}</span>
+        </div>
+        <div class="theme-detail__program-grid">
+          {relatedPrograms.map((program) => (
+            <a href={localizedPath(`/programs/${program.slug}/`, language)} style={`--program-accent:${program.accent}`}>
+              <span>{program.number}</span>
+              <strong>{program.title[language]}</strong>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {relatedProjects.length > 0 && (
+      <section class="container-wide theme-detail__projects">
+        <div class="theme-detail__section-head">
+          <p>{language === 'sq' ? 'Në praktikë' : 'In practice'}</p>
+          <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Të gjitha projektet' : 'All projects'} ↗</a>
+        </div>
+        <div class="theme-detail__project-grid">
+          {relatedProjects.slice(0,3).map((project, projectIndex) => <ProjectCard {project} {language} priority={projectIndex === 0} />)}
+        </div>
+      </section>
+    )}
+
+    <nav class="container-wide theme-detail__next" aria-label={language === 'sq' ? 'Temat' : 'Themes'}>
+      <a href={localizedPath(`/themes/${previous.slug}/`, language)}>
+        <span>← {language === 'sq' ? 'Më parë' : 'Previous'}</span>
+        <strong>{previous.title[language]}</strong>
+      </a>
+      <a href={localizedPath(`/themes/${next.slug}/`, language)}>
+        <span>{language === 'sq' ? 'Më tej' : 'Next'} →</span>
+        <strong>{next.title[language]}</strong>
+      </a>
+    </nav>
+    <ContinueWithKult360 {language} context="theme" />
+  </article>
+</BaseLayout>

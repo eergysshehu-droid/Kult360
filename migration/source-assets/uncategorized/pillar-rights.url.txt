@@ -1,0 +1,7 @@
+id: pillar-rights
+role: strategic_pillar
+alt_or_label: ADVANCING EQUITY & RIGHTS
+rendition_url: https://static.wixstatic.com/media/11062b_be6550557a054f44b39b965915d2812f~mv2.jpg/v1/fill/w_225%2Ch_224%2Cq_90%2Cenc_avif%2Cquality_auto/11062b_be6550557a054f44b39b965915d2812f~mv2.jpg
+original_url: https://static.wixstatic.com/media/11062b_be6550557a054f44b39b965915d2812f~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

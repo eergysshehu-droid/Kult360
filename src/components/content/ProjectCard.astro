@@ -1,0 +1,24 @@
+---
+import {localizedPath, type Language} from '../../lib/site-config';
+import {projectImage, projectSlug, type Project} from '../../lib/content';
+import {projectMediaMode} from '../../content/project-editorial';
+interface Props {project: Project; language: Language; priority?: boolean; index?: number}
+const {project, language, priority = false} = Astro.props;
+const image = projectImage(project);
+const href = localizedPath(`/projects/${projectSlug(project)}/`, language);
+const meta = project.location || project.kind.replaceAll('_', ' ');
+const mediaMode = projectMediaMode(project.id);
+---
+<article class="project-card">
+  <a class="project-card__link" href={href} aria-label={`${project.title} — ${language === 'sq' ? 'shiko projektin' : 'view project'}`}>
+    <div class:list={['project-card__media', `project-card__media--${mediaMode}`]}>
+      {image ? <img src={image} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" /> : <span class="project-card__fallback" aria-hidden="true"></span>}
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__meta"><p class="meta">{meta}</p></div>
+      <h3>{project.title}</h3>
+      {project.summary && <p class="project-card__summary">{project.summary}</p>}
+      <span class="card-inline-action">{language === 'sq' ? 'Hap projektin' : 'Open project'} <i aria-hidden="true">↗</i></span>
+    </div>
+  </a>
+</article>

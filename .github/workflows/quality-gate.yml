@@ -1,0 +1,55 @@
+name: KULT360 quality gate
+
+on:
+  pull_request:
+  push:
+    branches: [main, rebuild/kult360-foundation, design/foundation-visual-v1]
+
+permissions:
+  contents: read
+
+env:
+  SITE_URL: https://phase1.invalid
+  PUBLIC_SANITY_PROJECT_ID: phase1placeholder
+  PUBLIC_SANITY_DATASET: phase1
+  SANITY_STUDIO_PROJECT_ID: phase1placeholder
+  SANITY_STUDIO_DATASET: phase1
+  ASTRO_TELEMETRY_DISABLED: "1"
+  XDG_CONFIG_HOME: /tmp/kult360-config
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kult360-dist
+          path: dist
+          if-no-files-found: error
+
+  browser-quality:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium webkit
+      - uses: actions/download-artifact@v4
+        with:
+          name: kult360-dist
+          path: dist
+      - run: npm run quality:browser:built
+
+  # Deployment is intentionally absent in Phase 1. Add a separately approved,
+  # environment-protected deployment job only after identity and CMS setup.

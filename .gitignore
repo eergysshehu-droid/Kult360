@@ -1,0 +1,32 @@
+node_modules/
+dist/
+studio-dist/
+design-preview/
+.astro/
+.sanity/
+.wrangler/
+.wrangler-dry-run/
+.env
+.env.*
+!.env.example
+instagram-media.json
+*.log
+test-results/
+playwright-report/
+
+# Local migration baseline archive
+Ergysshehuportofolio-main (3).zip
+
+# Local migration baseline archive
+Ergysshehuportofolio-main (3).zip
+KULT360_PHASE_2_MIGRATION.zip
+KULT360_PHASE_2B_SAVEWEB_PATCH.zip
+saveweb2zip-com-www-kult360-com.zip
+KULT360_PHASE_3_MAPPING.zip
+.vercel
+.env*
+KULT360_PHASE_3_LOCAL_VERCEL_PATCH.zip
+KULT360_SCHEMA_SNAPSHOT.zip
+KULT360_LOCAL_CONTENT_SNAPSHOT.zip
+KULT360_PHASE_4_EDITORIAL_DESIGN.zip
+KULT360_PHASE_4B_V2_CALM_EDITORIAL.zip

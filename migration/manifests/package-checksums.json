@@ -1,0 +1,357 @@
+[
+  {
+    "path": "PHASE-2-README.md",
+    "bytes": 1583,
+    "sha256": "a92b520efa7b3e0409eb79b95cabefd58cae9758d6ff6e0bd61deebdbb20046b"
+  },
+  {
+    "path": "migration/manifests/assets.json",
+    "bytes": 35776,
+    "sha256": "39d0808ba09ead3776fd39e51d1afea2b0a9e14192e0f1c134766c34ca934d2e"
+  },
+  {
+    "path": "migration/manifests/documents.json",
+    "bytes": 287,
+    "sha256": "f9ad067a2a3c061aa35fb617b9e656f6fe11666a4e13ea2a42e29111cc7d06bb"
+  },
+  {
+    "path": "migration/manifests/events.json",
+    "bytes": 2032,
+    "sha256": "69079e487d12e106ee16a8d22bcf8a9d884ccc8155a6c0b46b09aa887da047d6"
+  },
+  {
+    "path": "migration/manifests/journal.json",
+    "bytes": 12446,
+    "sha256": "995ffe520ef0c63cd73af9dd8f7c7d0065acb320061d94accca298d1aa161ca2"
+  },
+  {
+    "path": "migration/manifests/media-embeds.json",
+    "bytes": 702,
+    "sha256": "ac7cd8a8fccb7f8a60eeca7836dbfd93cd2d6719ba16805bf72f86f6d5e96d02"
+  },
+  {
+    "path": "migration/manifests/migration-master.json",
+    "bytes": 1176,
+    "sha256": "17f2521c1c926a1b95e0d60259c03722a363a006512356f8f74bd70b99045aef"
+  },
+  {
+    "path": "migration/manifests/navigation.json",
+    "bytes": 1434,
+    "sha256": "44a7610391e34f22c0a4ea612d6de743b904d475651bad61b2a5ed23d121da18"
+  },
+  {
+    "path": "migration/manifests/opportunities.json",
+    "bytes": 1044,
+    "sha256": "e39d0bff75cb780c7422fd4d6333cafd583e6cade27da7abe36ed92374f3d47a"
+  },
+  {
+    "path": "migration/manifests/pages.json",
+    "bytes": 5400,
+    "sha256": "7631c17650200e2fc5a3ff420086cac7d7d6570a522d4af30c1c4781ac7bac78"
+  },
+  {
+    "path": "migration/manifests/partners.json",
+    "bytes": 3765,
+    "sha256": "d03fb000d139fa6ab5d6bc0c32acad463d60d03fb5afcef5d1b9ec53e561a15d"
+  },
+  {
+    "path": "migration/manifests/people.json",
+    "bytes": 1959,
+    "sha256": "ca24e34ebc9afb2b86b600770130bd7590f900ed68dc65fc3bbe4e6b932505c1"
+  },
+  {
+    "path": "migration/manifests/programs.json",
+    "bytes": 1512,
+    "sha256": "a2f30a2f0fd987e2125fae9ce5ca426c786bba4c6433c2814eeadce1ed6362ce"
+  },
+  {
+    "path": "migration/manifests/projects.json",
+    "bytes": 7334,
+    "sha256": "28285463ef344456c54b3d77d92aca1e7008bc3a088d749bdd1c31b395a042e2"
+  },
+  {
+    "path": "migration/manifests/relationships.json",
+    "bytes": 1254,
+    "sha256": "e59f1de0fedb4adcfc49547c03b45d2cb81f4f072f9d793b8bcc0fe671db9517"
+  },
+  {
+    "path": "migration/manifests/seo.json",
+    "bytes": 2114,
+    "sha256": "5c584b269c76e167122f08ac28f960858c333443985e0e7a908baf09057e077e"
+  },
+  {
+    "path": "migration/manifests/testimonials.json",
+    "bytes": 1514,
+    "sha256": "34a9f00384f96d99a64af9ebd43e397239b09b837aee239e0e5952a16754448f"
+  },
+  {
+    "path": "migration/redirects/proposed-redirects.json",
+    "bytes": 4315,
+    "sha256": "b40fe9035ebe33532be1cb0895b688a3e97aaf814656d9f1ea4e549cb833094c"
+  },
+  {
+    "path": "migration/reports/content-review-flags.md",
+    "bytes": 2455,
+    "sha256": "85fe466cc57d72bc3bb692f2b0330afa652acb762b82f0da2ec66cc1ba1fc68a"
+  },
+  {
+    "path": "migration/reports/duplicate-assets.md",
+    "bytes": 852,
+    "sha256": "e030292c2d7ab96362e72b394879bf19645fc1914518a0906166902c7b88809f"
+  },
+  {
+    "path": "migration/reports/phase-2-result.md",
+    "bytes": 2444,
+    "sha256": "9cadcb47d711f32518ed3b7b54798c278588b6d93e805d7f0510f362bff46916"
+  },
+  {
+    "path": "migration/scripts/fetch-public-assets.mjs",
+    "bytes": 2657,
+    "sha256": "35c525521506fb3d3e607345628f2c37538123c553db5aabb1fff0c065573d99"
+  },
+  {
+    "path": "migration/scripts/validate-phase-2.mjs",
+    "bytes": 983,
+    "sha256": "7d2c34add5fe942d279d878302c343a33a7cd22d41234ebd79b9579b8efd25c1"
+  },
+  {
+    "path": "migration/source-assets/brand/brand-logo.url.txt",
+    "bytes": 490,
+    "sha256": "42581c4bdec5378d54f8320ca70d12a41399426167e0db668d79437e464959a4"
+  },
+  {
+    "path": "migration/source-assets/brand/home-media-05.url.txt",
+    "bytes": 474,
+    "sha256": "f7d61c72cff3ead7f7786a6818a1ceebb4ce038e7bd367766ed7c3747898a719"
+  },
+  {
+    "path": "migration/source-assets/documents/README.md",
+    "bytes": 153,
+    "sha256": "2c0d22a42cfe3201dcda4d7e7e30d12694b045e09f9ecdff247363b58193876d"
+  },
+  {
+    "path": "migration/source-assets/events/home-media-08.url.txt",
+    "bytes": 469,
+    "sha256": "c60f7ffe5eafec11ef1d2ba55ca67e75de572f6d8c692bba7cf380dd62247c2a"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-bossa-blur.url.txt",
+    "bytes": 501,
+    "sha256": "5489a4a16bee5189641feb8613ad35189a28e2d9e1be9fcb550a8510933f59a9"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-bossa.url.txt",
+    "bytes": 478,
+    "sha256": "b1177fd5d2f265d46ca86b3619c9a83674f05e914efed569ed29997192d0120c"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-kosovo-blur.url.txt",
+    "bytes": 558,
+    "sha256": "0184ab4d09eade8792ea1655ef9636996ab9aca39e4c40911e351d4c794bec44"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-kosovo.url.txt",
+    "bytes": 535,
+    "sha256": "b1fb2679b48ef803bbcbcd38e763179c73f3b655d4e61ac646868b62d95537d0"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-robot-blur.url.txt",
+    "bytes": 490,
+    "sha256": "9249b516b3894c3605dca85c42974e4a1b516bdbbc3ab9183709d92783c1f91b"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-robot.url.txt",
+    "bytes": 467,
+    "sha256": "84ae7b40e0954a7c2934ecde2ee67575018c8f9bb21d9cbe9695b861d0340e5f"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-skanderbeg-blur.url.txt",
+    "bytes": 554,
+    "sha256": "f768448f95a82280b0417329995d569701f1d56412c0bf7052abd448f2954789"
+  },
+  {
+    "path": "migration/source-assets/journal/journal-skanderbeg.url.txt",
+    "bytes": 531,
+    "sha256": "b3456f4201e0b79418b8f8b521480e9d215e34e1a0c1d7eed336c466975f85a3"
+  },
+  {
+    "path": "migration/source-assets/partners/partner-collage.url.txt",
+    "bytes": 469,
+    "sha256": "0425941cccade08d5ed4b63534cb4f57e8f5e51457c91d916436be69634e8962"
+  },
+  {
+    "path": "migration/source-assets/partners/partner-logo-01.url.txt",
+    "bytes": 467,
+    "sha256": "c5854a708421aa8c85bdebc4d6df758dbe5494c7bb966382a1ff8c88b9a8dc74"
+  },
+  {
+    "path": "migration/source-assets/partners/partner-logo-02.url.txt",
+    "bytes": 469,
+    "sha256": "943dd1a0ca16cc84bf1f4d70b5627a057db402d30997fba57e784525d374cbe6"
+  },
+  {
+    "path": "migration/source-assets/people/README.md",
+    "bytes": 150,
+    "sha256": "26c9a3790085430145a24050e864abf7fbc75d5a43c94a19ac4617b5c284d6c6"
+  },
+  {
+    "path": "migration/source-assets/projects/project-artist-hub-card.url.txt",
+    "bytes": 448,
+    "sha256": "0a17cf33f6bee1b1f45f1c38921cda2da3f5480f35f95733b2148eeba6ff0dd3"
+  },
+  {
+    "path": "migration/source-assets/projects/project-blue-heart-card.url.txt",
+    "bytes": 448,
+    "sha256": "0e20deab000dfc171276b3a96bb3a38126adb89531f071561fe2845131711c43"
+  },
+  {
+    "path": "migration/source-assets/projects/project-chemical-waste-card.url.txt",
+    "bytes": 452,
+    "sha256": "168fe765e59fdde7d6e078d0c5ac2660dfd5d7f00ee891a83fc5faf8f279e8af"
+  },
+  {
+    "path": "migration/source-assets/projects/project-jazz-wine-2014-card.url.txt",
+    "bytes": 452,
+    "sha256": "42f6ecb13c672ee00c9db24cd4b1d693332fd1f636830449fb07dfc3d86d3f20"
+  },
+  {
+    "path": "migration/source-assets/projects/project-jazz-wine-2017-card.url.txt",
+    "bytes": 452,
+    "sha256": "22a295340b1fda7f2139499fe6591c8ae39901b40333601cecd7b2603e28efeb"
+  },
+  {
+    "path": "migration/source-assets/projects/project-jazz-wine-program-2014.url.txt",
+    "bytes": 455,
+    "sha256": "f91c6dcc288eb253f92f3c5c5ddeaee235989dd45254e0ebbb77158502cd9b25"
+  },
+  {
+    "path": "migration/source-assets/projects/project-jazz-wine-program-2017.url.txt",
+    "bytes": 455,
+    "sha256": "754ce7c51a05f74323bb943ace6458ee2fcdb31bc3131da787160314aae3eed9"
+  },
+  {
+    "path": "migration/source-assets/projects/project-literary-voices-card.url.txt",
+    "bytes": 501,
+    "sha256": "8fdbab6fb2f66546cc8de3a21d3ab2eb278dfb0309ae813c12844faf5c528493"
+  },
+  {
+    "path": "migration/source-assets/projects/project-luzatart-card.url.txt",
+    "bytes": 462,
+    "sha256": "f18fcaa3174d6372035aff7a38055919f6fb9a1011258d5d482d3ca1c3d7fea7"
+  },
+  {
+    "path": "migration/source-assets/projects/project-open-spaces-card.url.txt",
+    "bytes": 483,
+    "sha256": "29595aff809c74a17aff3d75aa603e2ad5622bafdcffb097a9a80418c2eaf2c8"
+  },
+  {
+    "path": "migration/source-assets/projects/project-recognition-herbie.url.txt",
+    "bytes": 451,
+    "sha256": "dc74f53e399e43eb4551a7459d9cb8b7e69dfb97d9ecaccadf5977648dd9da93"
+  },
+  {
+    "path": "migration/source-assets/projects/project-terminal-card.url.txt",
+    "bytes": 498,
+    "sha256": "488ec35478509b244dc81d81db9a908484dffda8cd274cc325b64009de651b1c"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-01.url.txt",
+    "bytes": 489,
+    "sha256": "ed97b698b1b2b42765a27c8af0ad6f5aba75596c3ed46d9fe920b08851c6662a"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-02.url.txt",
+    "bytes": 491,
+    "sha256": "c333eb9f0787ae1e6ee6bf9275e5af2f3c4bb20fd19aaf04aca659697b78e8bd"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-03.url.txt",
+    "bytes": 443,
+    "sha256": "c28cac18fbf3e9a772fccf553a842b8dfa94e24cefb7abaadd26b7e5a82ab34d"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-04.url.txt",
+    "bytes": 502,
+    "sha256": "5ba8d7e48be496679085942cb635c05d3169a7a506f673ad51614cb335cec089"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-05.url.txt",
+    "bytes": 440,
+    "sha256": "34bd312b0438ec5e48d42713adc5b26644706679d0b712646af3a6fcac648e2f"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-06.url.txt",
+    "bytes": 455,
+    "sha256": "059b945455c93036a46e28f298afc330376159b9714b75e9919c700df1fc2895"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-07.url.txt",
+    "bytes": 455,
+    "sha256": "7025197b867f88e675020431945c64aca428ccbcb70734700d8b5cb1e734f351"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-08.url.txt",
+    "bytes": 443,
+    "sha256": "1e9c4d196a0f48f1cc7aabef6e29646a11a1d4de1de78987ed585436726a0da0"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-09.url.txt",
+    "bytes": 458,
+    "sha256": "da7836ff20ccbe6da1a01b2a38b26c5a46c997acb1f29356b223c946391ac394"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-10.url.txt",
+    "bytes": 510,
+    "sha256": "14ddca13149bcd00457eb9c4ce096e0bd5c5ea4278afab9fc5b605f1e7c33c38"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-11.url.txt",
+    "bytes": 458,
+    "sha256": "60ddef4aeb7ba14513ba0ae362cf483e454018c7edc78057f92fe891a443de7a"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-12.url.txt",
+    "bytes": 443,
+    "sha256": "966f7d3736e8cfebe11ec8720ac87a6675abc98fa5e554d692bb8120f1295a21"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-13.url.txt",
+    "bytes": 458,
+    "sha256": "c8dd65f098da50dd539aa2622e28f837438822d65633e4fea332e9b45d6b2468"
+  },
+  {
+    "path": "migration/source-assets/projects/terminal-14.url.txt",
+    "bytes": 477,
+    "sha256": "16b1f1742299ce9fcc14d660f91ce8cf1cf3a9e2e4fe9183e93d2de0c0681559"
+  },
+  {
+    "path": "migration/source-assets/uncategorized/footer-community-image.url.txt",
+    "bytes": 523,
+    "sha256": "0b655ba8690ba1ae2c3981d1fe2ba05d34d389e423b61b10d5e3c588152bdf9a"
+  },
+  {
+    "path": "migration/source-assets/uncategorized/home-media-04.url.txt",
+    "bytes": 465,
+    "sha256": "9046851aac9829c34ea5dff2f32275c70e9791652c42ae6b45194958bbf78a92"
+  },
+  {
+    "path": "migration/source-assets/uncategorized/pillar-art.url.txt",
+    "bytes": 469,
+    "sha256": "294ac2172afd9e50926fb7839e1c35bacdadbf08b999123abdf59c9a932d0053"
+  },
+  {
+    "path": "migration/source-assets/uncategorized/pillar-education.url.txt",
+    "bytes": 471,
+    "sha256": "cc3a528ca032aa280b7e19c7f39f966808ca2a676e0cf70aeda16f7fcba6a32a"
+  },
+  {
+    "path": "migration/source-assets/uncategorized/pillar-heritage.url.txt",
+    "bytes": 469,
+    "sha256": "1b62e91d7f29c18530b89cdb70d286052f4a7c5f27343353d32253f69ffcabfa"
+  },
+  {
+    "path": "migration/source-assets/uncategorized/pillar-rights.url.txt",
+    "bytes": 467,
+    "sha256": "c8da2ad442170304060470952f1c5869cc85935e062ee34f5df5b6cc39fb0fd7"
+  }
+]

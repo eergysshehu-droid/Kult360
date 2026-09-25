@@ -1,0 +1,7 @@
+id: journal-skanderbeg
+role: blog_thumbnail
+alt_or_label: Skanderbeg Square: 90s Video Clip Memory Versus the Paradox of Empty Benches
+rendition_url: https://static.wixstatic.com/media/f4598e_693f2a8ed6c84b9b9c2ab685532259e1~mv2.webp/v1/fill/w_230%2Ch_229%2Cal_c%2Cq_90%2Cenc_avif%2Cquality_auto/f4598e_693f2a8ed6c84b9b9c2ab685532259e1~mv2.webp
+original_url: https://static.wixstatic.com/media/f4598e_693f2a8ed6c84b9b9c2ab685532259e1~mv2.webp
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

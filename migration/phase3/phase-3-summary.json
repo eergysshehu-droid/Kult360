@@ -1,0 +1,27 @@
+{
+  "source_counts": {
+    "pages": 10,
+    "people": 5,
+    "programs": 6,
+    "projects": 11,
+    "events": 7,
+    "journal": 31,
+    "opportunities": 4,
+    "testimonials": 3,
+    "partners": 20,
+    "base_assets": 46,
+    "supplemental_media": 33
+  },
+  "phase3_mapping_counts": {
+    "content_records": 97,
+    "reference_edges": 103,
+    "canonical_media_candidates": 62,
+    "supplemental_variants_collapsed_by_same_wix_media_id": 17,
+    "supplemental_new_media_candidates": 16,
+    "review_queue_items": 182,
+    "high_priority_reviews": 91,
+    "medium_priority_reviews": 91
+  },
+  "important": "79 collected media files are not 79 CMS assets. Same-Wix-media-ID variants are collapsed conceptually before import. Based on current manifests, 17 supplemental image variants map to existing base Wix media IDs, leaving 62 canonical media candidates (46 base + 16 genuinely additional supplemental candidates, including 2 videos). This is identity-by-source-ID, not perceptual duplicate detection.",
+  "status": "READY_FOR_SCHEMA_CONTRACT_REVIEW_NOT_SANITY_IMPORT"
+}

@@ -1,0 +1,7 @@
+id: project-jazz-wine-program-2014
+role: project_card
+alt_or_label: 
+rendition_url: https://static.wixstatic.com/media/b6f73a_a4ddcdf8d06a46269ba4bebcaee9c1f1~mv2.jpg/v1/fill/w_414%2Ch_414%2Cq_35%2Cenc_avif%2Cquality_auto/b6f73a_a4ddcdf8d06a46269ba4bebcaee9c1f1~mv2.jpg
+original_url: https://static.wixstatic.com/media/b6f73a_a4ddcdf8d06a46269ba4bebcaee9c1f1~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

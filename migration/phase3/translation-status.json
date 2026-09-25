@@ -1,0 +1,584 @@
+[
+  {
+    "source_collection": "pages",
+    "source_id": "page-home",
+    "source_language": "mixed_en_sq",
+    "action": "split_and_editorially_review"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-about",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-lab",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-gallery",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-blog",
+    "source_language": "mostly_sq",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-get-involved",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-donate",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-heritage",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-qyteti-brenda-oborrit",
+    "source_language": "sq_en",
+    "action": "split_and_editorially_review"
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-contact",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-eda-zari",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-ergys-shehu",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-eda-elbasani",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-eros-dibra",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-teufik-bashi",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-art-professional-empowerment",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-equity-rights",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-inclusive-education",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-heritage-sustainability",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "initiative-artist-rights",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "initiative-sound-heritage-library",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "recognition-herbie-hancock-unesco",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-qyteti-brenda-oborrit",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-terminal-europe-week-2026",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-luzatart-culture",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-artist-hub-lab",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-literary-voices-heine-poradeci",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-open-spaces-lost-culture",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-save-blue-heart-europe",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-no-chemical-waste",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-jazz-wine-2017",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-jazz-wine-2014",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-qyteti-brenda-oborrit-2026",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-terminal-europe-week-2026",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-luzatart-2025",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-literary-voices-2023",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-open-spaces-2023",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-jazz-wine-2017",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-jazz-wine-2014",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-01",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-02",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-03",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-04",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-05",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-06",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-07",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-08",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-09",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-10",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-11",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-12",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-13",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-14",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-15",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-16",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-17",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-18",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-19",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-20",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-21",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-22",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-23",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-24",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-25",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-26",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-27",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-28",
+    "source_language": "sq",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-29",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-30",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-31",
+    "source_language": "unknown",
+    "action": "do_not_auto_translate_body_missing"
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-support-individual",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-corporate-partner",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-foundation-collaboration",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-visionary-partners",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "testimonials",
+    "source_id": "testimonial-silvio-gonzato",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "testimonials",
+    "source_id": "testimonial-herbie-hancock",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "testimonials",
+    "source_id": "testimonial-ulrich-eichelmann",
+    "source_language": "en",
+    "action": "source_language_known_translation_pending"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "European Union",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "EU Delegation in Albania",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Europe House",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kalo Foundation",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kalo Gallery",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Patagonia",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Riverwatch",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "EcoAlbania",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Bashkia Himarë",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "GIZ Albania",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Agency South Coastal Region Albania",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Çobo",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Nurellari",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Belba",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Kokomani",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kaba Music Records",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Botimpex",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Symbiotic",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "UNESCO",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Thelonious Monk Institute of Jazz",
+    "source_language": "unknown",
+    "action": "language_review_required"
+  }
+]

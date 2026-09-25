@@ -1,0 +1,7 @@
+id: partner-logo-02
+role: partner_logo
+alt_or_label: 
+rendition_url: https://static.wixstatic.com/media/b6f73a_d96fdbdde80c4750a6bdabaf54b22bb5~mv2.jpeg/v1/fill/w_92%2Ch_92%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/b6f73a_d96fdbdde80c4750a6bdabaf54b22bb5~mv2.jpeg
+original_url: https://static.wixstatic.com/media/b6f73a_d96fdbdde80c4750a6bdabaf54b22bb5~mv2.jpeg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

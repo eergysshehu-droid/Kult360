@@ -1,0 +1,46 @@
+[
+  {
+    "id": "pillar-art-professional-empowerment",
+    "title": "ART & PROFESSIONAL EMPOWERMENT",
+    "kind": "strategic_pillar",
+    "source_url": "https://www.kult360.com/",
+    "status": "verified"
+  },
+  {
+    "id": "pillar-equity-rights",
+    "title": "ADVANCING EQUITY & RIGHTS",
+    "kind": "strategic_pillar",
+    "source_url": "https://www.kult360.com/",
+    "status": "verified"
+  },
+  {
+    "id": "pillar-inclusive-education",
+    "title": "CULTURE & INCLUSIVE EDUCATION",
+    "kind": "strategic_pillar",
+    "source_url": "https://www.kult360.com/",
+    "status": "verified"
+  },
+  {
+    "id": "pillar-heritage-sustainability",
+    "title": "HERITAGE & SUSTAINABILITY",
+    "kind": "strategic_pillar",
+    "source_url": "https://www.kult360.com/",
+    "status": "verified"
+  },
+  {
+    "id": "initiative-artist-rights",
+    "title": "Art-Rights & Artist Protection",
+    "kind": "initiative",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "summary": "Advocacy for legal literacy, copyright protection and structural support for independent creators and younger artists.",
+    "status": "verified_public_summary"
+  },
+  {
+    "id": "initiative-sound-heritage-library",
+    "title": "Sound & Heritage Library",
+    "kind": "initiative",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "summary": "Collecting, archiving and digitizing traditional instruments and native soundscapes across Albanian regions.",
+    "status": "verified_public_summary"
+  }
+]

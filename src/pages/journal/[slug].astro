@@ -1,0 +1,7 @@
+---
+import JournalDetailPage from '../../components/content/JournalDetailPage.astro';
+import {journal, journalSlug} from '../../lib/content';
+export const getStaticPaths = () => journal.map((record) => ({params:{slug:journalSlug(record)}, props:{record}}));
+const {record} = Astro.props;
+---
+<JournalDetailPage {record} language="en" />

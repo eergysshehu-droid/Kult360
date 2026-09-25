@@ -1,0 +1,224 @@
+[
+  {
+    "id": "recognition-herbie-hancock-unesco",
+    "title": "A Commendation from Mr. Herbie Hancock & UNESCO",
+    "kind": "recognition",
+    "date": null,
+    "source_url": "https://www.kult360.com/",
+    "summary": "Homepage recognition item stating that Herbie Hancock, in his capacity associated with UNESCO and the Thelonious Monk Institute of Jazz, thanked Eda Zari for support of International Jazz Day.",
+    "people": [
+      "person-eda-zari"
+    ],
+    "partners_or_related": [
+      "UNESCO",
+      "Thelonious Monk Institute of Jazz"
+    ],
+    "review_required": true
+  },
+  {
+    "id": "project-qyteti-brenda-oborrit",
+    "title": "QYTETI BRENDA OBORRIT",
+    "kind": "event_project",
+    "date": "2026-08-28",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "summary": "KULT360 Chapter 1 / one-year cultural impact event framed around moving culture from the periphery to the centre and presenting current initiatives.",
+    "location": "Oborri Tirana, Rr. Naim Frashëri, Tiranë",
+    "people": [],
+    "partners_or_related": []
+  },
+  {
+    "id": "project-terminal-europe-week-2026",
+    "title": "TERMINAL: Attention, attention / Vini re, Vini re",
+    "kind": "multidisciplinary_performance_installation",
+    "date_range": {
+      "start": "2026-05-15",
+      "end": "2026-05-17"
+    },
+    "source_url": "https://www.kult360.com/",
+    "summary": "Site-specific audio-visual intervention at the old Shkodra railway station using sound, archive, moving image and collective memory, presented in the context of Europe Week 2026.",
+    "location": "Old Railway Station, Shkodra",
+    "people": [
+      "Eda Zari",
+      "Ergys Shehu",
+      "Eda Elbasani",
+      "Rhani Krija",
+      "Ermal Rodi",
+      "Teufik Bashi"
+    ],
+    "partners_or_related": [
+      "European Union",
+      "EU Delegation in Albania",
+      "Europe House"
+    ]
+  },
+  {
+    "id": "project-luzatart-culture",
+    "title": "LUZATART CULTURE",
+    "kind": "artist_residency",
+    "date": "2025-08-14",
+    "source_url": "https://www.kult360.com/",
+    "summary": "Rural residency and cultural exchange initiative in Luzat involving visual artists from the region and music producers, developed with Kalo Foundation and Kalo Gallery.",
+    "location": "Luzat, Albania",
+    "people": [
+      "Eda Zari",
+      "Eda Elbasani",
+      "Henning Jung",
+      "AJS Trio"
+    ],
+    "partners_or_related": [
+      "Kalo Foundation",
+      "Kalo Gallery"
+    ]
+  },
+  {
+    "id": "project-artist-hub-lab",
+    "title": "THE ARTIST HUB & LAB",
+    "kind": "residency_training",
+    "date_range": {
+      "start": "2024-10",
+      "end": "2024-12"
+    },
+    "source_url": "https://www.kult360.com/",
+    "summary": "Creative production and cinematic scoring residency for student producers, with emphasis on original film music, studio practice, copyright and intellectual property.",
+    "people": [
+      "Mark Joggerst"
+    ],
+    "partners_or_related": [
+      "Institute of Music and Media, Düsseldorf",
+      "Neon Media Prod., Cologne"
+    ]
+  },
+  {
+    "id": "project-literary-voices-heine-poradeci",
+    "title": "LITERARY VOICES / HEINE & PORADECI",
+    "kind": "literary_music_event",
+    "date": "2023-09-25",
+    "source_url": "https://www.kult360.com/",
+    "summary": "Discussion/event at Dukagjini Bookstore in Pristina on lyric poetry, music, vinyl and the works of Lasgush Poradeci and Heinrich Heine.",
+    "location": "Dukagjini Bookstore, Pristina",
+    "people": [
+      "Eda Zari",
+      "Arbër Selmani",
+      "Visar Kuçi",
+      "Eda Elbasani"
+    ],
+    "partners_or_related": []
+  },
+  {
+    "id": "project-open-spaces-lost-culture",
+    "title": "OPEN SPACES FOR LOST CULTURE",
+    "kind": "interactive_performance",
+    "date": "2023-03-25",
+    "source_url": "https://www.kult360.com/",
+    "summary": "Interactive cultural format described as a reclamation project around vinyl, slow culture, conversation, heritage and audience engagement.",
+    "people": [
+      "Eda Zari",
+      "Ardian Cerga",
+      "Gent Rushi",
+      "Eda Elbasani",
+      "Ergys Shehu"
+    ],
+    "partners_or_related": [
+      "Shëndeverë Tirana",
+      "Muharrem Çobo"
+    ]
+  },
+  {
+    "id": "project-save-blue-heart-europe",
+    "title": "SAVE THE BLUE HEART OF EUROPE",
+    "kind": "environmental_art_advocacy_series",
+    "date_range": {
+      "start": "2016",
+      "end": "2023"
+    },
+    "source_url": "https://www.kult360.com/",
+    "summary": "Concert series and artistic advocacy around protection of Albanian and Balkan wild rivers, including Vjosa and Valbona.",
+    "people": [
+      "Eda Zari",
+      "Elina Duni"
+    ],
+    "partners_or_related": [
+      "Patagonia",
+      "Riverwatch",
+      "EcoAlbania"
+    ],
+    "review_required": true,
+    "review_note": "Impact/causality language on the source site should be independently verified before publication in a migrated institutional record."
+  },
+  {
+    "id": "project-no-chemical-waste",
+    "title": "NO TO CHEMICAL WASTE: THE ARTISTIC RESISTANCE",
+    "kind": "environmental_art_advocacy",
+    "date_range": {
+      "start": "2016",
+      "end": "2023"
+    },
+    "source_url": "https://www.kult360.com/",
+    "summary": "Homepage describes an artistic mobilization involving Eda Zari and Elina Duni, including a large protest concert at Tirana's Pyramid opposing chemical/toxic waste importation.",
+    "people": [
+      "Eda Zari",
+      "Elina Duni"
+    ],
+    "partners_or_related": [],
+    "review_required": true,
+    "review_note": "Source makes strong attendance and policy-causality claims; verify before re-publication."
+  },
+  {
+    "id": "project-jazz-wine-2017",
+    "title": "JAZZ & WINE INTERNATIONAL FESTIVAL ALBANIA — EDITION II",
+    "kind": "festival",
+    "date_range": {
+      "start": "2017-07-07",
+      "end": "2017-07-08"
+    },
+    "source_url": "https://www.kult360.com/",
+    "summary": "Second edition at Porto Palermo combining jazz, polyphony, heritage, wine, cultural tourism and environmental awareness.",
+    "location": "Porto Palermo, Himarë",
+    "people": [
+      "Hayden Chisholm",
+      "Martin Sasse Trio",
+      "Marialy Pacheco",
+      "Aly Keïta",
+      "Gent Rushi",
+      "Ermal Rodi",
+      "Ethnist Kuartet"
+    ],
+    "partners_or_related": [
+      "Bashkia Himarë",
+      "GIZ Albania",
+      "Agency South Coastal Region Albania",
+      "Kantina Çobo",
+      "Kantina Nurellari",
+      "Kantina Belba",
+      "Kantina Kokomani",
+      "Kaba Music Records",
+      "Botimpex",
+      "Symbiotic"
+    ]
+  },
+  {
+    "id": "project-jazz-wine-2014",
+    "title": "JAZZ & WINE INTERNATIONAL FESTIVAL ALBANIA — EDITION I",
+    "kind": "festival",
+    "date_range": {
+      "start": "2014-09-05",
+      "end": "2014-09-06"
+    },
+    "source_url": "https://www.kult360.com/",
+    "summary": "First edition in Berat, combining international jazz, Albanian heritage sites and regional wine culture.",
+    "location": "Berat, Albania",
+    "people": [
+      "Eda Zari",
+      "Hans Lüdemann Trio",
+      "Ilir Bajri Quartett",
+      "Sebastian Studnitzky Trio",
+      "Albanian Saxophon Quartett",
+      "Dejan Terzic Trio",
+      "Dren Abazi & Zig Zag Orchestra"
+    ],
+    "partners_or_related": [
+      "National Museum Onufri",
+      "National Ethnographic Museum"
+    ]
+  }
+]

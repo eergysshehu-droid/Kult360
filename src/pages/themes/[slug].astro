@@ -1,0 +1,7 @@
+---
+import ThemeDetailPage from '../../components/content/ThemeDetailPage.astro';
+import {cultureThemes} from '../../content/themes';
+export const getStaticPaths = () => cultureThemes.map((theme) => ({params:{slug:theme.slug}, props:{theme}}));
+const {theme} = Astro.props;
+---
+<ThemeDetailPage {theme} language="en" />

@@ -1,0 +1,7 @@
+id: terminal-02
+role: terminal_gallery
+alt_or_label: Concrete platform Shkodra station
+rendition_url: https://static.wixstatic.com/media/b6f73a_a1424396427f47da80f86809492b2ecf~mv2.jpeg/v1/fill/w_191%2Ch_191%2Cfp_0.65_0.33%2Cq_90%2Cenc_avif%2Cquality_auto/b6f73a_a1424396427f47da80f86809492b2ecf~mv2.jpeg
+original_url: https://static.wixstatic.com/media/b6f73a_a1424396427f47da80f86809492b2ecf~mv2.jpeg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

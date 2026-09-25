@@ -1,0 +1,14 @@
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./PHASE-4-CHECKSUMS.sha256
+7e594896b5e4bca7b78280199335c2c90da0f79a2ffd7b9a1e9fae41bdb13ee4  ./PHASE-4-DESIGN-README.md
+09b87dcd0beb7b4d03804e8964dfac3f9e8357939c0a44f6f75b05a896de98f9  ./migration/scripts/validate-phase-4-design.mjs
+d71849255960a9ab05d42daffa31c95a4150fb9a08497d725aa1f3b3b8502f11  ./src/components/chrome/Footer.astro
+2dd990054a196b49422453acfea2fa47850860696ceb8d8ebb869810b37bed87  ./src/components/chrome/Header.astro
+30297b1b1a614fcbc34e8dc08a2ca5f3a4f3543aee2d604fb0bcf49e5b8edf3a  ./src/components/chrome/MobileNavigation.astro
+16178f6b578c9012c9756134954e0acce847de45dd2068777b20f97d43fdc57a  ./src/components/content/JournalCard.astro
+cb3dc4296fe8cd96f9bfa9adc9b20fa2d343049aa4962075426ee5736116655d  ./src/components/content/ProjectCard.astro
+e85008f3dea37ec7d1cf747a48dfce2ca8a406dc163424a132373bb578cfcc17  ./src/layouts/BaseLayout.astro
+cf92e71254bb656b91e8bc99e3de7a39cff96b54e4be2dcf39a982f026ddf8de  ./src/pages/index.astro
+71d299416feb30182a2e4cb67051c5ce7b4a2dc1fd0b5f9d9d135815baa8100f  ./src/pages/sq/index.astro
+411238058139fc853be30c02660ff48a30726a2975ae7ae2192862cb7e375dcb  ./src/styles/global.css
+c855d29f3ff39146166461a1e15a0b60f28f6605cd801ea059cfa46033e6d5b1  ./src/styles/tokens.css
+96db63e71d1cfa70c8e6fd1efc132f43e038a29fbbc62fcd089ae884728e14ea  ./src/styles/typography.css

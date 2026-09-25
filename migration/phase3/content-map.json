@@ -1,0 +1,1369 @@
+[
+  {
+    "source_collection": "pages",
+    "source_id": "page-home",
+    "target_type": "page",
+    "target_id": "k360.page-home",
+    "slug_candidate": "home",
+    "target_path": "/",
+    "readiness": "structure_ready_copy_review",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "mixed_en_sq",
+    "preserve_legacy_path": "/",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-about",
+    "target_type": "page",
+    "target_id": "k360.page-about",
+    "slug_candidate": "about",
+    "target_path": "/about/",
+    "readiness": "structure_ready_copy_review",
+    "source_url": "https://www.kult360.com/about",
+    "language_source": "en",
+    "preserve_legacy_path": "/about",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-lab",
+    "target_type": "page",
+    "target_id": "k360.page-lab",
+    "slug_candidate": "lab",
+    "target_path": "/lab/",
+    "readiness": "blocked_missing_body",
+    "source_url": "https://www.kult360.com/stories-conversations",
+    "language_source": "unknown",
+    "preserve_legacy_path": "/stories-conversations",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-gallery",
+    "target_type": "page",
+    "target_id": "k360.page-gallery",
+    "slug_candidate": "media",
+    "target_path": "/media/",
+    "readiness": "blocked_missing_body",
+    "source_url": "https://www.kult360.com/copy-of-culture-inclusive-education",
+    "language_source": "unknown",
+    "preserve_legacy_path": "/copy-of-culture-inclusive-education",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-blog",
+    "target_type": "page",
+    "target_id": "k360.page-blog",
+    "slug_candidate": "journal",
+    "target_path": "/journal/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/blog",
+    "language_source": "mostly_sq",
+    "preserve_legacy_path": "/blog",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-get-involved",
+    "target_type": "page",
+    "target_id": "k360.page-get-involved",
+    "slug_candidate": "get-involved",
+    "target_path": "/get-involved/",
+    "readiness": "structure_ready_copy_review",
+    "source_url": "https://www.kult360.com/get-involved",
+    "language_source": "en",
+    "preserve_legacy_path": "/get-involved",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-donate",
+    "target_type": "supportCampaign",
+    "target_id": "k360.page-donate",
+    "slug_candidate": "support",
+    "target_path": "/support/",
+    "readiness": "structure_ready_copy_review",
+    "source_url": "https://www.kult360.com/donate",
+    "language_source": "en",
+    "preserve_legacy_path": "/donate",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-heritage",
+    "target_type": "page",
+    "target_id": "k360.page-heritage",
+    "slug_candidate": "heritage-sustainability",
+    "target_path": "/programs/heritage-sustainability/",
+    "readiness": "editorial_review",
+    "source_url": "https://www.kult360.com/general-6",
+    "language_source": "en",
+    "preserve_legacy_path": "/general-6",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-qyteti-brenda-oborrit",
+    "target_type": "page",
+    "target_id": "k360.page-qyteti-brenda-oborrit",
+    "slug_candidate": "qyteti-brenda-oborrit",
+    "target_path": "/events/qyteti-brenda-oborrit-2026/",
+    "readiness": "structure_ready_copy_review",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "sq_en",
+    "preserve_legacy_path": "/qytetibrendaoborrit",
+    "notes": []
+  },
+  {
+    "source_collection": "pages",
+    "source_id": "page-contact",
+    "target_type": "siteSettings",
+    "target_id": "k360.page-contact",
+    "slug_candidate": "contact",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "en",
+    "preserve_legacy_path": null,
+    "notes": []
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-eda-zari",
+    "target_type": "person",
+    "target_id": "k360.person-eda-zari",
+    "slug_candidate": "eda-zari",
+    "target_path": "/people/eda-zari/",
+    "readiness": "metadata_ready_bio_missing",
+    "source_url": "https://www.kult360.com/edazari",
+    "language_source": "unknown",
+    "notes": [
+      "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    ]
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-ergys-shehu",
+    "target_type": "person",
+    "target_id": "k360.person-ergys-shehu",
+    "slug_candidate": "ergys-shehu",
+    "target_path": "/people/ergys-shehu/",
+    "readiness": "metadata_ready_bio_missing",
+    "source_url": "https://www.kult360.com/ergysshehu",
+    "language_source": "unknown",
+    "notes": [
+      "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    ]
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-eda-elbasani",
+    "target_type": "person",
+    "target_id": "k360.person-eda-elbasani",
+    "slug_candidate": "eda-elbasani",
+    "target_path": "/people/eda-elbasani/",
+    "readiness": "metadata_ready_bio_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Not publicly extracted; requires source export or manual confirmation."
+    ]
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-eros-dibra",
+    "target_type": "person",
+    "target_id": "k360.person-eros-dibra",
+    "slug_candidate": "eros-dibra",
+    "target_path": "/people/eros-dibra/",
+    "readiness": "metadata_ready_bio_missing",
+    "source_url": "https://www.kult360.com/erosdibra",
+    "language_source": "unknown",
+    "notes": [
+      "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    ]
+  },
+  {
+    "source_collection": "people",
+    "source_id": "person-teufik-bashi",
+    "target_type": "person",
+    "target_id": "k360.person-teufik-bashi",
+    "slug_candidate": "teufik-bashi",
+    "target_path": "/people/teufik-bashi/",
+    "readiness": "metadata_ready_bio_missing",
+    "source_url": "https://www.kult360.com/teufikbashi",
+    "language_source": "unknown",
+    "notes": [
+      "No substantive team biography was exposed by the crawled profile result. Do not invent one."
+    ]
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-art-professional-empowerment",
+    "target_type": "program",
+    "target_id": "k360.pillar-art-professional-empowerment",
+    "slug_candidate": "art-professional-empowerment",
+    "target_path": "/programs/art-professional-empowerment/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Keep source kind as taxonomy metadata: strategic_pillar"
+    ]
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-equity-rights",
+    "target_type": "program",
+    "target_id": "k360.pillar-equity-rights",
+    "slug_candidate": "advancing-equity-rights",
+    "target_path": "/programs/advancing-equity-rights/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Keep source kind as taxonomy metadata: strategic_pillar"
+    ]
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-inclusive-education",
+    "target_type": "program",
+    "target_id": "k360.pillar-inclusive-education",
+    "slug_candidate": "culture-inclusive-education",
+    "target_path": "/programs/culture-inclusive-education/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Keep source kind as taxonomy metadata: strategic_pillar"
+    ]
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "pillar-heritage-sustainability",
+    "target_type": "program",
+    "target_id": "k360.pillar-heritage-sustainability",
+    "slug_candidate": "heritage-sustainability",
+    "target_path": "/programs/heritage-sustainability/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Keep source kind as taxonomy metadata: strategic_pillar"
+    ]
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "initiative-artist-rights",
+    "target_type": "program",
+    "target_id": "k360.initiative-artist-rights",
+    "slug_candidate": "art-rights-artist-protection",
+    "target_path": "/programs/art-rights-artist-protection/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "unknown",
+    "notes": [
+      "Keep source kind as taxonomy metadata: initiative"
+    ]
+  },
+  {
+    "source_collection": "programs",
+    "source_id": "initiative-sound-heritage-library",
+    "target_type": "program",
+    "target_id": "k360.initiative-sound-heritage-library",
+    "slug_candidate": "sound-heritage-library",
+    "target_path": "/programs/sound-heritage-library/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "unknown",
+    "notes": [
+      "Keep source kind as taxonomy metadata: initiative"
+    ]
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "recognition-herbie-hancock-unesco",
+    "target_type": "impactRecord",
+    "target_id": "k360.recognition-herbie-hancock-unesco",
+    "slug_candidate": "a-commendation-from-mr-herbie-hancock-unesco",
+    "target_path": null,
+    "readiness": "review_claims",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-qyteti-brenda-oborrit",
+    "target_type": "project",
+    "target_id": "k360.project-qyteti-brenda-oborrit",
+    "slug_candidate": "qyteti-brenda-oborrit",
+    "target_path": "/projects/qyteti-brenda-oborrit/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-terminal-europe-week-2026",
+    "target_type": "project",
+    "target_id": "k360.project-terminal-europe-week-2026",
+    "slug_candidate": "terminal-attention-attention-vini-re-vini-re",
+    "target_path": "/projects/terminal-attention-attention-vini-re-vini-re/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-luzatart-culture",
+    "target_type": "project",
+    "target_id": "k360.project-luzatart-culture",
+    "slug_candidate": "luzatart-culture",
+    "target_path": "/projects/luzatart-culture/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-artist-hub-lab",
+    "target_type": "project",
+    "target_id": "k360.project-artist-hub-lab",
+    "slug_candidate": "the-artist-hub-lab",
+    "target_path": "/projects/the-artist-hub-lab/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-literary-voices-heine-poradeci",
+    "target_type": "project",
+    "target_id": "k360.project-literary-voices-heine-poradeci",
+    "slug_candidate": "literary-voices-heine-poradeci",
+    "target_path": "/projects/literary-voices-heine-poradeci/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-open-spaces-lost-culture",
+    "target_type": "project",
+    "target_id": "k360.project-open-spaces-lost-culture",
+    "slug_candidate": "open-spaces-for-lost-culture",
+    "target_path": "/projects/open-spaces-for-lost-culture/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-save-blue-heart-europe",
+    "target_type": "project",
+    "target_id": "k360.project-save-blue-heart-europe",
+    "slug_candidate": "save-the-blue-heart-of-europe",
+    "target_path": "/projects/save-the-blue-heart-of-europe/",
+    "readiness": "review_claims",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Impact/causality language on the source site should be independently verified before publication in a migrated institutional record."
+    ]
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-no-chemical-waste",
+    "target_type": "project",
+    "target_id": "k360.project-no-chemical-waste",
+    "slug_candidate": "no-to-chemical-waste-the-artistic-resistance",
+    "target_path": "/projects/no-to-chemical-waste-the-artistic-resistance/",
+    "readiness": "review_claims",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Source makes strong attendance and policy-causality claims; verify before re-publication."
+    ]
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-jazz-wine-2017",
+    "target_type": "project",
+    "target_id": "k360.project-jazz-wine-2017",
+    "slug_candidate": "jazz-wine-international-festival-albania-edition-ii",
+    "target_path": "/projects/jazz-wine-international-festival-albania-edition-ii/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "projects",
+    "source_id": "project-jazz-wine-2014",
+    "target_type": "project",
+    "target_id": "k360.project-jazz-wine-2014",
+    "slug_candidate": "jazz-wine-international-festival-albania-edition-i",
+    "target_path": "/projects/jazz-wine-international-festival-albania-edition-i/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-qyteti-brenda-oborrit-2026",
+    "target_type": "event",
+    "target_id": "k360.event-qyteti-brenda-oborrit-2026",
+    "slug_candidate": "qyteti-brenda-oborrit-special-night",
+    "target_path": "/events/qyteti-brenda-oborrit-special-night/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-terminal-europe-week-2026",
+    "target_type": "event",
+    "target_id": "k360.event-terminal-europe-week-2026",
+    "slug_candidate": "terminal-europe-week-2026",
+    "target_path": "/events/terminal-europe-week-2026/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-luzatart-2025",
+    "target_type": "event",
+    "target_id": "k360.event-luzatart-2025",
+    "slug_candidate": "luzatart-culture",
+    "target_path": "/events/luzatart-culture/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-literary-voices-2023",
+    "target_type": "event",
+    "target_id": "k360.event-literary-voices-2023",
+    "slug_candidate": "literary-voices-heine-poradeci",
+    "target_path": "/events/literary-voices-heine-poradeci/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-open-spaces-2023",
+    "target_type": "event",
+    "target_id": "k360.event-open-spaces-2023",
+    "slug_candidate": "open-spaces-for-lost-culture",
+    "target_path": "/events/open-spaces-for-lost-culture/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-jazz-wine-2017",
+    "target_type": "event",
+    "target_id": "k360.event-jazz-wine-2017",
+    "slug_candidate": "jazz-wine-international-festival-albania-edition-ii",
+    "target_path": "/events/jazz-wine-international-festival-albania-edition-ii/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "events",
+    "source_id": "event-jazz-wine-2014",
+    "target_type": "event",
+    "target_id": "k360.event-jazz-wine-2014",
+    "slug_candidate": "jazz-wine-international-festival-albania-edition-i",
+    "target_path": "/events/jazz-wine-international-festival-albania-edition-i/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": []
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-01",
+    "target_type": "article",
+    "target_id": "k360.journal-01",
+    "slug_candidate": "flamingot-dhe-zanati-i-te-kerkuarit-heronj-me-porosi-eda-zari",
+    "target_path": "/journal/flamingot-dhe-zanati-i-te-kerkuarit-heronj-me-porosi-eda-zari/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/flamingot-dhe-zanati-i-t%C3%AB-k%C3%ABrkuarit-heronj-me-porosi-eda-zari",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-02",
+    "target_type": "article",
+    "target_id": "k360.journal-02",
+    "slug_candidate": "fyejt-e-gramshit-ne-uliksin-e-ri-te-hollywood-it-nje-meditim-mbi-zerin-baritor-kinemane-dhe-kujt",
+    "target_path": "/journal/fyejt-e-gramshit-ne-uliksin-e-ri-te-hollywood-it-nje-meditim-mbi-zerin-baritor-kinemane-dhe-kujt/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/fyejt-e-gramshit-n%C3%AB-uliksin-e-ri-t%C3%AB-hollywood-it-nj%C3%AB-meditim-mbi-z%C3%ABrin-baritor-kineman%C3%AB-dhe-kujt",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-03",
+    "target_type": "article",
+    "target_id": "k360.journal-03",
+    "slug_candidate": "bad-bunny-flamingo-revolution",
+    "target_path": "/journal/bad-bunny-flamingo-revolution/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/bad-bunny-flamingo-revolution",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-04",
+    "target_type": "article",
+    "target_id": "k360.journal-04",
+    "slug_candidate": "kosova-jashte-eurovizionit-doganat-e-gjeneves-nga-eda-zari",
+    "target_path": "/journal/kosova-jashte-eurovizionit-doganat-e-gjeneves-nga-eda-zari/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-05",
+    "target_type": "article",
+    "target_id": "k360.journal-05",
+    "slug_candidate": "sheshi-skenderbej-kujtesa-e-videoklipeve-te-viteve-90-dhe-paradoksi-i-uleseve-bosh",
+    "target_path": "/journal/sheshi-skenderbej-kujtesa-e-videoklipeve-te-viteve-90-dhe-paradoksi-i-uleseve-bosh/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-06",
+    "target_type": "article",
+    "target_id": "k360.journal-06",
+    "slug_candidate": "hejza-ne-bisede-me-eda-zarin",
+    "target_path": "/journal/hejza-ne-bisede-me-eda-zarin/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/hejza-n%C3%AB-bised%C3%AB-me-eda-zarin",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-07",
+    "target_type": "article",
+    "target_id": "k360.journal-07",
+    "slug_candidate": "artist-apo-robot-debati-mbi-autenticitetin-e-esc-festivali-i-68-te-i-eurovizionit",
+    "target_path": "/journal/artist-apo-robot-debati-mbi-autenticitetin-e-esc-festivali-i-68-te-i-eurovizionit/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/artist-apo-robot-debati-mbi-autenticitetin-e-esc-festivali-i-68-te-i-eurovizionit",
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-08",
+    "target_type": "article",
+    "target_id": "k360.journal-08",
+    "slug_candidate": "media-insights-and-reviews-on-eda-zari-s-music",
+    "target_path": "/journal/media-insights-and-reviews-on-eda-zari-s-music/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/media-insights-and-reviews-on-eda-zari-s-music",
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-09",
+    "target_type": "article",
+    "target_id": "k360.journal-09",
+    "slug_candidate": "derteve-me-te-forta",
+    "target_path": "/journal/derteve-me-te-forta/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/derteve-m%C3%AB-t%C3%AB-forta",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-10",
+    "target_type": "article",
+    "target_id": "k360.journal-10",
+    "slug_candidate": "sharmi-i-vinilit-dhe-narrativa-mbi-kulturen-e-degjimit-muzikor-nga-eda-zari",
+    "target_path": "/journal/sharmi-i-vinilit-dhe-narrativa-mbi-kulturen-e-degjimit-muzikor-nga-eda-zari/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/sharmi-i-vinilit-dhe-narrativa-mbi-kultur%C3%ABn-e-d%C3%ABgjimit-muzikor-nga-eda-zari",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-11",
+    "target_type": "article",
+    "target_id": "k360.journal-11",
+    "slug_candidate": "s-heq-dore",
+    "target_path": "/journal/s-heq-dore/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/s-heq-dor%C3%AB",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-12",
+    "target_type": "article",
+    "target_id": "k360.journal-12",
+    "slug_candidate": "fajin-e-ka-bossa-nova-nje-ze-i-qete-per-nje-bote-te-zhurmshme-nga-eda-zari",
+    "target_path": "/journal/fajin-e-ka-bossa-nova-nje-ze-i-qete-per-nje-bote-te-zhurmshme-nga-eda-zari/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/fajin-e-ka-bossa-nova-nj%C3%AB-z%C3%AB-i-qet%C3%AB-p%C3%ABr-nj%C3%AB-bot%C3%AB-t%C3%AB-zhurmshme-nga-eda-zari",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-13",
+    "target_type": "article",
+    "target_id": "k360.journal-13",
+    "slug_candidate": "arti-i-te-kerkuarit-falje-kur-umberto-eco-argetoheshe-nga-eda-zari",
+    "target_path": "/journal/arti-i-te-kerkuarit-falje-kur-umberto-eco-argetoheshe-nga-eda-zari/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-14",
+    "target_type": "article",
+    "target_id": "k360.journal-14",
+    "slug_candidate": "albumi-i-ri-palimpsest-poradeci-i-heine",
+    "target_path": "/journal/albumi-i-ri-palimpsest-poradeci-i-heine/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-15",
+    "target_type": "article",
+    "target_id": "k360.journal-15",
+    "slug_candidate": "nje-mesh-per-paqen-ne-kujtim-te-viktimave-te-luftes-ne-kosove-nga-eda-zari",
+    "target_path": "/journal/nje-mesh-per-paqen-ne-kujtim-te-viktimave-te-luftes-ne-kosove-nga-eda-zari/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-16",
+    "target_type": "article",
+    "target_id": "k360.journal-16",
+    "slug_candidate": "dielli-lind-serisht-me-hemingway-jazz-fest-edicioni-i-8-te",
+    "target_path": "/journal/dielli-lind-serisht-me-hemingway-jazz-fest-edicioni-i-8-te/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/dielli-lind-s%C3%ABrisht-me-hemingway-jazz-fest-edicioni-i-8-t%C3%AB",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-17",
+    "target_type": "article",
+    "target_id": "k360.journal-17",
+    "slug_candidate": "qan-lulja-per-lulen-bukuria-e-poliritmit-eda-zari",
+    "target_path": "/journal/qan-lulja-per-lulen-bukuria-e-poliritmit-eda-zari/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-18",
+    "target_type": "article",
+    "target_id": "k360.journal-18",
+    "slug_candidate": "capriccio-poradeci-heine-dhe-tingulli-nga-eda-zari",
+    "target_path": "/journal/capriccio-poradeci-heine-dhe-tingulli-nga-eda-zari/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-19",
+    "target_type": "article",
+    "target_id": "k360.journal-19",
+    "slug_candidate": "gruaja-ne-muzike-a-guilty-pleasure",
+    "target_path": "/journal/gruaja-ne-muzike-a-guilty-pleasure/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-20",
+    "target_type": "article",
+    "target_id": "k360.journal-20",
+    "slug_candidate": "mbi-termin-emigrant-1937-bert-brecht",
+    "target_path": "/journal/mbi-termin-emigrant-1937-bert-brecht/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/mbi-termin-emigrant-1937-bert-brecht",
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-21",
+    "target_type": "article",
+    "target_id": "k360.journal-21",
+    "slug_candidate": "pikat-e-gjakut-tim-gatiten-yje",
+    "target_path": "/journal/pikat-e-gjakut-tim-gatiten-yje/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/pikat-e-gjakut-tim-gatiten-yje",
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-22",
+    "target_type": "article",
+    "target_id": "k360.journal-22",
+    "slug_candidate": "leter-nga-redaksia",
+    "target_path": "/journal/leter-nga-redaksia/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-23",
+    "target_type": "article",
+    "target_id": "k360.journal-23",
+    "slug_candidate": "ennio-morricone-me-vdekje-vdekjen-shkeli",
+    "target_path": "/journal/ennio-morricone-me-vdekje-vdekjen-shkeli/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-24",
+    "target_type": "article",
+    "target_id": "k360.journal-24",
+    "slug_candidate": "vocalise-kur-flasim-pa-fjale-eda-zari",
+    "target_path": "/journal/vocalise-kur-flasim-pa-fjale-eda-zari/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/vocalise-kur-flasim-pa-fjal%C3%AB-eda-zari",
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-25",
+    "target_type": "article",
+    "target_id": "k360.journal-25",
+    "slug_candidate": "kujtesa-jone-muzikore-dhe-umberto-eco-eda-zari",
+    "target_path": "/journal/kujtesa-jone-muzikore-dhe-umberto-eco-eda-zari/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-26",
+    "target_type": "article",
+    "target_id": "k360.journal-26",
+    "slug_candidate": "refuzim-abasge-hermann-hesse",
+    "target_path": "/journal/refuzim-abasge-hermann-hesse/",
+    "readiness": "body_missing",
+    "source_url": "https://www.kult360.com/post/refuzim-abasge-hermann-hesse",
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-27",
+    "target_type": "article",
+    "target_id": "k360.journal-27",
+    "slug_candidate": "nga-eda-zari-dita-nderkombetare-e-xhazit-ne-shtepi",
+    "target_path": "/journal/nga-eda-zari-dita-nderkombetare-e-xhazit-ne-shtepi/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-28",
+    "target_type": "article",
+    "target_id": "k360.journal-28",
+    "slug_candidate": "nga-eda-zari-kengelutje",
+    "target_path": "/journal/nga-eda-zari-kengelutje/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "sq",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-29",
+    "target_type": "article",
+    "target_id": "k360.journal-29",
+    "slug_candidate": "nga-eda-zari-ars-longa-beat-hoveni-takohet-me-jazz-in",
+    "target_path": "/journal/nga-eda-zari-ars-longa-beat-hoveni-takohet-me-jazz-in/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-30",
+    "target_type": "article",
+    "target_id": "k360.journal-30",
+    "slug_candidate": "xhazi-ne-liturgji",
+    "target_path": "/journal/xhazi-ne-liturgji/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "journal",
+    "source_id": "journal-31",
+    "target_type": "article",
+    "target_id": "k360.journal-31",
+    "slug_candidate": "entropy",
+    "target_path": "/journal/entropy/",
+    "readiness": "url_and_body_missing",
+    "source_url": null,
+    "language_source": "unknown",
+    "notes": [
+      "Preserve source category separately from proposed editorial format.",
+      "Do not publish migrated article until full body is sourced."
+    ]
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-support-individual",
+    "target_type": "opportunity",
+    "target_id": "k360.opportunity-support-individual",
+    "slug_candidate": "support-as-an-individual",
+    "target_path": "/opportunities/support-as-an-individual/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/get-involved",
+    "language_source": "en",
+    "notes": [
+      "Evergreen CTA: confirm it remains active before publication."
+    ]
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-corporate-partner",
+    "target_type": "opportunity",
+    "target_id": "k360.opportunity-corporate-partner",
+    "slug_candidate": "partner-as-a-corporation",
+    "target_path": "/opportunities/partner-as-a-corporation/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/get-involved",
+    "language_source": "en",
+    "notes": [
+      "Evergreen CTA: confirm it remains active before publication."
+    ]
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-foundation-collaboration",
+    "target_type": "opportunity",
+    "target_id": "k360.opportunity-foundation-collaboration",
+    "slug_candidate": "collaborate-as-a-foundation",
+    "target_path": "/opportunities/collaborate-as-a-foundation/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/get-involved",
+    "language_source": "en",
+    "notes": [
+      "Evergreen CTA: confirm it remains active before publication."
+    ]
+  },
+  {
+    "source_collection": "opportunities",
+    "source_id": "opportunity-visionary-partners",
+    "target_type": "opportunity",
+    "target_id": "k360.opportunity-visionary-partners",
+    "slug_candidate": "we-seek-visionary-partners",
+    "target_path": "/opportunities/we-seek-visionary-partners/",
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "en",
+    "notes": [
+      "Evergreen CTA: confirm it remains active before publication."
+    ]
+  },
+  {
+    "source_collection": "testimonials",
+    "source_id": "testimonial-silvio-gonzato",
+    "target_type": "testimonial",
+    "target_id": "k360.testimonial-silvio-gonzato",
+    "slug_candidate": null,
+    "target_path": null,
+    "readiness": "rights_review_required",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "en",
+    "notes": [
+      "Use original wording only after rights/editorial review."
+    ]
+  },
+  {
+    "source_collection": "testimonials",
+    "source_id": "testimonial-herbie-hancock",
+    "target_type": "testimonial",
+    "target_id": "k360.testimonial-herbie-hancock",
+    "slug_candidate": null,
+    "target_path": null,
+    "readiness": "rights_review_required",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "en",
+    "notes": [
+      "Verify the original letter/permission before republishing as an institutional testimonial."
+    ]
+  },
+  {
+    "source_collection": "testimonials",
+    "source_id": "testimonial-ulrich-eichelmann",
+    "target_type": "testimonial",
+    "target_id": "k360.testimonial-ulrich-eichelmann",
+    "slug_candidate": null,
+    "target_path": null,
+    "readiness": "rights_review_required",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "en",
+    "notes": [
+      "Verify original letter/permission before republication."
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "European Union",
+    "target_type": "partner",
+    "target_id": "k360.partner-european-union",
+    "slug_candidate": "european-union",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "supporter of TERMINAL / Europe Week 2026"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "EU Delegation in Albania",
+    "target_type": "partner",
+    "target_id": "k360.partner-eu-delegation-in-albania",
+    "slug_candidate": "eu-delegation-in-albania",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "supporter named on Qyteti Brenda Oborrit initiative summary"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Europe House",
+    "target_type": "partner",
+    "target_id": "k360.partner-europe-house",
+    "slug_candidate": "europe-house",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "supporter named on Qyteti Brenda Oborrit initiative summary"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kalo Foundation",
+    "target_type": "partner",
+    "target_id": "k360.partner-kalo-foundation",
+    "slug_candidate": "kalo-foundation",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "LuzatArt strategic cooperation"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kalo Gallery",
+    "target_type": "partner",
+    "target_id": "k360.partner-kalo-gallery",
+    "slug_candidate": "kalo-gallery",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "LuzatArt strategic cooperation / artistic curation"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Patagonia",
+    "target_type": "partner",
+    "target_id": "k360.partner-patagonia",
+    "slug_candidate": "patagonia",
+    "target_path": null,
+    "readiness": "review",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Save the Blue Heart of Europe strategic support"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Riverwatch",
+    "target_type": "partner",
+    "target_id": "k360.partner-riverwatch",
+    "slug_candidate": "riverwatch",
+    "target_path": null,
+    "readiness": "review",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Save the Blue Heart of Europe strategic support"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "EcoAlbania",
+    "target_type": "partner",
+    "target_id": "k360.partner-ecoalbania",
+    "slug_candidate": "ecoalbania",
+    "target_path": null,
+    "readiness": "review",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Save the Blue Heart of Europe strategic support"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Bashkia Himarë",
+    "target_type": "partner",
+    "target_id": "k360.partner-bashkia-himare",
+    "slug_candidate": "bashkia-himare",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 institutional support"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "GIZ Albania",
+    "target_type": "partner",
+    "target_id": "k360.partner-giz-albania",
+    "slug_candidate": "giz-albania",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 institutional support"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Agency South Coastal Region Albania",
+    "target_type": "partner",
+    "target_id": "k360.partner-agency-south-coastal-region-albania",
+    "slug_candidate": "agency-south-coastal-region-albania",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 institutional support"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Çobo",
+    "target_type": "partner",
+    "target_id": "k360.partner-kantina-cobo",
+    "slug_candidate": "kantina-cobo",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 wine partner"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Nurellari",
+    "target_type": "partner",
+    "target_id": "k360.partner-kantina-nurellari",
+    "slug_candidate": "kantina-nurellari",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 wine partner"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Belba",
+    "target_type": "partner",
+    "target_id": "k360.partner-kantina-belba",
+    "slug_candidate": "kantina-belba",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 wine partner"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kantina Kokomani",
+    "target_type": "partner",
+    "target_id": "k360.partner-kantina-kokomani",
+    "slug_candidate": "kantina-kokomani",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 wine partner"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Kaba Music Records",
+    "target_type": "partner",
+    "target_id": "k360.partner-kaba-music-records",
+    "slug_candidate": "kaba-music-records",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 music/production"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Botimpex",
+    "target_type": "partner",
+    "target_id": "k360.partner-botimpex",
+    "slug_candidate": "botimpex",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 partner"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Symbiotic",
+    "target_type": "partner",
+    "target_id": "k360.partner-symbiotic",
+    "slug_candidate": "symbiotic",
+    "target_path": null,
+    "readiness": "metadata_ready",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Jazz & Wine 2017 partner"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "UNESCO",
+    "target_type": "partner",
+    "target_id": "k360.partner-unesco",
+    "slug_candidate": "unesco",
+    "target_path": null,
+    "readiness": "review",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Referenced through International Jazz Day / Herbie Hancock recognition"
+    ]
+  },
+  {
+    "source_collection": "partners",
+    "source_id": "Thelonious Monk Institute of Jazz",
+    "target_type": "partner",
+    "target_id": "k360.partner-thelonious-monk-institute-of-jazz",
+    "slug_candidate": "thelonious-monk-institute-of-jazz",
+    "target_path": null,
+    "readiness": "review",
+    "source_url": "https://www.kult360.com/",
+    "language_source": "unknown",
+    "notes": [
+      "Being named on the legacy site does not automatically mean current partner status.",
+      "Referenced through Herbie Hancock recognition"
+    ]
+  }
+]

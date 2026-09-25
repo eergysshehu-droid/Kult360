@@ -1,0 +1,7 @@
+id: pillar-art
+role: strategic_pillar
+alt_or_label: ART & PROFESSIONAL EMPOWERMENT
+rendition_url: https://static.wixstatic.com/media/ac2b9c_83e5dce2fa114146a35c8831ea9f31f6~mv2.jpg/v1/fill/w_225%2Ch_224%2Cq_90%2Cenc_avif%2Cquality_auto/ac2b9c_83e5dce2fa114146a35c8831ea9f31f6~mv2.jpg
+original_url: https://static.wixstatic.com/media/ac2b9c_83e5dce2fa114146a35c8831ea9f31f6~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

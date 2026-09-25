@@ -1,0 +1,30 @@
+---
+interface Props {
+  language: 'en' | 'sq';
+}
+
+const {language} = Astro.props;
+const alt = language === 'sq' ? {
+  network: 'Rrjeti historik i partnerëve KULT360',
+  eu: 'Bashkimi Europian',
+  delegation: 'Delegacioni i Bashkimit Europian në Shqipëri'
+} : {
+  network: 'KULT360 historic partner network',
+  eu: 'European Union',
+  delegation: 'European Union Delegation to Albania'
+};
+---
+<div class="partner-marquee" role="region" aria-label={language === 'sq' ? 'Partnerët KULT360' : 'KULT360 partners'}>
+  <div class="partner-marquee__track">
+    <div class="partner-marquee__set">
+      <figure class="partner-marquee__item partner-marquee__item--network"><img src="/media/partners/collage.jpg" alt={alt.network} loading="lazy" decoding="async" /></figure>
+      <figure class="partner-marquee__item partner-marquee__item--eu"><img src="/media/partners/european-union-horizontal.jpg" alt={alt.eu} loading="lazy" decoding="async" /></figure>
+      <figure class="partner-marquee__item partner-marquee__item--delegation"><img src="/media/partners/eu-delegation-albania.jpeg" alt={alt.delegation} loading="lazy" decoding="async" /></figure>
+    </div>
+    <div class="partner-marquee__set" aria-hidden="true">
+      <figure class="partner-marquee__item partner-marquee__item--network"><img src="/media/partners/collage.jpg" alt="" loading="lazy" decoding="async" /></figure>
+      <figure class="partner-marquee__item partner-marquee__item--eu"><img src="/media/partners/european-union-horizontal.jpg" alt="" loading="lazy" decoding="async" /></figure>
+      <figure class="partner-marquee__item partner-marquee__item--delegation"><img src="/media/partners/eu-delegation-albania.jpeg" alt="" loading="lazy" decoding="async" /></figure>
+    </div>
+  </div>
+</div>

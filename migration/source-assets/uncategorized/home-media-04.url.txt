@@ -1,0 +1,7 @@
+id: home-media-04
+role: home_visual
+alt_or_label: 
+rendition_url: https://static.wixstatic.com/media/11062b_a371ce88dfd24ab9a95b07b250101474f000.jpg/v1/fill/w_980%2Ch_551%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/11062b_a371ce88dfd24ab9a95b07b250101474f000.jpg
+original_url: https://static.wixstatic.com/media/11062b_a371ce88dfd24ab9a95b07b250101474f000.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

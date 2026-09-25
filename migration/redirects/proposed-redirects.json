@@ -1,0 +1,143 @@
+[
+  {
+    "from": "/about",
+    "to": "/about/",
+    "status": "safe"
+  },
+  {
+    "from": "/stories-conversations",
+    "to": "/lab/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/copy-of-culture-inclusive-education",
+    "to": "/media/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/blog",
+    "to": "/journal/",
+    "status": "safe_conceptual"
+  },
+  {
+    "from": "/blog/categories/music",
+    "to": "/journal/",
+    "status": "proposed_review",
+    "note": "Preserve category via filter/tag in the V2 Journal."
+  },
+  {
+    "from": "/general-6",
+    "to": "/programs/heritage-sustainability/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/qytetibrendaoborrit",
+    "to": "/events/qyteti-brenda-oborrit/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/get-involved",
+    "to": "/get-involved/",
+    "status": "safe"
+  },
+  {
+    "from": "/donate",
+    "to": "/support/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/edazari",
+    "to": "/people/eda-zari/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/ergysshehu",
+    "to": "/people/ergys-shehu/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/erosdibra",
+    "to": "/people/eros-dibra/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/teufikbashi",
+    "to": "/people/teufik-bashi/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/flamingot-dhe-zanati-i-t%C3%AB-k%C3%ABrkuarit-heronj-me-porosi-eda-zari",
+    "to": "/journal/flamingot-dhe-zanati-i-t%C3%AB-k%C3%ABrkuarit-heronj-me-porosi-eda-zari/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/fyejt-e-gramshit-n%C3%AB-uliksin-e-ri-t%C3%AB-hollywood-it-nj%C3%AB-meditim-mbi-z%C3%ABrin-baritor-kineman%C3%AB-dhe-kujt",
+    "to": "/journal/fyejt-e-gramshit-n%C3%AB-uliksin-e-ri-t%C3%AB-hollywood-it-nj%C3%AB-meditim-mbi-z%C3%ABrin-baritor-kineman%C3%AB-dhe-kujt/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/bad-bunny-flamingo-revolution",
+    "to": "/journal/bad-bunny-flamingo-revolution/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/hejza-n%C3%AB-bised%C3%AB-me-eda-zarin",
+    "to": "/journal/hejza-n%C3%AB-bised%C3%AB-me-eda-zarin/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/artist-apo-robot-debati-mbi-autenticitetin-e-esc-festivali-i-68-te-i-eurovizionit",
+    "to": "/journal/artist-apo-robot-debati-mbi-autenticitetin-e-esc-festivali-i-68-te-i-eurovizionit/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/media-insights-and-reviews-on-eda-zari-s-music",
+    "to": "/journal/media-insights-and-reviews-on-eda-zari-s-music/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/derteve-m%C3%AB-t%C3%AB-forta",
+    "to": "/journal/derteve-m%C3%AB-t%C3%AB-forta/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/sharmi-i-vinilit-dhe-narrativa-mbi-kultur%C3%ABn-e-d%C3%ABgjimit-muzikor-nga-eda-zari",
+    "to": "/journal/sharmi-i-vinilit-dhe-narrativa-mbi-kultur%C3%ABn-e-d%C3%ABgjimit-muzikor-nga-eda-zari/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/s-heq-dor%C3%AB",
+    "to": "/journal/s-heq-dor%C3%AB/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/fajin-e-ka-bossa-nova-nj%C3%AB-z%C3%AB-i-qet%C3%AB-p%C3%ABr-nj%C3%AB-bot%C3%AB-t%C3%AB-zhurmshme-nga-eda-zari",
+    "to": "/journal/fajin-e-ka-bossa-nova-nj%C3%AB-z%C3%AB-i-qet%C3%AB-p%C3%ABr-nj%C3%AB-bot%C3%AB-t%C3%AB-zhurmshme-nga-eda-zari/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/dielli-lind-s%C3%ABrisht-me-hemingway-jazz-fest-edicioni-i-8-t%C3%AB",
+    "to": "/journal/dielli-lind-s%C3%ABrisht-me-hemingway-jazz-fest-edicioni-i-8-t%C3%AB/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/mbi-termin-emigrant-1937-bert-brecht",
+    "to": "/journal/mbi-termin-emigrant-1937-bert-brecht/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/pikat-e-gjakut-tim-gatiten-yje",
+    "to": "/journal/pikat-e-gjakut-tim-gatiten-yje/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/vocalise-kur-flasim-pa-fjal%C3%AB-eda-zari",
+    "to": "/journal/vocalise-kur-flasim-pa-fjal%C3%AB-eda-zari/",
+    "status": "proposed_review"
+  },
+  {
+    "from": "/post/refuzim-abasge-hermann-hesse",
+    "to": "/journal/refuzim-abasge-hermann-hesse/",
+    "status": "proposed_review"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "person-eda-zari",
+    "name": "Eda Zari",
+    "role": "President / Chair of the Board",
+    "source_url": "https://www.kult360.com/edazari",
+    "legacy_path": "/edazari",
+    "profile_status": "foundation_profile_supplied",
+    "bio": null,
+    "bio_status": "Full profile content supplied directly by KULT360.",
+    "observed_profile_image_name": "Crop-ESH00939-Edit.jpg",
+    "related_public_content": [
+      "https://www.kult360.com/post/hejza-n%C3%AB-bised%C3%AB-me-eda-zarin"
+    ]
+  },
+  {
+    "id": "person-ergys-shehu",
+    "name": "Ergys Shehu",
+    "role": "Executive Director",
+    "source_url": "https://www.kult360.com/ergysshehu",
+    "legacy_path": "/ergysshehu",
+    "profile_status": "foundation_profile_supplied",
+    "bio": null,
+    "bio_status": "Full profile content supplied directly by KULT360."
+  },
+  {
+    "id": "person-eda-elbasani",
+    "name": "Enkelejda Elbasani",
+    "role": "Director of Communications",
+    "source_url": null,
+    "legacy_path": null,
+    "profile_status": "foundation_profile_supplied",
+    "bio": null,
+    "bio_status": "Full profile content supplied directly by KULT360."
+  },
+  {
+    "id": "person-teufik-bashi",
+    "name": "Teufik Bashi",
+    "role": "Director of Finance & Resources",
+    "source_url": "https://www.kult360.com/teufikbashi",
+    "legacy_path": "/teufikbashi",
+    "profile_status": "foundation_profile_supplied",
+    "bio": null,
+    "bio_status": "Full profile content supplied directly by KULT360."
+  },
+  {
+    "id": "person-eros-dibra",
+    "name": "Eros Dibra",
+    "role": "Director, Arts & Education",
+    "source_url": "https://www.kult360.com/erosdibra",
+    "legacy_path": "/erosdibra",
+    "profile_status": "foundation_profile_supplied",
+    "bio": null,
+    "bio_status": "Full profile content supplied directly by KULT360."
+  }
+]

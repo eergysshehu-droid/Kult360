@@ -1,0 +1,336 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+import ProjectArchive from './ProjectArchive.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
+import JournalCard from './JournalCard.astro';
+import PartnerMarquee from './PartnerMarquee.astro';
+import AboutPage from './AboutPage.astro';
+import ContactPage from './ContactPage.astro';
+import GetInvolvedPage from './GetInvolvedPage.astro';
+import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
+import {events, formatDate, initiatives, journal, journalImage, journalSlug, opportunities, people, projectImage, projects} from '../../lib/content';
+import {programFocusAreas} from '../../content/program-focus';
+import {cultureThemes} from '../../content/themes';
+import type {ShellPageDefinition} from '../../content/shell-pages';
+
+interface Props {page: ShellPageDefinition; language: Language}
+const {page, language} = Astro.props;
+const path = localizedPath(`/${page.slug}/`, language);
+const websitePolicies = {
+  privacy: {
+    eyebrow: language === 'sq' ? 'Privatësia & të dhënat personale' : 'Privacy & personal data',
+    intro: language === 'sq'
+      ? 'KULT360 e trajton privatësinë si pjesë të përgjegjësisë institucionale. Ky njoftim shpjegon si mbledhim, përdorim, ruajmë dhe mbrojmë të dhënat personale kur vizitoni faqen, na shkruani ose komunikoni me ne për punën publike të Fondacionit. Është hartuar duke marrë parasysh Ligjin nr. 124/2024 “Për mbrojtjen e të dhënave personale” dhe, kur zbatohet, Rregulloren (BE) 2016/679 (GDPR).'
+      : 'KULT360 treats privacy as part of its institutional responsibility. This notice explains how we collect, use, retain and protect personal information when you visit the website, write to us or communicate with us about the Foundation’s public work. It is designed with Albania’s Law No. 124/2024 “On Personal Data Protection” in mind and, where applicable, Regulation (EU) 2016/679 (GDPR).',
+    sections: language === 'sq' ? [
+      ['1. Kush jemi', 'KULT360 është një fondacion kulturor jofitimprurës i themeluar në Shqipëri. Kur KULT360 përcakton qëllimin dhe mënyrën e përpunimit të të dhënave personale, vepron si kontrollues i tyre. Ky njoftim zbatohet për faqen publike, komunikimet që nisni përmes emailit ose kanaleve të publikuara në faqe dhe informacionin që zgjidhni të ndani me ne për projekte, partneritete, evente, mundësi ose kërkesa të tjera. Për aktivitete të veçanta mund të japim njoftime shtesë privatësie.'],
+      ['2. Çfarë të dhënash mund të marrim', 'Në varësi të ndërveprimit tuaj, mund të marrim emrin, mbiemrin, adresën e emailit, numrin e telefonit, organizatën që përfaqësoni, përmbajtjen e korrespondencës, si dhe dokumente ose materiale që zgjidhni të na dërgoni. Infrastruktura e hostimit dhe sigurisë mund të gjenerojë të dhëna teknike të kufizuara si adresa IP, lloji i pajisjes ose shfletuesit, data dhe ora e kërkesës, faqet e kërkuara dhe regjistra teknikë ose sigurie. Nuk kërkojmë kategori të ndjeshme të të dhënave përmes faqes publike përveç rasteve kur kjo është e nevojshme për një aktivitet të përcaktuar dhe jepet informacion i posaçëm.'],
+      ['3. Pse i përdorim dhe baza ligjore', 'Të dhënat përpunohen vetëm për qëllime të përcaktuara dhe mbi një bazë ligjore të vlefshme. Sipas rrethanave, kjo mund të jetë përgjigjja ndaj një kërkese ose marrja e hapave që kërkoni përpara një marrëdhënieje kontraktore; përmbushja e detyrimeve ligjore, financiare, të auditimit ose raportimit; interesat legjitime të KULT360 për administrimin e komunikimeve, bashkëpunimeve, sigurisë së faqes dhe veprimtarisë së tij; ose pëlqimi juaj kur ligji e kërkon. Kur mbështetemi në pëlqim, ai mund të tërhiqet për të ardhmen pa cenuar ligjshmërinë e përpunimit të kryer më parë.'],
+      ['4. Komunikime dhe bashkëpunime', 'Kur na kontaktoni për një projekt, partneritet, grant, mundësi profesionale, event, intervistë, media ose çështje tjetër, përdorim informacionin për të kuptuar kërkesën, për t’ju përgjigjur dhe për të menaxhuar hapat vijues. Një mesazh i zakonshëm kontakti nuk trajtohet si leje për marketing të drejtpërdrejtë të palidhur. Nëse në të ardhmen ofrojmë newsletter ose komunikime promocionale, do të përdorim mekanizmat e duhur të zgjedhjes dhe çregjistrimit.'],
+      ['5. Cookies, të dhëna teknike dhe gjurmimi', 'Ndërtimi aktual i faqes nuk synon të përdorë cookies reklamimi, profilizim të vizitorëve ose gjurmim për reklamim të sjelljes nga KULT360. Funksione teknike të domosdoshme mund të ofrohen nga infrastruktura e hostimit dhe sigurisë. Nëse shtojmë më vonë analitikë, media të integruara ose teknologji të tjera që kërkojnë zgjedhjen tuaj, do të përditësojmë Cookie Notice dhe do të vendosim kontrollet e nevojshme të pëlqimit përpara aktivizimit të teknologjive jo thelbësore.'],
+      ['6. Me kë mund të ndahen të dhënat', 'KULT360 nuk shet të dhëna personale. Akses i kufizuar mund t’u jepet ofruesve që na ndihmojnë me hosting, email, ruajtje cloud, siguri, mirëmbajtje teknike ose shërbime profesionale, vetëm në masën e nevojshme për funksionin e tyre. Informacioni mund të ndahet me partnerë projekti kur kjo është e nevojshme për një aktivitet konkret, ekziston një bazë ligjore dhe ndarja është në përputhje me informacionin që ju është dhënë. Mund t’u përgjigjemi autoriteteve publike kur një detyrim ligjor na kërkon ta bëjmë këtë.'],
+      ['7. Transferimet ndërkombëtare', 'KULT360 punon në një mjedis kulturor ndërkombëtar dhe disa ofrues teknikë ose partnerë mund të ndodhen jashtë Shqipërisë. Kur transferimi i të dhënave personale kërkon masa mbrojtëse sipas ligjit shqiptar ose, kur zbatohet, GDPR-së, përdorim mekanizma të ligjshëm dhe masa të përshtatshme. Kur një transferim specifik kërkon informacion shtesë ose pëlqim, ai do të jepet në kontekstin përkatës.'],
+      ['8. Sa kohë i ruajmë', 'Të dhënat personale ruhen vetëm për aq kohë sa është e arsyeshme dhe e nevojshme për qëllimin për të cilin u mblodhën, duke marrë parasysh detyrimet ligjore, financiare, kontraktore, të auditimit, grantit, raportimit ose zgjidhjes së mosmarrëveshjeve. Korrespondenca e zakonshme mund të mbahet për një periudhë të arsyeshme pas mbylljes së çështjes; dokumentacioni i projekteve, kontratave ose financave mund të kërkojë ruajtje më të gjatë. Regjistrat teknikë të sigurisë ruhen sipas nevojës operative dhe konfigurimit të ofruesve përkatës.'],
+      ['9. Të drejtat tuaja', 'Në varësi të ligjit dhe rrethanave, mund të kërkoni akses në të dhënat tuaja, korrigjimin e të dhënave të pasakta, fshirjen, kufizimin e përpunimit, kundërshtimin e përpunimit dhe, kur zbatohet, transferueshmërinë e të dhënave. Kur baza është pëlqimi, mund ta tërhiqni atë. Mund të kërkojmë informacion të arsyeshëm për verifikimin e identitetit përpara se t’i përgjigjemi një kërkese dhe do të veprojmë brenda afateve që parashikon legjislacioni i zbatueshëm.'],
+      ['10. Fëmijët, fotografia dhe dokumentimi kulturor', 'Faqja publike nuk është krijuar për të mbledhur drejtpërdrejt të dhëna personale nga fëmijët pa bazë të përshtatshme ligjore. KULT360 mund të zhvillojë programe kulturore ose edukative me të mitur; në këto raste përdoren procedura dhe njoftime specifike, përfshirë prindin, kujdestarin ose institucionin përgjegjës kur kërkohet. Si fondacion kulturor, KULT360 mund të dokumentojë projekte, performanca dhe evente për arkivim, raportim dhe komunikim kulturor; përdorimi i imazhit ose zërit të personave të identifikueshëm duhet të mbështetet në bazën ligjore të përshtatshme për aktivitetin konkret.'],
+      ['11. Siguria dhe vendimmarrja automatike', 'Përdorim masa teknike dhe organizative të arsyeshme për të mbrojtur informacionin nga aksesi, përdorimi, ndryshimi, humbja ose zbulimi i paautorizuar dhe kufizojmë aksesin te personat ose ofruesit që kanë nevojë legjitime për të. Asnjë sistem online nuk mund të garantojë siguri absolute. Faqja publike e KULT360 nuk përdor aktualisht vendimmarrje tërësisht automatike ose profilizim që prodhon efekte ligjore ose efekte të ngjashme të rëndësishme për vizitorët.'],
+      ['12. Kontakt dhe përditësime', 'Për pyetje mbi privatësinë, për të ushtruar një të drejtë ose për të ngritur një shqetësim, shkruani në office@kult360.com. Këtë njoftim mund ta përditësojmë kur ndryshojnë shërbimet, teknologjitë, praktikat ose kërkesat ligjore.']
+    ] : [
+      ['1. Who we are', 'KULT360 is a non-profit cultural foundation established in Albania. Where KULT360 determines the purposes and means of processing personal information, it acts as the data controller. This notice applies to the public website, communications you initiate through email or other published contact channels, and information you choose to send us about projects, partnerships, events, opportunities or other enquiries. Specific activities may be accompanied by additional privacy information.'],
+      ['2. Information we may receive', 'Depending on how you interact with us, we may receive your name, email address, telephone number, the organisation you represent, correspondence, and documents or materials you choose to send. Hosting and security infrastructure may generate limited technical data such as IP address, browser or device type, request date and time, requested pages and technical or security logs. We do not ask for sensitive categories of personal data through the public website unless necessary for a defined activity and accompanied by appropriate information.'],
+      ['3. Why we use information and legal bases', 'We process personal information only for defined purposes and where a lawful basis applies. Depending on the circumstances, this may include responding to a request or taking steps you ask us to take before an agreement; complying with legal, financial, audit or reporting obligations; KULT360’s legitimate interests in administering communications, collaborations, website security and its activities; or your consent where consent is required. Where we rely on consent, you may withdraw it for the future without affecting processing already carried out lawfully.'],
+      ['4. Enquiries and collaborations', 'If you contact us about a project, partnership, grant, professional opportunity, event, interview, media request or another matter, we use the information to understand the enquiry, respond and manage appropriate follow-up. An ordinary contact message is not treated as permission for unrelated direct marketing. If we introduce newsletters or promotional mailings in the future, we will provide appropriate choice and unsubscribe mechanisms.'],
+      ['5. Cookies, technical data and tracking', 'The current site build is not intended to use advertising cookies, visitor profiling or behavioural-advertising tracking by KULT360. Essential technical functions may be provided by hosting and security infrastructure. If we later introduce analytics, embedded media or other technologies that require your choice, we will update the Cookie Notice and provide appropriate consent controls before non-essential technologies are activated.'],
+      ['6. Who may receive information', 'KULT360 does not sell personal information. Limited access may be given to providers that support hosting, email, cloud storage, security, technical maintenance or professional services, only to the extent necessary for their role. Information may be shared with project partners where necessary for a specific activity, supported by a lawful basis and consistent with the information provided to you. We may also respond to public authorities where a legal obligation requires us to do so.'],
+      ['7. International transfers', 'KULT360 works in an international cultural environment and some technical providers or project partners may be located outside Albania. Where a transfer of personal information requires safeguards under Albanian law or, where applicable, the GDPR, we use a lawful transfer mechanism and appropriate safeguards. Where a specific transfer requires additional information or consent, this will be provided in the relevant context.'],
+      ['8. How long we keep information', 'Personal information is kept only for as long as reasonably necessary for the purpose for which it was collected, taking into account legal, financial, contractual, audit, grant-reporting, reporting or dispute-resolution requirements. Ordinary correspondence may be retained for a reasonable period after a matter closes; project, contractual or financial records may need to be kept longer. Technical security logs are retained according to operational needs and the configuration of the relevant providers.'],
+      ['9. Your rights', 'Depending on applicable law and the circumstances, you may have rights to request access to your personal information, correction of inaccurate information, erasure, restriction of processing, objection to processing and, where applicable, data portability. Where processing is based on consent, you may withdraw it. We may request reasonable information to verify identity before responding and will act within the time limits required by applicable law.'],
+      ['10. Children, photography and cultural documentation', 'The public website is not designed to collect personal information directly from children without an appropriate legal basis. KULT360 may run cultural or educational programmes involving minors; those activities use programme-specific procedures and notices, including a parent, guardian or responsible institution where required. As a cultural foundation, KULT360 may document projects, performances and events for archival, reporting and cultural-communication purposes; the use of identifiable image or audio material must rely on an appropriate legal basis for the relevant activity.'],
+      ['11. Security and automated decision-making', 'We use reasonable technical and organisational measures to protect information against unauthorised access, use, alteration, loss or disclosure and limit access to people or providers with a legitimate need. No online system can guarantee absolute security. The KULT360 public website does not currently use solely automated decision-making or profiling that produces legal or similarly significant effects for visitors.'],
+      ['12. Contact and updates', 'For privacy questions, to exercise a right or to raise a concern, email office@kult360.com. We may update this notice when our services, technologies, practices or legal requirements change.']
+    ]
+  },
+  cookies: {
+    eyebrow: 'Cookies',
+    intro: language === 'sq'
+      ? 'KULT360 synon një faqe të thjeshtë dhe pa gjurmim të panevojshëm.'
+      : 'KULT360 aims to keep this website simple and free from unnecessary tracking.',
+    sections: language === 'sq' ? [
+      ['Cookies të faqes', 'Ndërtimi aktual i faqes nuk përdor me qëllim cookies reklamimi ose profilizimi nga KULT360. Funksione teknike thelbësore mund të ofrohen nga infrastruktura e hostimit.'],
+      ['Shërbime të jashtme', 'Kur ndiqni një lidhje drejt një platforme të jashtme, ajo platformë mund të përdorë cookies sipas politikave të veta.'],
+      ['Ndryshime', 'Nëse në të ardhmen shtojmë analitikë, media të integruara ose teknologji të tjera që kërkojnë zgjedhjen tuaj, do ta përditësojmë këtë njoftim dhe mekanizmin e pëlqimit kur kërkohet.']
+    ] : [
+      ['Website cookies', 'The current site build does not intentionally use KULT360 advertising or profiling cookies. Essential technical functions may be provided by the hosting infrastructure.'],
+      ['External services', 'When you follow a link to an external platform, that platform may use cookies under its own policies.'],
+      ['Changes', 'If we later add analytics, embedded media or other technologies that require a choice, we will update this notice and provide consent controls where required.']
+    ]
+  },
+  terms: {
+    eyebrow: language === 'sq' ? 'Kushtet e përdorimit' : 'Terms of use',
+    intro: language === 'sq'
+      ? 'Këto kushte rregullojnë përdorimin e faqes publike KULT360 dhe materialeve të publikuara në të. Ato përcaktojnë mënyrën si mund të përdoret faqja, përmbajtja e saj dhe materialet e publikuara nga ose në bashkëpunim me KULT360.'
+      : 'These terms govern use of the public KULT360 website and the material published on it. They set out how the website, its content and materials published by or in collaboration with KULT360 may be used.',
+    sections: language === 'sq' ? [
+      ['1. Rreth kësaj faqeje', 'KULT360 është një fondacion kulturor jofitimprurës i themeluar në Shqipëri. Faqja përdoret për informacion publik, komunikim kulturor, dokumentim të projekteve, publikim editorial, prezantim të programeve dhe krijim lidhjesh me artistë, komunitete, institucione, partnerë dhe publikun. Përdorimi i faqes nuk krijon vetvetiu marrëdhënie kontraktore, partneritet, financim ose angazhim nga KULT360.'],
+      ['2. Përdorimi i pranueshëm', 'Mund ta shfletoni faqen, të ndani lidhje drejt saj dhe të përdorni informacionin publik për referencë personale, edukative, kërkimore ose gazetareske në përputhje me ligjin. Nuk duhet të përdorni faqen për veprimtari të paligjshme, për të ndërhyrë në sigurinë ose funksionimin e saj, për të tentuar akses të paautorizuar, për të ngarkuar kod keqdashës ose për të keqpërdorur identitetin, emrin, markën apo materialet e KULT360.'],
+      ['3. Përmbajtja editoriale dhe saktësia', 'KULT360 synon që informacioni publik të jetë i qartë dhe i saktë, por projekte, data, partneritete, mundësi dhe programe mund të ndryshojnë. Materiali i arkivit mund të pasqyrojë kontekstin dhe gjuhën e publikimit origjinal. Përmbajtja mund të korrigjohet, plotësohet, zhvendoset ose hiqet pa njoftim paraprak kur kërkohet nga puna editoriale, të drejtat e autorëve, privatësia, siguria ose zhvillimi i programeve.'],
+      ['4. E drejta e autorit dhe të drejtat e lidhura', 'Tekstet, fotografitë, videot, regjistrimet, grafikat, identiteti vizual dhe materialet e tjera mund t’i përkasin KULT360 ose autorëve, artistëve, fotografëve, producentëve, partnerëve dhe licencuesve të kredituar. Një kreditim nuk përbën leje për ripërdorim. Përveç rasteve të lejuara shprehimisht nga ligji, ripublikimi, përshtatja, përdorimi komercial, heqja e kreditimit ose përdorimi i materialeve në një mënyrë që cenon të drejtat e mbajtësit mund të kërkojë leje paraprake.'],
+      ['5. Marka dhe identiteti KULT360', 'Emri KULT360, logoja, elementet e identitetit vizual dhe prezantimi grafik i faqes nuk duhet të përdoren në mënyrë që sugjeron miratim, partneritet ose përfaqësim zyrtar pa autorizim. Lidhja normale drejt faqes lejohet, por nuk duhet të paraqitet si mbështetje zyrtare kur një mbështetje e tillë nuk ekziston.'],
+      ['6. Materialet që na dërgoni', 'Nëse na dërgoni propozime, portofol, fotografi, tekste, dokumente ose materiale të tjera, ju përgjigjeni për të drejtën tuaj për t’i dërguar ato dhe për të mos cenuar të drejtat e personave të tjerë. Dërgimi i materialit nuk nënkupton automatikisht përzgjedhje, publikim, financim ose transferim të së drejtës së autorit. Çdo përdorim i mëtejshëm nga KULT360 duhet të mbështetet në marrëveshjen, lejen ose bazën tjetër të zbatueshme për rastin konkret.'],
+      ['7. Lidhje dhe shërbime të palëve të treta', 'Faqja mund të përmbajë lidhje drejt platformave, institucioneve, partnerëve ose shërbimeve të jashtme. Këto ofrohen për kontekst ose lehtësi. KULT360 nuk kontrollon disponueshmërinë, sigurinë, përmbajtjen, kushtet ose praktikat e privatësisë së palëve të treta dhe përdorimi i tyre i nënshtrohet rregullave të tyre.'],
+      ['8. Privatësia, cookies dhe siguria', 'Përdorimi i të dhënave personale shpjegohet në Privacy Notice dhe përdorimi i cookies ose teknologjive të ngjashme në Cookie Notice. Ne marrim masa të arsyeshme për sigurinë dhe vazhdimësinë e faqes, por asnjë shërbim online nuk mund të garantohet si plotësisht i pandërprerë, pa gabime ose i imunizuar nga incidente teknike.'],
+      ['9. Informacion, jo këshillë profesionale', 'Përmbajtja mbi kulturën, të drejtat e autorit, financimin, politikat, grantet ose tema të tjera publikohet për informacion dhe komunikim kulturor. Përveç rasteve kur thuhet shprehimisht ndryshe, ajo nuk përbën këshillë juridike, financiare, tatimore ose profesionale dhe nuk duhet të përdoret si zëvendësim për këshillën e një profesionisti të kualifikuar për një situatë konkrete.'],
+      ['10. Përgjegjësia dhe disponueshmëria', 'KULT360 synon ta mbajë faqen të dobishme dhe funksionale, por nuk garanton se çdo material do të jetë gjithmonë i disponueshëm, i plotë ose i përshtatshëm për çdo qëllim. Në masën e lejuar nga ligji, KULT360 nuk mban përgjegjësi për humbje që lind vetëm nga mbështetja në material informues të përgjithshëm, nga ndërprerje teknike jashtë kontrollit të arsyeshëm ose nga përdorimi i faqeve të jashtme. Asgjë këtu nuk kufizon përgjegjësinë që nuk mund të kufizohet ligjërisht.'],
+      ['11. Kuadri ligjor', 'Këto kushte interpretohen në përputhje me ligjet që zbatohen ndaj KULT360 si fondacion i themeluar në Republikën e Shqipërisë, pa cenuar të drejtat detyruese që mund t’u takojnë përdoruesve sipas një legjislacioni tjetër të zbatueshëm.'],
+      ['12. Ndryshime dhe kontakt', 'Këto kushte mund të përditësohen kur ndryshon faqja, veprimtaria publike ose kuadri ligjor. Versioni i publikuar tregon datën e përditësimit. Për pyetje mbi përdorimin e faqes, të drejtat e materialeve ose për të kërkuar leje për ripërdorim, kontaktoni office@kult360.com.']
+    ] : [
+      ['1. About this website', 'KULT360 is a non-profit cultural foundation established in Albania. This website is used for public information, cultural communication, project documentation, editorial publishing, presentation of programmes and connections with artists, communities, institutions, partners and the public. Using the website does not by itself create a contractual relationship, partnership, funding commitment or other undertaking by KULT360.'],
+      ['2. Acceptable use', 'You may browse the website, share links to it and use public information for personal, educational, research or journalistic reference in accordance with law. You must not use the site for unlawful activity, interfere with its security or operation, attempt unauthorised access, introduce malicious code, or misuse KULT360’s identity, name, brand or materials.'],
+      ['3. Editorial content and accuracy', 'KULT360 aims to keep public information clear and accurate, but projects, dates, partnerships, opportunities and programmes may change. Archive material may reflect the context and language of the original publication. Content may be corrected, supplemented, moved or removed without prior notice where required by editorial work, creator rights, privacy, security or programme development.'],
+      ['4. Copyright and related rights', 'Text, photography, video, recordings, graphics, visual identity and other material may belong to KULT360 or to credited authors, artists, photographers, producers, partners and licensors. A credit is not itself permission to reuse material. Except where expressly permitted by law, republication, adaptation, commercial use, removal of credits or use that infringes a rights holder may require prior permission.'],
+      ['5. KULT360 name and identity', 'The KULT360 name, logo, visual identity and website presentation must not be used in a way that suggests endorsement, partnership or official representation without authorisation. Ordinary linking to the website is permitted, but a link must not be presented as official support where no such support exists.'],
+      ['6. Material you send us', 'If you send proposals, portfolios, photographs, text, documents or other material, you are responsible for having the right to send it and for respecting the rights of others. Sending material does not automatically mean selection, publication, funding or transfer of copyright. Any further use by KULT360 must be supported by the agreement, permission or other lawful basis applicable to the specific context.'],
+      ['7. External links and services', 'The website may contain links to external platforms, institutions, partners or services. They are provided for context or convenience. KULT360 does not control their availability, security, content, terms or privacy practices, and your use of those services is subject to their own rules.'],
+      ['8. Privacy, cookies and security', 'Our handling of personal information is explained in the Privacy Notice, and our use of cookies or similar technologies is described in the Cookie Notice. We take reasonable steps to support website security and continuity, but no online service can be guaranteed to be uninterrupted, error-free or immune from technical incidents.'],
+      ['9. Information, not professional advice', 'Material about culture, copyright, funding, policy, grants or other topics is published for information and cultural communication. Unless expressly stated otherwise, it is not legal, financial, tax or other professional advice and should not replace advice from a qualified professional about a specific situation.'],
+      ['10. Liability and availability', 'KULT360 aims to keep the website useful and functional but does not guarantee that every item will always be available, complete or suitable for every purpose. To the extent permitted by law, KULT360 is not responsible for loss arising solely from reliance on general informational material, technical interruptions outside its reasonable control or the use of external websites. Nothing in these terms excludes liability that cannot lawfully be excluded.'],
+      ['11. Legal framework', 'These terms are interpreted under the laws applicable to KULT360 as a foundation established in the Republic of Albania, without limiting mandatory rights that may apply to users under other applicable law.'],
+      ['12. Changes and contact', 'These terms may be updated as the website, public activity or legal framework develops. The published version shows the latest update date. For questions about website use, rights in material or permission to reuse content, contact office@kult360.com.']
+    ]
+  },
+  accessibility: {
+    eyebrow: language === 'sq' ? 'Aksesueshmëria' : 'Accessibility',
+    intro: language === 'sq'
+      ? 'Ne duam që KULT360 të jetë i qartë, i lexueshëm dhe i përdorshëm nga sa më shumë njerëz.'
+      : 'We want KULT360 to be clear, readable and usable by as many people as possible.',
+    sections: language === 'sq' ? [
+      ['Qasja jonë', 'Po punojmë për kontrast të qartë, navigim me tastierë, fokus të dukshëm, tekst alternativ dhe respektim të preferencës për lëvizje të reduktuar.'],
+      ['Na ndihmoni ta përmirësojmë', 'Nëse hasni një pengesë në përdorimin e faqes ose një material që nuk mund ta aksesoni, na shkruani në office@kult360.com dhe na tregoni faqen ose problemin.']
+    ] : [
+      ['Our approach', 'We are working toward clear contrast, keyboard navigation, visible focus states, meaningful alternative text and respect for reduced-motion preferences.'],
+      ['Help us improve', 'If you encounter a barrier or material you cannot access, email office@kult360.com and tell us which page or issue you encountered.']
+    ]
+  }
+} as const;
+
+const policy = page.slug in websitePolicies ? websitePolicies[page.slug as keyof typeof websitePolicies] : undefined;
+const journalFeature = journal.find((record) => record.featured && journalImage(record)) || journal.find((record) => journalImage(record)) || journal[0];
+const journalRest = journalFeature ? journal.filter((record) => record.id !== journalFeature.id) : journal;
+const journalFeatureTitleClass = journalFeature
+  ? (journalFeature.title.trim().length > 105
+      ? 'journal-feature__card--title-very-long'
+      : journalFeature.title.trim().length > 70
+        ? 'journal-feature__card--title-long'
+        : undefined)
+  : undefined;
+const initiativeThemeLink: Record<string,string> = {
+  'initiative-artist-rights': 'rights-access',
+  'initiative-sound-heritage-library': 'heritage-memory'
+};
+---
+<ListingLayout title={page.heading[language]} description={page.description[language]} {language} {path} translations={['en','sq']} about={page.slug === 'about'}>
+  {!['about','contact','get-involved'].includes(page.slug) && (
+    <section class:list={['section-intro', policy && 'section-intro--policy']}>
+      <SectionHeader eyebrow="KULT360" heading={page.heading[language]} description={page.description[language]} />
+    </section>
+  )}
+
+  {page.slug === 'about' && <AboutPage {language} />}
+
+  {page.slug === 'programs' && (
+    <>
+      <section class="program-page-grid ruled-section">
+        {programFocusAreas.map((item) => (
+          <a class="program-page-card" href={localizedPath(`/programs/${item.slug}/`, language)} style={`--program-accent:${item.accent}`}>
+            <span class="program-page-card__index">{item.number}</span>
+            <div class="program-page-card__body">
+              <h2>{item.title[language]}</h2>
+              <p>{item.summary[language]}</p>
+            </div>
+            <span class="program-page-card__action">{language === 'sq' ? 'Hap programin' : 'Open program'} <i aria-hidden="true">↗</i></span>
+            <span class="program-page-card__accent" aria-hidden="true"></span>
+          </a>
+        ))}
+      </section>
+      <section class="ruled-section programme-initiatives">
+        <div class="section-kicker"><span>+</span><h2>{language === 'sq' ? 'Nisma' : 'Initiatives'}</h2></div>
+        <div class="two-column-list">
+          {initiatives.map((item) => {
+            const themeSlug = initiativeThemeLink[item.id];
+            return themeSlug ? (
+              <a class="initiative-link-card" href={localizedPath(`/themes/${themeSlug}/`, language)}>
+                <div><h3>{item.title}</h3><p>{item.summary}</p></div>
+                <span>{language === 'sq' ? 'Eksploro temën' : 'Explore the theme'} ↗</span>
+              </a>
+            ) : (
+              <article><h3>{item.title}</h3><p>{item.summary}</p></article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section class="ruled-section programme-themes">
+        <div class="section-kicker"><span>06</span><h2>{language === 'sq' ? 'Tema që kalojnë përmes programeve' : 'Themes across our programmes'}</h2></div>
+        <p class="programme-themes__intro">{language === 'sq'
+          ? 'Këto tema lidhin programet tona dhe ndihmojnë të kuptohet si arti, të drejtat, mësimi, kujtesa, vendi dhe media takohen në praktikë.'
+          : 'These themes connect our programme areas and show how art, rights, learning, memory, place and media meet in practice.'}</p>
+        <div class="programme-theme-grid">
+          {cultureThemes.map((theme) => (
+            <a href={localizedPath(`/themes/${theme.slug}/`, language)} style={`--theme-accent:${theme.accent}`}>
+              <span>{theme.number}</span>
+              <h3>{theme.title[language]}</h3>
+              <p>{theme.summary[language]}</p>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
+  )}
+
+  {page.slug === 'projects' && <ProjectArchive projects={projects} {language} />}
+
+  {page.slug === 'events' && (
+    <section class="event-list ruled-section">
+      {events.map((event) => <article><div><p class="meta">{formatDate(event.start, language)}</p><h2>{event.title}</h2></div><p>{event.location || '—'}</p></article>)}
+    </section>
+  )}
+
+  {page.slug === 'journal' && (
+    <>
+      {journalFeature && (
+        <section class="journal-feature ruled-section">
+          <div class="journal-feature__label"><span>01</span><p>{language === 'sq' ? 'Në fokus' : 'Featured story'}</p></div>
+          <a class:list={['journal-feature__card', journalFeatureTitleClass]} href={localizedPath(`/journal/${journalSlug(journalFeature)}/`, language)}>
+            {journalImage(journalFeature) && <div class="journal-feature__media"><img src={journalImage(journalFeature)} alt="" fetchpriority="high" decoding="async" /></div>}
+            <div class="journal-feature__copy">
+              <p class="meta">{[journalFeature.category || 'Journal', journalFeature.author, journalFeature.read_time].filter(Boolean).join(' · ')}</p>
+              <h2>{journalFeature.title}</h2>
+              {journalFeature.excerpt && <p>{journalFeature.excerpt}</p>}
+              <span>{language === 'sq' ? 'Lexo historinë' : 'Read the story'} <i aria-hidden="true">↗</i></span>
+            </div>
+          </a>
+        </section>
+      )}
+      <section class="journal-library ruled-section">
+        <div class="journal-library__head">
+          <div><p class="meta">{language === 'sq' ? 'Arkivi' : 'The archive'}</p><h2>{language === 'sq' ? 'Histori, ide & perspektiva.' : 'Stories, ideas & perspectives.'}</h2></div>
+          <p>{language === 'sq' ? 'Shkrime nga rrjeti kulturor i KULT360, të ruajtura në gjuhën e publikimit të tyre kur përkthimi editorial nuk është ende i miratuar.' : 'Writing from the KULT360 cultural network, kept in its source language where an editorial translation is not yet approved.'}</p>
+        </div>
+        <div class="journal-index journal-index--editorial">
+          {journalRest.map((record) => <JournalCard {record} {language} />)}
+        </div>
+      </section>
+      <ContinueWithKult360 {language} context="journal" />
+    </>
+  )}
+
+  {page.slug === 'media' && (
+    <section class="media-grid ruled-section">
+      {projects.filter((item) => item.id.startsWith('project-')).map((project) => {
+        const asset = projectImage(project);
+        return asset && <figure><img src={asset} alt="" loading="lazy" decoding="async" /><figcaption>{project.title}</figcaption></figure>;
+      })}
+    </section>
+  )}
+
+  {page.slug === 'people' && (
+    <section class="people-grid ruled-section">{people.map((person) => <article><p class="meta">{person.role}</p><h2><a href={localizedPath(`/people/${person.id.replace(/^person-/, '')}/`, language)}>{person.name}</a></h2></article>)}</section>
+  )}
+
+  {(page.slug === 'opportunities' || page.slug === 'support') && (
+    <section class="opportunity-grid ruled-section">{opportunities.map((item) => <article><p class="meta">{item.kind}</p><h2>{item.title}</h2>{item.summary && <p>{item.summary}</p>}</article>)}</section>
+  )}
+
+  {page.slug === 'get-involved' && <GetInvolvedPage {language} />}
+
+  {policy && (
+    <section class={`policy-page ruled-section ${page.slug === 'privacy' ? 'policy-page--privacy' : ''}`}>
+      <div class="policy-page__intro">
+        <p class="meta">{policy.eyebrow}</p>
+        <p>{policy.intro}</p>
+        {page.slug === 'privacy' && (
+          <div class="policy-page__identity">
+            <div><span>{language === 'sq' ? 'Kontrolluesi' : 'Controller'}</span><strong>{siteConfig.organization.legalName || 'KULT360 Foundation'}</strong></div>
+            <div><span>{language === 'sq' ? 'Kuadri' : 'Framework'}</span><strong>{language === 'sq' ? 'Ligji 124/2024 · GDPR kur zbatohet' : 'Law 124/2024 · GDPR where applicable'}</strong></div>
+            <div><span>{language === 'sq' ? 'Kontakt' : 'Contact'}</span><strong><a href={`mailto:${siteConfig.organization.email}`}>{siteConfig.organization.email}</a></strong></div>
+            <div><span>{language === 'sq' ? 'Përditësuar' : 'Updated'}</span><strong>25.09.2026</strong></div>
+          </div>
+        )}
+      </div>
+      <div class="policy-page__sections">
+        {policy.sections.map((section) => (
+          <article><h2>{section[0]}</h2><p>{section[1]}</p></article>
+        ))}
+      </div>
+      <p class="policy-page__note">{language === 'sq' ? 'Përditësuar: 25 shtator 2026 · Politika e faqes publike.' : 'Updated: 25 September 2026 · Public website policy.'}</p>
+    </section>
+  )}
+
+  {page.slug === 'lab' && (
+    <section class="lab-page ruled-section">
+      <div class="lab-page__intro">
+        <p class="meta">KULT360 LAB</p>
+        <h2>{language === 'sq' ? 'Një hapësirë për të provuar si mund të funksionojë kultura ndryshe.' : 'A space for testing how culture can work differently.'}</h2>
+        <p>{language === 'sq'
+          ? 'LAB-i bashkon eksperimentimin artistik, mësimin profesional, shkëmbimin dhe dokumentimin. Nuk është një disiplinë e vetme; është mënyra jonë për të provuar formate të reja përpara se ato të bëhen projekte më të mëdha.'
+          : 'The LAB brings together artistic experimentation, professional learning, exchange and documentation. It is not one discipline; it is a way to test new formats before they grow into larger projects.'}</p>
+      </div>
+      <div class="lab-page__modes">
+        {[
+          [language === 'sq' ? 'Prototipo' : 'Prototype', language === 'sq' ? 'Provo ide, formate dhe mënyra të reja pune në shkallë të vogël.' : 'Test ideas, formats and new ways of working at a smaller scale.'],
+          [language === 'sq' ? 'Shkëmbe' : 'Exchange', language === 'sq' ? 'Lidh artistë, edukatorë dhe partnerë për të ndarë praktikë dhe dije.' : 'Bring artists, educators and partners together to exchange practice and knowledge.'],
+          [language === 'sq' ? 'Dokumento' : 'Document', language === 'sq' ? 'Ruaj procesin, materialet dhe mësimet që mund të përdoren përsëri.' : 'Preserve process, material and learning that can be used again.']
+        ].map((item,index) => (
+          <article><span>0{index + 1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>
+        ))}
+      </div>
+      <div class="lab-page__links">
+        <a href={localizedPath('/themes/artists-practice/', language)}>{language === 'sq' ? 'Artistë & Praktikë' : 'Artists & Practice'} ↗</a>
+        <a href={localizedPath('/themes/digital-culture-media/', language)}>{language === 'sq' ? 'Kulturë Digjitale & Media' : 'Digital Culture & Media'} ↗</a>
+      </div>
+    </section>
+  )}
+
+  {page.slug === 'resources' && (
+    <section class="resources-page ruled-section">
+      <div class="resources-page__intro">
+        <p class="meta">{language === 'sq' ? 'Burime publike' : 'Public resources'}</p>
+        <h2>{language === 'sq' ? 'Dije praktike që lidhet me punën kulturore.' : 'Practical knowledge connected to cultural work.'}</h2>
+        <p>{language === 'sq'
+          ? 'Kjo hapësirë do të rritet gradualisht me materiale publike. Për momentin organizon dy fusha që KULT360 po zhvillon në mënyrë të dukshme në punën e tij.'
+          : 'This space will grow gradually with public material. For now it organises two areas already visible in KULT360’s work.'}</p>
+      </div>
+      <div class="resources-page__grid">
+        <a href={localizedPath('/themes/rights-access/', language)}>
+          <span>01</span>
+          <h3>{language === 'sq' ? 'Të drejtat e artistit' : 'Artist rights'}</h3>
+          <p>{language === 'sq' ? 'Autorësi, pronësi intelektuale, qasje kulturore dhe zë publik.' : 'Authorship, intellectual property, cultural access and public voice.'}</p>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a href={localizedPath('/themes/heritage-memory/', language)}>
+          <span>02</span>
+          <h3>{language === 'sq' ? 'Tingull, trashëgimi & arkiv' : 'Sound, heritage & archive'}</h3>
+          <p>{language === 'sq' ? 'Dokumentim, kujtesë, tingull dhe forma digjitale të ruajtjes.' : 'Documentation, memory, sound and digital forms of preservation.'}</p>
+          <i aria-hidden="true">↗</i>
+        </a>
+      </div>
+    </section>
+  )}
+
+  {page.slug === 'contact' && <ContactPage {language} />}
+
+  {!['contact','media','privacy','cookies','terms','accessibility'].includes(page.slug) && (
+    <section class="partner-strip partner-strip--logos ruled-section">
+      <div class="partner-strip__head">
+        <p class="meta">{language === 'sq' ? 'Partnerë & bashkëpunëtorë' : 'Partners & collaborators'}</p>
+        <p>{language === 'sq' ? 'Rrjeti historik i partnerëve dhe bashkëpunëtorëve KULT360.' : 'KULT360’s historic network of partners and collaborators.'}</p>
+      </div>
+      <PartnerMarquee {language} />
+    </section>
+  )}
+
+
+</ListingLayout>

@@ -1,0 +1,16 @@
+:root {
+  --color-canvas: #f6f3eb;
+  --color-surface: #fbfaf6;
+  --color-ink: #161616;
+  --color-muted: #716d64;
+  --color-line: #d7d1c5;
+  --color-accent: #faa719;
+  --color-dark: #171716;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --content-width: 88rem;
+  --reading-width: 47rem;
+  --radius: .2rem;
+  --focus-ring: 0 0 0 2px var(--color-canvas), 0 0 0 5px var(--color-ink);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}

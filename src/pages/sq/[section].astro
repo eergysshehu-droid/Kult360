@@ -1,0 +1,8 @@
+---
+import LocalSectionPage from '../../components/content/LocalSectionPage.astro';
+import {shellPages, type ShellPageDefinition} from '../../content/shell-pages';
+export const getStaticPaths = () => shellPages.map((page) => ({params: {section: page.slug}, props: {page}}));
+interface Props {page: ShellPageDefinition}
+const {page} = Astro.props;
+---
+<LocalSectionPage {page} language="sq" />

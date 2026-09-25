@@ -1,0 +1,7 @@
+id: partner-collage
+role: partner_collage
+alt_or_label: Our Partners & Coll
+rendition_url: https://static.wixstatic.com/media/b6f73a_3479026901e04553a687f2801d92c22e~mv2.jpg/v1/fill/w_712%2Ch_399%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/logot%20%20te%20gjitha.jpg
+original_url: https://static.wixstatic.com/media/b6f73a_3479026901e04553a687f2801d92c22e~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

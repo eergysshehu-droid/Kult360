@@ -1,0 +1,7 @@
+id: journal-kosovo
+role: blog_thumbnail
+alt_or_label: symbol of the technical paradox and media isolation from EBU and Eurovision.
+rendition_url: https://static.wixstatic.com/media/f4598e_a59deff3cdf94f44830bb1404ee5460e~mv2.jpeg/v1/fill/w_230%2Ch_229%2Cfp_0.50_0.50%2Cq_90%2Cenc_avif%2Cquality_auto/f4598e_a59deff3cdf94f44830bb1404ee5460e~mv2.webp
+original_url: https://static.wixstatic.com/media/f4598e_a59deff3cdf94f44830bb1404ee5460e~mv2.jpeg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

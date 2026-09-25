@@ -1,0 +1,13 @@
+9ecc9cc76f0aed22f7925e37d57e00b243f7bec1d00d829fdec7693272a49716  ./PHASE-4B-V2-README.md
+59d6200c8318383d4cf2becc6f4e0f9e66695a51e087002a6726e5d3051522a8  ./migration/scripts/validate-phase-4b-v2-design.mjs
+4d7613c6f3c138fcddfc8f38254dd1c6f3f72f1ebce5a969d4660f51b6c290cd  ./src/components/chrome/Footer.astro
+e5fde7424ac918218c7f2c18552a163d1c9345b5b310bdde58033e06d248e35e  ./src/components/chrome/Header.astro
+bd2d13a429479b85ef6b75ce5e381119f7714350612bbe969cfd5958e876f9b8  ./src/components/chrome/MobileNavigation.astro
+a5c10c163329a239bb020c0432ef1c864bb4e42728da15264bf2df8fc259151d  ./src/components/content/JournalCard.astro
+bb8f6f242488e9d81876bf598ea4e0d4da0f8caf17e7136dc98ae32101deb262  ./src/components/content/ProjectCard.astro
+1e00797c9e5c429076eee12b9cd75c7e23a52dbc9f584447bb26fffedc6aba9f  ./src/layouts/BaseLayout.astro
+608ebc61fbbea74dd170aa44d5adf18160edc5cfb78d7098d909990055197133  ./src/pages/index.astro
+2785c57bac30e084fcd88c2fb417bd12726a33ddced78c7d8deea3ce4cdef022  ./src/pages/sq/index.astro
+298fbbad7a45ee08a88d670c4796dfa1fb44ce3b6800d68a6e9abff9a9becbe6  ./src/styles/global.css
+3fd7e34c82c6e48fc1ea10b5565008e18de85ea6e09a7029f0be0d995f861bd0  ./src/styles/tokens.css
+9e9fea9328f8c0b525e9f6212bb4cc5513546cfcee2c578d012435ad96b15b6d  ./src/styles/typography.css

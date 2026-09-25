@@ -1,0 +1,55 @@
+---
+import {siteConfig, localizedPath, type Language} from '../../lib/site-config';
+interface Props {language: Language}
+const {language} = Astro.props;
+---
+<footer class="site-footer site-footer--v2">
+  <div class="container-wide footer-v2__top">
+    <a class="footer-v2__logo" href={localizedPath('/', language)} aria-label="KULT360">
+      <img src="/media/brand/kult360-logo.png" alt="KULT360" />
+    </a>
+
+    <p class="footer-v2__tagline">{language === 'sq' ? 'Kulturë · Barazi · Komunitet' : 'Culture · Equality · Community'}</p>
+
+    <nav class="footer-v2__social" aria-label={language === 'sq' ? 'Rrjetet sociale' : 'Social media'}>
+      <a href={siteConfig.social.instagram} aria-label="Instagram" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.6" cy="6.6" r="1"></circle></svg>
+      </a>
+      <a href={siteConfig.social.facebook} aria-label="Facebook" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7.5v3h2.8v8h3.3Z"></path></svg>
+      </a>
+      <a href={siteConfig.social.youtube} aria-label="YouTube" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 6.2c-.2-.8-.8-1.4-1.6-1.6C17.4 4.2 12 4.2 12 4.2s-5.4 0-6.8.4c-.8.2-1.4.8-1.6 1.6C3.2 7.6 3.2 12 3.2 12s0 4.4.4 5.8c.2.8.8 1.4 1.6 1.6 1.4.4 6.8.4 6.8.4s5.4 0 6.8-.4c.8-.2 1.4-.8 1.6-1.6.4-1.4.4-5.8.4-5.8s0-4.4-.4-5.8Z"></path><path class="footer-v2__play" d="m10 15.5 5-3.5-5-3.5v7Z"></path></svg>
+      </a>
+    </nav>
+  </div>
+
+  <div class="container-wide footer-v2__compact">
+    <div class="footer-v2__contact">
+      <p class="foundation-label">{language === 'sq' ? 'Kontakt' : 'Contact'}</p>
+      <a class="footer-v2__contact-primary" href={'mailto:' + siteConfig.organization.email}>{siteConfig.organization.email}</a>
+      <div class="footer-v2__contact-meta">
+        <a href={'tel:' + siteConfig.organization.phone?.replace(/\s/g,'')}>{siteConfig.organization.phone}</a>
+        <span>{siteConfig.organization.address}</span>
+      </div>
+    </div>
+
+    <nav class="footer-v2__nav" aria-label={language === 'sq' ? 'Lidhje kryesore' : 'Footer navigation'}>
+      <a href={localizedPath('/about/', language)}>{language === 'sq' ? 'Rreth nesh' : 'About'} <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/programs/', language)}>{language === 'sq' ? 'Programet' : 'Programs'} <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Projektet' : 'Projects'} <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/journal/', language)}>Journal <span aria-hidden="true">↗</span></a>
+      <a href={localizedPath('/get-involved/', language)}>{language === 'sq' ? 'Përfshihu' : 'Get involved'} <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+
+  <div class="container-wide footer-v2__bottom">
+    <span>© {new Date().getFullYear()} KULT360 Foundation · Albania</span>
+    <nav class="footer-v2__legal" aria-label={language === 'sq' ? 'Informacion ligjor i faqes' : 'Website information'}>
+      <a href={localizedPath('/privacy/', language)}>{language === 'sq' ? 'Privatësia' : 'Privacy'}</a>
+      <a href={localizedPath('/cookies/', language)}>Cookies</a>
+      <a href={localizedPath('/terms/', language)}>{language === 'sq' ? 'Kushtet' : 'Terms'}</a>
+      <a href={localizedPath('/accessibility/', language)}>{language === 'sq' ? 'Aksesueshmëria' : 'Accessibility'}</a>
+    </nav>
+  </div>
+</footer>

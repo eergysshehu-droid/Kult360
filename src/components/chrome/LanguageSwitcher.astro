@@ -1,0 +1,16 @@
+---
+import {localizedPath, type Language} from '../../lib/site-config';
+interface Props {language: Language; path: string; translations: readonly Language[]}
+const {language, path, translations} = Astro.props;
+const basePath = path.replace(/^\/sq\/?/, '/');
+---
+<nav class="language-switcher" aria-label={language === 'sq' ? 'Zgjidh gjuhën' : 'Choose language'}>
+  {translations.map((item) => (
+    <a
+      href={localizedPath(basePath, item)}
+      lang={item}
+      hreflang={item}
+      aria-current={item === language ? 'page' : undefined}
+    >{item.toUpperCase()}</a>
+  ))}
+</nav>

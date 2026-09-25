@@ -1,0 +1,91 @@
+[
+  {
+    "url": "https://www.kult360.com/",
+    "observed_title": "KULT360 Foundation | Empowering Albanian Artists & Culture",
+    "proposed_schema": [
+      "Organization",
+      "WebSite",
+      "WebPage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/about",
+    "observed_title": "ABOUT | KULT360",
+    "proposed_schema": [
+      "AboutPage",
+      "Organization"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/get-involved",
+    "observed_title": "GET INVOLVED | KULT360",
+    "proposed_schema": [
+      "WebPage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/donate",
+    "observed_title": "DONATE | KULT360",
+    "proposed_schema": [
+      "WebPage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/general-6",
+    "observed_title": "HERITAGE | KULT360",
+    "proposed_schema": [
+      "WebPage",
+      "CollectionPage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/qytetibrendaoborrit",
+    "observed_title": "Qyteti Brenda Oborrit | KULT360",
+    "proposed_schema": [
+      "Event",
+      "WebPage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/edazari",
+    "observed_title": "Eda Zari | KULT360",
+    "proposed_schema": [
+      "Person",
+      "ProfilePage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/ergysshehu",
+    "observed_title": "Ergys Shehu | KULT360",
+    "proposed_schema": [
+      "Person",
+      "ProfilePage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/erosdibra",
+    "observed_title": "Eros Dibra | KULT360",
+    "proposed_schema": [
+      "Person",
+      "ProfilePage"
+    ],
+    "status": "verified_search_title"
+  },
+  {
+    "url": "https://www.kult360.com/teufikbashi",
+    "observed_title": "Teufik bashi | KULT360",
+    "proposed_schema": [
+      "Person",
+      "ProfilePage"
+    ],
+    "status": "verified_search_title"
+  }
+]

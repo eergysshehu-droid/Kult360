@@ -1,0 +1,7 @@
+id: project-terminal-card
+role: project_card
+alt_or_label: Albanian Railway - Shkodra Station. Europe Week 2026
+rendition_url: https://static.wixstatic.com/media/b6f73a_dc16674bf4624a35bb8777ae9bbeaa08~mv2.jpg/v1/fill/w_470%2Ch_627%2Cq_35%2Cenc_avif%2Cquality_auto/b6f73a_dc16674bf4624a35bb8777ae9bbeaa08~mv2.jpg
+original_url: https://static.wixstatic.com/media/b6f73a_dc16674bf4624a35bb8777ae9bbeaa08~mv2.jpg
+rights_status: unknown_verify_before_republication
+download_status: pending_local_fetch

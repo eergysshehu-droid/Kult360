@@ -1,0 +1,45 @@
+{
+  "name": "kult360-foundation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0 --port 4321",
+    "build": "astro build",
+    "preview": "node scripts/serve-dist.mjs",
+    "check": "astro check",
+    "verify": "npm run architecture:check && npm run security:check && npm run check && npm run build && npm run performance:budget && npm run content:check && wrangler deploy --dry-run --outdir .wrangler-dry-run",
+    "studio": "sanity dev --host 127.0.0.1",
+    "studio:build": "sanity build studio-dist",
+    "architecture:check": "node scripts/check-architecture.mjs && node scripts/check-quality-contract.mjs",
+    "security:check": "node scripts/check-security-contract.mjs",
+    "performance:budget": "node scripts/check-performance-budget.mjs",
+    "content:check": "node scripts/check-built-site.mjs",
+    "quality:browser": "playwright test",
+    "quality:browser:built": "PLAYWRIGHT_USE_EXISTING_BUILD=1 playwright test",
+    "journal:localize": "node migration/scripts/localize-wix-journal.mjs",
+    "local:assets": "node migration/scripts/install-local-site-assets.mjs",
+    "local:validate": "node migration/scripts/validate-local-content.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@sanity/client": "8.6.1",
+    "@sanity/image-url": "2.1.1",
+    "astro": "7.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.0.0",
+    "sanity": "6.14.1",
+    "typescript": "^5.9.0",
+    "wrangler": "4.131.1"
+  }
+}

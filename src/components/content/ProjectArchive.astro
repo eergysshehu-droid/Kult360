@@ -1,0 +1,56 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
+import type {Project} from '../../lib/content';
+import type {Language} from '../../lib/site-config';
+
+interface Props {projects: Project[]; language: Language}
+const {projects, language} = Astro.props;
+const kinds = Array.from(new Set(projects.map((project) => project.kind))).filter(Boolean);
+const labelFor = (kind: string) => kind.replaceAll('_',' ').replace(/\b\w/g,(letter)=>letter.toUpperCase());
+---
+<section class="projects-archive ruled-section" data-project-archive>
+  <div class="projects-archive__bar">
+    <div>
+      <p class="meta">{language === 'sq' ? 'Arkivi i KULT360' : 'KULT360 archive'}</p>
+      <p>{language === 'sq' ? 'Filtroni sipas formatit ose hapni një projekt për të parë historinë e plotë.' : 'Filter by format or open a project to see its full story.'}</p>
+    </div>
+    <div class="projects-archive__filters" role="group" aria-label={language === 'sq' ? 'Filtro projektet' : 'Filter projects'}>
+      <button type="button" class="is-active" data-project-filter="all">{language === 'sq' ? 'Të gjitha' : 'All'}</button>
+      {kinds.map((kind) => <button type="button" data-project-filter={kind}>{labelFor(kind)}</button>)}
+    </div>
+  </div>
+
+  <div class="project-grid project-grid--curated" data-project-grid>
+    {projects.map((project,index) => (
+      <div class="project-grid__item" data-project-item data-kind={project.kind}>
+        <ProjectCard {project} {language} priority={index < 3} />
+      </div>
+    ))}
+  </div>
+  <p class="projects-archive__status" data-project-status aria-live="polite"></p>
+</section>
+
+<ContinueWithKult360 {language} context="archive" />
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-project-archive]').forEach((archive) => {
+    const buttons = Array.from(archive.querySelectorAll<HTMLButtonElement>('[data-project-filter]'));
+    const items = Array.from(archive.querySelectorAll<HTMLElement>('[data-project-item]'));
+    const status = archive.querySelector<HTMLElement>('[data-project-status]');
+
+    const apply = (filter: string) => {
+      let visible = 0;
+      items.forEach((item) => {
+        const show = filter === 'all' || item.dataset.kind === filter;
+        item.hidden = !show;
+        if (show) visible += 1;
+      });
+      buttons.forEach((button) => button.classList.toggle('is-active', button.dataset.projectFilter === filter));
+      if (status) status.textContent = String(visible) + ' ' + (visible === 1 ? 'project' : 'projects');
+    };
+
+    buttons.forEach((button) => button.addEventListener('click', () => apply(button.dataset.projectFilter || 'all')));
+    apply('all');
+  });
+</script>

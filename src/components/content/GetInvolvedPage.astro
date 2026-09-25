@@ -1,0 +1,131 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import {projects} from '../../lib/content';
+import {localizedPath, siteConfig, type Language} from '../../lib/site-config';
+
+interface Props {language: Language}
+const {language} = Astro.props;
+const selected = projects.filter((project) => project.id.startsWith('project-')).slice(0, 3);
+const copy = language === 'sq'
+  ? {
+      eyebrow:'PËRFSHIHU',
+      title:'Kultura lëviz kur njerëzit marrin pjesë.',
+      intro:'KULT360 ndërton bashkëpunime me artistë, organizata, institucione dhe komunitete. Na sillni një ide, një partneritet ose një mundësi për të punuar së bashku.',
+      primary:'Nis një bisedë',
+      secondary:'Shiko projektet',
+      ways:'Si mund të lidhemi',
+      waysIntro:'Zgjidhni rrugën që i përshtatet më mirë idesë ose organizatës suaj.',
+      routes:[
+        ['01','Partneritet institucional','Bashkëzhvilloni programe, shkëmbime ose projekte me vlerë publike.'],
+        ['02','Bashkëpunim artistik','Sillni një ide, praktikë ose format dhe shihni ku mund të takohet me punën tonë.'],
+        ['03','Komunitet & pjesëmarrje','Lidhuni me aktivitetet, rrjetin dhe mundësitë publike të KULT360.']
+      ],
+      work:'Shihni punën',
+      workIntro:'Disa nga projektet që tregojnë si punon KULT360 në praktikë.',
+      contactTitle:'Keni diçka konkrete në mendje?',
+      contactBody:'Na shkruani me pak kontekst dhe ekipi ynë do ta drejtojë mesazhin te personi i duhur.',
+      contact:'Kontaktoni KULT360'
+    }
+  : {
+      eyebrow:'GET INVOLVED',
+      title:'Culture moves when people take part.',
+      intro:'KULT360 builds collaborations with artists, organisations, institutions and communities. Bring us an idea, a partnership or an opportunity to work together.',
+      primary:'Start a conversation',
+      secondary:'Explore projects',
+      ways:'Ways to connect',
+      waysIntro:'Choose the route that best matches your idea or organisation.',
+      routes:[
+        ['01','Institutional partnerships','Co-develop programmes, exchanges or projects with public value.'],
+        ['02','Artistic collaboration','Bring an idea, practice or format and explore where it can meet our work.'],
+        ['03','Community & participation','Connect with KULT360 activities, networks and public opportunities.']
+      ],
+      work:'See the work',
+      workIntro:'A selection of projects showing how KULT360 works in practice.',
+      contactTitle:'Have something specific in mind?',
+      contactBody:'Send us a little context and our team will direct your message to the right person.',
+      contact:'Contact KULT360'
+    };
+---
+<section class="involve-v3__hero">
+  <div class="involve-v3__orbit" aria-hidden="true"><span></span><i></i></div>
+  <div class="container-wide involve-v3__hero-inner">
+    <p class="involve-v3__eyebrow">{copy.eyebrow}</p>
+    <div class="involve-v3__hero-copy">
+      <h1>{copy.title}</h1>
+      <p>{copy.intro}</p>
+      <div class="involve-v3__actions">
+        <a class="involve-v3__button involve-v3__button--primary" href={localizedPath('/contact/',language)}>{copy.primary}<i aria-hidden="true">↗</i></a>
+        <a class="involve-v3__button" href={localizedPath('/projects/',language)}>{copy.secondary}<i aria-hidden="true">→</i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container-wide involve-v3__ways">
+  <div class="involve-v3__section-head">
+    <div><p>01</p><h2>{copy.ways}</h2></div>
+    <p>{copy.waysIntro}</p>
+  </div>
+  <div class="involve-v3__route-grid">
+    {copy.routes.map(([number,title,body]) => (
+      <a href={localizedPath('/contact/',language)}>
+        <span>{number}</span>
+        <h3>{title}</h3>
+        <p>{body}</p>
+        <i aria-hidden="true">↗</i>
+      </a>
+    ))}
+  </div>
+</section>
+
+{selected.length > 0 && (
+  <section class="involve-v3__work">
+    <div class="container-wide">
+      <div class="involve-v3__section-head">
+        <div><p>02</p><h2>{copy.work}</h2></div>
+        <p>{copy.workIntro}</p>
+      </div>
+      <div class="involve-v3__project-grid">
+        {selected.map((project,index) => <ProjectCard {project} {language} priority={index === 0} />)}
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="container-wide involve-v3__contact">
+  <div>
+    <p>03 · {language === 'sq' ? 'KONTAKT' : 'CONTACT'}</p>
+    <h2>{copy.contactTitle}</h2>
+    <span>{copy.contactBody}</span>
+  </div>
+  <div class="involve-v3__contact-actions">
+    <a href={localizedPath('/contact/',language)}>{copy.contact}<i aria-hidden="true">↗</i></a>
+    <a href={"mailto:"+siteConfig.organization.email}>{siteConfig.organization.email}</a>
+  </div>
+</section>
+
+<style is:global>
+.involve-v3__hero{position:relative;overflow:hidden;color:#f8f5ee;background:#0b0c09;border-top:3px solid #faa719}
+.involve-v3__hero-inner{position:relative;z-index:2;min-height:clamp(38rem,72svh,47rem);display:grid;grid-template-columns:minmax(8rem,.28fr) minmax(0,1fr);gap:2rem;align-items:center;padding-block:clamp(6rem,9vw,8rem)}
+.involve-v3__eyebrow{align-self:start;margin:1rem 0 0;color:#faa719;font-size:.62rem;font-weight:850;letter-spacing:.12em}
+.involve-v3__hero-copy{max-width:60rem}
+.involve-v3__hero h1{margin:0;max-width:11ch;font-family:var(--font-sans);font-size:clamp(3.6rem,6.7vw,7.4rem);font-weight:720;line-height:.88;letter-spacing:-.068em}
+.involve-v3__hero-copy>p{max-width:38rem;margin:1.5rem 0 0;color:rgb(255 255 255 / 68%);font-size:1.02rem;line-height:1.62}
+.involve-v3__actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:2rem}
+.involve-v3__button{min-height:3rem;display:inline-flex;align-items:center;gap:1.1rem;padding:.72rem 1rem;color:#fff;border:1px solid rgb(255 255 255 / 34%);border-radius:999px;text-decoration:none;font-size:.68rem;font-weight:850;letter-spacing:.055em;text-transform:uppercase}
+.involve-v3__button i{font-style:normal}.involve-v3__button--primary{color:#111;background:#f8f5ee;border-color:#f8f5ee}
+.involve-v3__orbit{position:absolute;right:clamp(2rem,4vw,5rem);top:50%;width:min(31rem,30vw);aspect-ratio:1;transform:translateY(-50%);border:1px solid rgb(250 167 25 / 28%);border-radius:50%;box-shadow:0 0 0 4.5rem rgb(250 167 25 / 4%),0 0 0 9rem rgb(255 255 255 / 2%);opacity:.86}
+.involve-v3__orbit::before,.involve-v3__orbit::after{content:'';position:absolute;border-radius:50%}.involve-v3__orbit::before{inset:22%;border:1px solid rgb(250 167 25 / 34%)}.involve-v3__orbit::after{inset:43%;background:#faa719;box-shadow:0 0 1.2rem rgb(250 167 25 / 28%)}
+.involve-v3__orbit span{position:absolute;left:-.35rem;top:50%;width:.7rem;aspect-ratio:1;border-radius:50%;background:#faa719;transform:translateY(-50%);box-shadow:0 0 .8rem rgb(250 167 25 / 35%)}
+.involve-v3__orbit i{position:absolute;inset:-1px;border-radius:50%;animation:involveOrbit 18s linear infinite}.involve-v3__orbit i::after{content:'';position:absolute;left:50%;top:-.3rem;width:.55rem;aspect-ratio:1;border-radius:50%;background:#faa719}
+@keyframes involveOrbit{to{transform:rotate(360deg)}}
+.involve-v3__ways,.involve-v3__work .container-wide{padding-block:clamp(4.5rem,7vw,7rem)}
+.involve-v3__section-head{display:grid;grid-template-columns:minmax(15rem,.72fr) minmax(0,1.28fr);gap:2rem;align-items:end;padding-bottom:1.2rem;border-bottom:1px solid rgb(9 9 8 / 18%)}
+.involve-v3__section-head>div{display:grid;grid-template-columns:2.6rem 1fr;align-items:end}.involve-v3__section-head>div>p{margin:0 0 .35rem;color:#faa719;font-size:.62rem;font-weight:850}.involve-v3__section-head h2{margin:0;font-size:clamp(2.4rem,4vw,4.5rem);line-height:.92;letter-spacing:-.055em}.involve-v3__section-head>p{margin:0;max-width:30rem;color:#666158;font-size:.88rem;line-height:1.55}
+.involve-v3__route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-left:1px solid rgb(9 9 8 / 16%)}.involve-v3__route-grid a{position:relative;min-height:18rem;display:grid;grid-template-rows:auto auto 1fr auto;gap:1rem;padding:1.15rem;color:inherit;border-right:1px solid rgb(9 9 8 / 16%);border-bottom:1px solid rgb(9 9 8 / 16%);text-decoration:none;transition:background .25s ease,color .25s ease,transform .25s ease}.involve-v3__route-grid a:hover,.involve-v3__route-grid a:focus-visible{color:#fff;background:#11110f;transform:translateY(-3px)}.involve-v3__route-grid span{color:#faa719;font-size:.61rem;font-weight:850}.involve-v3__route-grid h3{margin:0;max-width:13ch;font-size:clamp(1.45rem,2.1vw,2.15rem);line-height:1}.involve-v3__route-grid p{margin:0;max-width:25rem;color:#676159;font-size:.8rem;line-height:1.55}.involve-v3__route-grid a:hover p{color:rgb(255 255 255 / 65%)}.involve-v3__route-grid i{font-style:normal;justify-self:end}
+.involve-v3__work{background:#ebe6dc;border-block:1px solid rgb(9 9 8 / 12%)}.involve-v3__project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}.involve-v3__project-grid .project-card__link{height:100%;background:#f7f4ed;border-radius:10px;overflow:hidden}.involve-v3__project-grid .project-card__media{aspect-ratio:4/3}.involve-v3__project-grid .project-card__media img{width:100%;height:100%;object-fit:contain}
+.involve-v3__contact{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr);gap:3rem;align-items:end;padding-block:clamp(4rem,7vw,6.5rem)}.involve-v3__contact>div>p{margin:0 0 .8rem;color:#777168;font-size:.61rem;font-weight:850;letter-spacing:.1em}.involve-v3__contact h2{margin:0;max-width:12ch;font-size:clamp(2.3rem,4vw,4.2rem);line-height:.94;letter-spacing:-.055em}.involve-v3__contact>div>span{display:block;max-width:32rem;margin-top:1rem;color:#666158;font-size:.88rem;line-height:1.55}.involve-v3__contact-actions{display:grid;border-top:1px solid rgb(9 9 8 / 18%)}.involve-v3__contact-actions a{min-height:4.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:inherit;border-bottom:1px solid rgb(9 9 8 / 18%);text-decoration:none;font-weight:760}.involve-v3__contact-actions i{font-style:normal;color:#faa719}
+@media(max-width:58rem){.involve-v3__hero-inner,.involve-v3__section-head,.involve-v3__contact{grid-template-columns:1fr}.involve-v3__eyebrow{align-self:auto}.involve-v3__orbit{right:-5rem;width:25rem;opacity:.52}.involve-v3__route-grid,.involve-v3__project-grid{grid-template-columns:1fr}.involve-v3__route-grid a{min-height:13rem}}
+@media(max-width:44rem){.involve-v3__hero-inner{min-height:38rem;padding-top:6rem}.involve-v3__hero h1{font-size:clamp(3rem,14vw,4.4rem)}.involve-v3__orbit{right:-10rem;top:58%;width:23rem}.involve-v3__actions{display:grid}.involve-v3__button{justify-content:space-between}.involve-v3__ways,.involve-v3__work .container-wide{padding-block:3.6rem}}
+@media(prefers-reduced-motion:reduce){.involve-v3__orbit i{animation:none}}
+</style>

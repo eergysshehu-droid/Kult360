@@ -1,0 +1,56 @@
+[
+  {
+    "from": "/",
+    "to": "/",
+    "status": "proposed_review",
+    "source_id": "page-home"
+  },
+  {
+    "from": "/about",
+    "to": "/about/",
+    "status": "proposed_review",
+    "source_id": "page-about"
+  },
+  {
+    "from": "/stories-conversations",
+    "to": "/lab/",
+    "status": "proposed_review",
+    "source_id": "page-lab"
+  },
+  {
+    "from": "/copy-of-culture-inclusive-education",
+    "to": "/media/",
+    "status": "proposed_review",
+    "source_id": "page-gallery"
+  },
+  {
+    "from": "/blog",
+    "to": "/journal/",
+    "status": "proposed_review",
+    "source_id": "page-blog"
+  },
+  {
+    "from": "/get-involved",
+    "to": "/get-involved/",
+    "status": "proposed_review",
+    "source_id": "page-get-involved"
+  },
+  {
+    "from": "/donate",
+    "to": "/support/",
+    "status": "proposed_review",
+    "source_id": "page-donate"
+  },
+  {
+    "from": "/general-6",
+    "to": "/programs/heritage-sustainability/",
+    "status": "proposed_review",
+    "source_id": "page-heritage"
+  },
+  {
+    "from": "/qytetibrendaoborrit",
+    "to": "/events/qyteti-brenda-oborrit-2026/",
+    "status": "proposed_review",
+    "source_id": "page-qyteti-brenda-oborrit"
+  }
+]

@@ -1,0 +1,66 @@
+---
+import {localizedPath, type Language} from '../../lib/site-config';
+
+interface Props {
+  language: Language;
+  context?: 'project' | 'journal' | 'theme' | 'program' | 'archive';
+}
+const {language, context = 'archive'} = Astro.props;
+
+const copy = language === 'sq'
+  ? {
+      eyebrow: 'VAZHDO ME KULT360',
+      title: 'Mos u ndal këtu.',
+      body: 'Zbuloni projekte, ide dhe mënyra për t’u përfshirë në punën e KULT360.',
+      projects: 'Shiko projektet',
+      journal: 'Lexo Journal',
+      programs: 'Eksploro programet',
+      involved: 'Përfshihu'
+    }
+  : {
+      eyebrow: 'CONTINUE WITH KULT360',
+      title: 'Keep moving through KULT360.',
+      body: 'Explore the work, read the ideas behind it, or start a conversation with us.',
+      projects: 'Explore projects',
+      journal: 'Read the Journal',
+      programs: 'Explore programs',
+      involved: 'Get involved'
+    };
+
+const routes = context === 'journal'
+  ? [
+      [copy.projects, '/projects/'],
+      [copy.programs, '/programs/'],
+      [copy.involved, '/get-involved/']
+    ]
+  : context === 'project'
+    ? [
+        [copy.journal, '/journal/'],
+        [copy.programs, '/programs/'],
+        [copy.involved, '/get-involved/']
+      ]
+    : [
+        [copy.projects, '/projects/'],
+        [copy.journal, '/journal/'],
+        [copy.involved, '/get-involved/']
+      ];
+---
+<section class="continuation-cta" aria-label={copy.eyebrow}>
+  <div class="container-wide continuation-cta__inner">
+    <div class="continuation-cta__copy">
+      <p>{copy.eyebrow}</p>
+      <h2>{copy.title}</h2>
+      <span>{copy.body}</span>
+    </div>
+    <nav class="continuation-cta__routes">
+      {routes.map(([label, href], index) => (
+        <a href={localizedPath(href, language)}>
+          <span>0{index + 1}</span>
+          <strong>{label}</strong>
+          <i aria-hidden="true">↗</i>
+        </a>
+      ))}
+    </nav>
+    <div class="continuation-cta__orbit" aria-hidden="true"><span></span><i></i></div>
+  </div>
+</section>

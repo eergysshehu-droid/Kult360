@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from './ProjectCard.astro';
+import {projects} from '../../lib/content';
+import {localizedPath, type Language} from '../../lib/site-config';
+
+interface Props { language: Language }
+const {language} = Astro.props;
+
+const copy = {
+  en: {
+    eyebrow: 'Heritage & sustainability · Working principle',
+    title: 'Listen to place',
+    dek: 'Before a cultural project speaks, it should learn how to listen: to landscape, memory, everyday use, local knowledge and the ecological limits of the place it enters.',
+    back: 'Heritage & sustainability',
+    introLabel: 'The idea',
+    introTitle: 'Place is not a backdrop. It is part of the work.',
+    intro: 'A square, riverbank, courtyard, neighbourhood, archive or rural landscape already carries relationships, habits, conflicts and memories. Site-responsive cultural work begins by reading those layers instead of arriving with a finished idea and asking the place to accommodate it.',
+    chapters: [
+      {
+        number: '01',
+        title: 'Listening is a method',
+        body: [
+          'Listening to place starts before production. It means spending time on site, observing how people move through it, noticing what is visible and what has disappeared, and asking who holds knowledge that is not written down.',
+          'The aim is not to romanticise a location. It is to understand its real conditions: who uses it, who avoids it, what has changed, what is vulnerable and what kinds of cultural activity can belong there without erasing what is already present.'
+        ]
+      },
+      {
+        number: '02',
+        title: 'Local knowledge changes the work',
+        body: [
+          'Residents, craftspeople, historians, young people, artists, environmental groups and informal communities often know a place in different ways. Bringing those perspectives together can change the artistic question itself.',
+          'A project becomes stronger when local knowledge can affect form, timing, language, access, materials and even the decision not to intervene. Participation is meaningful when it can alter the process rather than simply decorate a predetermined outcome.'
+        ]
+      },
+      {
+        number: '03',
+        title: 'Ecology is part of cultural responsibility',
+        body: [
+          'Working with place also means respecting its physical limits. Production choices have consequences: transport, temporary structures, energy use, waste, sound, audience movement and pressure on fragile environments.',
+          'For KULT360, sustainability is not a visual theme added at the end. It is a practical question inside the artistic method: what can be reused, what should remain untouched, what can be produced locally, and what kind of cultural presence leaves the place stronger rather than more burdened.'
+        ]
+      },
+      {
+        number: '04',
+        title: 'Leave a trace worth keeping',
+        body: [
+          'Site-based work does not need to become permanent to have continuity. A trace can be a recording, an oral history, a map, an image archive, a new relationship, a shared method or knowledge that remains accessible after the event.',
+          'The most valuable legacy is often not an object. It is a deeper capacity to notice, remember and care for a place together.'
+        ]
+      }
+    ],
+    practiceLabel: 'KULT360 approach',
+    practiceTitle: 'From attention to action.',
+    practices: [
+      ['Read the site', 'Observe movement, history, access, ecology and everyday use before defining the format.'],
+      ['Invite knowledge', 'Treat local voices as contributors whose knowledge can change the project.'],
+      ['Design lightly', 'Choose production methods that are proportional to the place and reduce unnecessary impact.'],
+      ['Document context', 'Record not only the final event, but the stories, decisions and knowledge that shaped it.']
+    ],
+    related: 'Related projects',
+    allProjects: 'All projects',
+    next: 'Back to Heritage & Sustainability'
+  },
+  sq: {
+    eyebrow: 'Trashëgimi & qëndrueshmëri · Parim pune',
+    title: 'Dëgjo vendin',
+    dek: 'Përpara se një projekt kulturor të flasë, duhet të mësojë të dëgjojë: peizazhin, kujtesën, përdorimin e përditshëm, dijen lokale dhe kufijtë ekologjikë të vendit ku hyn.',
+    back: 'Trashëgimi & qëndrueshmëri',
+    introLabel: 'Ideja',
+    introTitle: 'Vendi nuk është sfond. Është pjesë e veprës.',
+    intro: 'Një shesh, breg lumi, oborr, lagje, arkiv apo peizazh rural mbart tashmë marrëdhënie, zakone, konflikte dhe kujtime. Puna kulturore e lidhur me vendin nis duke i lexuar këto shtresa, jo duke ardhur me një ide të përfunduar dhe duke i kërkuar vendit t’i përshtatet asaj.',
+    chapters: [
+      {
+        number: '01',
+        title: 'Dëgjimi është metodë',
+        body: [
+          'Të dëgjosh një vend fillon përpara prodhimit. Do të thotë të kalosh kohë aty, të vëzhgosh si lëvizin njerëzit, të dallosh çfarë është e dukshme dhe çfarë është zhdukur, dhe të pyesësh kush mban dije që nuk është shkruar.',
+          'Qëllimi nuk është ta romantizojmë një vend. Është të kuptojmë kushtet e tij reale: kush e përdor, kush e shmang, çfarë ka ndryshuar, çfarë është e brishtë dhe çfarë forme aktiviteti kulturor mund t’i përkasë pa fshirë atë që ekziston.'
+        ]
+      },
+      {
+        number: '02',
+        title: 'Dija lokale e ndryshon veprën',
+        body: [
+          'Banorët, zejtarët, historianët, të rinjtë, artistët, grupet mjedisore dhe komunitetet informale mund ta njohin të njëjtin vend në mënyra të ndryshme. Bashkimi i këtyre këndvështrimeve mund ta ndryshojë vetë pyetjen artistike.',
+          'Një projekt bëhet më i fortë kur dija lokale mund të ndikojë formën, kohën, gjuhën, qasjen, materialet dhe madje vendimin për të mos ndërhyrë. Pjesëmarrja ka kuptim kur mund ta ndryshojë procesin, jo vetëm ta zbukurojë një rezultat të paracaktuar.'
+        ]
+      },
+      {
+        number: '03',
+        title: 'Ekologjia është përgjegjësi kulturore',
+        body: [
+          'Të punosh me një vend do të thotë edhe të respektosh kufijtë e tij fizikë. Zgjedhjet e prodhimit kanë pasoja: transporti, strukturat e përkohshme, energjia, mbetjet, zëri, lëvizja e publikut dhe presioni mbi mjedise të brishta.',
+          'Për KULT360, qëndrueshmëria nuk është një temë vizuale që shtohet në fund. Është pyetje praktike brenda metodës artistike: çfarë mund të ripërdoret, çfarë duhet të mbetet e paprekur, çfarë mund të prodhohet lokalisht dhe çfarë pranie kulturore e lë vendin më të fortë, jo më të rënduar.'
+        ]
+      },
+      {
+        number: '04',
+        title: 'Lër një gjurmë që ia vlen të mbetet',
+        body: [
+          'Puna e lidhur me vendin nuk ka nevojë të bëhet e përhershme për të pasur vazhdimësi. Gjurmë mund të jetë një regjistrim, histori gojore, hartë, arkiv imazhesh, marrëdhënie e re, metodë e përbashkët ose dije që mbetet e aksesueshme pas ngjarjes.',
+          'Trashëgimia më e vlefshme shpesh nuk është një objekt. Është aftësia më e thellë për të vërejtur, kujtuar dhe për t’u kujdesur së bashku për një vend.'
+        ]
+      }
+    ],
+    practiceLabel: 'Qasja KULT360',
+    practiceTitle: 'Nga vëmendja te veprimi.',
+    practices: [
+      ['Lexo vendin', 'Vëzhgo lëvizjen, historinë, qasjen, ekologjinë dhe përdorimin e përditshëm përpara se të përcaktosh formatin.'],
+      ['Fto dijen', 'Trajto zërat lokalë si kontribues, dija e të cilëve mund ta ndryshojë projektin.'],
+      ['Projekto me masë', 'Zgjidh metoda prodhimi proporcionale me vendin dhe zvogëlo ndikimin e panevojshëm.'],
+      ['Dokumento kontekstin', 'Regjistro jo vetëm ngjarjen finale, por edhe historitë, vendimet dhe dijen që e formuan.']
+    ],
+    related: 'Projekte të lidhura',
+    allProjects: 'Të gjitha projektet',
+    next: 'Kthehu te Trashëgimi & Qëndrueshmëri'
+  }
+}[language];
+
+const related = projects
+  .filter((project) => ['project-terminal-europe-week-2026','project-jazz-wine-2017','project-open-spaces-lost-culture'].includes(project.id))
+  .slice(0,3);
+
+const path = localizedPath('/programs/heritage-sustainability/listen-to-place/', language);
+---
+<BaseLayout title={copy.title} description={copy.dek} {language} {path} translations={['en','sq']}>
+  <article class="place-essay">
+    <header class="place-essay__hero">
+      <div class="place-essay__orbit" aria-hidden="true"><img src="/media/brand/kult360-orbit-source.png" alt="" /></div>
+      <div class="container-wide place-essay__hero-inner">
+        <a class="place-essay__back" href={localizedPath('/programs/heritage-sustainability/', language)}>← {copy.back}</a>
+        <div class="place-essay__hero-copy">
+          <p>{copy.eyebrow}</p>
+          <h1>{copy.title}</h1>
+          <p>{copy.dek}</p>
+        </div>
+        <span class="place-essay__index" aria-hidden="true">02 / 03</span>
+      </div>
+    </header>
+
+    <section class="container-wide place-essay__intro">
+      <p class="place-essay__label">{copy.introLabel}</p>
+      <div>
+        <h2>{copy.introTitle}</h2>
+        <p>{copy.intro}</p>
+      </div>
+    </section>
+
+    <section class="place-essay__chapters">
+      <div class="container-wide">
+        {copy.chapters.map((chapter) => (
+          <article class="place-essay__chapter">
+            <div class="place-essay__chapter-mark"><span>{chapter.number}</span></div>
+            <div>
+              <h2>{chapter.title}</h2>
+              {chapter.body.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="place-essay__practice">
+      <div class="container-wide">
+        <div class="place-essay__practice-head">
+          <p>{copy.practiceLabel}</p>
+          <h2>{copy.practiceTitle}</h2>
+        </div>
+        <div class="place-essay__practice-grid">
+          {copy.practices.map((item, index) => (
+            <article>
+              <span>0{index + 1}</span>
+              <h3>{item[0]}</h3>
+              <p>{item[1]}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section class="place-essay__related">
+        <div class="container-wide">
+          <div class="place-essay__section-head">
+            <p>{copy.related}</p>
+            <a href={localizedPath('/projects/', language)}>{copy.allProjects} ↗</a>
+          </div>
+          <div class="place-essay__related-grid">
+            {related.map((project, index) => <ProjectCard {project} {language} priority={index === 0} />)}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <nav class="place-essay__return">
+      <div class="container-wide">
+        <a href={localizedPath('/programs/heritage-sustainability/', language)}>
+          <span>←</span>
+          <strong>{copy.next}</strong>
+        </a>
+      </div>
+    </nav>
+  </article>
+</BaseLayout>

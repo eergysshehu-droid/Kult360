@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeInteractions from '../components/home/HomeInteractions.astro';
+import PartnerMarquee from '../components/content/PartnerMarquee.astro';
+import {copy} from '../content/site-copy';
+import {
+  featuredJournal,
+  journal,
+  journalImage,
+  journalSlug,
+  people,
+  personImage,
+  projectImage,
+  projectSlug,
+  projects,
+  strategicPillars
+} from '../lib/content';
+import {localizedPath} from '../lib/site-config';
+import {homePage} from '../content/shell-pages';
+
+const language = 'en';
+const leadershipIds = ['person-eda-zari'];
+const directorIds = ['person-ergys-shehu','person-eda-elbasani','person-teufik-bashi','person-eros-dibra'];
+const leadership = people
+  .filter((person) => leadershipIds.includes(person.id))
+  .sort((a, b) => leadershipIds.indexOf(a.id) - leadershipIds.indexOf(b.id));
+const directors = people
+  .filter((person) => directorIds.includes(person.id))
+  .sort((a, b) => directorIds.indexOf(a.id) - directorIds.indexOf(b.id));
+const programmeImages = [
+  '/media/projects/artist-hub.jpg',
+  '/media/projects/blue-heart.jpg',
+  '/media/projects/literary-voices.jpg',
+  '/media/projects/luzatart.jpg'
+];
+const projectSelection = projects.filter((project) =>
+  ['project-terminal-europe-week-2026','project-qyteti-brenda-oborrit','project-luzatart-culture'].includes(project.id)
+);
+const storySelection = journal.filter((record) => journalImage(record)).slice(0, 8);
+const programmeSummaries = [
+  'Supporting artists with practical tools, stronger networks and room to develop ambitious work.',
+  'Advocating for cultural rights, fair access and the freedom to create and participate.',
+  'Opening culture to more people through inclusive learning, exchange and shared knowledge.',
+  'Keeping living heritage active while building sustainable cultural futures.'
+];
+const programmeLinks = [
+  '/programs/art-professional-empowerment/',
+  '/programs/advancing-equity-rights/',
+  '/programs/culture-inclusive-education/',
+  '/programs/heritage-sustainability/'
+];
+const heroWords = ['Nature','Art','Communities','Heritage','Memory','Education','Equality','Music','Digitality'];
+---
+<BaseLayout title={homePage.heading.en} description={homePage.description.en} {language} path="/" translations={['en','sq']}>
+  <section class="pcf-hero pcf-hero--black pcf-hero--dial">
+    <div class="pcf-hero__dial-stage" data-hero-dial aria-hidden="true">
+      <div class="pcf-hero__dial-glow"></div>
+      <div class="pcf-hero__dial-rings">
+        <div class="pcf-hero__dial-ticks"></div>
+        <div
+          class="pcf-hero__dial-rotor"
+          data-dial-rotor
+          style="--dial-turn: 0deg; transform: rotate(0deg);"
+        >
+          {heroWords.map((label, index) => {
+            const angle = 180 + index * 40;
+            const scale = label.length > 11 ? .76 : label.length > 9 ? .84 : label.length > 7 ? .91 : 1;
+            const offset = index % heroWords.length;
+            const state =
+              offset === 0 ? 'active' :
+              offset === 1 ? 'near-next' :
+              offset === heroWords.length - 1 ? 'near-prev' :
+              offset === 2 ? 'far-next' :
+              offset === heroWords.length - 2 ? 'far-prev' :
+              'hidden';
+            return (
+              <span
+                class="pcf-hero__dial-item"
+                data-dial-index={index}
+                data-dial-state={state}
+                style={`--item-angle: ${angle}deg; --label-scale: ${scale};`}
+              >
+                <span class="pcf-hero__dial-item-upright">
+                  <span class="pcf-hero__dial-dot"></span>
+                  <span class="pcf-hero__dial-label">{label}</span>
+                </span>
+              </span>
+            );
+          })}
+        </div>
+
+        <div class="pcf-hero__dial-core" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+
+      <div class="pcf-hero__dial-selector" aria-hidden="true">
+        <span class="pcf-hero__dial-beam"></span>
+        <span class="pcf-hero__dial-arrow"></span>
+        <span class="pcf-hero__dial-lock"></span>
+      </div>
+    </div>
+
+    <div class="container-wide pcf-hero__inner">
+      <p class="pcf-kicker">KULT360 Foundation · Albania</p>
+
+      <div class="pcf-hero__headline-wrap pcf-hero__headline-wrap--dial">
+        <h1 class="pcf-hero__headline pcf-hero__headline--dial" aria-label="Culture is Nature, Art, Communities, Heritage, Memory, Education, Equality, Music and Digitality">
+          <span class="pcf-hero__dial-prefix">Culture is</span>
+          <span class="pcf-hero__dial-live" data-dial-live aria-live="polite">NATURE</span>
+        </h1>
+      </div>
+
+      <div class="pcf-hero__bottom">
+        <p>{copy.heroBody.en}</p>
+        <div class="pcf-hero__actions">
+          <a class="pcf-button pcf-button--light" href="/projects/"><span>Explore projects</span><i aria-hidden="true">↗</i></a>
+          <a class="pcf-button pcf-button--ghost" href="/about/"><span>About KULT360</span><i aria-hidden="true">→</i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-intro" id="foundation-intro">
+    <div class="container-wide pcf-intro__grid">
+      <p class="pcf-label">About the foundation</p>
+      <h2>We build dialogue bridges through art and heritage, connecting communities for a more equitable cultural future.</h2>
+      <div class="pcf-intro__aside">
+        <p>We are an independent foundation connecting culture and development, promoting the arts as a vital catalyst for social progress.</p>
+        <a class="pcf-text-link" href="/about/">Discover our work ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-updates">
+    <div class="container-wide">
+      <div class="pcf-section-head">
+        <div><p class="pcf-label">Latest</p><h2>News &amp; updates</h2></div>
+        <a class="pcf-text-link" href="/journal/">See all ↗</a>
+      </div>
+      <div class="pcf-update-list">
+        {featuredJournal.slice(0, 4).map((record) => (
+          <a href={'/journal/' + journalSlug(record) + '/'}>
+            <span>{record.category || 'Journal'}{record.language && record.language !== language ? ` · ${record.language.toUpperCase()}` : ''}</span>
+            <strong>{record.title}</strong>
+            <em>{record.read_time || 'Read'}</em>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-programmes">
+    <div class="container-wide">
+      <div class="pcf-section-head pcf-section-head--wide">
+        <div>
+          <p class="pcf-label">360° action</p>
+          <h2>Four connected fields of cultural work.</h2>
+        </div>
+        <p>Our focus areas are distinct, but they work as one ecosystem: artists, rights, learning and living heritage.</p>
+      </div>
+
+      <div class="pcf-programme-grid">
+        {strategicPillars.map((item, index) => (
+          <a class:list={['pcf-programme-card', 'pcf-programme-card--' + (index + 1)]} href={programmeLinks[index]}>
+            <div class="pcf-programme-card__media" aria-hidden="true">
+              <img src={programmeImages[index % programmeImages.length]} alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="pcf-programme-card__body">
+              <span>{String(index + 1).padStart(2,'0')}</span>
+              <h3>{item.title}</h3>
+              <p>{item.summary || programmeSummaries[index]}</p>
+              <span class="pcf-mini-link">Discover <i aria-hidden="true">↗</i></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-projects">
+    <div class="container-wide">
+      <div class="pcf-section-head">
+        <div><p class="pcf-label">Selected projects</p><h2>Culture in practice.</h2></div>
+        <a class="pcf-text-link" href="/projects/">All projects ↗</a>
+      </div>
+
+      <div class="pcf-project-grid">
+        {projectSelection.map((project, index) => {
+          const image = projectImage(project);
+          const href = '/projects/' + projectSlug(project) + '/';
+          return (
+            <a class:list={['pcf-project-card', index === 0 && 'pcf-project-card--lead']} href={href}>
+              <div class="pcf-project-card__media">
+                {image && <img src={image} alt="" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />}
+              </div>
+              <div class="pcf-project-card__copy">
+                <p>{project.location || project.kind.replaceAll('_',' ')}</p>
+                <h3>{project.title}</h3>
+                {project.summary && <p>{project.summary}</p>}
+                <span class="pcf-card-action">Open project <i aria-hidden="true">↗</i></span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-signals">
+    <div class="container-wide">
+      <div class="pcf-signals__head">
+        <div>
+          <p class="pcf-label">Journal / perspectives</p>
+          <h2>Cultural signals.</h2>
+          <p class="pcf-signals__intro">Stories, ideas and perspectives moving through our cultural network.</p>
+        </div>
+        <div class="pcf-rail-controls" data-story-controls>
+          <button type="button" data-story-prev aria-label="Previous stories" aria-controls="story-rail">←</button>
+          <span class="pcf-rail-progress" aria-hidden="true"><i data-story-progress></i></span>
+          <button type="button" data-story-next aria-label="Next stories" aria-controls="story-rail">→</button>
+        </div>
+      </div>
+
+      <div class="pcf-story-rail" data-story-rail id="story-rail" aria-label="KULT360 Journal stories">
+        {storySelection.map((record, index) => {
+          const image = journalImage(record);
+          return (
+            <a class="pcf-story-card" href={'/journal/' + journalSlug(record) + '/'}>
+              <div class="pcf-story-card__media">
+                {image && <img src={image} alt="" loading="lazy" decoding="async" />}
+                <span>{String(index + 1).padStart(2,'0')}</span>
+              </div>
+              <div class="pcf-story-card__copy">
+                <p>{[record.category, record.read_time].filter(Boolean).join(' · ') || 'Journal'}</p>
+                <h3>{record.title}</h3>
+                <span>{record.author || 'KULT360 Journal'}</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="pcf-signals__foot">
+        <p>Move through the archive with the arrows or swipe.</p>
+        <a class="pcf-text-link" href="/journal/">Open Journal ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-people">
+    <div class="container-wide">
+      <div class="pcf-section-head pcf-section-head--wide">
+        <div><p class="pcf-label">Our team</p><h2>The people behind KULT360.</h2></div>
+        <p>Artists, producers, communicators and cultural practitioners shaping the foundation together.</p>
+      </div>
+
+      <div class="pcf-leadership-head">
+        <p class="pcf-label">Leadership</p>
+      </div>
+
+      <div class="pcf-leadership-single" aria-label="KULT360 President">
+        {leadership.map((person) => {
+          const image = personImage(person);
+          return (
+            <a class="pcf-person-card pcf-person-card--president" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
+              <div class="pcf-person-card__media">
+                {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
+              </div>
+              <div class="pcf-person-card__copy">
+                <span class="pcf-person-card__eyebrow">President / Chair of the Board</span>
+                <strong>{person.name}</strong>
+                <p>Institutional leadership and artistic vision of the foundation.</p>
+                <i aria-hidden="true">↗</i>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="pcf-directors-head">
+        <p class="pcf-label">Directors</p>
+        <span>Swipe to explore →</span>
+      </div>
+
+      <div class="pcf-people-grid pcf-people-grid--directors" data-team-rail>
+        {directors.map((person) => {
+          const image = personImage(person);
+          return (
+            <a class="pcf-person-card pcf-person-card--director" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
+              <div class="pcf-person-card__media">
+                {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
+              </div>
+              <div class="pcf-person-card__copy">
+                <strong>{person.name}</strong>
+                <span>{person.role}</span>
+                <i aria-hidden="true">↗</i>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="pcf-partners">
+    <div class="container-wide pcf-partners__grid">
+      <div class="pcf-partners__copy">
+        <p class="pcf-label">Partners &amp; collaborators</p>
+        <h2>Culture grows through connection.</h2>
+        <p class="pcf-partners__note">A growing network of institutions, cultural organisations and independent collaborators.</p>
+      </div>
+      <PartnerMarquee {language} />
+    </div>
+  </section>
+
+  <section class="pcf-join">
+    <div class="container-wide">
+      <p class="pcf-label">Work with KULT360</p>
+      <h2>Culture grows through connection.</h2>
+      <p class="pcf-join__lede">We collaborate with cultural institutions, foundations, organisations, artists and communities to build work that travels, connects and lasts.</p>
+      <div class="pcf-join__actions">
+        <a class="pcf-button pcf-button--dark" href="/get-involved/"><span>Partner with KULT360</span><i aria-hidden="true">↗</i></a>
+        <a class="pcf-button pcf-button--outline-dark" href="/contact/"><span>Contact us</span><i aria-hidden="true">→</i></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<HomeInteractions />
+
+

@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from './ProjectCard.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
+import {cultureThemes} from '../../content/themes';
+import {projectEditorial, projectEditorialFor, projectMediaMode} from '../../content/project-editorial';
+import {formatDate, people as peopleDirectory, personSlug, projectImage, projectSlug, projects, terminalGallery, type Project} from '../../lib/content';
+import {localizedPath, type Language} from '../../lib/site-config';
+
+interface Props {project: Project; language: Language}
+const {project, language} = Astro.props;
+const image = projectImage(project);
+const mediaMode = projectMediaMode(project.id);
+const editorial = projectEditorialFor(project.id);
+const projectIndex = projects.findIndex((item) => item.id === project.id);
+const nextProject = projects[(projectIndex + 1) % projects.length];
+const dateStart = project.date || project.date_range?.start;
+const dateEnd = project.date_range?.end;
+const dateLabel = dateStart
+  ? [formatDate(dateStart, language), dateEnd && dateEnd !== dateStart ? formatDate(dateEnd, language) : undefined].filter(Boolean).join(' — ')
+  : undefined;
+const projectPeople = (project.people ?? []).map((id) => {
+  const record = peopleDirectory.find((person) => person.id === id);
+  return {
+    id,
+    record,
+    label: record?.name || id.replace(/^person-/, '').replaceAll('-', ' ')
+  };
+});
+const partners = project.partners_or_related ?? [];
+const relatedThemes = (editorial?.relatedThemeSlugs || [])
+  .map((slug) => cultureThemes.find((theme) => theme.slug === slug))
+  .filter((theme) => theme !== undefined);
+
+const relatedProjects = projects
+  .filter((candidate) => candidate.id !== project.id)
+  .filter((candidate) => {
+    const candidateThemes = projectEditorial[candidate.id]?.relatedThemeSlugs || [];
+    return editorial?.relatedThemeSlugs.some((slug) => candidateThemes.includes(slug));
+  })
+  .slice(0, 3);
+
+const kindLabel = project.kind.replaceAll('_',' ');
+const path = localizedPath(`/projects/${projectSlug(project)}/`, language);
+const sourceLanguageNote = language === 'sq'
+  ? 'Përmbajtja editoriale e kësaj faqeje është përmbledhur nga regjistri publik i projektit.'
+  : 'This editorial page is built from the project’s public archive record.';
+---
+<BaseLayout title={project.title} description={project.summary || project.title} {language} {path} translations={['en','sq']}>
+  <article class:list={['project-detail-v2', `project-detail-v2--${mediaMode}`]}>
+    <header class="project-detail-v2__hero">
+      <div class="container-wide project-detail-v2__hero-grid">
+        <div class="project-detail-v2__heading">
+          <a class="project-detail-v2__back" href={localizedPath('/projects/', language)}>← {language === 'sq' ? 'Projektet' : 'Projects'}</a>
+          <p class="project-detail-v2__eyebrow">{language === 'sq' ? 'Arkivi i projektit' : 'Project archive'} · {kindLabel}</p>
+          <h1>{project.title}</h1>
+          {project.summary && <p class="project-detail-v2__dek">{project.summary}</p>}
+        </div>
+
+        <dl class="project-detail-v2__facts">
+          {dateLabel && <div><dt>{language === 'sq' ? 'Koha' : 'When'}</dt><dd>{dateLabel}</dd></div>}
+          {project.location && <div><dt>{language === 'sq' ? 'Vendi' : 'Where'}</dt><dd>{project.location}</dd></div>}
+          <div><dt>{language === 'sq' ? 'Formati' : 'Format'}</dt><dd>{kindLabel}</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    {image && (
+      <section class:list={['project-detail-v2__media-stage', `project-detail-v2__media-stage--${mediaMode}`]}>
+        <figure class="container-wide">
+          <img src={image} alt="" fetchpriority="high" decoding="async" />
+          <figcaption>{language === 'sq' ? 'Material nga arkivi publik i projektit.' : 'Material from the project’s public archive.'}</figcaption>
+        </figure>
+      </section>
+    )}
+
+    <section class="container-wide project-detail-v2__story">
+      <div class="project-detail-v2__section-label">
+        <span>01</span>
+        <p>{language === 'sq' ? 'Projekti' : 'The project'}</p>
+      </div>
+      <div class="project-detail-v2__story-copy">
+        <h2>{editorial?.overview[language] || project.summary}</h2>
+        {editorial?.approach && <p>{editorial.approach[language]}</p>}
+      </div>
+    </section>
+
+    {project.id === 'project-terminal-europe-week-2026' && (
+      <section class="container-wide project-detail-v2__gallery">
+        <div class="project-detail-v2__section-head">
+          <p>{language === 'sq' ? 'Nga hapësira' : 'From the site'}</p>
+          <span>{language === 'sq' ? 'Dokumentim vizual' : 'Visual documentation'}</span>
+        </div>
+        <div>{terminalGallery.map((src) => <img src={src} alt="" loading="lazy" decoding="async" />)}</div>
+      </section>
+    )}
+
+    {relatedThemes.length > 0 && (
+      <section class="container-wide project-detail-v2__themes">
+        <div class="project-detail-v2__section-head">
+          <p>{language === 'sq' ? 'Tema' : 'Themes'}</p>
+          <span>{language === 'sq' ? 'Lexo projektin në një kontekst më të gjerë' : 'Read the project in a wider context'}</span>
+        </div>
+        <div class="project-detail-v2__theme-grid">
+          {relatedThemes.map((theme) => (
+            <a href={localizedPath(`/themes/${theme.slug}/`, language)} style={`--theme-accent:${theme.accent}`}>
+              <span>{theme.number}</span>
+              <strong>{theme.title[language]}</strong>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {relatedProjects.length > 0 && (
+      <section class="container-wide project-detail-v2__related">
+        <div class="project-detail-v2__section-head">
+          <p>{language === 'sq' ? 'Vazhdo eksplorimin' : 'Keep exploring'}</p>
+          <a href={localizedPath('/projects/', language)}>{language === 'sq' ? 'Të gjitha projektet' : 'All projects'} ↗</a>
+        </div>
+        <div class="project-detail-v2__related-grid">
+          {relatedProjects.map((related) => <ProjectCard project={related} {language} />)}
+        </div>
+      </section>
+    )}
+
+    <section class="container-wide project-detail-v2__archive-note">
+      <p>{sourceLanguageNote}</p>
+      {project.source_url && <a href={project.source_url} rel="noreferrer">{language === 'sq' ? 'Burimi publik' : 'Public source'} ↗</a>}
+    </section>
+
+    {(projectPeople.length > 0 || partners.length > 0) && (
+      <section class="container-wide project-detail-v2__credits" aria-labelledby="project-credits-heading">
+        <div class="project-detail-v2__credits-head">
+          <p id="project-credits-heading">{language === 'sq' ? 'Kreditet e projektit' : 'Project credits'}</p>
+          <span>{language === 'sq' ? 'Njerëz & partnerë' : 'People & partners'}</span>
+        </div>
+
+        <div class="project-detail-v2__credits-grid">
+          {projectPeople.length > 0 && (
+            <div class="project-detail-v2__credit-group">
+              <p class="project-detail-v2__section-label-inline">{language === 'sq' ? 'Njerëz' : 'People'}</p>
+              <ul>
+                {projectPeople.map(({record, label}) => (
+                  <li>
+                    {record
+                      ? <a href={localizedPath(`/people/${personSlug(record)}/`, language)}><span>{label}</span><i aria-hidden="true">↗</i></a>
+                      : <span>{label}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {partners.length > 0 && (
+            <div class="project-detail-v2__credit-group">
+              <p class="project-detail-v2__section-label-inline">{language === 'sq' ? 'Partnerë & të lidhur' : 'Partners & related'}</p>
+              <ul>{partners.map((partner) => <li><span>{partner}</span></li>)}</ul>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <nav class="container-wide project-detail-v2__next">
+      <a href={localizedPath(`/projects/${projectSlug(nextProject)}/`, language)}>
+        <span>{language === 'sq' ? 'Projekti tjetër' : 'Next project'} →</span>
+        <strong>{nextProject.title}</strong>
+      </a>
+    </nav>
+    <ContinueWithKult360 {language} context="project" />
+  </article>
+</BaseLayout>

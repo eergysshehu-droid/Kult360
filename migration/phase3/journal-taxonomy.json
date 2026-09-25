@@ -1,0 +1,268 @@
+{
+  "principle": "Source category and V2 editorial format are separate fields. Do not overwrite one with the other.",
+  "source_categories": [
+    "ART",
+    "MUSIC"
+  ],
+  "editorial_formats": [
+    "Essay",
+    "Interview",
+    "Story"
+  ],
+  "recommended_fields": {
+    "source_category": "string_or_reference",
+    "format": "one_of Story, Essay, Interview, News, Project Note",
+    "legacy_read_time": "string",
+    "legacy_url": "url"
+  },
+  "items": [
+    {
+      "id": "journal-01",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2026-07-29",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-02",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2026-07-17",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-03",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2026-06-24",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-04",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": null,
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-05",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2025-11-05",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-06",
+      "source_category": null,
+      "proposed_format": "Interview",
+      "published_date": "2025-11-02",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-07",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2024-05-13",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-08",
+      "source_category": null,
+      "proposed_format": "Story",
+      "published_date": "2023-12-12",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-09",
+      "source_category": null,
+      "proposed_format": "Essay",
+      "published_date": "2022-12-11",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-10",
+      "source_category": null,
+      "proposed_format": "Essay",
+      "published_date": "2022-10-14",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-11",
+      "source_category": null,
+      "proposed_format": "Essay",
+      "published_date": "2022-08-21",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-12",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2022-06-25",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-13",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2022-03-04",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-14",
+      "source_category": "MUSIC",
+      "proposed_format": "Story",
+      "published_date": "2021-09-30",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-15",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2021-08-01",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-16",
+      "source_category": "ART",
+      "proposed_format": "Story",
+      "published_date": "2021-07-17",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-17",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2021-06-05",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-18",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2021-04-23",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-19",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-12-27",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-20",
+      "source_category": null,
+      "proposed_format": "Essay",
+      "published_date": "2020-09-25",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-21",
+      "source_category": null,
+      "proposed_format": "Essay",
+      "published_date": "2020-08-21",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-22",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-08-18",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-23",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-07-14",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-24",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-06-28",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-25",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-06-27",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-26",
+      "source_category": null,
+      "proposed_format": "Essay",
+      "published_date": "2020-06-07",
+      "author": "Eda Zari",
+      "content_status": "metadata_and_short_summary_only"
+    },
+    {
+      "id": "journal-27",
+      "source_category": "ART",
+      "proposed_format": "Story",
+      "published_date": "2020-04-30",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-28",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-03-16",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-29",
+      "source_category": "ART",
+      "proposed_format": "Essay",
+      "published_date": "2020-01-09",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-30",
+      "source_category": "MUSIC",
+      "proposed_format": "Essay",
+      "published_date": "2018-01-05",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    },
+    {
+      "id": "journal-31",
+      "source_category": "MUSIC",
+      "proposed_format": "Story",
+      "published_date": "2016-09-30",
+      "author": "Eda Zari",
+      "content_status": "inventory_only_url_pending"
+    }
+  ]
+}

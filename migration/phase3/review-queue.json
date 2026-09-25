@@ -1,0 +1,1276 @@
+[
+  {
+    "priority": "high",
+    "kind": "person",
+    "source_id": "person-eda-zari",
+    "issue": "Biography missing from extracted public source.",
+    "required_action": "Obtain owned/approved biography; do not synthesize."
+  },
+  {
+    "priority": "high",
+    "kind": "person",
+    "source_id": "person-ergys-shehu",
+    "issue": "Biography missing from extracted public source.",
+    "required_action": "Obtain owned/approved biography; do not synthesize."
+  },
+  {
+    "priority": "high",
+    "kind": "person",
+    "source_id": "person-eda-elbasani",
+    "issue": "Biography missing from extracted public source.",
+    "required_action": "Obtain owned/approved biography; do not synthesize."
+  },
+  {
+    "priority": "high",
+    "kind": "person",
+    "source_id": "person-eros-dibra",
+    "issue": "Biography missing from extracted public source.",
+    "required_action": "Obtain owned/approved biography; do not synthesize."
+  },
+  {
+    "priority": "high",
+    "kind": "person",
+    "source_id": "person-teufik-bashi",
+    "issue": "Biography missing from extracted public source.",
+    "required_action": "Obtain owned/approved biography; do not synthesize."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-04",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-04",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-05",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-05",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-13",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-13",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-14",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-14",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-15",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-15",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-17",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-17",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-18",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-18",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-19",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-19",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-22",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-22",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-23",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-23",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-25",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-25",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-27",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-27",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-28",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-28",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-29",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-29",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-30",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-30",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "article",
+    "source_id": "journal-31",
+    "issue": "Full article body is not present in Phase 2 inventory.",
+    "required_action": "Source complete owned article body before import/publishing."
+  },
+  {
+    "priority": "medium",
+    "kind": "article",
+    "source_id": "journal-31",
+    "issue": "Legacy article URL unresolved.",
+    "required_action": "Resolve from Wix export or manual source before redirect finalization."
+  },
+  {
+    "priority": "high",
+    "kind": "project",
+    "source_id": "recognition-herbie-hancock-unesco",
+    "issue": "Source includes claims flagged for verification.",
+    "required_action": "Verify impact/causality/attendance or recognition against primary evidence before publication."
+  },
+  {
+    "priority": "high",
+    "kind": "project",
+    "source_id": "project-save-blue-heart-europe",
+    "issue": "Source includes claims flagged for verification.",
+    "required_action": "Verify impact/causality/attendance or recognition against primary evidence before publication."
+  },
+  {
+    "priority": "high",
+    "kind": "project",
+    "source_id": "project-no-chemical-waste",
+    "issue": "Source includes claims flagged for verification.",
+    "required_action": "Verify impact/causality/attendance or recognition against primary evidence before publication."
+  },
+  {
+    "priority": "high",
+    "kind": "testimonial",
+    "source_id": "testimonial-silvio-gonzato",
+    "issue": "Quote/permission not cleared for republication.",
+    "required_action": "Verify original wording and rights/permission before publishing testimonial."
+  },
+  {
+    "priority": "high",
+    "kind": "testimonial",
+    "source_id": "testimonial-herbie-hancock",
+    "issue": "Quote/permission not cleared for republication.",
+    "required_action": "Verify original wording and rights/permission before publishing testimonial."
+  },
+  {
+    "priority": "high",
+    "kind": "testimonial",
+    "source_id": "testimonial-ulrich-eichelmann",
+    "issue": "Quote/permission not cleared for republication.",
+    "required_action": "Verify original wording and rights/permission before publishing testimonial."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "brand-logo",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "home-media-04",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "home-media-04",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "home-media-05",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "home-media-05",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "home-media-08",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "home-media-08",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-01",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-02",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-03",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-03",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-04",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-05",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-05",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-06",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-06",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-07",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-07",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-08",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-08",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-09",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-09",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-10",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-11",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-11",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-12",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-12",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-13",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-13",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "terminal-14",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "terminal-14",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "pillar-art",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "pillar-rights",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "pillar-education",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "pillar-heritage",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-kosovo-blur",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-kosovo",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-skanderbeg-blur",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-skanderbeg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-robot-blur",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-robot",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-bossa-blur",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "journal-bossa",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-recognition-herbie",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-recognition-herbie",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-terminal-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-luzatart-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-artist-hub-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-artist-hub-card",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-literary-voices-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-open-spaces-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-blue-heart-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-blue-heart-card",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-chemical-waste-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-chemical-waste-card",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-2017-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-2017-card",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-program-2017",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-program-2017",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-2014-card",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-2014-card",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-program-2014",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "project-jazz-wine-program-2014",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "footer-community-image",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "partner-logo-01",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "partner-logo-01",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "partner-logo-02",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "partner-logo-02",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "partner-collage",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-035244-eac0cb69cd9842838188176a1cf524a6-mv2-d-5122-3415-s-4-2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-035244-eac0cb69cd9842838188176a1cf524a6-mv2-d-5122-3415-s-4-2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-83524445ca90408594501cacb2567307-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-83524445ca90408594501cacb2567307-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-561321bda88f42f5a09a214c0bbd90f4-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-561321bda88f42f5a09a214c0bbd90f4-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-5fc07fa7550645dc9455aa914297adb4-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-5fc07fa7550645dc9455aa914297adb4-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-bb8fddb4732f49729568bd42ab1acff6-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-bb8fddb4732f49729568bd42ab1acff6-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-bd8c5a16721e47c6b51de4301dd94f29-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-bd8c5a16721e47c6b51de4301dd94f29-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-ff4f3e70685f43ee82f0b5e770788205-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-ac2b9c-ff4f3e70685f43ee82f0b5e770788205-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-2d3fa7b7d15d48318df597a3e3d16766-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-2d3fa7b7d15d48318df597a3e3d16766-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-489b4a1605614534ba3a43c20bd77363-mv2-png",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-489b4a1605614534ba3a43c20bd77363-mv2-png",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-a4f6ea78f69e41979b976ea5cda5b7d9-mv2-png",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-a4f6ea78f69e41979b976ea5cda5b7d9-mv2-png",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-cbb9de332ceb441aab51029a5ac8f20e-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-b6f73a-cbb9de332ceb441aab51029a5ac8f20e-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-df81d0146a554f6c9a51a21ae7d95d4f-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-df81d0146a554f6c9a51a21ae7d95d4f-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-f4598e-aaf11e80dfab4827a9ed06c6eb265f9c-mv2-avif",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-f4598e-aaf11e80dfab4827a9ed06c6eb265f9c-mv2-avif",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-f4598e-f9a2f79edee74f55b2d9ba03c923a02e-mv2-jpg",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-f4598e-f9a2f79edee74f55b2d9ba03c923a02e-mv2-jpg",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-video-11062b-a371ce88dfd24ab9a95b07b250101474",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-video-11062b-a371ce88dfd24ab9a95b07b250101474",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "mediaAsset",
+    "source_id": "supp-video-b6f73a-8537a033e14148cf99ff7555b5ad832e",
+    "issue": "Media rights status is unverified.",
+    "required_action": "Confirm ownership/license/credit before CMS import or republication."
+  },
+  {
+    "priority": "medium",
+    "kind": "mediaAsset",
+    "source_id": "supp-video-b6f73a-8537a033e14148cf99ff7555b5ad832e",
+    "issue": "Alt text is missing.",
+    "required_action": "Write factual accessibility alt text after visual review; do not infer identity of people."
+  },
+  {
+    "priority": "high",
+    "kind": "page",
+    "source_id": "page-lab",
+    "issue": "Page body was not extracted.",
+    "required_action": "Source page body/export before final migration."
+  },
+  {
+    "priority": "high",
+    "kind": "page",
+    "source_id": "page-gallery",
+    "issue": "Page body was not extracted.",
+    "required_action": "Source page body/export before final migration."
+  },
+  {
+    "priority": "medium",
+    "kind": "page",
+    "source_id": "page-heritage",
+    "issue": "Legacy page includes placeholder content.",
+    "required_action": "Do not migrate placeholder blocks; editorially rebuild approved content."
+  },
+  {
+    "priority": "medium",
+    "kind": "partner",
+    "source_id": "Patagonia",
+    "issue": "Legacy mention should not be represented as a current partnership without confirmation.",
+    "required_action": "Confirm relationship status and dates before publication."
+  },
+  {
+    "priority": "medium",
+    "kind": "partner",
+    "source_id": "Riverwatch",
+    "issue": "Legacy mention should not be represented as a current partnership without confirmation.",
+    "required_action": "Confirm relationship status and dates before publication."
+  },
+  {
+    "priority": "medium",
+    "kind": "partner",
+    "source_id": "EcoAlbania",
+    "issue": "Legacy mention should not be represented as a current partnership without confirmation.",
+    "required_action": "Confirm relationship status and dates before publication."
+  },
+  {
+    "priority": "medium",
+    "kind": "partner",
+    "source_id": "UNESCO",
+    "issue": "Legacy mention should not be represented as a current partnership without confirmation.",
+    "required_action": "Confirm relationship status and dates before publication."
+  },
+  {
+    "priority": "medium",
+    "kind": "partner",
+    "source_id": "Thelonious Monk Institute of Jazz",
+    "issue": "Legacy mention should not be represented as a current partnership without confirmation.",
+    "required_action": "Confirm relationship status and dates before publication."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-terminal-europe-week-2026",
+    "issue": "Unresolved reference: Rhani Krija (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-terminal-europe-week-2026",
+    "issue": "Unresolved reference: Ermal Rodi (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-luzatart-culture",
+    "issue": "Unresolved reference: Henning Jung (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-luzatart-culture",
+    "issue": "Unresolved reference: AJS Trio (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-artist-hub-lab",
+    "issue": "Unresolved reference: Mark Joggerst (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-artist-hub-lab",
+    "issue": "Unresolved reference: Institute of Music and Media, Düsseldorf (external_entity_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-artist-hub-lab",
+    "issue": "Unresolved reference: Neon Media Prod., Cologne (external_entity_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-literary-voices-heine-poradeci",
+    "issue": "Unresolved reference: Arbër Selmani (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-literary-voices-heine-poradeci",
+    "issue": "Unresolved reference: Visar Kuçi (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-open-spaces-lost-culture",
+    "issue": "Unresolved reference: Ardian Cerga (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-open-spaces-lost-culture",
+    "issue": "Unresolved reference: Gent Rushi (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-open-spaces-lost-culture",
+    "issue": "Unresolved reference: Shëndeverë Tirana (external_entity_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-open-spaces-lost-culture",
+    "issue": "Unresolved reference: Muharrem Çobo (external_entity_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-save-blue-heart-europe",
+    "issue": "Unresolved reference: Elina Duni (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-no-chemical-waste",
+    "issue": "Unresolved reference: Elina Duni (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Hayden Chisholm (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Martin Sasse Trio (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Marialy Pacheco (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Aly Keïta (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Gent Rushi (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Ermal Rodi (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2017",
+    "issue": "Unresolved reference: Ethnist Kuartet (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: Hans Lüdemann Trio (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: Ilir Bajri Quartett (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: Sebastian Studnitzky Trio (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: Albanian Saxophon Quartett (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: Dejan Terzic Trio (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: Dren Abazi & Zig Zag Orchestra (external_person_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: National Museum Onufri (external_entity_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  },
+  {
+    "priority": "medium",
+    "kind": "reference",
+    "source_id": "k360.project-jazz-wine-2014",
+    "issue": "Unresolved reference: National Ethnographic Museum (external_entity_unmodeled).",
+    "required_action": "Keep as plain-text credit until a verified CMS entity is intentionally created."
+  }
+]

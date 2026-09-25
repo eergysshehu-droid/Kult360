@@ -1,0 +1,31 @@
+[
+  {
+    "id": "opportunity-support-individual",
+    "title": "Support as an Individual",
+    "kind": "support",
+    "source_url": "https://www.kult360.com/get-involved",
+    "status": "evergreen_call_to_action"
+  },
+  {
+    "id": "opportunity-corporate-partner",
+    "title": "Partner as a Corporation",
+    "kind": "partnership",
+    "source_url": "https://www.kult360.com/get-involved",
+    "status": "evergreen_call_to_action"
+  },
+  {
+    "id": "opportunity-foundation-collaboration",
+    "title": "Collaborate as a Foundation",
+    "kind": "partnership",
+    "source_url": "https://www.kult360.com/get-involved",
+    "status": "evergreen_call_to_action"
+  },
+  {
+    "id": "opportunity-visionary-partners",
+    "title": "We seek visionary Partners",
+    "kind": "partnership",
+    "source_url": "https://www.kult360.com/qytetibrendaoborrit",
+    "status": "evergreen_call_to_action",
+    "summary": "Source page invites institutions, corporations and philanthropic bodies to support KULT360 via direct finance or in-kind support."
+  }
+]
