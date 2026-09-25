@@ -5214,3 +5214,296 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding-block: 2.5rem;
   }
 }
+
+
+/* =========================================================
+   KULT360 WAYFINDING PASS — SITE-WIDE CHAPTER SYSTEM
+   ========================================================= */
+
+/* Every major section reads as a chapter, never as accidental whitespace. */
+.pcf-intro,
+.pcf-updates,
+.pcf-programmes,
+.pcf-projects,
+.pcf-signals,
+.pcf-people,
+.pcf-partners,
+.pcf-join {
+  position: relative;
+  border-top: 1px solid rgb(9 9 8 / 16%);
+}
+
+.pcf-intro { background: #f6f3eb; }
+.pcf-updates { background: #eee9df; }
+.pcf-programmes { background: #f6f3eb; }
+.pcf-projects { background: #ddd7cc; }
+.pcf-signals { background: #151513; color: #fff; }
+.pcf-people { background: #f7f4ed; }
+.pcf-partners { background: #ebe5d9; }
+.pcf-join { border-top: 5px solid var(--section-yellow); }
+
+/* A subtle chapter rule tells the eye where the next section starts. */
+.pcf-updates::before,
+.pcf-programmes::before,
+.pcf-projects::before,
+.pcf-people::before,
+.pcf-partners::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: clamp(4rem, 12vw, 11rem);
+  height: 3px;
+  background: var(--section-yellow);
+}
+
+/* Dark journal chapter keeps all local navigation legible. */
+.pcf-signals .pcf-label,
+.pcf-signals .pcf-signals__intro,
+.pcf-signals .pcf-signals__foot,
+.pcf-signals .pcf-story-card__copy > span,
+.pcf-signals .pcf-story-card__copy > p {
+  color: rgb(255 255 255 / 62%);
+}
+.pcf-signals .pcf-section-head h2,
+.pcf-signals h2,
+.pcf-signals .pcf-story-card__copy h3 {
+  color: #fff;
+}
+.pcf-signals .pcf-rail-controls button,
+.pcf-signals .pcf-text-link {
+  color: #fff;
+}
+
+/* Listing pages alternate section fields so About / Programs / Journal never blur together. */
+.listing-layout > .ruled-section {
+  position: relative;
+  isolation: isolate;
+}
+.listing-layout > .ruled-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #f6f3eb;
+  border-top: 1px solid rgb(9 9 8 / 14%);
+}
+.listing-layout > .ruled-section:nth-of-type(even)::before {
+  background: #e9e4da;
+}
+.listing-layout > .ruled-section:last-of-type::before {
+  border-bottom: 1px solid rgb(9 9 8 / 14%);
+}
+
+/* Section kickers act as wayfinding bars, not decorative captions. */
+.section-kicker,
+.program-detail__section-head,
+.project-detail-v2__section-head,
+.theme-detail__section-head {
+  min-height: 2.8rem;
+  align-items: center;
+}
+.section-kicker {
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgb(9 9 8 / 18%);
+}
+.section-kicker h2,
+.program-detail__section-head > p:first-child,
+.project-detail-v2__section-head > p:first-child,
+.theme-detail__section-head > p:first-child {
+  letter-spacing: .12em;
+}
+
+/* Actions look clickable before hover — crucial on touch devices. */
+.section-kicker a,
+.program-detail__section-head a,
+.project-detail-v2__section-head a,
+.theme-detail__section-head a {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .72rem;
+  border: 1px solid rgb(9 9 8 / 22%);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.section-kicker a:hover,
+.section-kicker a:focus-visible,
+.program-detail__section-head a:hover,
+.program-detail__section-head a:focus-visible,
+.project-detail-v2__section-head a:hover,
+.project-detail-v2__section-head a:focus-visible,
+.theme-detail__section-head a:hover,
+.theme-detail__section-head a:focus-visible {
+  background: var(--pcf-ink);
+  color: #fff;
+  border-color: var(--pcf-ink);
+}
+
+/* Programme detail gets the same chapter rhythm as project and theme pages. */
+.program-detail__themes,
+.program-detail__projects,
+.program-detail__partners,
+.program-detail__next {
+  position: relative;
+  isolation: isolate;
+}
+.program-detail__themes::before,
+.program-detail__projects::before,
+.program-detail__next::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  border-top: 1px solid rgb(9 9 8 / 14%);
+}
+.program-detail__themes::before { background: #e9e4da; }
+.program-detail__projects::before { background: #f6f3eb; }
+.program-detail__next::before {
+  background: #ddd7cc;
+  border-bottom: 1px solid rgb(9 9 8 / 14%);
+}
+.program-detail__partners {
+  border-top: 5px solid var(--program-accent);
+}
+
+/* Project navigation is its own closing chapter. */
+.project-detail-v2__next::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #11110f;
+  border-top: 5px solid var(--section-yellow);
+}
+.project-detail-v2__next a {
+  border-color: rgb(255 255 255 / 22%);
+}
+
+/* Footer is always unmistakably the footer. */
+.site-footer--v2 {
+  border-top: 5px solid var(--section-yellow);
+}
+
+/* Menu: primary navigation first, secondary exploration underneath. */
+.menu-dialog__nav-stack {
+  display: grid;
+  gap: 1.7rem;
+  align-content: center;
+}
+.menu-dialog__quick {
+  display: grid;
+  gap: .7rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+}
+.menu-dialog__quick > p {
+  margin: 0;
+  color: rgb(255 255 255 / 42%);
+  font-size: .58rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.menu-dialog__quick > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.menu-dialog__quick a {
+  min-height: 2.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .5rem .75rem;
+  color: #fff;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 999px;
+  font-size: .67rem;
+  font-weight: 760;
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+.menu-dialog__quick a[aria-current='page'],
+.menu-dialog__quick a:hover,
+.menu-dialog__quick a:focus-visible {
+  color: var(--pcf-ink);
+  background: var(--section-yellow);
+  border-color: var(--section-yellow);
+}
+
+/* Stronger chapter separation on small screens where vertical context is limited. */
+@media (max-width: 44rem) {
+  .pcf-intro,
+  .pcf-updates,
+  .pcf-programmes,
+  .pcf-projects,
+  .pcf-signals,
+  .pcf-people,
+  .pcf-partners {
+    border-top-width: 1px;
+  }
+
+  .pcf-updates::before,
+  .pcf-programmes::before,
+  .pcf-projects::before,
+  .pcf-people::before,
+  .pcf-partners::before {
+    width: 4.5rem;
+    height: 3px;
+  }
+
+  .section-kicker,
+  .program-detail__section-head,
+  .project-detail-v2__section-head,
+  .theme-detail__section-head {
+    min-height: 0;
+  }
+
+  .section-kicker {
+    padding-bottom: .7rem;
+  }
+
+  .section-kicker a,
+  .program-detail__section-head a,
+  .project-detail-v2__section-head a,
+  .theme-detail__section-head a {
+    min-height: 2.55rem;
+    padding-inline: .7rem;
+  }
+
+  .menu-dialog__body {
+    align-items: start;
+    margin-block: 1.2rem auto;
+  }
+
+  .menu-dialog__nav-stack {
+    gap: 1.2rem;
+  }
+
+  .menu-list a {
+    min-height: 4.2rem;
+  }
+
+  .menu-dialog__quick {
+    padding-top: .85rem;
+  }
+
+  .menu-dialog__quick a {
+    min-height: 2.55rem;
+    font-size: .62rem;
+  }
+
+  .site-footer--v2 {
+    border-top-width: 4px;
+  }
+}
