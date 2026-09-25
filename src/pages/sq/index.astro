@@ -274,40 +274,65 @@ const heroWordStep = 360 / heroWords.length;
     let autoplayTimer = 0;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const signedDistance = (index) => {
-      let distance = ((index - active) % count + count) % count;
-      if (distance > count / 2) distance -= count;
-      return distance;
-    };
+    const transitionMs = 1280;
+    let transitionTimer = 0;
 
-    const render = () => {
+    const paintIdle = () => {
       cylinder.style.setProperty('--wheel-rotation', `${-active * step}deg`);
       words.forEach((word, index) => {
-        const distance = signedDistance(index);
-        word.dataset.depth = distance === 0 ? 'front' : Math.abs(distance) <= 2 ? 'near' : 'back';
-        word.dataset.position =
-          distance === 0 ? 'front' :
-          distance === 1 ? 'incoming' :
-          distance === 2 ? 'incoming-far' :
-          distance === -1 ? 'outgoing' :
-          'back';
+        word.dataset.position = index === active ? 'front' : 'back';
+        delete word.dataset.transition;
       });
       if (live) live.textContent = words[active]?.textContent || '';
     };
+
     const scheduleAutoplay = () => {
       window.clearTimeout(autoplayTimer);
       if (reducedMotion || document.hidden) return;
-      autoplayTimer = window.setTimeout(() => {
-        active = (active + 1) % count;
-        render();
-        scheduleAutoplay();
-      }, 3600);
+      autoplayTimer = window.setTimeout(() => rotate(1), 3900);
     };
 
     const rotate = (direction) => {
-      active = (active + direction + count) % count;
-      render();
-      scheduleAutoplay();
+      if (wheelLocked) return;
+      const outgoingIndex = active;
+      const incomingIndex = (active + direction + count) % count;
+
+      if (reducedMotion) {
+        active = incomingIndex;
+        paintIdle();
+        scheduleAutoplay();
+        return;
+      }
+
+      wheelLocked = true;
+      window.clearTimeout(transitionTimer);
+      window.clearTimeout(autoplayTimer);
+
+      words.forEach((word, index) => {
+        word.dataset.position = 'back';
+        delete word.dataset.transition;
+        if (index === outgoingIndex) {
+          word.dataset.position = 'front';
+          word.dataset.transition = 'outgoing';
+        }
+        if (index === incomingIndex) {
+          word.dataset.transition = 'incoming';
+        }
+      });
+
+      active = incomingIndex;
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          cylinder.style.setProperty('--wheel-rotation', `${-active * step}deg`);
+        });
+      });
+
+      transitionTimer = window.setTimeout(() => {
+        paintIdle();
+        wheelLocked = false;
+        scheduleAutoplay();
+      }, transitionMs);
     };
 
     wheel.addEventListener('keydown', (event) => {
@@ -328,11 +353,15 @@ const heroWordStep = 360 / heroWords.length;
     }
 
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) window.clearTimeout(autoplayTimer);
-      else scheduleAutoplay();
+      if (document.hidden) {
+        window.clearTimeout(autoplayTimer);
+        window.clearTimeout(transitionTimer);
+      } else if (!wheelLocked) {
+        scheduleAutoplay();
+      }
     });
 
-    render();
+    paintIdle();
     scheduleAutoplay();
   }
 
