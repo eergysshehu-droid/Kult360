@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from './ProjectCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
 import {programFocusAreas, type ProgramFocusArea} from '../../content/program-focus';
+import {cultureThemes} from '../../content/themes';
 import {projects} from '../../lib/content';
 import {localizedPath, type Language} from '../../lib/site-config';
 
@@ -16,6 +17,7 @@ const previous = programFocusAreas[(programIndex - 1 + programFocusAreas.length)
 const next = programFocusAreas[(programIndex + 1) % programFocusAreas.length];
 const path = localizedPath(`/programs/${program.slug}/`, language);
 const words = program.title[language].split(' ');
+const relatedThemes = cultureThemes.filter((theme) => theme.relatedProgramSlugs.includes(program.slug));
 ---
 <BaseLayout title={program.title[language]} description={program.summary[language]} {language} {path} translations={['en', 'sq']}>
   <article class="program-detail" style={`--program-accent:${program.accent}`}>
@@ -65,6 +67,25 @@ const words = program.title[language].split(' ');
         </div>
       </div>
     </section>
+
+    {relatedThemes.length > 0 && (
+      <section class="container-wide program-detail__themes">
+        <div class="program-detail__section-head">
+          <p>{language === 'sq' ? 'Tema ndërsektoriale' : 'Cross-cutting themes'}</p>
+          <span>{language === 'sq' ? 'Shko më thellë' : 'Go deeper'}</span>
+        </div>
+        <div class="program-detail__theme-grid">
+          {relatedThemes.map((theme) => (
+            <a href={localizedPath(`/themes/${theme.slug}/`, language)} style={`--theme-accent:${theme.accent}`}>
+              <span>{theme.number}</span>
+              <strong>{theme.title[language]}</strong>
+              <p>{theme.summary[language]}</p>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="container-wide program-detail__projects">
       <div class="program-detail__section-head">
