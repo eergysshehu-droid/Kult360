@@ -2196,3 +2196,409 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     opacity: .22 !important;
   }
 }
+
+
+/* KULT360 INSTITUTIONAL CLARITY + PUBLIC POLICY PASS */
+
+/* Clear click language: cards, rows and actions always read as interactive. */
+a:is(
+  .pcf-programme-card,
+  .pcf-project-card,
+  .pcf-story-card,
+  .pcf-person-card,
+  .program-page-card,
+  .project-card__link,
+  .person-row,
+  .institutional-route,
+  .pcf-button
+) {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgb(240 207 34 / 16%);
+}
+
+a:is(
+  .pcf-programme-card,
+  .pcf-project-card,
+  .pcf-story-card,
+  .pcf-person-card,
+  .program-page-card,
+  .project-card__link,
+  .person-row,
+  .institutional-route
+):focus-visible {
+  outline: 2px solid var(--experience-yellow);
+  outline-offset: 4px;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.program-page-card,.project-card__link,.institutional-route) {
+    transition:
+      transform .28s var(--experience-ease),
+      box-shadow .28s ease,
+      border-color .28s ease,
+      background-color .28s ease;
+  }
+  a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.program-page-card,.project-card__link,.institutional-route):hover {
+    transform: translateY(-3px);
+  }
+}
+
+a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.program-page-card,.project-card__link,.institutional-route):active {
+  transform: scale(.992);
+}
+
+/* Dark programme surfaces: informative copy is always legible.
+   Decorative giant hero type may remain translucent; usable headings may not. */
+.program-detail__principles {
+  color: #f6f3eb;
+}
+
+.program-detail__principle-grid article {
+  color: rgb(255 255 255 / 92%);
+}
+
+.program-detail__principle-grid h3 {
+  color: inherit;
+  opacity: 1;
+}
+
+.program-detail__principle-grid p {
+  color: rgb(255 255 255 / 72%);
+  opacity: 1;
+}
+
+.program-detail__principle-grid article > span {
+  color: var(--program-accent);
+}
+
+.program-detail__principle-grid article:hover,
+.program-detail__principle-grid article:focus-within {
+  color: var(--pcf-ink);
+  background: var(--program-accent);
+}
+
+.program-detail__principle-grid article:hover h3,
+.program-detail__principle-grid article:hover p,
+.program-detail__principle-grid article:focus-within h3,
+.program-detail__principle-grid article:focus-within p {
+  color: var(--pcf-ink);
+}
+
+/* Institutional close on the homepage */
+.pcf-join__lede {
+  width: min(100%, 43rem);
+  margin: 1rem 0 0;
+  font-size: clamp(.9rem, 1.15vw, 1.05rem);
+  line-height: 1.6;
+  color: rgb(9 9 8 / 70%);
+}
+
+.pcf-join__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: 1.6rem;
+}
+
+.pcf-button--outline-dark {
+  color: var(--pcf-ink);
+  background: transparent;
+  border-color: rgb(9 9 8 / 48%);
+}
+
+.pcf-button--outline-dark:hover,
+.pcf-button--outline-dark:focus-visible {
+  color: #fff;
+  background: var(--pcf-ink);
+  border-color: var(--pcf-ink);
+}
+
+/* Get involved: three obvious routes instead of passive informational cards. */
+.institutional-invite {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  padding-block: clamp(4rem, 7vw, 7rem);
+}
+
+.institutional-invite__intro {
+  display: grid;
+  grid-template-columns: minmax(8rem,.25fr) minmax(0,1fr);
+  gap: 1rem 2rem;
+  align-items: start;
+}
+
+.institutional-invite__intro > p:first-child {
+  padding-top: .45rem;
+}
+
+.institutional-invite__intro h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(2.7rem, 5.6vw, 5.8rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+}
+
+.institutional-invite__intro > p:last-child {
+  grid-column: 2;
+  width: min(100%, 43rem);
+  margin: 0;
+  color: #625e56;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.institutional-invite__routes {
+  border-top: 1px solid rgb(9 9 8 / 18%);
+}
+
+.institutional-route {
+  min-height: 8.5rem;
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0,1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding: 1.3rem .25rem;
+  border-bottom: 1px solid rgb(9 9 8 / 18%);
+  color: inherit;
+  text-decoration: none;
+}
+
+.institutional-route > span {
+  color: #777168;
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.institutional-route h3 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.5vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.institutional-route p {
+  margin: .5rem 0 0;
+  max-width: 43rem;
+  color: #6a665f;
+  line-height: 1.5;
+}
+
+.institutional-route i {
+  width: 2.7rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(9 9 8 / 35%);
+  border-radius: 50%;
+  font-style: normal;
+  transition: transform .25s var(--experience-ease), background .25s ease, color .25s ease;
+}
+
+.institutional-route:hover {
+  background: rgb(240 207 34 / 10%);
+}
+
+.institutional-route:hover i,
+.institutional-route:focus-visible i {
+  color: var(--pcf-ink);
+  background: var(--experience-yellow);
+  transform: rotate(7deg);
+}
+
+.institutional-invite__contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: var(--pcf-ink);
+  color: #fff;
+}
+
+.institutional-invite__contact p {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+.institutional-invite__contact .pcf-button--dark {
+  background: #fff;
+  color: var(--pcf-ink);
+  border-color: #fff;
+}
+
+/* Public website policy pages: intentionally simple, not governance documents. */
+.policy-page {
+  display: grid;
+  grid-template-columns: minmax(12rem,.34fr) minmax(0,1fr);
+  gap: 2rem 4rem;
+  padding-block: clamp(4rem, 7vw, 7rem);
+}
+
+.policy-page__intro {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+  display: grid;
+  gap: 1rem;
+}
+
+.policy-page__intro p {
+  margin: 0;
+}
+
+.policy-page__intro > p:last-child {
+  max-width: 25rem;
+  color: #625e56;
+  line-height: 1.6;
+}
+
+.policy-page__sections {
+  display: grid;
+}
+
+.policy-page__sections article {
+  padding: 0 0 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgb(9 9 8 / 18%);
+}
+
+.policy-page__sections h2 {
+  margin: 0 0 .7rem;
+  font-size: clamp(1.55rem, 2.4vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.policy-page__sections p {
+  margin: 0;
+  max-width: 48rem;
+  color: #625e56;
+  line-height: 1.7;
+}
+
+.policy-page__note {
+  grid-column: 2;
+  margin: 0;
+  color: #777168;
+  font-size: .66rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+/* Footer now supports two navigation columns without becoming visually heavy. */
+.footer-v2__grid {
+  grid-template-columns: minmax(0,1.15fr) minmax(12rem,.8fr) minmax(9rem,.55fr) minmax(9rem,.55fr);
+}
+
+.footer-v2__quick {
+  align-content: start;
+}
+
+/* Render less below the fold while preserving layout space; improves long-page responsiveness. */
+.pcf-intro,
+.pcf-updates,
+.pcf-programmes,
+.pcf-projects,
+.pcf-signals,
+.pcf-people,
+.pcf-partners,
+.pcf-join,
+.partner-strip,
+.program-detail__statement,
+.program-detail__principles,
+.program-detail__projects,
+.program-detail__partners {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 850px;
+}
+
+@media (max-width: 56rem) {
+  .footer-v2__grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .policy-page {
+    grid-template-columns: 1fr;
+  }
+  .policy-page__intro {
+    position: static;
+  }
+  .policy-page__note {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 44rem) {
+  .institutional-invite__intro {
+    grid-template-columns: 1fr;
+  }
+
+  .institutional-invite__intro > p:last-child {
+    grid-column: 1;
+  }
+
+  .institutional-invite__intro h2 {
+    font-size: clamp(2.25rem, 10vw, 3.2rem);
+  }
+
+  .institutional-route {
+    min-height: 0;
+    grid-template-columns: 2.2rem minmax(0,1fr) auto;
+    gap: .75rem;
+    padding-block: 1.15rem;
+  }
+
+  .institutional-route h3 {
+    font-size: 1.45rem;
+  }
+
+  .institutional-route p {
+    font-size: .78rem;
+  }
+
+  .institutional-route i {
+    width: 2.35rem;
+  }
+
+  .institutional-invite__contact {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .institutional-invite__contact .pcf-button {
+    width: 100%;
+  }
+
+  .pcf-join__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .pcf-join__actions .pcf-button {
+    width: 100%;
+  }
+
+  .footer-v2__grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .policy-page {
+    gap: 2.5rem;
+  }
+
+  .policy-page__sections h2 {
+    font-size: 1.65rem;
+  }
+
+  .program-detail__principle-grid h3 {
+    color: rgb(255 255 255 / 94%) !important;
+  }
+
+  .program-detail__principle-grid p {
+    color: rgb(255 255 255 / 74%) !important;
+  }
+}
