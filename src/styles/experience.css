@@ -412,7 +412,6 @@ body:has(.pcf-hero) .site-header.is-scrolled {
 @keyframes kultOrbit {
   to { transform: rotate(360deg); }
 }
-
 .partner-marquee {
   min-width: 0;
   overflow: hidden;
@@ -456,7 +455,6 @@ body:has(.pcf-hero) .site-header.is-scrolled {
 .partner-marquee__item--network,
 .partner-marquee__item--eu { width: clamp(22rem, 34vw, 29rem); }
 .partner-marquee__item--delegation { width: clamp(12rem, 19vw, 16rem); }
-
 @media (max-width: 44rem) {
   .partner-marquee__set {
     gap: .55rem;
@@ -473,7 +471,6 @@ body:has(.pcf-hero) .site-header.is-scrolled {
 @keyframes partnerFlow {
   to { transform: translateX(-50%); }
 }
-
 .menu-dialog[open] .menu-dialog__header,
 .menu-dialog[open] .menu-list li,
 .menu-dialog[open] .menu-dialog__foot,
@@ -679,7 +676,6 @@ body:has(.pcf-hero) .site-header.is-scrolled {
     transition: none;
   }
 }
-
 /* Hero reel — the KULT360 orbit becomes the moving stage, not a decorative line. */
 body:has(.pcf-hero) .brand-lockup {
   width: 9.2rem;
@@ -783,7 +779,6 @@ body:has(.pcf-hero) .brand-lockup__accent {
 @keyframes heroOrbit {
   to { transform: rotate(360deg); }
 }
-
 @media (max-width: 44rem) {
   body:has(.pcf-hero) .brand-lockup {
     width: 7.35rem;
@@ -824,7 +819,6 @@ body:has(.pcf-hero) .brand-lockup__accent {
     text-align: center;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .pcf-hero__orbit-art img,
   .pcf-hero__word-cycle b {
@@ -837,7 +831,6 @@ body:has(.pcf-hero) .brand-lockup__accent {
   }
   .pcf-hero__word-cycle b:first-child { opacity: 1; }
 }
-
 /* The supplied black/yellow PNG is the single source of truth in the header. */
 .brand-lockup__mark > img {
   position: absolute;
@@ -868,7 +861,6 @@ body:has(.place-essay__hero) .brand-lockup {
   max-width: none;
   filter: none !important;
 }
-
 /* The mobile control is the moving KULT360 orbit—no visible utility label. */
 .menu-trigger {
   width: 3.5rem;
@@ -891,7 +883,6 @@ body:has(.place-essay__hero) .brand-lockup {
   width: 100%;
   box-shadow: none;
 }
-
 /* Programs index: four precise, navigable focus areas. */
 .program-page-grid {
   gap: 1rem;
@@ -990,7 +981,6 @@ body:has(.place-essay__hero) .brand-lockup {
 .program-page-card:focus-visible p {
   color: inherit;
 }
-
 /* Immersive programme detail pages. */
 body:has(.program-detail__hero) .site-header,
 body:has(.theme-detail__hero) .site-header,
@@ -1313,7 +1303,6 @@ body:has(.place-essay__hero) .site-header.is-scrolled {
   font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1;
 }
-
 @media (max-width: 56rem) {
   .program-detail__orbit {
     right: -15rem;
@@ -1334,7 +1323,6 @@ body:has(.place-essay__hero) .site-header.is-scrolled {
     width: calc(50% - .6rem);
   }
 }
-
 @media (max-width: 44rem) {
   body:has(.pcf-hero) .brand-lockup,
   body:has(.program-detail__hero) .brand-lockup,
@@ -1425,7 +1413,6 @@ body:has(.place-essay__hero) .site-header.is-scrolled {
     border-top: 0;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .program-detail__orbit img {
     animation: none !important;
@@ -1436,8 +1423,6 @@ body:has(.place-essay__hero) .site-header.is-scrolled {
     transition: none;
   }
 }
-
-
 /* KULT360 FINAL HEADER + 3D WORD WHEEL POLISH */
 /* Larger desktop brand/navigation, with transparent inverse logo on dark hero and black mark on light pages. */
 .brand-lockup {
@@ -1482,7 +1467,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   border: 0;
 }
 .mobile-brand img { width: 100%; height: auto; }
-
 /* True cylindrical typography: one wheel rotates, words do not slide independently. */
 .pcf-hero__headline {
   align-items: baseline;
@@ -1559,7 +1543,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   border-radius: .08em;
   box-shadow: 0 0 0 .025em rgb(240 207 34 / 50%);
 }
-
 @media (max-width: 70rem) {
   .brand-lockup { width: 8.35rem; }
   .desktop-navigation a,
@@ -1569,7 +1552,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     width: 11.4ch;
   }
 }
-
 @media (max-width: 44rem) {
   body:has(.pcf-hero) .brand-lockup,
   body:has(.program-detail__hero) .brand-lockup,
@@ -1592,13 +1574,10 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     filter: blur(.65px) brightness(.7);
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .pcf-hero__word-cylinder { transition: none !important; }
   .pcf-hero__word { transition: none !important; }
 }
-
-
 /* KULT360 MOBILE MENU + TEAM RAIL REFINEMENT */
 /* Make the mobile menu read as a deliberate dark layer, with a clearer icon-only trigger. */
 @media (max-width: 56rem) {
@@ -1619,7 +1598,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
       inset 0 0 0 1px rgb(255 255 255 / 8%),
       0 0 0 1px rgb(240 207 34 / 8%);
   }
-
   .menu-trigger::before {
     content: '';
     position: absolute;
@@ -1633,7 +1611,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     box-shadow: 0 .32rem 0 var(--experience-yellow);
     opacity: .95;
   }
-
   .menu-trigger::after {
     content: '';
     position: absolute;
@@ -1646,34 +1623,28 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     background: var(--experience-yellow);
     box-shadow: 0 0 0 .2rem rgb(240 207 34 / 10%);
   }
-
   .menu-orbit--trigger {
     width: 2.95rem;
     opacity: .86;
   }
-
   .menu-dialog {
     background:
       linear-gradient(to bottom, rgb(8 8 7 / 4%) 0%, rgb(5 5 4 / 26%) 52%, rgb(0 0 0 / 70%) 100%),
       radial-gradient(circle at 78% 43%, rgb(251 167 26 / 13%), transparent 24rem),
       #060605;
   }
-
   .menu-dialog__panel {
     min-height: 100svh;
     padding-bottom: max(1.2rem, env(safe-area-inset-bottom));
   }
-
   .menu-dialog__body {
     min-height: 0;
   }
-
   .menu-dialog__signal {
     width: 100%;
     min-width: 0;
     overflow: visible;
   }
-
   .menu-dialog__signal p {
     width: 100%;
     max-width: none;
@@ -1686,7 +1657,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     letter-spacing: .115em;
     text-align: center;
   }
-
   .menu-dialog__foot {
     position: relative;
     z-index: 3;
@@ -1694,12 +1664,10 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     border-top: 1px solid rgb(255 255 255 / 10%);
   }
 }
-
 /* Directors/team: one compact horizontal rail, so the final member never drops alone. */
 .pcf-people .container-wide {
   overflow: visible;
 }
-
 .pcf-people-grid {
   display: grid;
   grid-auto-flow: column;
@@ -1717,37 +1685,29 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   scrollbar-width: thin;
   scrollbar-color: rgb(9 9 8 / 24%) transparent;
 }
-
 .pcf-people-grid::-webkit-scrollbar {
   height: 5px;
 }
-
 .pcf-people-grid::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .pcf-people-grid::-webkit-scrollbar-thumb {
   background: rgb(9 9 8 / 24%);
   border-radius: 999px;
 }
-
 .pcf-person-card {
   scroll-snap-align: start;
 }
-
 .pcf-person-card__media {
   aspect-ratio: 4 / 4.8;
 }
-
 .pcf-person-card__copy {
   min-height: 3.1rem;
 }
-
 @media (max-width: 44rem) {
   .pcf-people {
     padding-block: 3.8rem 4.2rem;
   }
-
   .pcf-people-grid {
     grid-auto-columns: min(61vw, 13.25rem);
     gap: .72rem;
@@ -1755,26 +1715,20 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     padding-right: 1rem;
     padding-bottom: .8rem;
   }
-
   .pcf-person-card {
     gap: .58rem;
   }
-
   .pcf-person-card__media {
     border-radius: 10px;
   }
-
   .pcf-person-card__copy strong {
     font-size: .86rem;
   }
-
   .pcf-person-card__copy span {
     font-size: .63rem;
     line-height: 1.3;
   }
 }
-
-
 /* KULT360 LOGO CANVAS CROP FIX */
 /* Source logo files include a large transparent 4200×3000 canvas.
    Crop that canvas in CSS so the complete horizontal lockup is visible,
@@ -1782,7 +1736,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
 .brand-lockup {
   width: clamp(8rem, 9vw, 8.8rem);
 }
-
 .brand-lockup__mark {
   position: relative;
   display: block;
@@ -1791,7 +1744,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   overflow: hidden;
   line-height: 0;
 }
-
 .brand-lockup__logo {
   position: absolute;
   left: 50%;
@@ -1802,17 +1754,14 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   transform: translate(-50%, -50%);
   object-fit: contain;
 }
-
 .brand-lockup__logo--dark {
   mix-blend-mode: normal;
 }
-
 @media (max-width: 70rem) {
   .brand-lockup {
     width: 8rem;
   }
 }
-
 @media (max-width: 44rem) {
   body:has(.pcf-hero) .brand-lockup,
   body:has(.program-detail__hero) .brand-lockup,
@@ -1821,15 +1770,11 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
     min-width: 7.35rem;
     overflow: visible;
   }
-
   .brand-lockup__mark {
     overflow: hidden;
   }
 }
-
-
 /* KULT360 FINAL MOBILE QA PASS 2026-09-25 */
-
 /* --- Brand lockup: correct source-canvas crop and correct inverse variant --- */
 .brand-lockup__mark > img.brand-lockup__logo {
   position: absolute;
@@ -1841,17 +1786,14 @@ body:has(.pcf-hero) .brand-lockup__logo--light { opacity: 1; }
   transform: translate(-50%, -50%);
   filter: none !important;
 }
-
 body:has(.program-detail__hero) .brand-lockup__logo--dark,
 body:has(.pcf-hero) .brand-lockup__logo--dark {
   opacity: 0 !important;
 }
-
 body:has(.program-detail__hero) .brand-lockup__logo--light,
 body:has(.pcf-hero) .brand-lockup__logo--light {
   opacity: 1 !important;
 }
-
 /* --- 3D wheel geometry: cancel cylinder radius at the parent so the front word
        lands exactly on the "Culture is" baseline instead of magnifying/shifting. --- */
 .pcf-hero__word-cylinder {
@@ -1859,35 +1801,29 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     translateZ(calc(-1 * var(--wheel-radius)))
     rotateX(var(--wheel-rotation)) !important;
 }
-
 .pcf-hero__word[data-depth='near'] {
   opacity: .12;
   filter: blur(.7px) brightness(.68);
 }
-
 .pcf-hero__word[data-depth='back'] {
   opacity: 0;
 }
-
 /* --- Programme hero: visible editorial watermark rather than near-black text --- */
 .program-detail__title-grid h1 {
   color: #f4f1e9 !important;
   text-shadow: 0 .08em .55em rgb(0 0 0 / 18%);
 }
-
 /* --- Mobile refinements from the visual QA screenshots --- */
 @media (max-width: 44rem) {
   .site-header__inner {
     min-height: 4.15rem !important;
   }
-
   body:has(.pcf-hero) .brand-lockup,
   body:has(.program-detail__hero) .brand-lockup,
   .brand-lockup {
     width: 7.35rem !important;
     min-width: 7.35rem !important;
   }
-
   /* Clear icon-only menu: preserve the orbit, add a restrained three-line cue. */
   .menu-trigger {
     width: 3.2rem !important;
@@ -1896,7 +1832,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     min-height: 3.2rem !important;
     padding: .14rem !important;
   }
-
   .menu-trigger::before {
     content: '' !important;
     position: absolute !important;
@@ -1914,7 +1849,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
       rgb(4 4 4 / 76%) !important;
     box-shadow: 0 0 0 1px rgb(240 207 34 / 30%) !important;
   }
-
   .menu-trigger::after {
     width: .4rem !important;
     height: .4rem !important;
@@ -1923,18 +1857,15 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     background: var(--experience-yellow) !important;
     box-shadow: 0 0 0 .18rem rgb(240 207 34 / 10%) !important;
   }
-
   /* Homepage hero must remain one sentence on mobile. */
   .pcf-hero__inner {
     padding-top: 5.15rem !important;
   }
-
   .pcf-hero__headline-wrap {
     display: flex !important;
     align-items: center !important;
     overflow: visible !important;
   }
-
   .pcf-hero__headline {
     display: flex !important;
     width: 100% !important;
@@ -1948,11 +1879,9 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     line-height: .92 !important;
     letter-spacing: -.058em !important;
   }
-
   html[lang='sq'] .pcf-hero__headline {
     font-size: clamp(1.82rem, 7.35vw, 2.35rem) !important;
   }
-
   .pcf-hero__prefix {
     flex: 0 0 auto !important;
     font-size: 1em !important;
@@ -1960,7 +1889,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     letter-spacing: inherit !important;
     text-transform: none !important;
   }
-
   .pcf-hero__word-cycle {
     --wheel-radius: 2.45rem !important;
     flex: 1 1 auto !important;
@@ -1971,21 +1899,17 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     perspective: 860px !important;
     perspective-origin: left 50% !important;
   }
-
   .pcf-hero__word-cylinder {
     inset: auto auto 0 0 !important;
     height: .94em !important;
   }
-
   .pcf-hero__word {
     line-height: .92 !important;
   }
-
   .pcf-hero__word[data-depth='near'] {
     opacity: .085 !important;
     filter: blur(.65px) brightness(.62) !important;
   }
-
   /* Editorial scale: strong, but not poster-sized on a phone. */
   .pcf-intro h2 {
     max-width: 17.5ch !important;
@@ -1993,85 +1917,70 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     line-height: 1.01 !important;
     letter-spacing: -.045em !important;
   }
-
   .pcf-programmes .pcf-section-head h2 {
     max-width: 14ch !important;
     font-size: clamp(2.2rem, 9.6vw, 3rem) !important;
     line-height: .96 !important;
   }
-
   .pcf-programme-card {
     min-height: 14.75rem !important;
   }
-
   .pcf-programme-card__body h3 {
     max-width: 13ch !important;
     font-size: clamp(1.65rem, 7.4vw, 2.05rem) !important;
     line-height: .96 !important;
   }
-
   /* Programs listing cards. */
   .program-page-card {
     min-height: 18.5rem !important;
     padding: 1.15rem !important;
     gap: 1.25rem !important;
   }
-
   .program-page-card h2 {
     max-width: 13ch !important;
     font-size: clamp(1.95rem, 8.7vw, 2.7rem) !important;
     line-height: .94 !important;
   }
-
   /* Programme detail hero: shorter header, legible watermark, calmer composition. */
   .program-detail__hero {
     min-height: 41rem !important;
   }
-
   .program-detail__hero-inner {
     padding-top: 5.35rem !important;
     padding-bottom: 1.15rem !important;
   }
-
   .program-detail__title-grid {
     gap: 1rem !important;
   }
-
   .program-detail__title-grid h1 {
     max-width: 10.5ch !important;
     font-size: clamp(2.75rem, 10.8vw, 3.85rem) !important;
     line-height: .88 !important;
     color: #f4f1e9 !important;
   }
-
   .program-detail__summary {
     max-width: 23rem !important;
     font-size: .96rem !important;
     line-height: 1.5 !important;
   }
-
   .program-detail__orbit {
     opacity: .32 !important;
   }
-
   /* Project archive: show image + information within one phone viewport more often. */
   .project-grid {
     gap: 2.25rem !important;
   }
-
   .project-card__media,
   .program-detail__project-grid .project-card__media {
     aspect-ratio: 16 / 10 !important;
     max-height: 18rem !important;
   }
-
   .project-card__media img,
   .program-detail__project-grid .project-card__media img {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
   }
-
   /* Menu lower half and footer information stay readable and within the viewport. */
   .menu-dialog {
     background:
@@ -2079,7 +1988,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
       radial-gradient(circle at 78% 42%, rgb(251 167 26 / 12%), transparent 21rem),
       #050504 !important;
   }
-
   .menu-dialog__signal p {
     white-space: normal !important;
     max-width: 18rem !important;
@@ -2087,15 +1995,11 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     line-height: 1.45 !important;
     letter-spacing: .105em !important;
   }
-
   .menu-dialog__foot {
     padding-bottom: max(.25rem, env(safe-area-inset-bottom)) !important;
   }
 }
-
-
 /* KULT360 MENU LOCK + LIQUID GLASS + WORD AUTOPLAY SUPPORT */
-
 /* Menu overlay keeps the exact same header geometry as the closed header.
    The layer is translucent so the page survives underneath as a dark liquid-glass field. */
 .menu-dialog {
@@ -2106,13 +2010,11 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
   -webkit-backdrop-filter: blur(30px) saturate(128%) contrast(104%);
   backdrop-filter: blur(30px) saturate(128%) contrast(104%);
 }
-
 .menu-dialog::backdrop {
   background: rgb(0 0 0 / 28%) !important;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-
 .menu-dialog__panel {
   min-height: 100svh !important;
   padding: 0 !important;
@@ -2120,7 +2022,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
   background:
     linear-gradient(118deg, rgb(255 255 255 / 4%), transparent 30%, rgb(240 207 34 / 3%) 63%, transparent 84%);
 }
-
 .menu-dialog__header {
   width: min(calc(100% - 1.25rem), 94rem);
   min-height: 4.15rem;
@@ -2131,7 +2032,6 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
   padding: 0 !important;
   border-bottom: 1px solid rgb(255 255 255 / 8%);
 }
-
 .mobile-brand {
   position: relative;
   width: 9.15rem !important;
@@ -2144,14 +2044,12 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
   overflow: visible !important;
   line-height: 0;
 }
-
 .mobile-brand img {
   width: 100% !important;
   max-width: none !important;
   height: auto !important;
   object-fit: contain;
 }
-
 .menu-close {
   width: 3.2rem !important;
   min-width: 3.2rem;
@@ -2173,34 +2071,28 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
   backdrop-filter: blur(14px);
   transform: none !important;
 }
-
 .menu-dialog__body,
 .menu-dialog__foot {
   width: min(calc(100% - 1.25rem), 94rem);
   margin-inline: auto;
 }
-
 .menu-dialog__body {
   flex: 1 1 auto;
   padding-block: clamp(2.2rem, 7vh, 5rem);
 }
-
 .menu-dialog__foot {
   padding-block: 1rem max(1rem, env(safe-area-inset-bottom));
 }
-
 /* Do not replay the header itself when the dialog opens: that caused the visible jump. */
 .menu-dialog[open] .menu-dialog__header {
   animation: none !important;
 }
-
 /* Keep menu opening stable: content can ease in, chrome stays pinned. */
 .menu-dialog[open] .menu-list li,
 .menu-dialog[open] .menu-dialog__foot,
 .menu-dialog[open] .menu-dialog__signal {
   animation-duration: .42s !important;
 }
-
 @media (max-width: 44rem) {
   .menu-dialog {
     background:
@@ -2209,33 +2101,25 @@ body:has(.pcf-hero) .brand-lockup__logo--light {
     -webkit-backdrop-filter: blur(34px) saturate(132%);
     backdrop-filter: blur(34px) saturate(132%);
   }
-
   .menu-dialog__header {
     min-height: 4.15rem !important;
   }
-
   .menu-dialog__body {
     padding-block: 2rem 1.6rem !important;
   }
-
   .menu-list a {
     min-height: 4.35rem !important;
   }
-
   .menu-dialog__signal {
     opacity: .22 !important;
   }
 }
-
-
 /* KULT360 INSTITUTIONAL CLARITY + PUBLIC POLICY PASS */
-
 /* Clear click language: cards, rows and actions always read as interactive. */
 :where(a,button,summary,[role='button']) {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
-
 a:is(
   .pcf-programme-card,
   .pcf-project-card,
@@ -2250,14 +2134,12 @@ a:is(
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-
 @media (hover:none) {
   :where(a,button,summary,[role='button']):focus:not(:focus-visible) {
     outline: none;
     box-shadow: none;
   }
 }
-
 .brand-lockup:focus-visible,
 .mobile-brand:focus-visible,
 .menu-trigger:focus-visible,
@@ -2268,7 +2150,6 @@ a:is(
     0 0 0 2px var(--pcf-paper),
     0 0 0 4px var(--experience-yellow);
 }
-
 a:is(
   .pcf-programme-card,
   .pcf-project-card,
@@ -2282,7 +2163,6 @@ a:is(
   outline: 2px solid var(--experience-yellow);
   outline-offset: 4px;
 }
-
 @media (hover:hover) and (pointer:fine) {
   a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.program-page-card,.project-card__link,.institutional-route) {
     transition:
@@ -2295,48 +2175,39 @@ a:is(
     transform: translateY(-3px);
   }
 }
-
 a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.program-page-card,.project-card__link,.institutional-route):active {
   transform: scale(.992);
 }
-
 /* Dark programme surfaces: informative copy is always legible.
    Decorative giant hero type may remain translucent; usable headings may not. */
 .program-detail__principles {
   color: #f6f3eb;
 }
-
 .program-detail__principle-grid article {
   color: rgb(255 255 255 / 92%);
 }
-
 .program-detail__principle-grid h3 {
   color: inherit;
   opacity: 1;
 }
-
 .program-detail__principle-grid p {
   color: rgb(255 255 255 / 72%);
   opacity: 1;
 }
-
 .program-detail__principle-grid article > span {
   color: var(--program-accent);
 }
-
 .program-detail__principle-grid article:hover,
 .program-detail__principle-grid article:focus-within {
   color: var(--pcf-ink);
   background: var(--program-accent);
 }
-
 .program-detail__principle-grid article:hover h3,
 .program-detail__principle-grid article:hover p,
 .program-detail__principle-grid article:focus-within h3,
 .program-detail__principle-grid article:focus-within p {
   color: var(--pcf-ink);
 }
-
 /* Institutional close on the homepage */
 .pcf-join__lede {
   width: min(100%, 43rem);
@@ -2345,45 +2216,38 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: 1.6;
   color: rgb(9 9 8 / 70%);
 }
-
 .pcf-join__actions {
   display: flex;
   flex-wrap: wrap;
   gap: .7rem;
   margin-top: 1.6rem;
 }
-
 .pcf-button--outline-dark {
   color: var(--pcf-ink);
   background: transparent;
   border-color: rgb(9 9 8 / 48%);
 }
-
 .pcf-button--outline-dark:hover,
 .pcf-button--outline-dark:focus-visible {
   color: #fff;
   background: var(--pcf-ink);
   border-color: var(--pcf-ink);
 }
-
 /* Get involved: three obvious routes instead of passive informational cards. */
 .institutional-invite {
   display: grid;
   gap: clamp(2.5rem, 5vw, 5rem);
   padding-block: clamp(4rem, 7vw, 7rem);
 }
-
 .institutional-invite__intro {
   display: grid;
   grid-template-columns: minmax(8rem,.25fr) minmax(0,1fr);
   gap: 1rem 2rem;
   align-items: start;
 }
-
 .institutional-invite__intro > p:first-child {
   padding-top: .45rem;
 }
-
 .institutional-invite__intro h2 {
   margin: 0;
   max-width: 14ch;
@@ -2391,7 +2255,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .92;
   letter-spacing: -.06em;
 }
-
 .institutional-invite__intro > p:last-child {
   grid-column: 2;
   width: min(100%, 43rem);
@@ -2400,11 +2263,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: 1rem;
   line-height: 1.65;
 }
-
 .institutional-invite__routes {
   border-top: 1px solid rgb(9 9 8 / 18%);
 }
-
 .institutional-route {
   min-height: 8.5rem;
   display: grid;
@@ -2416,28 +2277,24 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: inherit;
   text-decoration: none;
 }
-
 .institutional-route > span {
   color: #777168;
   font-size: .65rem;
   font-weight: 850;
   letter-spacing: .12em;
 }
-
 .institutional-route h3 {
   margin: 0;
   font-size: clamp(1.55rem, 2.5vw, 2.6rem);
   line-height: 1;
   letter-spacing: -.04em;
 }
-
 .institutional-route p {
   margin: .5rem 0 0;
   max-width: 43rem;
   color: #6a665f;
   line-height: 1.5;
 }
-
 .institutional-route i {
   width: 2.7rem;
   aspect-ratio: 1;
@@ -2448,18 +2305,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-style: normal;
   transition: transform .25s var(--experience-ease), background .25s ease, color .25s ease;
 }
-
 .institutional-route:hover {
   background: rgb(240 207 34 / 10%);
 }
-
 .institutional-route:hover i,
 .institutional-route:focus-visible i {
   color: var(--pcf-ink);
   background: var(--experience-yellow);
   transform: rotate(7deg);
 }
-
 .institutional-invite__contact {
   display: flex;
   align-items: center;
@@ -2470,20 +2324,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: var(--pcf-ink);
   color: #fff;
 }
-
 .institutional-invite__contact p {
   margin: 0;
   font-size: clamp(1.15rem, 2vw, 1.75rem);
   font-weight: 650;
   letter-spacing: -.025em;
 }
-
 .institutional-invite__contact .pcf-button--dark {
   background: #fff;
   color: var(--pcf-ink);
   border-color: #fff;
 }
-
 /* Public policy pages — institutional, readable, and deliberately restrained. */
 .section-intro--policy{
   padding-bottom:clamp(2.8rem,4.5vw,4.6rem);
@@ -2500,7 +2351,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .section-intro--policy .section-header__description{
   max-width:38rem;
 }
-
 .policy-page {
   position: relative;
   display: grid;
@@ -2637,16 +2487,13 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   .policy-page__sections h2 { font-size:clamp(1.35rem,6.4vw,1.75rem); }
   .policy-page__sections p { font-size:.94rem; line-height:1.72; }
 }
-
 /* Footer now supports two navigation columns without becoming visually heavy. */
 .footer-v2__grid {
   grid-template-columns: minmax(0,1.15fr) minmax(12rem,.8fr) minmax(9rem,.55fr) minmax(9rem,.55fr);
 }
-
 .footer-v2__quick {
   align-content: start;
 }
-
 /* Render less below the fold while preserving layout space; improves long-page responsiveness. */
 .pcf-intro,
 .pcf-updates,
@@ -2664,7 +2511,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   content-visibility: auto;
   contain-intrinsic-size: 1px 850px;
 }
-
 @media (max-width: 56rem) {
   .footer-v2__grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
@@ -2679,81 +2525,62 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     grid-column: 1;
   }
 }
-
 @media (max-width: 44rem) {
   .institutional-invite__intro {
     grid-template-columns: 1fr;
   }
-
   .institutional-invite__intro > p:last-child {
     grid-column: 1;
   }
-
   .institutional-invite__intro h2 {
     font-size: clamp(2.25rem, 10vw, 3.2rem);
   }
-
   .institutional-route {
     min-height: 0;
     grid-template-columns: 2.2rem minmax(0,1fr) auto;
     gap: .75rem;
     padding-block: 1.15rem;
   }
-
   .institutional-route h3 {
     font-size: 1.45rem;
   }
-
   .institutional-route p {
     font-size: .78rem;
   }
-
   .institutional-route i {
     width: 2.35rem;
   }
-
   .institutional-invite__contact {
     align-items: stretch;
     flex-direction: column;
   }
-
   .institutional-invite__contact .pcf-button {
     width: 100%;
   }
-
   .pcf-join__actions {
     display: grid;
     grid-template-columns: 1fr;
   }
-
   .pcf-join__actions .pcf-button {
     width: 100%;
   }
-
   .footer-v2__grid {
     grid-template-columns: 1fr !important;
   }
-
   .policy-page {
     gap: 2.5rem;
   }
-
   .policy-page__sections h2 {
     font-size: 1.65rem;
   }
-
   .program-detail__principle-grid h3 {
     color: rgb(255 255 255 / 94%) !important;
   }
-
   .program-detail__principle-grid p {
     color: rgb(255 255 255 / 74%) !important;
   }
 }
-
-
 /* KULT360 COMPACT FOOTER + PREDICTABLE MOBILE INTERACTIONS */
-
 /* Compact footer: contact + primary navigation, legal links live in the final line. */
 .footer-v2__compact {
   display: grid;
@@ -2763,17 +2590,14 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-block: clamp(1.5rem,3vw,2.4rem);
   border-top: 1px solid rgb(255 255 255 / 14%);
 }
-
 .footer-v2__contact {
   display: grid;
   gap: .55rem;
 }
-
 .footer-v2__contact p,
 .footer-v2__contact span {
   margin: 0;
 }
-
 .footer-v2__contact-primary {
   width: max-content;
   max-width: 100%;
@@ -2783,7 +2607,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.02em;
   text-decoration: none;
 }
-
 .footer-v2__contact-meta {
   display: flex;
   flex-wrap: wrap;
@@ -2792,19 +2615,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: .7rem;
   line-height: 1.45;
 }
-
 .footer-v2__contact-meta a {
   color: inherit;
   text-decoration: none;
 }
-
 .footer-v2__nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: .55rem;
 }
-
 .footer-v2__nav a {
   min-height: 2.7rem;
   display: inline-flex;
@@ -2821,12 +2641,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-transform: uppercase;
   transition: background .22s ease, color .22s ease, border-color .22s ease, transform .22s ease;
 }
-
 .footer-v2__nav a span {
   color: var(--experience-yellow);
   transition: transform .22s ease;
 }
-
 .footer-v2__nav a:hover,
 .footer-v2__nav a:focus-visible {
   color: var(--pcf-ink);
@@ -2834,13 +2652,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-color: var(--experience-yellow);
   transform: translateY(-2px);
 }
-
 .footer-v2__nav a:hover span,
 .footer-v2__nav a:focus-visible span {
   color: var(--pcf-ink);
   transform: translate(2px,-2px);
 }
-
 .footer-v2__bottom {
   display: flex;
   align-items: center;
@@ -2849,29 +2665,24 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-block: .95rem 1.15rem;
   border-top: 1px solid rgb(255 255 255 / 10%);
 }
-
 .footer-v2__legal {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: .3rem 1rem;
 }
-
 .footer-v2__legal a {
   color: rgb(255 255 255 / 52%);
   text-decoration: none;
   font-size: .62rem;
 }
-
 .footer-v2__legal a:hover,
 .footer-v2__legal a:focus-visible {
   color: var(--experience-yellow);
 }
-
 .footer-v2__grid {
   display: none !important;
 }
-
 /* One visual language for interaction: visible action, 44px touch size, stable tap feedback. */
 .pcf-button,
 .pcf-text-link,
@@ -2881,12 +2692,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .program-page-card__action {
   min-height: 2.75rem;
 }
-
 .pcf-button {
   position: relative;
   overflow: hidden;
 }
-
 .pcf-button i,
 .pcf-text-link::after,
 .pcf-mini-link i,
@@ -2896,18 +2705,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-person-card__copy i {
   transition: transform .2s var(--experience-ease);
 }
-
 .pcf-button:active,
 .footer-v2__nav a:active {
   transform: scale(.985);
 }
-
 /* Permanent cues on cards that otherwise rely too much on hover. */
 .pcf-update-list a {
   position: relative;
   padding-right: 3.4rem;
 }
-
 .pcf-update-list a::after,
 .pcf-story-card::after {
   content: '↗';
@@ -2921,18 +2727,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: 1;
   opacity: .72;
 }
-
 .pcf-update-list a::after {
   position: absolute;
   right: .15rem;
   top: 50%;
   transform: translateY(-50%);
 }
-
 .pcf-story-card {
   position: relative;
 }
-
 .pcf-story-card::after {
   position: absolute;
   right: .72rem;
@@ -2943,7 +2746,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-
 /* Person-card arrow is a control cue, not a decorative glyph. */
 .pcf-person-card__copy i {
   width: 2rem;
@@ -2953,7 +2755,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 28%);
   border-radius: 50%;
 }
-
 /* Mobile: predictable, visible and comfortably tappable without turning everything into giant buttons. */
 @media (max-width: 56rem) {
   .footer-v2__compact {
@@ -2961,55 +2762,44 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     gap: 1.4rem;
     padding-block: 1.45rem;
   }
-
   .footer-v2__nav {
     justify-content: flex-start;
   }
-
   .footer-v2__bottom {
     align-items: flex-start;
     flex-direction: column;
     gap: .7rem;
   }
-
   .footer-v2__legal {
     justify-content: flex-start;
   }
 }
-
 @media (max-width: 44rem) {
   .site-footer--v2 {
     padding-bottom: max(.25rem, env(safe-area-inset-bottom));
   }
-
   .footer-v2__top {
     padding-block: 1.1rem !important;
   }
-
   .footer-v2__tagline {
     display: none;
   }
-
   .footer-v2__compact {
     gap: 1rem;
     padding-block: 1rem 1.2rem;
   }
-
   .footer-v2__contact-primary {
     font-size: 1rem;
   }
-
   .footer-v2__contact-meta {
     gap: .25rem .7rem;
     font-size: .64rem;
   }
-
   .footer-v2__nav {
     display: grid;
     grid-template-columns: repeat(2,minmax(0,1fr));
     gap: .45rem;
   }
-
   .footer-v2__nav a {
     min-width: 0;
     min-height: 2.85rem;
@@ -3017,30 +2807,24 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding: .68rem .78rem;
     font-size: .62rem;
   }
-
   .footer-v2__nav a:last-child {
     grid-column: 1 / -1;
   }
-
   .footer-v2__bottom {
     padding-block: .8rem .95rem;
   }
-
   .footer-v2__bottom > span {
     font-size: .58rem;
   }
-
   .footer-v2__legal {
     gap: .32rem .8rem;
   }
-
   .footer-v2__legal a {
     min-height: 2rem;
     display: inline-flex;
     align-items: center;
     font-size: .58rem;
   }
-
   .pcf-button,
   .pcf-text-link,
   .pcf-mini-link,
@@ -3049,11 +2833,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   .program-page-card__action {
     min-height: 2.9rem;
   }
-
   .pcf-button {
     justify-content: space-between;
   }
-
   .pcf-text-link {
     width: max-content;
     max-width: 100%;
@@ -3061,7 +2843,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     align-items: center;
     padding-block: .45rem;
   }
-
   .pcf-programme-card .pcf-mini-link,
   .pcf-card-action,
   .card-inline-action,
@@ -3070,23 +2851,19 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding-top: .7rem;
     border-top-width: 1px;
   }
-
   .pcf-update-list a {
     min-height: 5.2rem;
     padding-right: 3rem;
   }
-
   .pcf-update-list a::after {
     width: 2rem;
     right: 0;
   }
-
   .pcf-story-card::after {
     width: 2rem;
     right: .55rem;
     bottom: .55rem;
   }
-
   .pcf-programme-card:active,
   .pcf-project-card:active,
   .pcf-story-card:active,
@@ -3098,12 +2875,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     transform: scale(.985) !important;
     filter: brightness(.97);
   }
-
   .pcf-person-card__copy i {
     width: 2.15rem;
     flex: 0 0 auto;
   }
-
   /* The visible action row and persistent arrow do the teaching;
      no extra "tap here" text is needed. */
   .pcf-mini-link,
@@ -3113,10 +2888,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     letter-spacing: .07em;
   }
 }
-
-
 /* KULT360 CONTENT DEPTH PASS — THEMES, PROJECTS, JOURNAL */
-
 /* ---------- Shared content language ---------- */
 .theme-detail,
 .project-detail-v2,
@@ -3124,32 +2896,27 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: var(--pcf-cream);
   color: var(--pcf-ink);
 }
-
 .theme-detail a,
 .project-detail-v2 a,
 .journal-detail-v2 a {
   text-underline-offset: .16em;
 }
-
 /* ---------- Themes ---------- */
 .programme-themes {
   padding-block: clamp(4rem,7vw,7rem);
 }
-
 .programme-themes__intro {
   width: min(100%, 46rem);
   margin: 0 0 2rem auto;
   color: #625e56;
   line-height: 1.65;
 }
-
 .programme-theme-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   border-top: 1px solid rgb(9 9 8 / 18%);
   border-left: 1px solid rgb(9 9 8 / 18%);
 }
-
 .programme-theme-grid > a {
   position: relative;
   min-height: 18rem;
@@ -3163,7 +2930,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   overflow: hidden;
 }
-
 .programme-theme-grid > a::before {
   content: '';
   position: absolute;
@@ -3173,14 +2939,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   transform-origin: left;
   transition: transform .3s var(--experience-ease);
 }
-
 .programme-theme-grid > a > span {
   color: #777168;
   font-size: .62rem;
   font-weight: 850;
   letter-spacing: .12em;
 }
-
 .programme-theme-grid h3 {
   margin: 0;
   max-width: 10ch;
@@ -3188,14 +2952,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .96;
   letter-spacing: -.045em;
 }
-
 .programme-theme-grid p {
   align-self: end;
   margin: 0;
   color: #666158;
   line-height: 1.5;
 }
-
 .programme-theme-grid i {
   justify-self: end;
   width: 2.45rem;
@@ -3206,12 +2968,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   font-style: normal;
 }
-
 .programme-theme-grid > a:hover,
 .programme-theme-grid > a:focus-visible {
   background: color-mix(in srgb,var(--theme-accent) 11%,var(--pcf-cream));
 }
-
 .initiative-link-card {
   min-height: 14rem;
   display: grid;
@@ -3222,18 +2982,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 20%);
   text-decoration: none;
 }
-
 .initiative-link-card h3 {
   margin-top: 0;
 }
-
 .initiative-link-card > span {
   font-size: .65rem;
   font-weight: 850;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .theme-detail__hero {
   position: relative;
   min-height: clamp(36rem,70svh,46rem);
@@ -3243,7 +3000,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     radial-gradient(circle at 78% 38%, color-mix(in srgb,var(--theme-accent) 17%, transparent), transparent 28rem),
     linear-gradient(145deg,#0b0b09,#11120f 48%,#050505);
 }
-
 .theme-detail__orbit {
   position: absolute;
   right: clamp(-10rem,-6vw,-5rem);
@@ -3254,13 +3010,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   transform: translateY(-50%);
   pointer-events: none;
 }
-
 .theme-detail__orbit img {
   width: 100%;
   height: auto;
   filter: hue-rotate(8deg) saturate(.8);
 }
-
 .theme-detail__hero-inner {
   position: relative;
   z-index: 2;
@@ -3270,7 +3024,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-top: 6.4rem;
   padding-bottom: 3rem;
 }
-
 .theme-detail__top {
   display: flex;
   justify-content: space-between;
@@ -3281,17 +3034,14 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .theme-detail__top a {
   color: inherit;
   text-decoration: none;
 }
-
 .theme-detail__title {
   align-self: center;
   max-width: 56rem;
 }
-
 .theme-detail__title > p:first-child {
   margin: 0 0 1rem;
   color: var(--theme-accent);
@@ -3300,7 +3050,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .13em;
   text-transform: uppercase;
 }
-
 .theme-detail__title h1 {
   margin: 0;
   max-width: 10ch;
@@ -3311,7 +3060,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-wrap: balance;
   overflow-wrap: normal;
 }
-
 .theme-detail__title > p:last-child {
   width: min(100%,42rem);
   margin: 1.6rem 0 0;
@@ -3319,14 +3067,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: clamp(1rem,1.4vw,1.25rem);
   line-height: 1.55;
 }
-
 .theme-detail__statement {
   display: grid;
   grid-template-columns: minmax(10rem,.25fr) minmax(0,1fr);
   gap: 2rem 4rem;
   padding-block: clamp(4.5rem,8vw,8rem);
 }
-
 .theme-detail__label {
   margin: .35rem 0 0;
   color: #777168;
@@ -3335,7 +3081,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-
 .theme-detail__statement h2 {
   margin: 0;
   max-width: 18ch;
@@ -3343,7 +3088,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .92;
   letter-spacing: -.06em;
 }
-
 .theme-detail__statement div > p {
   width: min(100%,44rem);
   margin: 1.5rem 0 0;
@@ -3351,12 +3095,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: 1rem;
   line-height: 1.7;
 }
-
 .theme-detail__lenses {
   color: #fff;
   background: #090908;
 }
-
 .theme-detail__section-head {
   display: flex;
   align-items: baseline;
@@ -3366,7 +3108,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-bottom: 1px solid currentColor;
   color: inherit;
 }
-
 .theme-detail__section-head p,
 .theme-detail__section-head span {
   margin: 0;
@@ -3375,17 +3116,14 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .theme-detail__section-head a {
   color: inherit;
   text-decoration: none;
 }
-
 .theme-detail__lens-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
 }
-
 .theme-detail__lens-grid article {
   min-height: 19rem;
   display: grid;
@@ -3394,17 +3132,14 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding: 1.35rem;
   border-right: 1px solid rgb(255 255 255 / 16%);
 }
-
 .theme-detail__lens-grid article:last-child {
   border-right: 0;
 }
-
 .theme-detail__lens-grid article > span {
   color: var(--theme-accent);
   font-size: .65rem;
   font-weight: 850;
 }
-
 .theme-detail__lens-grid h3 {
   align-self: center;
   margin: 0;
@@ -3413,23 +3148,19 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.052em;
   color: #f4f1e9;
 }
-
 .theme-detail__lens-grid p {
   margin: 0;
   color: rgb(255 255 255 / 68%);
   line-height: 1.55;
 }
-
 .theme-detail__programs,
 .theme-detail__projects {
   padding-block: clamp(4rem,7vw,7rem);
 }
-
 .theme-detail__program-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
 }
-
 .theme-detail__program-grid a {
   min-height: 10rem;
   display: grid;
@@ -3441,23 +3172,19 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 18%);
   text-decoration: none;
 }
-
 .theme-detail__program-grid a + a {
   border-left: 0;
 }
-
 .theme-detail__program-grid span {
   color: var(--program-accent);
   font-size: .65rem;
   font-weight: 850;
 }
-
 .theme-detail__program-grid strong {
   max-width: 17ch;
   font-size: clamp(1.3rem,2.2vw,2.1rem);
   line-height: 1;
 }
-
 .theme-detail__program-grid i {
   width: 2.5rem;
   aspect-ratio: 1;
@@ -3467,20 +3194,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   font-style: normal;
 }
-
 .theme-detail__project-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
-
 .theme-detail__next {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   padding-block: 4rem;
 }
-
 .theme-detail__next a {
   min-height: 9rem;
   display: grid;
@@ -3491,12 +3215,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 18%);
   text-decoration: none;
 }
-
 .theme-detail__next a + a {
   border-left: 0;
   text-align: right;
 }
-
 .theme-detail__next span {
   color: #706b62;
   font-size: .62rem;
@@ -3504,23 +3226,19 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .theme-detail__next strong {
   font-size: clamp(1.25rem,2vw,1.9rem);
   line-height: 1;
 }
-
 /* Programme -> theme links */
 .program-detail__themes {
   padding-block: 4.5rem;
 }
-
 .program-detail__theme-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   margin-top: 1.3rem;
 }
-
 .program-detail__theme-grid a {
   min-height: 13rem;
   position: relative;
@@ -3533,11 +3251,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 18%);
   text-decoration: none;
 }
-
 .program-detail__theme-grid a + a {
   border-left: 0;
 }
-
 .program-detail__theme-grid a::before {
   content:'';
   position:absolute;
@@ -3545,19 +3261,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   height:3px;
   background:var(--theme-accent);
 }
-
 .program-detail__theme-grid span {
   color: #777168;
   font-size: .62rem;
   font-weight: 850;
 }
-
 .program-detail__theme-grid strong {
   font-size: clamp(1.4rem,2.4vw,2.3rem);
   line-height: 1;
   letter-spacing: -.035em;
 }
-
 .program-detail__theme-grid p {
   grid-column: 2;
   align-self: end;
@@ -3565,11 +3278,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #666158;
   line-height: 1.45;
 }
-
 .program-detail__theme-grid i {
   font-style: normal;
 }
-
 /* ---------- Project media intelligence ---------- */
 .project-card__media--poster,
 .project-card__media--archive {
@@ -3577,30 +3288,25 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     radial-gradient(circle at 50% 45%, rgb(240 207 34 / 7%), transparent 18rem),
     #ece8df;
 }
-
 .project-card__media--poster img,
 .project-card__media--archive img {
   object-fit: contain !important;
   padding: clamp(.6rem,1.6vw,1.1rem);
 }
-
 .project-card__media--photo img {
   object-fit: cover;
 }
-
 .project-detail-v2__hero {
   padding-top: clamp(7rem,11vw,10rem);
   padding-bottom: clamp(3rem,5vw,5rem);
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .project-detail-v2__hero-grid {
   display: grid;
   grid-template-columns: minmax(0,1fr) minmax(15rem,.28fr);
   gap: 2rem 5rem;
   align-items: end;
 }
-
 .project-detail-v2__back {
   display: inline-flex;
   margin-bottom: 3rem;
@@ -3611,7 +3317,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .project-detail-v2__eyebrow {
   margin: 0 0 .8rem;
   color: #6d685f;
@@ -3620,7 +3325,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-
 .project-detail-v2__heading h1 {
   margin: 0;
   max-width: 15ch;
@@ -3629,7 +3333,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.06em;
   text-wrap: balance;
 }
-
 .project-detail-v2__dek {
   width: min(100%,48rem);
   margin: 1.5rem 0 0;
@@ -3637,13 +3340,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: clamp(1rem,1.4vw,1.2rem);
   line-height: 1.6;
 }
-
 .project-detail-v2__facts {
   display: grid;
   gap: .75rem;
   margin: 0;
 }
-
 .project-detail-v2__facts div {
   display: grid;
   grid-template-columns: 4.2rem 1fr;
@@ -3651,34 +3352,28 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-top: .7rem;
   border-top: 1px solid rgb(9 9 8 / 18%);
 }
-
 .project-detail-v2__facts dt,
 .project-detail-v2__facts dd {
   margin: 0;
   font-size: .68rem;
 }
-
 .project-detail-v2__facts dt {
   color: #777168;
   font-weight: 800;
   text-transform: uppercase;
 }
-
 .project-detail-v2__facts dd {
   line-height: 1.4;
 }
-
 .project-detail-v2__media-stage {
   padding-block: clamp(1.5rem,4vw,4rem);
   background: #11110f;
 }
-
 .project-detail-v2__media-stage figure {
   display: grid;
   justify-items: center;
   margin-inline: auto;
 }
-
 .project-detail-v2__media-stage img {
   display: block;
   width: 100%;
@@ -3686,7 +3381,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   max-height: 75svh;
   object-fit: cover;
 }
-
 .project-detail-v2__media-stage--poster img,
 .project-detail-v2__media-stage--archive img {
   width: auto;
@@ -3697,7 +3391,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #f3efe7;
   box-shadow: 0 1.2rem 3rem rgb(0 0 0 / 24%);
 }
-
 .project-detail-v2__media-stage figcaption {
   width: min(100%,58rem);
   margin-top: .7rem;
@@ -3705,21 +3398,18 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: .62rem;
   letter-spacing: .05em;
 }
-
 .project-detail-v2__story {
   display: grid;
   grid-template-columns: minmax(8rem,.22fr) minmax(0,1fr);
   gap: 2rem 4rem;
   padding-block: clamp(4.5rem,8vw,8rem);
 }
-
 .project-detail-v2__section-label {
   display: flex;
   gap: .7rem;
   align-items: baseline;
   color: #777168;
 }
-
 .project-detail-v2__section-label span,
 .project-detail-v2__section-label p {
   margin: 0;
@@ -3728,7 +3418,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .project-detail-v2__story-copy h2 {
   margin: 0;
   max-width: 22ch;
@@ -3736,7 +3425,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .94;
   letter-spacing: -.055em;
 }
-
 .project-detail-v2__story-copy > p {
   width: min(100%,44rem);
   margin: 1.6rem 0 0;
@@ -3744,14 +3432,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: 1rem;
   line-height: 1.75;
 }
-
 .project-detail-v2__credits {
   margin-top: clamp(1.5rem,3vw,2.5rem);
   padding-block: clamp(1.6rem,3vw,2.4rem);
   border-top: 1px solid rgb(9 9 8 / 20%);
   border-bottom: 1px solid rgb(9 9 8 / 14%);
 }
-
 .project-detail-v2__credits-head {
   display: flex;
   align-items: baseline;
@@ -3759,7 +3445,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
-
 .project-detail-v2__credits-head p,
 .project-detail-v2__credits-head span {
   margin: 0;
@@ -3769,22 +3454,18 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .project-detail-v2__credits-head p {
   color: var(--pcf-ink);
 }
-
 .project-detail-v2__credits-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 1.2rem clamp(2rem,5vw,5rem);
 }
-
 .project-detail-v2__credit-group + .project-detail-v2__credit-group {
   border-left: 1px solid rgb(9 9 8 / 14%);
   padding-left: clamp(1.2rem,2.5vw,2.2rem);
 }
-
 .project-detail-v2__section-label-inline {
   margin: 0 0 .7rem;
   color: #777168;
@@ -3793,7 +3474,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .project-detail-v2__credits ul {
   list-style: none;
   display: grid;
@@ -3801,7 +3481,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   margin: 0;
   padding: 0;
 }
-
 .project-detail-v2__credits li {
   min-width: 0;
   border-top: 1px solid rgb(9 9 8 / 10%);
@@ -3809,11 +3488,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: 1.35;
   text-transform: none;
 }
-
 .project-detail-v2__credits li:last-child {
   border-bottom: 1px solid rgb(9 9 8 / 10%);
 }
-
 .project-detail-v2__credits li > span,
 .project-detail-v2__credits li > a {
   min-height: 2.55rem;
@@ -3825,23 +3502,19 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: inherit;
   text-decoration: none;
 }
-
 .project-detail-v2__credits li > a {
   transition: padding .2s ease, color .2s ease;
 }
-
 .project-detail-v2__credits li > a:hover,
 .project-detail-v2__credits li > a:focus-visible {
   padding-left: .35rem;
   color: #000;
 }
-
 .project-detail-v2__credits li i {
   flex: 0 0 auto;
   color: #777168;
   font-style: normal;
 }
-
 .project-detail-v2__section-head {
   display: flex;
   justify-content: space-between;
@@ -3850,7 +3523,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-bottom: .9rem;
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .project-detail-v2__section-head p,
 .project-detail-v2__section-head span,
 .project-detail-v2__section-head a {
@@ -3862,37 +3534,31 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .project-detail-v2__gallery,
 .project-detail-v2__themes,
 .project-detail-v2__related {
   padding-block: clamp(4rem,7vw,7rem);
 }
-
 .project-detail-v2__gallery > div:last-child {
   display: grid;
   grid-template-columns: 1.25fr .75fr;
   gap: 1rem;
   margin-top: 1rem;
 }
-
 .project-detail-v2__gallery img {
   width: 100%;
   height: 100%;
   min-height: 22rem;
   object-fit: cover;
 }
-
 .project-detail-v2__gallery img:first-child {
   grid-row: span 2;
 }
-
 .project-detail-v2__theme-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   margin-top: 1.1rem;
 }
-
 .project-detail-v2__theme-grid a {
   min-height: 8rem;
   display: grid;
@@ -3905,33 +3571,27 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   box-shadow: inset 0 3px 0 var(--theme-accent);
 }
-
 .project-detail-v2__theme-grid a + a {
   border-left: 0;
 }
-
 .project-detail-v2__theme-grid span {
   color: #777168;
   font-size: .62rem;
   font-weight: 850;
 }
-
 .project-detail-v2__theme-grid strong {
   font-size: clamp(1.15rem,1.7vw,1.6rem);
   line-height: 1;
 }
-
 .project-detail-v2__theme-grid i {
   font-style: normal;
 }
-
 .project-detail-v2__related-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 1rem;
   margin-top: 1.25rem;
 }
-
 .project-detail-v2__archive-note {
   display: flex;
   justify-content: space-between;
@@ -3941,21 +3601,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #777168;
   font-size: .65rem;
 }
-
 .project-detail-v2__archive-note p {
   margin: 0;
 }
-
 .project-detail-v2__archive-note a {
   color: inherit;
   font-weight: 800;
   text-decoration: none;
 }
-
 .project-detail-v2__next {
   padding-block: 2rem 5rem;
 }
-
 .project-detail-v2__next a {
   min-height: 10rem;
   display: grid;
@@ -3966,7 +3622,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #090908;
   text-decoration: none;
 }
-
 .project-detail-v2__next span {
   color: rgb(255 255 255 / 48%);
   font-size: .63rem;
@@ -3974,18 +3629,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .project-detail-v2__next strong {
   max-width: 24ch;
   font-size: clamp(1.7rem,3vw,3rem);
   line-height: .95;
 }
-
 /* ---------- Journal index ---------- */
 .journal-feature {
   padding-block: clamp(3rem,5vw,5rem);
 }
-
 .journal-feature__label {
   display: flex;
   gap: .7rem;
@@ -3993,7 +3645,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   margin-bottom: .9rem;
   color: #777168;
 }
-
 .journal-feature__label span,
 .journal-feature__label p {
   margin: 0;
@@ -4002,7 +3653,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .journal-feature__card {
   display: grid;
   grid-template-columns: minmax(0,1.15fr) minmax(18rem,.85fr);
@@ -4014,7 +3664,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 10px;
   text-decoration: none;
 }
-
 .journal-feature__media {
   min-height: 100%;
   display: grid;
@@ -4024,7 +3673,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #e9e5dc;
   border-right: 1px solid rgb(9 9 8 / 14%);
 }
-
 .journal-feature__media img {
   width: 100%;
   height: 100%;
@@ -4033,22 +3681,18 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   object-position: center;
   transition: transform .65s var(--experience-ease);
 }
-
 .journal-feature__card:hover .journal-feature__media img {
   transform: scale(1.012);
 }
-
 .journal-feature__copy {
   display: grid;
   align-content: end;
   gap: .85rem;
   padding: clamp(1.2rem,2.5vw,2rem);
 }
-
 .journal-feature__copy .meta {
   align-self: start;
 }
-
 .journal-feature__copy h2 {
   margin: 0;
   max-width: 14ch;
@@ -4059,17 +3703,14 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.05em;
   text-wrap: balance;
 }
-
 .journal-feature__card--title-long .journal-feature__copy h2 {
   font-size: clamp(1.8rem,2.8vw,2.85rem);
   line-height: .99;
 }
-
 .journal-feature__card--title-very-long .journal-feature__copy h2 {
   font-size: clamp(1.65rem,2.4vw,2.45rem);
   line-height: 1.01;
 }
-
 .journal-feature__copy > p:not(.meta) {
   margin: 0;
   max-width: 42rem;
@@ -4077,7 +3718,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: .91rem;
   line-height: 1.58;
 }
-
 .journal-feature__copy > span {
   margin-top: .3rem;
   font-size: .66rem;
@@ -4085,11 +3725,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .journal-library {
   padding-block: clamp(3.5rem,6vw,6rem);
 }
-
 .journal-library__head {
   display: grid;
   grid-template-columns: minmax(0,1fr) minmax(16rem,.4fr);
@@ -4097,7 +3735,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   align-items: end;
   margin-bottom: 1.6rem;
 }
-
 .journal-library__head h2 {
   margin: .35rem 0 0;
   max-width: 18ch;
@@ -4106,25 +3743,21 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .96;
   letter-spacing: -.052em;
 }
-
 .journal-library__head > p {
   margin: 0;
   color: #625e56;
   font-size: .9rem;
   line-height: 1.55;
 }
-
 .journal-index--editorial {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: .9rem;
 }
-
 .journal-index--editorial .journal-card {
   min-width: 0;
   border-top: 0;
 }
-
 .journal-index--editorial .journal-card__link {
   height: 100%;
   display: grid;
@@ -4137,7 +3770,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 16%);
   border-radius: 10px;
 }
-
 .journal-index--editorial .journal-card__media {
   aspect-ratio: 16/10;
   display: grid;
@@ -4150,7 +3782,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-bottom: 1px solid rgb(9 9 8 / 14%);
   border-radius: 0;
 }
-
 .journal-index--editorial .journal-card__media img {
   width: 100%;
   height: 100%;
@@ -4158,7 +3789,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   object-fit: contain;
   object-position: center;
 }
-
 .journal-index--editorial .journal-card__body {
   min-height: 11.8rem;
   display: grid;
@@ -4166,7 +3796,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: .48rem;
   padding: .9rem;
 }
-
 .journal-index--editorial .journal-card__body h3 {
   margin: 0;
   font-family: var(--font-sans);
@@ -4176,30 +3805,25 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.028em;
   text-wrap: pretty;
 }
-
 .journal-index--editorial .journal-card--title-long .journal-card__body h3 {
   font-size: clamp(1.03rem,1.25vw,1.3rem);
   line-height: 1.1;
 }
-
 .journal-index--editorial .journal-card--title-very-long .journal-card__body h3 {
   font-size: clamp(.96rem,1.12vw,1.18rem);
   line-height: 1.13;
 }
-
 .journal-index--editorial .card-inline-action {
   align-self: end;
   margin-top: auto;
   padding-top: .65rem;
   border-top: 1px solid rgb(9 9 8 / 12%);
 }
-
 /* ---------- Journal article ---------- */
 .journal-detail-v2__header {
   padding-top: clamp(6.3rem,8.5vw,8rem);
   padding-bottom: clamp(2.2rem,4vw,3.8rem);
 }
-
 .journal-detail-v2__back {
   display: inline-flex;
   margin-bottom: 2.2rem;
@@ -4210,7 +3834,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .journal-detail-v2__meta {
   display: flex;
   flex-wrap: wrap;
@@ -4218,7 +3841,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   align-items: center;
   margin-bottom: .9rem;
 }
-
 .journal-detail-v2__meta p,
 .journal-detail-v2__meta span {
   margin: 0;
@@ -4228,13 +3850,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .journal-detail-v2__meta span {
   padding: .35rem .5rem;
   border: 1px solid rgb(9 9 8 / 18%);
   border-radius: 999px;
 }
-
 .journal-detail-v2__header h1 {
   margin: 0;
   max-width: 20ch;
@@ -4245,19 +3865,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.052em;
   text-wrap: balance;
 }
-
 .journal-detail-v2__header--title-long h1 {
   max-width: 24ch;
   font-size: clamp(2.35rem,3.55vw,3.75rem);
   line-height: .97;
 }
-
 .journal-detail-v2__header--title-very-long h1 {
   max-width: 27ch;
   font-size: clamp(2.15rem,3.1vw,3.3rem);
   line-height: 1;
 }
-
 .journal-detail-v2__dek {
   width: min(100%,46rem);
   margin: 1.2rem 0 0;
@@ -4265,7 +3882,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: clamp(1rem,1.35vw,1.2rem);
   line-height: 1.58;
 }
-
 .journal-detail-v2__byline {
   display: flex;
   flex-wrap: wrap;
@@ -4274,7 +3890,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #706b62;
   font-size: .66rem;
 }
-
 .journal-detail-v2__cover {
   width: min(calc(100% - 2rem),86rem);
   display: grid;
@@ -4286,7 +3901,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #ebe7de;
   border: 1px solid rgb(9 9 8 / 14%);
 }
-
 .journal-detail-v2__cover img {
   display: block;
   width: auto;
@@ -4296,7 +3910,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   object-fit: contain;
   object-position: center;
 }
-
 .journal-detail-v2__body-wrap {
   width: min(calc(100% - 2rem),72rem);
   display: grid;
@@ -4304,7 +3917,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: 2rem 3.5rem;
   margin-inline: auto;
 }
-
 .journal-detail-v2__rail {
   position: sticky;
   top: 6rem;
@@ -4313,7 +3925,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: .45rem;
   color: #777168;
 }
-
 .journal-detail-v2__rail p,
 .journal-detail-v2__rail span {
   margin: 0;
@@ -4321,44 +3932,36 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .journal-detail-v2__rail p {
   color: var(--pcf-ink);
   font-weight: 850;
 }
-
 .journal-detail-v2__body {
   width: min(100%,45rem);
   margin: 0;
 }
-
 .journal-detail-v2__body > p:first-child {
   font-size: 1.08rem;
   line-height: 1.72;
 }
-
 .journal-detail-v2__body p,
 .journal-detail-v2__body li {
   font-size: 1rem;
   line-height: 1.72;
 }
-
 .journal-detail-v2__body h2 {
   max-width: 18ch;
   font-size: clamp(1.8rem,2.7vw,2.55rem);
   line-height: 1.02;
 }
-
 .journal-detail-v2__body h3 {
   max-width: 24ch;
   font-size: clamp(1.45rem,2vw,1.9rem);
   line-height: 1.06;
 }
-
 .journal-detail-v2__body span[style*="font-size"] {
   font-size: inherit !important;
 }
-
 .journal-detail-v2__body .rich-media {
   width: 100%;
   display: grid;
@@ -4368,7 +3971,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #eeeae2;
   border: 1px solid rgb(9 9 8 / 12%);
 }
-
 .journal-detail-v2__body .rich-media img {
   display: block;
   width: auto;
@@ -4378,13 +3980,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   object-fit: contain;
   object-position: center;
 }
-
 .journal-detail-v2__body .rich-gallery {
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: .6rem;
   align-items: stretch;
 }
-
 .journal-detail-v2__body .rich-gallery img {
   width: 100%;
   height: 100%;
@@ -4395,7 +3995,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #eeeae2;
   border: 1px solid rgb(9 9 8 / 12%);
 }
-
 .journal-detail-v2__source {
   display: flex;
   justify-content: space-between;
@@ -4406,21 +4005,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #706b62;
   font-size: .65rem;
 }
-
 .journal-detail-v2__source p {
   margin: 0;
 }
-
 .journal-detail-v2__source a {
   color: inherit;
   font-weight: 820;
   text-decoration: none;
 }
-
 .journal-detail-v2__related {
   padding-block: clamp(3.7rem,6vw,6rem);
 }
-
 .journal-detail-v2__section-head {
   display: flex;
   justify-content: space-between;
@@ -4429,7 +4024,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .journal-detail-v2__section-head p {
   margin: 0;
   color: #777168;
@@ -4438,14 +4032,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-
 .journal-detail-v2__section-head h2 {
   margin: .35rem 0 0;
   font-size: clamp(1.8rem,2.8vw,2.9rem);
   line-height: .98;
   letter-spacing: -.046em;
 }
-
 .journal-detail-v2__section-head a {
   color: inherit;
   font-size: .66rem;
@@ -4453,34 +4045,29 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .journal-detail-v2__related-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: .9rem;
   margin-top: 1rem;
 }
-
 .journal-detail-v2__related-grid .journal-card__link {
   gap: 0;
   margin: 0;
   padding: 0;
 }
-
 .journal-detail-v2__related-grid .journal-card__media {
   aspect-ratio: 16/10;
   display: grid;
   place-items: center;
   padding: .4rem;
 }
-
 .journal-detail-v2__related-grid .journal-card__media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
-
 @media (hover:hover) and (pointer:fine) {
   .programme-theme-grid > a:hover i,
   .program-detail__theme-grid a:hover i,
@@ -4489,84 +4076,67 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     transform: translate(2px,-2px);
   }
 }
-
 @media (max-width: 56rem) {
   .programme-theme-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
-
   .theme-detail__hero {
     min-height: 44rem;
   }
-
   .theme-detail__statement {
     grid-template-columns: minmax(7rem,.22fr) minmax(0,1fr);
   }
-
   .theme-detail__project-grid,
   .project-detail-v2__related-grid,
   .journal-index--editorial,
   .journal-detail-v2__related-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
-
   .theme-detail__project-grid > :last-child,
   .project-detail-v2__related-grid > :last-child,
   .journal-detail-v2__related-grid > :last-child {
     grid-column: 1 / -1;
     width: calc(50% - .5rem);
   }
-
   .project-detail-v2__hero-grid {
     grid-template-columns: 1fr;
   }
-
   .project-detail-v2__facts {
     grid-template-columns: repeat(3,minmax(0,1fr));
     gap: 1rem;
   }
-
   .project-detail-v2__facts div {
     grid-template-columns: 1fr;
   }
-
   .project-detail-v2__theme-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
-
   .journal-feature__card {
     grid-template-columns: 1fr;
   }
-
   .journal-feature__media {
     min-height: 24rem;
   }
-
   .journal-library__head {
     grid-template-columns: 1fr;
   }
-
   .journal-detail-v2__body-wrap {
     grid-template-columns: 1fr;
   }
-
   .journal-detail-v2__rail {
     position: static;
     display: flex;
     flex-wrap: wrap;
   }
 }
-
 @media (max-width: 44rem) {
   .programme-themes {
     padding-block: 3.5rem 4rem;
   }
-
   .programme-theme-grid {
     grid-template-columns: 1fr;
     border-left: 0;
   }
-
   .programme-theme-grid > a {
     min-height: 11.5rem;
     grid-template-columns: 2rem 1fr auto;
@@ -4574,36 +4144,29 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding: 1rem;
     border-left: 1px solid rgb(9 9 8 / 18%);
   }
-
   .programme-theme-grid h3 {
     font-size: 1.65rem;
   }
-
   .programme-theme-grid p {
     grid-column: 2 / -1;
     align-self: start;
     font-size: .78rem;
   }
-
   .programme-theme-grid i {
     grid-column: 3;
     grid-row: 1;
     width: 2.25rem;
   }
-
   .initiative-link-card {
     min-height: 10rem;
   }
-
   .theme-detail__hero {
     min-height: max(32rem, 66svh);
   }
-
   .theme-detail__hero-inner {
     padding-top: 5.3rem;
     padding-bottom: 2rem;
   }
-
   .theme-detail__orbit {
     right: -9rem;
     top: 48%;
@@ -4611,364 +4174,290 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     width: 26rem;
     transform: translateY(-50%);
   }
-
   .theme-detail__title h1 {
     font-size: clamp(2.65rem,10.8vw,3.6rem);
   }
-
   .theme-detail__title > p:last-child {
     font-size: .94rem;
   }
-
   .theme-detail__statement {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding-block: 4rem;
   }
-
   .theme-detail__statement h2 {
     font-size: clamp(2.2rem,9.4vw,3.15rem);
   }
-
   .theme-detail__lens-grid {
     grid-template-columns: 1fr;
   }
-
   .theme-detail__lens-grid article {
     min-height: 14rem;
     border-right: 0;
     border-bottom: 1px solid rgb(255 255 255 / 16%);
   }
-
   .theme-detail__lens-grid article:last-child {
     border-bottom: 0;
   }
-
   .theme-detail__lens-grid h3 {
     font-size: clamp(2.05rem,8.7vw,2.6rem);
   }
-
   .theme-detail__program-grid,
   .program-detail__theme-grid,
   .project-detail-v2__theme-grid {
     grid-template-columns: 1fr;
   }
-
   .theme-detail__program-grid a + a,
   .program-detail__theme-grid a + a,
   .project-detail-v2__theme-grid a + a {
     border-left: 1px solid rgb(9 9 8 / 18%);
     border-top: 0;
   }
-
   .theme-detail__project-grid,
   .project-detail-v2__related-grid,
   .journal-index--editorial,
   .journal-detail-v2__related-grid {
     grid-template-columns: 1fr;
   }
-
   .theme-detail__project-grid > :last-child,
   .project-detail-v2__related-grid > :last-child,
   .journal-detail-v2__related-grid > :last-child {
     grid-column: auto;
     width: auto;
   }
-
   .theme-detail__next {
     grid-template-columns: 1fr;
   }
-
   .theme-detail__next a + a {
     border-left: 1px solid rgb(9 9 8 / 18%);
     border-top: 0;
   }
-
   .project-card__media--poster,
   .project-card__media--archive {
     aspect-ratio: 4 / 3 !important;
     max-height: 15.5rem !important;
   }
-
   .project-card__media--poster img,
   .project-card__media--archive img {
     padding: .55rem !important;
   }
-
   .project-detail-v2__hero {
     padding-top: 5.6rem;
     padding-bottom: 2.6rem;
   }
-
   .project-detail-v2__back {
     margin-bottom: 2rem;
   }
-
   .project-detail-v2__heading h1 {
     font-size: clamp(2.45rem,9.8vw,3.45rem);
   }
-
   .project-detail-v2__dek {
     font-size: .95rem;
   }
-
   .project-detail-v2__facts {
     grid-template-columns: 1fr;
     gap: .35rem;
   }
-
   .project-detail-v2__facts div {
     grid-template-columns: 4.5rem 1fr;
   }
-
   .project-detail-v2__media-stage {
     padding-block: 1rem;
   }
-
   .project-detail-v2__media-stage--poster img,
   .project-detail-v2__media-stage--archive img {
     max-width: min(88vw,25rem);
     max-height: 58svh;
     padding: .45rem;
   }
-
   .project-detail-v2__story {
     grid-template-columns: 1fr;
     gap: 1.7rem;
     padding-block: 3.8rem;
   }
-
   .project-detail-v2__story-copy h2 {
     font-size: clamp(2rem,8.8vw,2.95rem);
   }
-
   .project-detail-v2__credits {
     margin-top: 1rem;
     padding-block: 1.35rem 1.55rem;
   }
-
   .project-detail-v2__credits-head {
     align-items: flex-start;
     margin-bottom: 1rem;
   }
-
   .project-detail-v2__credits-head span {
     max-width: 9rem;
     text-align: right;
   }
-
   .project-detail-v2__credits-grid {
     grid-template-columns: 1fr;
     gap: 1.35rem;
   }
-
   .project-detail-v2__credit-group + .project-detail-v2__credit-group {
     border-left: 0;
     padding-left: 0;
   }
-
   .project-detail-v2__credits li {
     font-size: .75rem;
   }
-
   .project-detail-v2__credits li > span,
   .project-detail-v2__credits li > a {
     min-height: 2.4rem;
     padding-block: .5rem;
   }
-
   .project-detail-v2__gallery > div:last-child {
     grid-template-columns: 1fr;
   }
-
   .project-detail-v2__gallery img {
     min-height: 0;
     aspect-ratio: 4/3;
   }
-
   .project-detail-v2__gallery img:first-child {
     grid-row: auto;
   }
-
   .project-detail-v2__theme-grid a {
     min-height: 6.7rem;
   }
-
   .project-detail-v2__archive-note,
   .journal-detail-v2__source {
     flex-direction: column;
   }
-
   .journal-feature {
     padding-block: 2.5rem 3.1rem;
   }
-
   .journal-feature__card {
     min-height: 0;
     grid-template-columns: 1fr;
   }
-
   .journal-feature__media {
     min-height: 0;
     aspect-ratio: 16/10;
     border-right: 0;
     border-bottom: 1px solid rgb(9 9 8 / 14%);
   }
-
   .journal-feature__media img {
     max-height: none;
   }
-
   .journal-feature__copy {
     padding: .95rem;
   }
-
   .journal-feature__copy h2 {
     max-width: 18ch;
     font-size: clamp(1.85rem,8.2vw,2.35rem);
     line-height: 1;
   }
-
   .journal-feature__card--title-long .journal-feature__copy h2 {
     font-size: clamp(1.65rem,7.3vw,2.1rem);
   }
-
   .journal-feature__card--title-very-long .journal-feature__copy h2 {
     font-size: clamp(1.5rem,6.7vw,1.9rem);
   }
-
   .journal-library {
     padding-block: 3rem;
   }
-
   .journal-library__head {
     gap: 1rem;
     margin-bottom: 1.25rem;
   }
-
   .journal-library__head h2 {
     max-width: 18ch;
     font-size: clamp(1.95rem,8.6vw,2.55rem);
     line-height: 1;
   }
-
   .journal-index--editorial {
     gap: .8rem;
   }
-
   .journal-index--editorial .journal-card__media {
     aspect-ratio: 16/10;
     max-height: none;
   }
-
   .journal-index--editorial .journal-card__body {
     min-height: 0;
     padding: .82rem;
   }
-
   .journal-index--editorial .journal-card__body h3 {
     font-size: clamp(1.08rem,5vw,1.35rem);
   }
-
   .journal-index--editorial .journal-card--title-long .journal-card__body h3 {
     font-size: clamp(1rem,4.6vw,1.22rem);
   }
-
   .journal-index--editorial .journal-card--title-very-long .journal-card__body h3 {
     font-size: clamp(.94rem,4.25vw,1.12rem);
   }
-
   .journal-detail-v2__header {
     padding-top: 5.2rem;
     padding-bottom: 2.2rem;
   }
-
   .journal-detail-v2__back {
     margin-bottom: 1.6rem;
   }
-
   .journal-detail-v2__header h1 {
     max-width: 22ch;
     font-size: clamp(2.15rem,8.8vw,2.85rem);
     line-height: .98;
   }
-
   .journal-detail-v2__header--title-long h1 {
     max-width: 25ch;
     font-size: clamp(1.95rem,8vw,2.55rem);
   }
-
   .journal-detail-v2__header--title-very-long h1 {
     max-width: 28ch;
     font-size: clamp(1.8rem,7.2vw,2.3rem);
   }
-
   .journal-detail-v2__dek {
     margin-top: 1rem;
     font-size: .96rem;
     line-height: 1.58;
   }
-
   .journal-detail-v2__cover {
     width: min(calc(100% - 1.25rem),94rem);
     margin-bottom: 2.5rem;
     padding: .35rem;
   }
-
   .journal-detail-v2__cover img {
     width: auto;
     max-width: 100%;
     max-height: 56svh;
     object-fit: contain;
   }
-
   .journal-detail-v2__body-wrap {
     width: min(calc(100% - 1.25rem),46rem);
     gap: 1.2rem;
   }
-
   .journal-detail-v2__body {
     font-size: .96rem;
     line-height: 1.7;
   }
-
   .journal-detail-v2__body h2 {
     max-width: 20ch;
     font-size: clamp(1.65rem,7.2vw,2.15rem);
   }
-
   .journal-detail-v2__body h3 {
     font-size: clamp(1.35rem,5.8vw,1.75rem);
   }
-
   .journal-detail-v2__body .rich-media {
     margin: 1.8rem 0 2.2rem;
     padding: .35rem;
   }
-
   .journal-detail-v2__body .rich-media img {
     max-height: 66svh;
   }
-
   .journal-detail-v2__body .rich-gallery {
     grid-template-columns: 1fr;
   }
-
   .journal-detail-v2__body .rich-gallery img {
     height: auto;
     max-height: 66svh;
   }
-
   .journal-detail-v2__related {
     padding-block: 3.2rem;
   }
-
   .journal-detail-v2__section-head {
     align-items: flex-start;
     flex-direction: column;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .journal-feature__media img,
   .programme-theme-grid > a,
@@ -4977,8 +4466,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     transition: none !important;
   }
 }
-
-
 /* KULT360 JOURNAL CARD FALLBACK */
 .journal-card__meta {
   display: flex;
@@ -4986,7 +4473,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   justify-content: space-between;
   gap: .7rem;
 }
-
 .journal-card__meta > span {
   flex: 0 0 auto;
   padding: .28rem .42rem;
@@ -4997,7 +4483,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-weight: 850;
   letter-spacing: .08em;
 }
-
 .journal-card__media--fallback {
   display: grid;
   place-items: center;
@@ -5006,7 +4491,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     repeating-radial-gradient(circle at 72% 38%, transparent 0 2.8rem, rgb(9 9 8 / 8%) 2.85rem 2.95rem),
     #e9e5dc;
 }
-
 .journal-card__fallback {
   color: var(--pcf-ink);
   font-size: clamp(2.8rem,7vw,5rem);
@@ -5014,14 +4498,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.075em;
   transform: rotate(-5deg);
 }
-
 @media (max-width:44rem) {
   .journal-card__meta > span {
     font-size: .52rem;
   }
 }
-
-
 /* KULT360 LAB + RESOURCES CONTENT */
 .lab-page,
 .resources-page {
@@ -5029,14 +4510,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: clamp(2.5rem,5vw,5rem);
   padding-block: clamp(4rem,7vw,7rem);
 }
-
 .lab-page__intro,
 .resources-page__intro {
   display: grid;
   grid-template-columns: minmax(8rem,.22fr) minmax(0,1fr);
   gap: 1rem 2rem;
 }
-
 .lab-page__intro h2,
 .resources-page__intro h2 {
   margin: 0;
@@ -5045,7 +4524,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .93;
   letter-spacing: -.06em;
 }
-
 .lab-page__intro > p:last-child,
 .resources-page__intro > p:last-child {
   grid-column: 2;
@@ -5054,14 +4532,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #625e56;
   line-height: 1.65;
 }
-
 .lab-page__modes {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   border-top: 1px solid rgb(9 9 8 / 18%);
   border-left: 1px solid rgb(9 9 8 / 18%);
 }
-
 .lab-page__modes article {
   min-height: 17rem;
   display: grid;
@@ -5071,7 +4547,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-right: 1px solid rgb(9 9 8 / 18%);
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .lab-page__modes span,
 .resources-page__grid span {
   color: #777168;
@@ -5079,7 +4554,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-weight: 850;
   letter-spacing: .1em;
 }
-
 .lab-page__modes h3,
 .resources-page__grid h3 {
   margin: 0;
@@ -5087,20 +4561,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .96;
   letter-spacing: -.045em;
 }
-
 .lab-page__modes p,
 .resources-page__grid p {
   margin: 0;
   color: #625e56;
   line-height: 1.55;
 }
-
 .lab-page__links {
   display: flex;
   flex-wrap: wrap;
   gap: .7rem;
 }
-
 .lab-page__links a {
   min-height: 2.8rem;
   display: inline-flex;
@@ -5114,12 +4585,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .resources-page__grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
 }
-
 .resources-page__grid a {
   min-height: 18rem;
   display: grid;
@@ -5131,20 +4600,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 18%);
   text-decoration: none;
 }
-
 .resources-page__grid a + a {
   border-left: 0;
 }
-
 .resources-page__grid h3 {
   align-self: start;
 }
-
 .resources-page__grid p {
   grid-column: 2;
   align-self: end;
 }
-
 .resources-page__grid i {
   width: 2.5rem;
   aspect-ratio: 1;
@@ -5154,48 +4619,38 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   font-style: normal;
 }
-
 @media (max-width:44rem) {
   .lab-page__intro,
   .resources-page__intro {
     grid-template-columns: 1fr;
   }
-
   .lab-page__intro > p:last-child,
   .resources-page__intro > p:last-child {
     grid-column: 1;
   }
-
   .lab-page__intro h2,
   .resources-page__intro h2 {
     font-size: clamp(2.3rem,10.5vw,3.4rem);
   }
-
   .lab-page__modes,
   .resources-page__grid {
     grid-template-columns: 1fr;
   }
-
   .lab-page__modes article {
     min-height: 12rem;
     border-left: 1px solid rgb(9 9 8 / 18%);
   }
-
   .resources-page__grid a {
     min-height: 12rem;
   }
-
   .resources-page__grid a + a {
     border-left: 1px solid rgb(9 9 8 / 18%);
     border-top: 0;
   }
 }
-
-
 /* =========================================================
    MOBILE TEAM RAIL + LEARNING THEME LONG-FORM
    ========================================================= */
-
 /* Learning-theme essays extend the existing circle/orbit visual language
    without changing the established page structure. */
 .theme-detail__articles {
@@ -5206,7 +4661,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-top: 1px solid rgb(9 9 8 / 14%);
   border-bottom: 1px solid rgb(9 9 8 / 14%);
 }
-
 .theme-detail__articles::after {
   content: '';
   position: absolute;
@@ -5221,17 +4675,14 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     0 0 0 6rem color-mix(in srgb, var(--theme-accent) 4%, transparent);
   pointer-events: none;
 }
-
 .theme-detail__articles > .container-wide {
   position: relative;
   z-index: 1;
 }
-
 .theme-detail__article-list {
   display: grid;
   border-top: 1px solid rgb(9 9 8 / 18%);
 }
-
 .theme-detail__article {
   display: grid;
   grid-template-columns: minmax(5.5rem, .32fr) minmax(0, 1fr);
@@ -5239,7 +4690,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-block: clamp(2.8rem, 6vw, 5rem);
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .theme-detail__article-mark {
   position: relative;
   width: clamp(4.5rem, 8vw, 7rem);
@@ -5250,7 +4700,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   background: color-mix(in srgb, var(--theme-accent) 24%, transparent);
 }
-
 .theme-detail__article-mark::after {
   content: '';
   position: absolute;
@@ -5258,7 +4707,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid color-mix(in srgb, var(--theme-accent) 72%, #090908);
   border-radius: 50%;
 }
-
 .theme-detail__article-mark span {
   position: relative;
   z-index: 1;
@@ -5266,11 +4714,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-weight: 850;
   letter-spacing: .1em;
 }
-
 .theme-detail__article-copy {
   max-width: 48rem;
 }
-
 .theme-detail__article-copy h2 {
   margin: .3rem 0 1.3rem;
   max-width: 12ch;
@@ -5280,29 +4726,24 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: -.055em;
   font-weight: 680;
 }
-
 .theme-detail__article-copy > p:not(.theme-detail__label) {
   max-width: 64ch;
   margin: 0;
   font-size: clamp(1rem, 1.15vw, 1.08rem);
   line-height: 1.7;
 }
-
 .theme-detail__article-copy > p:not(.theme-detail__label) + p {
   margin-top: 1rem;
 }
-
 /* The old "last odd director" layout conflicts with the horizontal rail.
    On phone, keep every director as one compact card and show three at once. */
 @media (max-width: 44rem) {
   .pcf-people {
     padding-block: 3.6rem 4rem;
   }
-
   .pcf-people .pcf-section-head h2 {
     font-size: clamp(2rem, 9vw, 2.8rem);
   }
-
   .pcf-people-grid {
     grid-auto-columns: calc((100% - 1.1rem) / 3);
     gap: .55rem;
@@ -5311,105 +4752,85 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding-bottom: .7rem;
     scroll-snap-type: x proximity;
   }
-
   .pcf-person-card {
     display: grid;
     grid-template-columns: none;
     align-items: stretch;
     gap: .42rem;
   }
-
   .pcf-person-card__media {
     aspect-ratio: 4 / 5;
     border-radius: 8px;
   }
-
   .pcf-person-card__copy {
     min-height: 2.6rem;
     padding-right: 1.25rem;
     gap: .08rem;
   }
-
   .pcf-person-card__copy strong {
     font-size: .72rem;
     line-height: 1.1;
   }
-
   .pcf-person-card__copy span {
     font-size: .52rem;
     line-height: 1.2;
   }
-
   .pcf-person-card__copy i {
     width: 1.4rem;
     font-size: .62rem;
   }
-
   .pcf-people-grid > .pcf-person-card:last-child:nth-child(odd) {
     grid-column: auto;
     grid-template-columns: none;
     align-items: stretch;
     gap: .42rem;
   }
-
   .pcf-people-grid > .pcf-person-card:last-child:nth-child(odd) .pcf-person-card__media {
     aspect-ratio: 4 / 5;
   }
-
   .pcf-people-grid > .pcf-person-card:last-child:nth-child(odd) .pcf-person-card__copy {
     padding-bottom: 0;
   }
-
   .theme-detail__articles {
     padding-block: 3.8rem;
   }
-
   .theme-detail__articles::after {
     right: -10rem;
     top: 7rem;
     width: 20rem;
     opacity: .65;
   }
-
   .theme-detail__article {
     grid-template-columns: 3.6rem minmax(0, 1fr);
     gap: 1rem;
     padding-block: 2.5rem;
   }
-
   .theme-detail__article-mark {
     width: 3.35rem;
   }
-
   .theme-detail__article-copy h2 {
     font-size: clamp(1.95rem, 9vw, 2.75rem);
   }
-
   .theme-detail__article-copy > p:not(.theme-detail__label) {
     font-size: .95rem;
     line-height: 1.62;
   }
 }
-
 @media (max-width: 24rem) {
   .pcf-people-grid {
     grid-auto-columns: calc((100% - .55rem) / 2);
   }
 }
-
-
 /* =========================================================
    SECTION HIERARCHY / WAYFINDING
    Clear visual chapters for long inner pages.
    ========================================================= */
-
 :root {
   --section-paper: #f6f3eb;
   --section-stone: #e7e2d8;
   --section-ink: #171715;
   --section-yellow: #f0cf22;
 }
-
 /* Article source is a compact transition band, not part of the prose. */
 .journal-detail-v2__source-band {
   margin-top: clamp(3.5rem, 7vw, 7rem);
@@ -5417,7 +4838,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-top: 1px solid rgb(9 9 8 / 18%);
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .journal-detail-v2__source {
   min-height: 8.5rem;
   margin-top: 0;
@@ -5428,12 +4848,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: 1.5rem 3rem;
   border-top: 0;
 }
-
 .journal-detail-v2__source > div {
   display: grid;
   gap: .5rem;
 }
-
 .journal-detail-v2__source-index {
   width: max-content;
   display: inline-flex;
@@ -5446,13 +4864,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-weight: 860;
   letter-spacing: .12em;
 }
-
 .journal-detail-v2__source p {
   max-width: 48rem;
   font-size: .82rem;
   line-height: 1.45;
 }
-
 .journal-detail-v2__source a {
   min-height: 2.8rem;
   display: inline-flex;
@@ -5463,14 +4879,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   white-space: nowrap;
   transition: background .2s ease, color .2s ease, border-color .2s ease;
 }
-
 .journal-detail-v2__source a:hover,
 .journal-detail-v2__source a:focus-visible {
   background: var(--pcf-ink);
   color: #fff;
   border-color: var(--pcf-ink);
 }
-
 /* Read-next is a new chapter. Full-bleed dark field makes the transition unmistakable. */
 .journal-detail-v2__related-band {
   position: relative;
@@ -5480,7 +4894,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #fff;
   border-bottom: 5px solid var(--section-yellow);
 }
-
 .journal-detail-v2__related-band::after {
   content: '';
   position: absolute;
@@ -5496,23 +4909,18 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     0 0 0 6rem rgb(255 255 255 / 2.5%);
   pointer-events: none;
 }
-
 .journal-detail-v2__related {
   padding-block: clamp(4.2rem, 8vw, 7.5rem);
 }
-
 .journal-detail-v2__related .journal-detail-v2__section-head {
   border-bottom-color: rgb(255 255 255 / 24%);
 }
-
 .journal-detail-v2__related .journal-detail-v2__section-head p {
   color: var(--section-yellow);
 }
-
 .journal-detail-v2__related .journal-detail-v2__section-head h2 {
   color: #fff;
 }
-
 .journal-detail-v2__related .journal-detail-v2__section-head > a {
   min-height: 2.75rem;
   display: inline-flex;
@@ -5522,11 +4930,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(255 255 255 / 34%);
   border-radius: 999px;
 }
-
 .journal-detail-v2__related .journal-card {
   min-width: 0;
 }
-
 .journal-detail-v2__related .journal-card__link {
   height: 100%;
   display: grid;
@@ -5537,28 +4943,23 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(255 255 255 / 18%);
   border-radius: 10px;
 }
-
 .journal-detail-v2__related .journal-card__media {
   border: 0;
   border-bottom: 1px solid rgb(9 9 8 / 14%);
   background: #ece7de;
 }
-
 .journal-detail-v2__related .journal-card__body {
   min-height: 12rem;
   padding: .9rem;
 }
-
 .journal-detail-v2__related .journal-card__meta {
   color: #716c63;
 }
-
 .journal-detail-v2__related .card-inline-action {
   margin-top: auto;
   padding-top: .7rem;
   border-top: 1px solid rgb(9 9 8 / 14%);
 }
-
 /* Reusable full-bleed chapter bands on theme/project detail pages. */
 .theme-detail__programs,
 .project-detail-v2__themes,
@@ -5566,7 +4967,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   position: relative;
   isolation: isolate;
 }
-
 .theme-detail__programs::before,
 .project-detail-v2__themes::before,
 .project-detail-v2__related::before {
@@ -5580,36 +4980,30 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-top: 1px solid rgb(9 9 8 / 14%);
   border-bottom: 1px solid rgb(9 9 8 / 14%);
 }
-
 .theme-detail__programs::before,
 .project-detail-v2__themes::before {
   background: var(--section-stone);
 }
-
 .project-detail-v2__related::before {
   background: color-mix(in srgb, var(--section-paper) 72%, var(--section-stone));
 }
-
 /* Section headers behave like signposts: label first, destination/action second. */
 .theme-detail__section-head,
 .project-detail-v2__section-head,
 .journal-detail-v2__section-head {
   position: relative;
 }
-
 .theme-detail__section-head > p:first-child,
 .project-detail-v2__section-head > p:first-child,
 .journal-detail-v2__section-head > div > p:first-child {
   letter-spacing: .12em;
 }
-
 /* Make next/previous navigation clearly different from content. */
 .theme-detail__next,
 .project-detail-v2__next {
   position: relative;
   isolation: isolate;
 }
-
 .theme-detail__next::before {
   content: '';
   position: absolute;
@@ -5621,105 +5015,84 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: #ded8cc;
   border-top: 1px solid rgb(9 9 8 / 18%);
 }
-
 .theme-detail__next a {
   background: rgb(255 255 255 / 34%);
   transition: background .2s ease, transform .25s var(--experience-ease);
 }
-
 .theme-detail__next a:hover,
 .theme-detail__next a:focus-visible {
   background: var(--section-paper);
 }
-
 @media (max-width: 56rem) {
   .journal-detail-v2__source {
     align-items: flex-start;
   }
-
   .journal-detail-v2__related-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .journal-detail-v2__related-grid > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
 }
-
 @media (max-width: 44rem) {
   .journal-detail-v2__source-band {
     margin-top: 3.2rem;
   }
-
   .journal-detail-v2__source {
     min-height: 0;
     display: grid;
     gap: 1rem;
     padding-block: 1.15rem 1.3rem;
   }
-
   .journal-detail-v2__source a {
     width: max-content;
     max-width: 100%;
   }
-
   .journal-detail-v2__related {
     padding-block: 3.8rem 4.2rem;
   }
-
   .journal-detail-v2__related-band::after {
     right: -10rem;
     top: 2rem;
     width: 20rem;
     opacity: .75;
   }
-
   .journal-detail-v2__section-head {
     align-items: start;
   }
-
   .journal-detail-v2__related .journal-detail-v2__section-head {
     display: grid;
     gap: 1.2rem;
   }
-
   .journal-detail-v2__related .journal-detail-v2__section-head h2 {
     max-width: 13ch;
     font-size: clamp(1.95rem, 8.6vw, 2.65rem);
     line-height: 1;
   }
-
   .journal-detail-v2__related-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
   .journal-detail-v2__related-grid > :last-child:nth-child(odd) {
     grid-column: auto;
   }
-
   .journal-detail-v2__related .journal-card__body {
     min-height: 0;
     padding: .82rem;
   }
-
   .theme-detail__programs,
   .project-detail-v2__themes,
   .project-detail-v2__related {
     padding-top: 3.7rem;
     padding-bottom: 3.7rem;
   }
-
   .theme-detail__next {
     padding-block: 2.5rem;
   }
 }
-
-
 /* =========================================================
    KULT360 WAYFINDING PASS — SITE-WIDE CHAPTER SYSTEM
    ========================================================= */
-
 /* Every major section reads as a chapter, never as accidental whitespace. */
 .pcf-intro,
 .pcf-updates,
@@ -5732,7 +5105,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   position: relative;
   border-top: 1px solid rgb(9 9 8 / 16%);
 }
-
 .pcf-intro { background: #f6f3eb; }
 .pcf-updates { background: #eee9df; }
 .pcf-programmes { background: #f6f3eb; }
@@ -5741,7 +5113,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-people { background: #f7f4ed; }
 .pcf-partners { background: #ebe5d9; }
 .pcf-join { border-top: 5px solid var(--section-yellow); }
-
 /* A subtle chapter rule tells the eye where the next section starts. */
 .pcf-updates::before,
 .pcf-programmes::before,
@@ -5755,7 +5126,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   height: 3px;
   background: var(--section-yellow);
 }
-
 /* Dark journal chapter keeps all local navigation legible. */
 .pcf-signals .pcf-label,
 .pcf-signals .pcf-signals__intro,
@@ -5773,7 +5143,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-signals .pcf-text-link {
   color: #fff;
 }
-
 /* Listing pages alternate section fields so About / Programs / Journal never blur together. */
 .listing-layout > .ruled-section {
   position: relative;
@@ -5796,7 +5165,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .listing-layout > .ruled-section:last-of-type::before {
   border-bottom: 1px solid rgb(9 9 8 / 14%);
 }
-
 /* Section kickers act as wayfinding bars, not decorative captions. */
 .section-kicker,
 .program-detail__section-head,
@@ -5815,7 +5183,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .theme-detail__section-head > p:first-child {
   letter-spacing: .12em;
 }
-
 /* Actions look clickable before hover — crucial on touch devices. */
 .section-kicker a,
 .program-detail__section-head a,
@@ -5842,7 +5209,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #fff;
   border-color: var(--pcf-ink);
 }
-
 /* Programme detail gets the same chapter rhythm as project and theme pages. */
 .program-detail__themes,
 .program-detail__projects,
@@ -5872,7 +5238,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .program-detail__partners {
   border-top: 5px solid var(--program-accent);
 }
-
 /* Project navigation is its own closing chapter. */
 .project-detail-v2__next::before {
   content: '';
@@ -5888,12 +5253,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .project-detail-v2__next a {
   border-color: rgb(255 255 255 / 22%);
 }
-
 /* Footer is always unmistakably the footer. */
 .site-footer--v2 {
   border-top: 5px solid var(--section-yellow);
 }
-
 /* Menu: primary navigation first, secondary exploration underneath. */
 .menu-dialog__nav-stack {
   display: grid;
@@ -5940,7 +5303,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   background: var(--section-yellow);
   border-color: var(--section-yellow);
 }
-
 /* Stronger chapter separation on small screens where vertical context is limited. */
 @media (max-width: 44rem) {
   .pcf-intro,
@@ -5952,7 +5314,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   .pcf-partners {
     border-top-width: 1px;
   }
-
   .pcf-updates::before,
   .pcf-programmes::before,
   .pcf-projects::before,
@@ -5961,18 +5322,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     width: 4.5rem;
     height: 3px;
   }
-
   .section-kicker,
   .program-detail__section-head,
   .project-detail-v2__section-head,
   .theme-detail__section-head {
     min-height: 0;
   }
-
   .section-kicker {
     padding-bottom: .7rem;
   }
-
   .section-kicker a,
   .program-detail__section-head a,
   .project-detail-v2__section-head a,
@@ -5980,39 +5338,30 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     min-height: 2.55rem;
     padding-inline: .7rem;
   }
-
   .menu-dialog__body {
     align-items: start;
     margin-block: 1.2rem auto;
   }
-
   .menu-dialog__nav-stack {
     gap: 1.2rem;
   }
-
   .menu-list a {
     min-height: 4.2rem;
   }
-
   .menu-dialog__quick {
     padding-top: .85rem;
   }
-
   .menu-dialog__quick a {
     min-height: 2.55rem;
     font-size: .62rem;
   }
-
   .site-footer--v2 {
     border-top-width: 4px;
   }
 }
-
-
 /* =========================================================
    FINAL MOBILE VISUAL QA — HERO / TEAM / LISTEN TO PLACE
    ========================================================= */
-
 /* Homepage hero: reduce dead space, keep the orbit calm, and make the word wheel
    feel anchored to the typography instead of floating inside the artwork. */
 .pcf-hero {
@@ -6021,18 +5370,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     radial-gradient(circle at 77% 47%, rgb(240 207 34 / 8%), transparent 23rem),
     linear-gradient(180deg, #0a0a08 0%, #0b0b08 58%, #090907 100%);
 }
-
 .pcf-hero__inner {
   min-height: 92svh;
   padding-top: 6.6rem;
   padding-bottom: 1.5rem;
 }
-
 .pcf-hero__headline-wrap {
   align-self: center;
   justify-content: flex-start;
 }
-
 .pcf-hero__headline {
   justify-content: flex-start;
   max-width: 74rem;
@@ -6040,7 +5386,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .9;
   letter-spacing: -.067em;
 }
-
 .pcf-hero__orbit-art {
   top: 51%;
   right: clamp(-9.5rem, -5vw, -4rem);
@@ -6051,7 +5396,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     0 0 0 1px rgb(240 207 34 / 8%),
     0 0 0 4rem rgb(240 207 34 / 1.6%);
 }
-
 .pcf-hero__orbit-art img {
   top: -35%;
   left: -65%;
@@ -6059,13 +5403,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   animation-duration: 52s;
   filter: saturate(.9) brightness(.92);
 }
-
 .pcf-hero::before {
   width: min(41rem, 48vw);
   right: -12rem;
   opacity: .5;
 }
-
 .pcf-hero::after {
   width: 4.4rem;
   left: auto;
@@ -6073,20 +5415,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   top: 24%;
   opacity: .55;
 }
-
 .pcf-hero__word-cylinder {
   transition: transform 1050ms cubic-bezier(.16,.82,.18,1) !important;
 }
-
 .pcf-hero__word[data-depth='near'] {
   opacity: .07 !important;
   filter: blur(.8px) brightness(.55) !important;
 }
-
 .pcf-hero__bottom {
   border-top-color: rgb(255 255 255 / 22%);
 }
-
 /* Team cards: three clean cards on phone, no text bleeding from partially visible cards. */
 .pcf-people-grid {
   scrollbar-width: none;
@@ -6094,110 +5432,90 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-people-grid::-webkit-scrollbar {
   display: none;
 }
-
 .pcf-person-card {
   min-width: 0;
   overflow: hidden;
   contain: layout paint;
 }
-
 .pcf-person-card__copy {
   min-width: 0;
 }
-
 .pcf-person-card__copy strong,
 .pcf-person-card__copy span {
   min-width: 0;
   max-width: 100%;
   overflow-wrap: anywhere;
 }
-
 @media (max-width: 44rem) {
   .pcf-hero {
     min-height: 86svh !important;
   }
-
   .pcf-hero__inner {
     min-height: 86svh !important;
     padding-top: 4.9rem !important;
     padding-bottom: 1.15rem !important;
   }
-
   .pcf-kicker {
     font-size: .58rem;
     letter-spacing: .105em;
   }
-
   .pcf-hero__headline-wrap {
     align-self: center !important;
     transform: translateY(-1.6rem);
   }
-
   .pcf-hero__headline {
     font-size: clamp(2rem, 8.05vw, 2.58rem) !important;
     gap: .065em !important;
     max-width: 100% !important;
   }
-
   html[lang='sq'] .pcf-hero__headline {
     font-size: clamp(1.78rem, 7.1vw, 2.25rem) !important;
   }
-
   .pcf-hero__word-cycle {
     --wheel-radius: 2.15rem !important;
     width: 10.8ch !important;
     perspective: 740px !important;
   }
-
   .pcf-hero__orbit-art {
     top: 50% !important;
     right: -8.8rem !important;
     width: 24.5rem !important;
     opacity: .52 !important;
   }
-
   .pcf-hero__orbit-art img {
     top: -30% !important;
     left: -58% !important;
     width: 214% !important;
     animation-duration: 58s !important;
   }
-
   .pcf-hero::before {
     width: 25rem;
     right: -12.5rem;
     opacity: .3;
   }
-
   .pcf-hero::after {
     width: 3.15rem;
     right: 8vw;
     top: 29%;
     left: auto;
   }
-
   .pcf-hero__bottom {
     gap: .9rem;
     padding-top: .9rem;
   }
-
   .pcf-hero__bottom > p {
     font-size: .76rem;
     line-height: 1.48;
   }
-
   .pcf-hero__actions {
     width: 100%;
   }
-
   .pcf-hero__actions .pcf-button:first-child {
     flex: 1 1 100%;
   }
-
   .pcf-people {
     overflow: hidden;
   }
-
   .pcf-people-grid {
     width: 100% !important;
     grid-auto-columns: calc((100% - 1rem) / 3) !important;
@@ -6208,35 +5526,29 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     scroll-padding-inline: 0 !important;
     scroll-snap-type: x mandatory !important;
   }
-
   .pcf-person-card {
     width: 100%;
     gap: .4rem !important;
   }
-
   .pcf-person-card__media {
     aspect-ratio: 4 / 5 !important;
     border-radius: 7px !important;
   }
-
   .pcf-person-card__copy {
     min-height: 3.2rem !important;
     padding-right: 0 !important;
     gap: .1rem !important;
   }
-
   .pcf-person-card__copy strong {
     padding-right: 1.2rem;
     font-size: .68rem !important;
     line-height: 1.08 !important;
   }
-
   .pcf-person-card__copy span {
     padding-right: .15rem;
     font-size: .49rem !important;
     line-height: 1.2 !important;
   }
-
   .pcf-person-card__copy i {
     top: -.05rem !important;
     right: 0 !important;
@@ -6246,7 +5558,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     border-color: rgb(9 9 8 / 22%) !important;
   }
 }
-
 /* Linked programme principle: visually reads as an invitation to go deeper. */
 .program-detail__principle-card {
   position: relative;
@@ -6258,11 +5569,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: inherit;
   border-right: 1px solid rgb(255 255 255 / 18%);
 }
-
 .program-detail__principle-card:last-child {
   border-right: 0;
 }
-
 .program-detail__principle-card--link {
   text-decoration: none;
   overflow: hidden;
@@ -6270,7 +5579,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     linear-gradient(180deg, rgb(134 173 135 / 0%), rgb(134 173 135 / 7%));
   transition: background .3s ease, transform .3s var(--experience-ease);
 }
-
 .program-detail__principle-card--link::after {
   content: '';
   position: absolute;
@@ -6283,7 +5591,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   box-shadow: 0 0 0 2rem rgb(134 173 135 / 5%);
   transition: transform .5s var(--experience-ease);
 }
-
 .program-detail__principle-card--link i {
   position: absolute;
   right: 1.2rem;
@@ -6296,18 +5603,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   font-style: normal;
 }
-
 .program-detail__principle-card--link:hover,
 .program-detail__principle-card--link:focus-visible {
   background: #86ad87;
   color: #091009;
 }
-
 .program-detail__principle-card--link:hover::after,
 .program-detail__principle-card--link:focus-visible::after {
   transform: translate(-1.2rem,-1.2rem) scale(1.08);
 }
-
 .program-detail__principle-grid .program-detail__principle-card h3 {
   align-self: end;
   color: #f4f1e9;
@@ -6319,7 +5623,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .93;
   letter-spacing: -.05em;
 }
-
 .program-detail__principle-grid .program-detail__principle-card p {
   margin: 0;
   max-width: 30rem;
@@ -6328,13 +5631,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: 1.55;
   opacity: .72;
 }
-
 /* Listen to Place — dedicated editorial page */
 .place-essay {
   background: #f4f0e6;
   color: var(--pcf-ink);
 }
-
 .place-essay__hero {
   position: relative;
   min-height: clamp(36rem, 70svh, 46rem);
@@ -6344,7 +5645,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     radial-gradient(circle at 78% 46%, rgb(134 173 135 / 16%), transparent 24rem),
     linear-gradient(145deg, #0a0b09, #11140f 56%, #090a08);
 }
-
 .place-essay__orbit {
   position: absolute;
   right: clamp(-10rem,-6vw,-5rem);
@@ -6355,7 +5655,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   transform: translateY(-50%);
   pointer-events: none;
 }
-
 .place-essay__orbit img {
   display: block;
   width: 100%;
@@ -6363,7 +5662,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   animation: heroOrbit 58s linear infinite;
   filter: hue-rotate(52deg) saturate(.55);
 }
-
 .place-essay__hero-inner {
   position: relative;
   z-index: 1;
@@ -6373,7 +5671,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-top: 7rem;
   padding-bottom: 2.1rem;
 }
-
 .place-essay__back {
   width: max-content;
   color: rgb(255 255 255 / 68%);
@@ -6383,12 +5680,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .place-essay__hero-copy {
   align-self: center;
   max-width: 68rem;
 }
-
 .place-essay__hero-copy > p:first-child,
 .place-essay__label,
 .place-essay__practice-head > p,
@@ -6400,7 +5695,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-
 .place-essay__hero-copy h1 {
   margin: .85rem 0 0;
   max-width: 8ch;
@@ -6410,7 +5704,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: #f4f1e9;
   text-wrap: balance;
 }
-
 .place-essay__hero-copy > p:last-child {
   width: min(100%, 46rem);
   margin: 1.6rem 0 0;
@@ -6418,21 +5711,18 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: clamp(1.05rem, 1.5vw, 1.3rem);
   line-height: 1.58;
 }
-
 .place-essay__index {
   justify-self: end;
   color: rgb(255 255 255 / 46%);
   font-size: .66rem;
   letter-spacing: .12em;
 }
-
 .place-essay__intro {
   display: grid;
   grid-template-columns: minmax(8rem,.22fr) minmax(0,1fr);
   gap: 2rem 4rem;
   padding-block: clamp(4.8rem, 8vw, 8rem);
 }
-
 .place-essay__intro h2 {
   margin: 0;
   max-width: 17ch;
@@ -6440,7 +5730,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .92;
   letter-spacing: -.06em;
 }
-
 .place-essay__intro div > p {
   width: min(100%, 47rem);
   margin: 1.5rem 0 0;
@@ -6448,13 +5737,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: 1.03rem;
   line-height: 1.72;
 }
-
 .place-essay__chapters {
   color: #fff;
   background: #11120f;
   border-top: 5px solid #86ad87;
 }
-
 .place-essay__chapter {
   display: grid;
   grid-template-columns: minmax(5rem,.2fr) minmax(0,1fr);
@@ -6462,7 +5749,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-block: clamp(3.8rem, 7vw, 6.5rem);
   border-bottom: 1px solid rgb(255 255 255 / 16%);
 }
-
 .place-essay__chapter-mark {
   width: clamp(4rem, 7vw, 6.5rem);
   aspect-ratio: 1;
@@ -6472,13 +5758,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   box-shadow: 0 0 0 .7rem rgb(134 173 135 / 4%);
 }
-
 .place-essay__chapter-mark span {
   color: #9fcea0;
   font-size: .66rem;
   font-weight: 850;
 }
-
 .place-essay__chapter h2 {
   margin: 0 0 1.5rem;
   max-width: 15ch;
@@ -6487,7 +5771,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .92;
   letter-spacing: -.055em;
 }
-
 .place-essay__chapter p {
   width: min(100%, 48rem);
   margin: 0;
@@ -6495,16 +5778,13 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: 1rem;
   line-height: 1.72;
 }
-
 .place-essay__chapter p + p {
   margin-top: 1rem;
 }
-
 .place-essay__practice {
   padding-block: clamp(4.8rem, 8vw, 8rem);
   background: #dfe8dc;
 }
-
 .place-essay__practice-head {
   display: grid;
   grid-template-columns: minmax(8rem,.22fr) minmax(0,1fr);
@@ -6512,7 +5792,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   align-items: end;
   margin-bottom: 2rem;
 }
-
 .place-essay__practice-head h2 {
   margin: 0;
   max-width: 12ch;
@@ -6520,14 +5799,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .92;
   letter-spacing: -.06em;
 }
-
 .place-essay__practice-grid {
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
   border-top: 1px solid rgb(9 9 8 / 20%);
   border-left: 1px solid rgb(9 9 8 / 20%);
 }
-
 .place-essay__practice-grid article {
   min-height: 18rem;
   display: grid;
@@ -6537,13 +5814,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-right: 1px solid rgb(9 9 8 / 20%);
   border-bottom: 1px solid rgb(9 9 8 / 20%);
 }
-
 .place-essay__practice-grid span {
   color: #537055;
   font-size: .62rem;
   font-weight: 850;
 }
-
 .place-essay__practice-grid h3 {
   align-self: end;
   margin: 0;
@@ -6552,19 +5827,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .96;
   letter-spacing: -.045em;
 }
-
 .place-essay__practice-grid p {
   margin: 0;
   color: #566057;
   font-size: .82rem;
   line-height: 1.55;
 }
-
 .place-essay__related {
   padding-block: clamp(4.8rem, 8vw, 7rem);
   background: #f5f1e8;
 }
-
 .place-essay__section-head {
   display: flex;
   align-items: center;
@@ -6574,7 +5846,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   margin-bottom: 1.3rem;
   border-bottom: 1px solid rgb(9 9 8 / 18%);
 }
-
 .place-essay__section-head a {
   color: inherit;
   font-size: .66rem;
@@ -6582,20 +5853,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .place-essay__related-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 1rem;
 }
-
 .place-essay__return {
   padding-block: 2.2rem;
   color: #fff;
   background: #11120f;
   border-top: 5px solid #86ad87;
 }
-
 .place-essay__return a {
   display: flex;
   align-items: center;
@@ -6603,7 +5871,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   color: inherit;
   text-decoration: none;
 }
-
 .place-essay__return span {
   width: 2.7rem;
   aspect-ratio: 1;
@@ -6612,11 +5879,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(255 255 255 / 28%);
   border-radius: 50%;
 }
-
 .place-essay__return strong {
   font-size: clamp(1.1rem, 2vw, 1.7rem);
 }
-
 @media (max-width: 56rem) {
   .place-essay__practice-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
@@ -6629,29 +5894,24 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     width: calc(50% - .5rem);
   }
 }
-
 @media (max-width: 44rem) {
   .program-detail__principle-card {
     min-height: 17rem !important;
     border-right: 0 !important;
     border-bottom: 1px solid rgb(255 255 255 / 18%);
   }
-
   .program-detail__principle-card--link i {
     width: 2rem;
     right: 1rem;
     top: 1rem;
   }
-
   .place-essay__hero {
     min-height: max(32rem, 66svh);
   }
-
   .place-essay__hero-inner {
     padding-top: 5.4rem;
     padding-bottom: 1.3rem;
   }
-
   .place-essay__orbit {
     right: -9rem;
     top: 48%;
@@ -6660,67 +5920,53 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     opacity: .22;
     transform: translateY(-50%);
   }
-
   .place-essay__hero-copy h1 {
     font-size: clamp(2.65rem, 10.6vw, 3.6rem);
   }
-
   .place-essay__hero-copy > p:last-child {
     max-width: 30rem;
     font-size: .98rem;
   }
-
   .place-essay__intro,
   .place-essay__practice-head {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-
   .place-essay__intro h2,
   .place-essay__practice-head h2 {
     font-size: clamp(2.15rem, 8.8vw, 3rem);
   }
-
   .place-essay__chapter {
     grid-template-columns: 3.6rem minmax(0,1fr);
     gap: 1rem;
     padding-block: 3.2rem;
   }
-
   .place-essay__chapter-mark {
     width: 3.25rem;
   }
-
   .place-essay__chapter h2 {
     font-size: clamp(2rem, 8.8vw, 2.85rem);
   }
-
   .place-essay__practice-grid,
   .place-essay__related-grid {
     grid-template-columns: 1fr;
   }
-
   .place-essay__practice-grid article {
     min-height: 13rem;
   }
-
   .place-essay__related-grid > :last-child {
     grid-column: auto;
     width: auto;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .place-essay__orbit img {
     animation: none !important;
   }
 }
-
-
 /* =========================================================
    HERO WHEEL + MOBILE RAIL FINAL REFINEMENT
    ========================================================= */
-
 /* The rotating word behaves like a real wheel:
    next terms approach from above with transparency, while the previous term
    fades downward and disappears. */
@@ -6728,7 +5974,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   overflow: visible !important;
   isolation: isolate;
 }
-
 .pcf-hero__word[data-position='front'] {
   z-index: 5 !important;
   color: var(--experience-yellow) !important;
@@ -6736,54 +5981,45 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   filter: blur(0) brightness(1) !important;
   text-shadow: 0 0 1.1rem rgb(240 207 34 / 8%);
 }
-
 .pcf-hero__word[data-position='incoming'] {
   z-index: 4 !important;
   color: rgb(240 207 34 / 72%) !important;
   opacity: .28 !important;
   filter: blur(.38px) brightness(.82) !important;
 }
-
 .pcf-hero__word[data-position='incoming-far'] {
   z-index: 3 !important;
   color: rgb(240 207 34 / 48%) !important;
   opacity: .09 !important;
   filter: blur(1.15px) brightness(.62) !important;
 }
-
 .pcf-hero__word[data-position='outgoing'] {
   z-index: 2 !important;
   color: rgb(240 207 34 / 34%) !important;
   opacity: .055 !important;
   filter: blur(1.35px) brightness(.52) !important;
 }
-
 .pcf-hero__word[data-position='back'] {
   z-index: 1 !important;
   opacity: 0 !important;
   filter: blur(3px) brightness(.4) !important;
 }
-
 .pcf-hero__word-cylinder {
   transition: transform 1150ms cubic-bezier(.14,.82,.16,1) !important;
 }
-
 /* Leadership order remains visually anchored at the start of the rail. */
 .pcf-people-grid {
   scroll-snap-type: x mandatory !important;
   scroll-behavior: smooth;
 }
-
 .pcf-person-card {
   scroll-snap-align: start !important;
   scroll-snap-stop: always;
 }
-
 .pcf-person-card:nth-child(1) .pcf-person-card__media,
 .pcf-person-card:nth-child(2) .pcf-person-card__media {
   border-color: rgb(9 9 8 / 28%);
 }
-
 /* Journal rail: on phone show one complete story at a time.
    No thin vertical-looking slice from the next card. */
 @media (max-width: 44rem) {
@@ -6797,13 +6033,11 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     scroll-snap-type: x mandatory !important;
     scrollbar-width: none !important;
   }
-
   .pcf-story-rail::-webkit-scrollbar {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
   }
-
   .pcf-story-card {
     width: 100% !important;
     min-width: 100% !important;
@@ -6811,35 +6045,28 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     scroll-snap-align: start !important;
     scroll-snap-stop: always;
   }
-
   .pcf-story-card__media {
     width: 100% !important;
     max-width: 100% !important;
   }
-
   .pcf-hero__word[data-position='incoming'] {
     opacity: .34 !important;
     filter: blur(.3px) brightness(.84) !important;
   }
-
   .pcf-hero__word[data-position='incoming-far'] {
     opacity: .105 !important;
     filter: blur(1px) brightness(.62) !important;
   }
-
   .pcf-hero__word[data-position='outgoing'] {
     opacity: .04 !important;
     filter: blur(1.5px) brightness(.48) !important;
   }
-
   .pcf-hero__word-cylinder {
     transition-duration: 1220ms !important;
   }
-
   .pcf-people-grid {
     scroll-behavior: smooth;
   }
-
   .pcf-person-card:nth-child(1)::before,
   .pcf-person-card:nth-child(2)::before {
     content: '';
@@ -6850,7 +6077,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     opacity: .8;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .pcf-hero__word[data-position='incoming'],
   .pcf-hero__word[data-position='incoming-far'],
@@ -6858,19 +6084,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     opacity: 0 !important;
   }
 }
-
-
 /* =========================================================
    LEADERSHIP FIRST — PRESIDENT + EXECUTIVE DIRECTOR
    ========================================================= */
-
 .pcf-leadership-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 1rem;
   margin-bottom: 2.25rem;
 }
-
 .pcf-person-card--leadership {
   grid-template-columns: minmax(0,.72fr) minmax(0,.28fr);
   align-items: end;
@@ -6880,28 +6102,23 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 18%);
   border-radius: 12px;
 }
-
 .pcf-person-card--leadership .pcf-person-card__media {
   aspect-ratio: 4 / 4.65;
 }
-
 .pcf-person-card--leadership .pcf-person-card__copy {
   min-height: 100%;
   align-content: end;
   padding: 0 2.1rem .2rem 0;
 }
-
 .pcf-person-card--leadership .pcf-person-card__copy strong {
   font-size: clamp(1.15rem,2vw,1.75rem);
   line-height: 1.04;
 }
-
 .pcf-person-card--leadership .pcf-person-card__copy span {
   margin-top: .45rem;
   font-size: .76rem;
   line-height: 1.35;
 }
-
 .pcf-directors-head {
   display: flex;
   align-items: center;
@@ -6911,25 +6128,21 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-top: 1.35rem;
   border-top: 1px solid rgb(9 9 8 / 16%);
 }
-
 .pcf-directors-head > span {
   color: var(--pcf-muted);
   font-size: .62rem;
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-
 .pcf-people-grid--directors {
   grid-auto-columns: clamp(13rem,18vw,16rem);
 }
-
 @media (max-width: 44rem) {
   .pcf-leadership-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
     gap: .65rem;
     margin-bottom: 1.55rem;
   }
-
   .pcf-person-card--leadership {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -6942,47 +6155,39 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     overflow: visible !important;
     contain: none !important;
   }
-
   .pcf-person-card--leadership .pcf-person-card__media {
     aspect-ratio: 4 / 5 !important;
     border-radius: 8px !important;
     border: 1px solid rgb(9 9 8 / 24%) !important;
   }
-
   .pcf-person-card--leadership .pcf-person-card__copy {
     min-height: 4.1rem !important;
     align-content: start !important;
     padding: 0 1.4rem 0 0 !important;
   }
-
   .pcf-person-card--leadership .pcf-person-card__copy strong {
     font-size: .78rem !important;
     line-height: 1.08 !important;
   }
-
   .pcf-person-card--leadership .pcf-person-card__copy span {
     margin-top: .12rem !important;
     font-size: .54rem !important;
     line-height: 1.22 !important;
   }
-
   .pcf-person-card--leadership .pcf-person-card__copy i {
     width: 1.15rem !important;
     height: 1.15rem !important;
     right: 0 !important;
     top: 0 !important;
   }
-
   .pcf-directors-head {
     margin-top: .35rem;
     margin-bottom: .65rem;
     padding-top: 1rem;
   }
-
   .pcf-directors-head > span {
     font-size: .52rem;
   }
-
   .pcf-people-grid--directors {
     grid-auto-columns: 44vw !important;
     gap: .6rem !important;
@@ -6993,26 +6198,20 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory !important;
   }
-
   .pcf-people-grid--directors .pcf-person-card {
     overflow: hidden !important;
     contain: layout paint !important;
   }
-
   .pcf-people-grid--directors .pcf-person-card__copy strong {
     font-size: .72rem !important;
   }
-
   .pcf-people-grid--directors .pcf-person-card__copy span {
     font-size: .52rem !important;
   }
 }
-
-
 /* =========================================================
    FINAL TEAM HIERARCHY — PRESIDENT + ONE DIRECTOR ROW
    ========================================================= */
-
 .pcf-leadership-head {
   display: flex;
   align-items: center;
@@ -7021,11 +6220,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-top: .9rem;
   border-top: 1px solid rgb(9 9 8 / 16%);
 }
-
 .pcf-leadership-single {
   margin-bottom: 2.35rem;
 }
-
 .pcf-person-card--president {
   display: grid;
   grid-template-columns: minmax(15rem,.42fr) minmax(0,.58fr);
@@ -7036,14 +6233,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 18%);
   border-radius: 12px;
 }
-
 .pcf-person-card--president .pcf-person-card__media {
   aspect-ratio: 4 / 4.65;
   border: 0;
   border-right: 1px solid rgb(9 9 8 / 14%);
   border-radius: 0;
 }
-
 .pcf-person-card--president .pcf-person-card__copy {
   min-height: 100%;
   display: grid;
@@ -7052,7 +6247,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: .7rem;
   padding: clamp(1.2rem,3vw,2.2rem);
 }
-
 .pcf-person-card--president .pcf-person-card__eyebrow {
   color: #7a746b;
   font-size: .62rem;
@@ -7060,7 +6254,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .pcf-person-card--president .pcf-person-card__copy strong {
   align-self: end;
   max-width: 9ch;
@@ -7068,7 +6261,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .92;
   letter-spacing: -.055em;
 }
-
 .pcf-person-card--president .pcf-person-card__copy p {
   margin: 0;
   max-width: 30rem;
@@ -7076,7 +6268,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: .88rem;
   line-height: 1.55;
 }
-
 .pcf-person-card--president .pcf-person-card__copy i {
   top: auto;
   right: 1.25rem;
@@ -7088,11 +6279,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border: 1px solid rgb(9 9 8 / 24%);
   border-radius: 50%;
 }
-
 .pcf-directors-head {
   margin-top: 0;
 }
-
 .pcf-people-grid--directors {
   display: grid !important;
   grid-template-columns: repeat(4,minmax(0,1fr)) !important;
@@ -7104,40 +6293,33 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   padding-right: 0 !important;
   overflow: visible !important;
 }
-
 .pcf-person-card--director {
   width: 100%;
   min-width: 0;
   overflow: hidden;
   contain: layout paint;
 }
-
 .pcf-person-card--director::before {
   display: none !important;
   content: none !important;
 }
-
 .pcf-person-card--director .pcf-person-card__media {
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: 8px;
 }
-
 .pcf-person-card--director .pcf-person-card__copy {
   min-height: 4.4rem;
   padding-right: 1.7rem;
 }
-
 .pcf-person-card--director .pcf-person-card__copy strong {
   font-size: .86rem;
   line-height: 1.08;
 }
-
 .pcf-person-card--director .pcf-person-card__copy span {
   font-size: .62rem;
   line-height: 1.25;
 }
-
 .pcf-person-card--director .pcf-person-card__copy i {
   width: 1.45rem;
   height: 1.45rem;
@@ -7147,18 +6329,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50%;
   font-size: .58rem;
 }
-
 @media (max-width: 44rem) {
   .pcf-leadership-head {
     min-height: 2.15rem;
     margin-bottom: .6rem;
     padding-top: .65rem;
   }
-
   .pcf-leadership-single {
     margin-bottom: 1.6rem;
   }
-
   .pcf-person-card--president {
     grid-template-columns: 43% minmax(0,57%) !important;
     min-height: 14.5rem;
@@ -7170,7 +6349,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     border-radius: 9px !important;
     contain: layout paint !important;
   }
-
   .pcf-person-card--president .pcf-person-card__media {
     height: 100%;
     min-height: 14.5rem;
@@ -7179,35 +6357,30 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     border-right: 1px solid rgb(9 9 8 / 14%) !important;
     border-radius: 0 !important;
   }
-
   .pcf-person-card--president .pcf-person-card__copy {
     min-height: 14.5rem !important;
     grid-template-rows: auto 1fr auto !important;
     gap: .5rem !important;
     padding: 1rem .9rem !important;
   }
-
   .pcf-person-card--president .pcf-person-card__eyebrow {
     padding-right: 0 !important;
     font-size: .47rem !important;
     line-height: 1.2 !important;
     letter-spacing: .075em;
   }
-
   .pcf-person-card--president .pcf-person-card__copy strong {
     align-self: end;
     padding-right: 0 !important;
     font-size: clamp(1.65rem,8vw,2.45rem) !important;
     line-height: .92 !important;
   }
-
   .pcf-person-card--president .pcf-person-card__copy p {
     display: block;
     padding-right: 1.2rem;
     font-size: .61rem;
     line-height: 1.4;
   }
-
   .pcf-person-card--president .pcf-person-card__copy i {
     right: .75rem !important;
     bottom: .75rem !important;
@@ -7216,12 +6389,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     height: 1.45rem !important;
     font-size: .54rem !important;
   }
-
   .pcf-directors-head {
     margin-top: 0;
     padding-top: .9rem;
   }
-
   .pcf-people-grid--directors {
     display: grid !important;
     grid-auto-flow: column !important;
@@ -7237,37 +6408,30 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     scroll-snap-type: x mandatory !important;
     scrollbar-width: none !important;
   }
-
   .pcf-people-grid--directors::-webkit-scrollbar {
     display: none !important;
   }
-
   .pcf-person-card--director {
     width: 100% !important;
     min-width: 0 !important;
     scroll-snap-align: start !important;
     scroll-snap-stop: always;
   }
-
   .pcf-person-card--director .pcf-person-card__media {
     aspect-ratio: 4 / 5 !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy {
     min-height: 4rem !important;
     padding-right: 1.25rem !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy strong {
     font-size: .72rem !important;
     line-height: 1.08 !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy span {
     font-size: .51rem !important;
     line-height: 1.22 !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy i {
     right: 0 !important;
     top: -.02rem !important;
@@ -7276,16 +6440,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     font-size: .49rem !important;
   }
 }
-
-
 /* =========================================================
    TEAM POLISH — COMPACT PRESIDENT + BALANCED DIRECTOR RAIL
    ========================================================= */
-
 .pcf-leadership-single {
   margin-bottom: 1.65rem !important;
 }
-
 .pcf-person-card--president {
   width: min(100%, 50rem) !important;
   max-width: 50rem !important;
@@ -7301,7 +6461,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 10px !important;
   contain: layout paint !important;
 }
-
 .pcf-person-card--president .pcf-person-card__media {
   grid-column: 1 !important;
   grid-row: 1 !important;
@@ -7314,14 +6473,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 0 !important;
   overflow: hidden !important;
 }
-
 .pcf-person-card--president .pcf-person-card__media img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: 50% 32% !important;
 }
-
 .pcf-person-card--president .pcf-person-card__copy {
   grid-column: 2 !important;
   grid-row: 1 !important;
@@ -7333,7 +6490,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   gap: .55rem !important;
   padding: 1.35rem 3.5rem 1.35rem 1.4rem !important;
 }
-
 .pcf-person-card--president .pcf-person-card__eyebrow {
   order: 1;
   margin: 0 !important;
@@ -7344,7 +6500,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   letter-spacing: .09em !important;
   text-transform: uppercase !important;
 }
-
 .pcf-person-card--president .pcf-person-card__copy strong {
   order: 2;
   align-self: auto !important;
@@ -7355,7 +6510,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   line-height: .94 !important;
   letter-spacing: -.05em !important;
 }
-
 .pcf-person-card--president .pcf-person-card__copy p {
   order: 3;
   width: min(100%, 29rem) !important;
@@ -7365,7 +6519,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   font-size: .76rem !important;
   line-height: 1.48 !important;
 }
-
 .pcf-person-card--president .pcf-person-card__copy i {
   top: 50% !important;
   right: 1.15rem !important;
@@ -7379,36 +6532,29 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   border-radius: 50% !important;
   font-size: .64rem !important;
 }
-
 .pcf-directors-head {
   margin-top: 0 !important;
   padding-top: 1rem !important;
   margin-bottom: .75rem !important;
 }
-
 .pcf-people-grid--directors {
   gap: .72rem !important;
 }
-
 .pcf-person-card--director .pcf-person-card__media {
   border-radius: 8px !important;
 }
-
 .pcf-person-card--director .pcf-person-card__copy {
   gap: .12rem !important;
 }
-
 @media (max-width: 44rem) {
   .pcf-leadership-head {
     min-height: 0 !important;
     margin-bottom: .48rem !important;
     padding-top: .5rem !important;
   }
-
   .pcf-leadership-single {
     margin-bottom: 1.2rem !important;
   }
-
   .pcf-person-card--president {
     width: 100% !important;
     max-width: none !important;
@@ -7417,7 +6563,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     grid-template-rows: 10.6rem !important;
     border-radius: 8px !important;
   }
-
   .pcf-person-card--president .pcf-person-card__media {
     grid-column: 1 !important;
     grid-row: 1 !important;
@@ -7426,11 +6571,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     min-height: 10.6rem !important;
     border-right: 1px solid rgb(9 9 8 / 14%) !important;
   }
-
   .pcf-person-card--president .pcf-person-card__media img {
     object-position: 50% 28% !important;
   }
-
   .pcf-person-card--president .pcf-person-card__copy {
     grid-column: 2 !important;
     grid-row: 1 !important;
@@ -7439,18 +6582,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     gap: .38rem !important;
     padding: .9rem 2.45rem .9rem .9rem !important;
   }
-
   .pcf-person-card--president .pcf-person-card__eyebrow {
     font-size: .44rem !important;
     line-height: 1.18 !important;
     letter-spacing: .072em !important;
   }
-
   .pcf-person-card--president .pcf-person-card__copy strong {
     font-size: clamp(1.45rem,7vw,1.95rem) !important;
     line-height: .94 !important;
   }
-
   .pcf-person-card--president .pcf-person-card__copy p {
     display: block !important;
     margin-top: .05rem !important;
@@ -7458,7 +6598,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     font-size: .54rem !important;
     line-height: 1.35 !important;
   }
-
   .pcf-person-card--president .pcf-person-card__copy i {
     top: 50% !important;
     right: .65rem !important;
@@ -7468,40 +6607,32 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     transform: translateY(-50%) !important;
     font-size: .48rem !important;
   }
-
   .pcf-directors-head {
     padding-top: .75rem !important;
     margin-bottom: .55rem !important;
   }
-
   .pcf-directors-head > span {
     font-size: .48rem !important;
   }
-
   .pcf-people-grid--directors {
     grid-auto-columns: 42vw !important;
     gap: .55rem !important;
     width: calc(100vw - .625rem) !important;
     padding-right: .7rem !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy {
     min-height: 3.7rem !important;
     padding-right: 1.18rem !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy strong {
     font-size: .7rem !important;
     line-height: 1.07 !important;
   }
-
   .pcf-person-card--director .pcf-person-card__copy span {
     font-size: .49rem !important;
     line-height: 1.2 !important;
   }
 }
-
-
 /* =========================================================
    FINAL KULT360 360-DIAL HERO
    Editorial statement connected to a precision 360 selector.
@@ -7838,7 +6969,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   box-shadow:0 0 0 .18rem rgb(240 207 34 / 8%),0 0 .85rem rgb(240 207 34 / 40%);
 }
 .pcf-hero--dial .pcf-hero__bottom{position:relative;z-index:10}
-
 @media(max-width:70rem){
   .pcf-hero__dial-stage{--dial-radius:29vw;right:-16vw;width:64vw}
   .pcf-hero__headline-wrap--dial{width:60vw}
@@ -7851,7 +6981,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     padding-top:4.85rem!important;
     padding-bottom:1.15rem!important;
   }
-
   /*
    * Mobile keeps the desktop relationship:
    * Culture is + active word + a short connector + one fixed selector dot.
@@ -7893,7 +7022,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     transform:none;
     background:transparent;
   }
-
   /* The selector endpoint never moves. The live word changes width and only
      trims the LEFT side of this connector, so there is no horizontal jump. */
   .pcf-hero__headline--dial::after{
@@ -7907,7 +7035,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     background:linear-gradient(90deg,rgb(240 207 34 / 8%),rgb(240 207 34 / 62%) 76%,var(--experience-yellow));
     box-shadow:0 0 .42rem rgb(240 207 34 / 6%);
   }
-
   /* Keep only roughly half of the instrument visible on phones. */
   .pcf-hero__dial-stage{
     --dial-radius:28vw;
@@ -7917,7 +7044,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     max-width:none;
   }
   .pcf-hero__dial-selector{left:25%}
-
   /* The fixed selector is the single endpoint of the sentence connector. */
   .pcf-hero__dial-beam{display:none}
   .pcf-hero__dial-arrow{
@@ -7932,7 +7058,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     box-shadow:0 0 0 .12rem rgb(240 207 34 / 7%),0 0 .65rem rgb(240 207 34 / 34%);
   }
   .pcf-hero__dial-item[data-dial-state='active'] .pcf-hero__dial-dot{opacity:0}
-
   .pcf-hero__dial-dot{width:.31rem}
   .pcf-hero__dial-item-upright{gap:.32rem}
   .pcf-hero__dial-label{
@@ -7943,7 +7068,6 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   .pcf-hero__dial-item[data-dial-state='near-next'] .pcf-hero__dial-label{opacity:.13}
   .pcf-hero__dial-item[data-dial-state='far-prev'] .pcf-hero__dial-label,
   .pcf-hero__dial-item[data-dial-state='far-next'] .pcf-hero__dial-label{opacity:.025}
-
   .pcf-hero__dial-core{
     width:41%;
     border-width:.56rem;
@@ -7954,11 +7078,9 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
       radial-gradient(circle at 108% 44%,transparent 0 12.5rem,rgb(255 255 255 / 1.25%) 12.58rem 12.65rem,transparent 12.74rem);
   }
 }
-
 @media(prefers-reduced-motion:reduce){
   .pcf-hero__dial-rotor,.pcf-hero__dial-item-upright,.pcf-hero__dial-live{transition-duration:1ms!important}
 }
-
 /* Partners — balanced editorial logo band */
 @media(min-width:68.01rem){
   .pcf-partners{
