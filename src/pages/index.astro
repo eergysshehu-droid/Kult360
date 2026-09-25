@@ -304,32 +304,33 @@ const heroWordStep = 360 / heroWords.length;
 
   if (wheel && cylinder && words.length) {
     const count = words.length;
-    const step = 360 / count;
     let active = 0;
     let wheelLocked = false;
     let autoplayTimer = 0;
+    let transitionTimer = 0;
+    const transitionMs = 1080;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const transitionMs = 1280;
-    let transitionTimer = 0;
-
     const paintIdle = () => {
-      cylinder.style.setProperty('--wheel-rotation', `${-active * step}deg`);
+      cylinder.style.transform = 'none';
       words.forEach((word, index) => {
-        word.dataset.position = index === active ? 'front' : 'back';
+        word.style.transform = 'translate3d(0,0,0) scale(1)';
+        word.dataset.wordState = index === active ? 'active' : 'hidden';
         delete word.dataset.transition;
+        delete word.dataset.direction;
       });
       if (live) live.textContent = words[active]?.textContent || '';
     };
 
     const scheduleAutoplay = () => {
       window.clearTimeout(autoplayTimer);
-      if (reducedMotion || document.hidden) return;
-      autoplayTimer = window.setTimeout(() => rotate(1), 3900);
+      if (reducedMotion || document.hidden || wheelLocked) return;
+      autoplayTimer = window.setTimeout(() => rotate(1), 4100);
     };
 
     const rotate = (direction) => {
       if (wheelLocked) return;
+
       const outgoingIndex = active;
       const incomingIndex = (active + direction + count) % count;
 
@@ -341,28 +342,29 @@ const heroWordStep = 360 / heroWords.length;
       }
 
       wheelLocked = true;
-      window.clearTimeout(transitionTimer);
       window.clearTimeout(autoplayTimer);
+      window.clearTimeout(transitionTimer);
 
       words.forEach((word, index) => {
-        word.dataset.position = 'back';
+        word.style.transform = 'translate3d(0,0,0) scale(1)';
+        word.dataset.wordState = 'hidden';
         delete word.dataset.transition;
+        delete word.dataset.direction;
+
         if (index === outgoingIndex) {
-          word.dataset.position = 'front';
-          word.dataset.transition = 'outgoing';
+          word.dataset.wordState = 'active';
+          word.dataset.transition = 'out';
+          word.dataset.direction = direction > 0 ? 'forward' : 'backward';
         }
+
         if (index === incomingIndex) {
-          word.dataset.transition = 'incoming';
+          word.dataset.wordState = 'hidden';
+          word.dataset.transition = 'in';
+          word.dataset.direction = direction > 0 ? 'forward' : 'backward';
         }
       });
 
       active = incomingIndex;
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          cylinder.style.setProperty('--wheel-rotation', `${-active * step}deg`);
-        });
-      });
 
       transitionTimer = window.setTimeout(() => {
         paintIdle();
@@ -382,12 +384,9 @@ const heroWordStep = 360 / heroWords.length;
     if (finePointer) {
       hero?.addEventListener('wheel', (event) => {
         if (reducedMotion || wheelLocked || Math.abs(event.deltaY) < 18) return;
-        wheelLocked = true;
         rotate(event.deltaY > 0 ? 1 : -1);
-        window.setTimeout(() => { wheelLocked = false; }, 900);
       }, {passive: true});
     }
-
 
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
