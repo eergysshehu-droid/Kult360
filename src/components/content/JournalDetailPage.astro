@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JournalCard from './JournalCard.astro';
+import {formatDate, journal, journalImage, journalSlug, type JournalRecord} from '../../lib/content';
+import {renderRichContent} from '../../lib/rich-content';
+import {localizedPath, type Language} from '../../lib/site-config';
+
+interface Props {record: JournalRecord; language: Language}
+const {record, language} = Astro.props;
+const image = journalImage(record);
+const bodyHtml = renderRichContent(record.rich_content);
+const description = record.excerpt || record.content_text?.slice(0, 180) || (record.author ? (language === 'sq' ? 'Artikull nga ' : 'Article by ') + record.author : 'KULT360 Journal');
+const recordCategories = record.categories || (record.category ? record.category.split(' · ').filter(Boolean) : []);
+const related = journal
+  .filter((candidate) => candidate.id !== record.id)
+  .map((candidate) => {
+    const categories = candidate.categories || (candidate.category ? candidate.category.split(' · ').filter(Boolean) : []);
+    const score = categories.filter((category) => recordCategories.includes(category)).length;
+    return {candidate, score};
+  })
+  .sort((a,b) => b.score - a.score)
+  .slice(0,3)
+  .map((item) => item.candidate);
+const sourceLang = record.language?.toLowerCase();
+const sourceLangDiffers = !!sourceLang && sourceLang !== language;
+const date = formatDate(record.first_published_date || record.published_date, language);
+const path = localizedPath(`/journal/${journalSlug(record)}/`, language);
+---
+<BaseLayout title={record.title} {description} {language} {path} translations={['en','sq']}>
+  <article class="journal-detail-v2">
+    <header class="container-wide journal-detail-v2__header">
+      <a class="journal-detail-v2__back" href={localizedPath('/journal/', language)}>← Journal</a>
+      <div class="journal-detail-v2__meta">
+        <p>{record.category || 'Journal'}</p>
+        {sourceLangDiffers && <span>{language === 'sq' ? 'Gjuha e burimit' : 'Source language'} · {sourceLang?.toUpperCase()}</span>}
+      </div>
+      <h1 lang={sourceLang || undefined}>{record.title}</h1>
+      {record.excerpt && <p class="journal-detail-v2__dek" lang={sourceLang || undefined}>{record.excerpt}</p>}
+      <div class="journal-detail-v2__byline">
+        {record.author && <span>{record.author}</span>}
+        {date && <span>{date}</span>}
+        {record.read_time && <span>{record.read_time}</span>}
+      </div>
+    </header>
+
+    {image && (
+      <figure class="container-wide journal-detail-v2__cover">
+        <img src={image} alt="" fetchpriority="high" decoding="async" />
+      </figure>
+    )}
+
+    <div class="journal-detail-v2__body-wrap">
+      <aside class="journal-detail-v2__rail">
+        <p>{language === 'sq' ? 'KULT360 Journal' : 'KULT360 Journal'}</p>
+        {recordCategories.slice(0,3).map((category) => <span>{category}</span>)}
+      </aside>
+      {bodyHtml
+        ? <div class="article-body rich-content journal-detail-v2__body" lang={sourceLang || undefined} set:html={bodyHtml}></div>
+        : <div class="article-body rich-content journal-detail-v2__body" lang={sourceLang || undefined}><p>{record.content_text}</p></div>}
+    </div>
+
+    {record.source_url && (
+      <div class="container-wide journal-detail-v2__source">
+        <p>{language === 'sq' ? 'Ky artikull është ruajtur nga arkivi publik i KULT360.' : 'This article is preserved from KULT360’s public archive.'}</p>
+        <a href={record.source_url} rel="noreferrer">{language === 'sq' ? 'Publikimi origjinal' : 'Original publication'} ↗</a>
+      </div>
+    )}
+
+    {related.length > 0 && (
+      <section class="container-wide journal-detail-v2__related">
+        <div class="journal-detail-v2__section-head">
+          <div><p>{language === 'sq' ? 'Lexo më tej' : 'Read next'}</p><h2>{language === 'sq' ? 'Më shumë nga Journal.' : 'More from the Journal.'}</h2></div>
+          <a href={localizedPath('/journal/', language)}>{language === 'sq' ? 'Të gjitha historitë' : 'All stories'} ↗</a>
+        </div>
+        <div class="journal-detail-v2__related-grid">
+          {related.map((item) => <JournalCard record={item} {language} />)}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
