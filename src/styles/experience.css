@@ -3723,21 +3723,49 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 }
 
 .project-detail-v2__credits {
-  padding-block: 3rem;
-  color: #fff;
-  background: #0a0a09;
+  margin-top: clamp(1.5rem,3vw,2.5rem);
+  padding-block: clamp(1.6rem,3vw,2.4rem);
+  border-top: 1px solid rgb(9 9 8 / 20%);
+  border-bottom: 1px solid rgb(9 9 8 / 14%);
+}
+
+.project-detail-v2__credits-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-detail-v2__credits-head p,
+.project-detail-v2__credits-head span {
+  margin: 0;
+  color: #716c63;
+  font-size: .61rem;
+  font-weight: 830;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.project-detail-v2__credits-head p {
+  color: var(--pcf-ink);
 }
 
 .project-detail-v2__credits-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 2rem 4rem;
+  gap: 1.2rem clamp(2rem,5vw,5rem);
+}
+
+.project-detail-v2__credit-group + .project-detail-v2__credit-group {
+  border-left: 1px solid rgb(9 9 8 / 14%);
+  padding-left: clamp(1.2rem,2.5vw,2.2rem);
 }
 
 .project-detail-v2__section-label-inline {
-  margin: 0 0 1rem;
-  color: rgb(255 255 255 / 45%);
-  font-size: .64rem;
+  margin: 0 0 .7rem;
+  color: #777168;
+  font-size: .58rem;
   font-weight: 830;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -3745,19 +3773,50 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
 .project-detail-v2__credits ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
+  display: grid;
+  gap: 0;
   margin: 0;
   padding: 0;
 }
 
 .project-detail-v2__credits li {
-  padding: .55rem .72rem;
-  border: 1px solid rgb(255 255 255 / 18%);
-  border-radius: 999px;
-  font-size: .72rem;
-  text-transform: capitalize;
+  min-width: 0;
+  border-top: 1px solid rgb(9 9 8 / 10%);
+  font-size: .78rem;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.project-detail-v2__credits li:last-child {
+  border-bottom: 1px solid rgb(9 9 8 / 10%);
+}
+
+.project-detail-v2__credits li > span,
+.project-detail-v2__credits li > a {
+  min-height: 2.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  padding: .55rem .05rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-detail-v2__credits li > a {
+  transition: padding .2s ease, color .2s ease;
+}
+
+.project-detail-v2__credits li > a:hover,
+.project-detail-v2__credits li > a:focus-visible {
+  padding-left: .35rem;
+  color: #000;
+}
+
+.project-detail-v2__credits li i {
+  flex: 0 0 auto;
+  color: #777168;
+  font-style: normal;
 }
 
 .project-detail-v2__section-head {
@@ -4660,9 +4719,39 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     font-size: clamp(2rem,8.8vw,2.95rem);
   }
 
+  .project-detail-v2__credits {
+    margin-top: 1rem;
+    padding-block: 1.35rem 1.55rem;
+  }
+
+  .project-detail-v2__credits-head {
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .project-detail-v2__credits-head span {
+    max-width: 9rem;
+    text-align: right;
+  }
+
   .project-detail-v2__credits-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.35rem;
+  }
+
+  .project-detail-v2__credit-group + .project-detail-v2__credit-group {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .project-detail-v2__credits li {
+    font-size: .75rem;
+  }
+
+  .project-detail-v2__credits li > span,
+  .project-detail-v2__credits li > a {
+    min-height: 2.4rem;
+    padding-block: .5rem;
   }
 
   .project-detail-v2__gallery > div:last-child {
