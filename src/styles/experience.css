@@ -4479,3 +4479,46 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     transition: none !important;
   }
 }
+
+
+/* KULT360 JOURNAL CARD FALLBACK */
+.journal-card__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .7rem;
+}
+
+.journal-card__meta > span {
+  flex: 0 0 auto;
+  padding: .28rem .42rem;
+  border: 1px solid rgb(9 9 8 / 20%);
+  border-radius: 999px;
+  color: #6c675f;
+  font-size: .55rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.journal-card__media--fallback {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 72% 38%, rgb(240 207 34 / 22%), transparent 32%),
+    repeating-radial-gradient(circle at 72% 38%, transparent 0 2.8rem, rgb(9 9 8 / 8%) 2.85rem 2.95rem),
+    #e9e5dc;
+}
+
+.journal-card__fallback {
+  color: var(--pcf-ink);
+  font-size: clamp(2.8rem,7vw,5rem);
+  font-weight: 880;
+  letter-spacing: -.075em;
+  transform: rotate(-5deg);
+}
+
+@media (max-width:44rem) {
+  .journal-card__meta > span {
+    font-size: .52rem;
+  }
+}
