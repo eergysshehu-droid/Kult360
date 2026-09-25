@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import JournalCard from './JournalCard.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
 import {formatDate, journal, journalImage, journalSlug, type JournalRecord} from '../../lib/content';
 import {renderRichContent} from '../../lib/rich-content';
 import {localizedPath, type Language} from '../../lib/site-config';
@@ -93,5 +94,6 @@ const titleClass = titleLength > 105
         </div>
       </section>
     )}
+    <ContinueWithKult360 {language} context="journal" />
   </article>
 </BaseLayout>

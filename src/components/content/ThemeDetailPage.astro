@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from './ProjectCard.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
 import {cultureThemes, type CultureTheme} from '../../content/themes';
 import {programFocusAreas} from '../../content/program-focus';
 import {projects} from '../../lib/content';
@@ -127,5 +128,6 @@ const path = localizedPath(`/themes/${theme.slug}/`, language);
         <strong>{next.title[language]}</strong>
       </a>
     </nav>
+    <ContinueWithKult360 {language} context="theme" />
   </article>
 </BaseLayout>

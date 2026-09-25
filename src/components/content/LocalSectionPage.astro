@@ -2,6 +2,8 @@
 import ListingLayout from '../../layouts/ListingLayout.astro';
 import SectionHeader from '../ui/SectionHeader.astro';
 import ProjectCard from './ProjectCard.astro';
+import ProjectArchive from './ProjectArchive.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
 import JournalCard from './JournalCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
 import AboutPage from './AboutPage.astro';
@@ -187,7 +189,7 @@ const initiativeThemeLink: Record<string,string> = {
     </>
   )}
 
-  {page.slug === 'projects' && <section class="project-grid ruled-section">{projects.map((project) => <ProjectCard {project} {language} />)}</section>}
+  {page.slug === 'projects' && <ProjectArchive projects={projects} {language} />}
 
   {page.slug === 'events' && (
     <section class="event-list ruled-section">
@@ -220,6 +222,7 @@ const initiativeThemeLink: Record<string,string> = {
           {journalRest.map((record) => <JournalCard {record} {language} />)}
         </div>
       </section>
+      <ContinueWithKult360 {language} context="journal" />
     </>
   )}
 

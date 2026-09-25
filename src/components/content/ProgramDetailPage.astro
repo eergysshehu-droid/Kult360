@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from './ProjectCard.astro';
 import PartnerMarquee from './PartnerMarquee.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
 import {programFocusAreas, type ProgramFocusArea} from '../../content/program-focus';
 import {cultureThemes} from '../../content/themes';
 import {projects} from '../../lib/content';
@@ -126,5 +127,6 @@ const relatedThemes = cultureThemes.filter((theme) => theme.relatedProgramSlugs.
         <strong>{next.title[language]}</strong>
       </a>
     </nav>
+    <ContinueWithKult360 {language} context="program" />
   </article>
 </BaseLayout>

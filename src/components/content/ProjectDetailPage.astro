@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from './ProjectCard.astro';
+import ContinueWithKult360 from './ContinueWithKult360.astro';
 import {cultureThemes} from '../../content/themes';
 import {projectEditorial, projectEditorialFor, projectMediaMode} from '../../content/project-editorial';
 import {formatDate, people as peopleDirectory, personSlug, projectImage, projectSlug, projects, terminalGallery, type Project} from '../../lib/content';
@@ -168,5 +169,6 @@ const sourceLanguageNote = language === 'sq'
         <strong>{nextProject.title}</strong>
       </a>
     </nav>
+    <ContinueWithKult360 {language} context="project" />
   </article>
 </BaseLayout>
