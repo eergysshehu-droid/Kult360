@@ -18,6 +18,11 @@ import {localizedPath} from '../lib/site-config';
 import {homePage} from '../content/shell-pages';
 
 const language = 'en';
+const leadershipIds = ['person-eda-zari','person-ergys-shehu'];
+const leadership = leadershipIds
+  .map((id) => people.find((person) => person.id === id))
+  .filter(Boolean);
+const directors = people.filter((person) => !leadershipIds.includes(person.id));
 const programmeImages = [
   '/media/projects/artist-hub.jpg',
   '/media/projects/blue-heart.jpg',
@@ -217,8 +222,31 @@ const heroWordStep = 360 / heroWords.length;
         <p>Artists, producers, communicators and cultural practitioners shaping the foundation together.</p>
       </div>
 
-      <div class="pcf-people-grid" data-team-rail>
-        {people.map((person) => {
+      <div class="pcf-leadership-grid" aria-label="KULT360 leadership">
+        {leadership.map((person) => {
+          const image = personImage(person);
+          return (
+            <a class="pcf-person-card pcf-person-card--leadership" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
+              <div class="pcf-person-card__media">
+                {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : <span>{person.name.split(' ').map((part) => part[0]).join('').slice(0,2)}</span>}
+              </div>
+              <div class="pcf-person-card__copy">
+                <strong>{person.name}</strong>
+                <span>{person.role}</span>
+                <i aria-hidden="true">↗</i>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="pcf-directors-head">
+        <p class="pcf-label">Directors</p>
+        <span>Swipe to explore →</span>
+      </div>
+
+      <div class="pcf-people-grid pcf-people-grid--directors" data-team-rail>
+        {directors.map((person) => {
           const image = personImage(person);
           return (
             <a class="pcf-person-card" href={localizedPath('/people/' + person.id.replace(/^person-/, '') + '/', language)}>
