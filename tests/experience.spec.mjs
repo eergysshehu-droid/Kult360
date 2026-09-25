@@ -1,10 +1,12 @@
 import {expect, test} from '@playwright/test';
 
-test('homepage experience uses local artwork and useful programme copy', async ({page}, testInfo) => {
+test('homepage experience uses the final 360 dial and useful programme copy', async ({page}, testInfo) => {
   test.skip(testInfo.project.name !== 'desktop-chromium');
   await page.goto('/');
 
-  await expect(page.locator('.pcf-hero__orbit-art img')).toHaveAttribute('src', '/media/brand/kult360-orbit-source.png');
+  await expect(page.locator('.pcf-hero__dial-stage')).toBeVisible();
+  await expect(page.locator('.pcf-hero__dial-item')).toHaveCount(9);
+  await expect(page.locator('[data-dial-live]')).not.toBeEmpty();
   await expect(page.locator('.partner-marquee img[src="/media/partners/collage.jpg"]').first()).toBeVisible();
   await expect(page.locator('.partner-marquee img[src="/media/partners/european-union-horizontal.jpg"]').first()).toBeVisible();
   await expect(page.locator('.pcf-programme-card__body p')).toHaveCount(4);
@@ -19,6 +21,7 @@ test('story rail exposes button state, progress and keyboard navigation', async 
   const previous = page.locator('[data-story-prev]');
   const next = page.locator('[data-story-next]');
   await rail.scrollIntoViewIfNeeded();
+  await expect.poll(() => rail.evaluate((element) => element.scrollWidth > element.clientWidth)).toBe(true);
   await expect(previous).toBeDisabled();
   await expect(next).toBeEnabled();
 
@@ -38,17 +41,18 @@ test('homepage header becomes solid after scrolling', async ({page}, testInfo) =
   await expect(header).toHaveClass(/is-scrolled/);
 });
 
-test('reduced motion keeps revealed content visible', async ({page}, testInfo) => {
+test('reduced motion keeps revealed content visible and the hero dial static', async ({page}, testInfo) => {
   test.skip(testInfo.project.name !== 'desktop-chromium');
   await page.emulateMedia({reducedMotion: 'reduce'});
   await page.goto('/');
 
   const card = page.locator('.pcf-programme-card').first();
-  const orbit = page.locator('.pcf-hero__orbit-art img');
-  const reelWords = page.locator('.pcf-hero__word-cycle b');
+  const liveWord = page.locator('[data-dial-live]');
+  const initialWord = await liveWord.textContent();
+
   await expect(card).toHaveCSS('opacity', '1');
   await expect(card).toHaveCSS('transform', 'none');
-  await expect(orbit).toHaveCSS('animation-name', 'none');
-  await expect(reelWords.first()).toHaveCSS('opacity', '1');
-  await expect(reelWords.nth(1)).toHaveCSS('opacity', '0');
+  await expect(page.locator('.pcf-hero__dial-stage')).toBeVisible();
+  await page.waitForTimeout(4300);
+  await expect(liveWord).toHaveText(initialWord || '');
 });
