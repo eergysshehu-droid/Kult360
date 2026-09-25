@@ -2602,3 +2602,366 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     color: rgb(255 255 255 / 74%) !important;
   }
 }
+
+
+/* KULT360 COMPACT FOOTER + PREDICTABLE MOBILE INTERACTIONS */
+
+/* Compact footer: contact + primary navigation, legal links live in the final line. */
+.footer-v2__compact {
+  display: grid;
+  grid-template-columns: minmax(17rem,.7fr) minmax(0,1.3fr);
+  gap: clamp(2rem,5vw,5rem);
+  align-items: end;
+  padding-block: clamp(1.5rem,3vw,2.4rem);
+  border-top: 1px solid rgb(255 255 255 / 14%);
+}
+
+.footer-v2__contact {
+  display: grid;
+  gap: .55rem;
+}
+
+.footer-v2__contact p,
+.footer-v2__contact span {
+  margin: 0;
+}
+
+.footer-v2__contact-primary {
+  width: max-content;
+  max-width: 100%;
+  color: #fff;
+  font-size: clamp(1rem,1.5vw,1.25rem);
+  font-weight: 680;
+  letter-spacing: -.02em;
+  text-decoration: none;
+}
+
+.footer-v2__contact-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1rem;
+  color: rgb(255 255 255 / 58%);
+  font-size: .7rem;
+  line-height: 1.45;
+}
+
+.footer-v2__contact-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-v2__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .55rem;
+}
+
+.footer-v2__nav a {
+  min-height: 2.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  padding: .7rem .9rem;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-size: .68rem;
+  font-weight: 820;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  transition: background .22s ease, color .22s ease, border-color .22s ease, transform .22s ease;
+}
+
+.footer-v2__nav a span {
+  color: var(--experience-yellow);
+  transition: transform .22s ease;
+}
+
+.footer-v2__nav a:hover,
+.footer-v2__nav a:focus-visible {
+  color: var(--pcf-ink);
+  background: var(--experience-yellow);
+  border-color: var(--experience-yellow);
+  transform: translateY(-2px);
+}
+
+.footer-v2__nav a:hover span,
+.footer-v2__nav a:focus-visible span {
+  color: var(--pcf-ink);
+  transform: translate(2px,-2px);
+}
+
+.footer-v2__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-block: .95rem 1.15rem;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.footer-v2__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .3rem 1rem;
+}
+
+.footer-v2__legal a {
+  color: rgb(255 255 255 / 52%);
+  text-decoration: none;
+  font-size: .62rem;
+}
+
+.footer-v2__legal a:hover,
+.footer-v2__legal a:focus-visible {
+  color: var(--experience-yellow);
+}
+
+.footer-v2__grid {
+  display: none !important;
+}
+
+/* One visual language for interaction: visible action, 44px touch size, stable tap feedback. */
+.pcf-button,
+.pcf-text-link,
+.pcf-mini-link,
+.pcf-card-action,
+.card-inline-action,
+.program-page-card__action {
+  min-height: 2.75rem;
+}
+
+.pcf-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.pcf-button i,
+.pcf-text-link::after,
+.pcf-mini-link i,
+.pcf-card-action i,
+.card-inline-action i,
+.program-page-card__action i,
+.pcf-person-card__copy i {
+  transition: transform .2s var(--experience-ease);
+}
+
+.pcf-button:active,
+.footer-v2__nav a:active {
+  transform: scale(.985);
+}
+
+/* Permanent cues on cards that otherwise rely too much on hover. */
+.pcf-update-list a {
+  position: relative;
+  padding-right: 3.4rem;
+}
+
+.pcf-update-list a::after,
+.pcf-story-card::after {
+  content: '↗';
+  width: 2.15rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: .72rem;
+  line-height: 1;
+  opacity: .72;
+}
+
+.pcf-update-list a::after {
+  position: absolute;
+  right: .15rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pcf-story-card {
+  position: relative;
+}
+
+.pcf-story-card::after {
+  position: absolute;
+  right: .72rem;
+  bottom: .72rem;
+  color: #fff;
+  background: rgb(0 0 0 / 28%);
+  border-color: rgb(255 255 255 / 42%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Person-card arrow is a control cue, not a decorative glyph. */
+.pcf-person-card__copy i {
+  width: 2rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(9 9 8 / 28%);
+  border-radius: 50%;
+}
+
+/* Mobile: predictable, visible and comfortably tappable without turning everything into giant buttons. */
+@media (max-width: 56rem) {
+  .footer-v2__compact {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding-block: 1.45rem;
+  }
+
+  .footer-v2__nav {
+    justify-content: flex-start;
+  }
+
+  .footer-v2__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .7rem;
+  }
+
+  .footer-v2__legal {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 44rem) {
+  .site-footer--v2 {
+    padding-bottom: max(.25rem, env(safe-area-inset-bottom));
+  }
+
+  .footer-v2__top {
+    padding-block: 1.1rem !important;
+  }
+
+  .footer-v2__tagline {
+    display: none;
+  }
+
+  .footer-v2__compact {
+    gap: 1rem;
+    padding-block: 1rem 1.2rem;
+  }
+
+  .footer-v2__contact-primary {
+    font-size: 1rem;
+  }
+
+  .footer-v2__contact-meta {
+    gap: .25rem .7rem;
+    font-size: .64rem;
+  }
+
+  .footer-v2__nav {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: .45rem;
+  }
+
+  .footer-v2__nav a {
+    min-width: 0;
+    min-height: 2.85rem;
+    justify-content: space-between;
+    padding: .68rem .78rem;
+    font-size: .62rem;
+  }
+
+  .footer-v2__nav a:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-v2__bottom {
+    padding-block: .8rem .95rem;
+  }
+
+  .footer-v2__bottom > span {
+    font-size: .58rem;
+  }
+
+  .footer-v2__legal {
+    gap: .32rem .8rem;
+  }
+
+  .footer-v2__legal a {
+    min-height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: .58rem;
+  }
+
+  .pcf-button,
+  .pcf-text-link,
+  .pcf-mini-link,
+  .pcf-card-action,
+  .card-inline-action,
+  .program-page-card__action {
+    min-height: 2.9rem;
+  }
+
+  .pcf-button {
+    justify-content: space-between;
+  }
+
+  .pcf-text-link {
+    width: max-content;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding-block: .45rem;
+  }
+
+  .pcf-programme-card .pcf-mini-link,
+  .pcf-card-action,
+  .card-inline-action,
+  .program-page-card__action {
+    margin-top: .55rem;
+    padding-top: .7rem;
+    border-top-width: 1px;
+  }
+
+  .pcf-update-list a {
+    min-height: 5.2rem;
+    padding-right: 3rem;
+  }
+
+  .pcf-update-list a::after {
+    width: 2rem;
+    right: 0;
+  }
+
+  .pcf-story-card::after {
+    width: 2rem;
+    right: .55rem;
+    bottom: .55rem;
+  }
+
+  .pcf-programme-card:active,
+  .pcf-project-card:active,
+  .pcf-story-card:active,
+  .pcf-person-card:active,
+  .program-page-card:active,
+  .project-card__link:active,
+  .journal-card__link:active,
+  .institutional-route:active {
+    transform: scale(.985) !important;
+    filter: brightness(.97);
+  }
+
+  .pcf-person-card__copy i {
+    width: 2.15rem;
+    flex: 0 0 auto;
+  }
+
+  /* The visible action row and persistent arrow do the teaching;
+     no extra "tap here" text is needed. */
+  .pcf-mini-link,
+  .pcf-card-action,
+  .card-inline-action,
+  .program-page-card__action {
+    letter-spacing: .07em;
+  }
+}
