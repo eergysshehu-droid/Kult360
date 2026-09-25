@@ -125,7 +125,20 @@ const structuredData = [organizationSchema(), websiteSchema(), webPageSchema({ti
           move(event.key === 'ArrowLeft' ? -1 : 1);
         });
         new ResizeObserver(updateRail).observe(rail);
-        updateRail();
+
+        if ('IntersectionObserver' in window) {
+          const railObserver = new IntersectionObserver((entries) => {
+            if (!entries.some((entry) => entry.isIntersecting)) return;
+            requestAnimationFrame(() => {
+              updateRail();
+              requestAnimationFrame(updateRail);
+            });
+          }, {threshold: 0.01});
+          railObserver.observe(rail);
+        }
+
+        window.addEventListener('load', updateRail, {once: true});
+        requestAnimationFrame(updateRail);
       });
     </script>
   </body>
