@@ -7048,3 +7048,227 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     animation: none !important;
   }
 }
+
+
+/* =========================================================
+   TEAM POLISH — COMPACT PRESIDENT + BALANCED DIRECTOR RAIL
+   ========================================================= */
+
+.pcf-leadership-single {
+  margin-bottom: 1.65rem !important;
+}
+
+.pcf-person-card--president {
+  width: min(100%, 50rem) !important;
+  max-width: 50rem !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: 15rem minmax(0,1fr) !important;
+  grid-template-rows: 1fr !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  background: #ece7dc !important;
+  border: 1px solid rgb(9 9 8 / 18%) !important;
+  border-radius: 10px !important;
+  contain: layout paint !important;
+}
+
+.pcf-person-card--president .pcf-person-card__media {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: 100% !important;
+  height: 16rem !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  border: 0 !important;
+  border-right: 1px solid rgb(9 9 8 / 14%) !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.pcf-person-card--president .pcf-person-card__media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 32% !important;
+}
+
+.pcf-person-card--president .pcf-person-card__copy {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: .55rem !important;
+  padding: 1.35rem 3.5rem 1.35rem 1.4rem !important;
+}
+
+.pcf-person-card--president .pcf-person-card__eyebrow {
+  order: 1;
+  margin: 0 !important;
+  color: #756f66 !important;
+  font-size: .56rem !important;
+  font-weight: 840 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .09em !important;
+  text-transform: uppercase !important;
+}
+
+.pcf-person-card--president .pcf-person-card__copy strong {
+  order: 2;
+  align-self: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: clamp(1.85rem,3.1vw,3.25rem) !important;
+  line-height: .94 !important;
+  letter-spacing: -.05em !important;
+}
+
+.pcf-person-card--president .pcf-person-card__copy p {
+  order: 3;
+  width: min(100%, 29rem) !important;
+  margin: .15rem 0 0 !important;
+  padding: 0 !important;
+  color: #625d55 !important;
+  font-size: .76rem !important;
+  line-height: 1.48 !important;
+}
+
+.pcf-person-card--president .pcf-person-card__copy i {
+  top: 50% !important;
+  right: 1.15rem !important;
+  bottom: auto !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  transform: translateY(-50%) !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 1px solid rgb(9 9 8 / 22%) !important;
+  border-radius: 50% !important;
+  font-size: .64rem !important;
+}
+
+.pcf-directors-head {
+  margin-top: 0 !important;
+  padding-top: 1rem !important;
+  margin-bottom: .75rem !important;
+}
+
+.pcf-people-grid--directors {
+  gap: .72rem !important;
+}
+
+.pcf-person-card--director .pcf-person-card__media {
+  border-radius: 8px !important;
+}
+
+.pcf-person-card--director .pcf-person-card__copy {
+  gap: .12rem !important;
+}
+
+@media (max-width: 44rem) {
+  .pcf-leadership-head {
+    min-height: 0 !important;
+    margin-bottom: .48rem !important;
+    padding-top: .5rem !important;
+  }
+
+  .pcf-leadership-single {
+    margin-bottom: 1.2rem !important;
+  }
+
+  .pcf-person-card--president {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 10.6rem !important;
+    grid-template-columns: 38% minmax(0,62%) !important;
+    grid-template-rows: 10.6rem !important;
+    border-radius: 8px !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__media {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    height: 10.6rem !important;
+    min-height: 10.6rem !important;
+    border-right: 1px solid rgb(9 9 8 / 14%) !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__media img {
+    object-position: 50% 28% !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__copy {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-height: 10.6rem !important;
+    justify-content: center !important;
+    gap: .38rem !important;
+    padding: .9rem 2.45rem .9rem .9rem !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__eyebrow {
+    font-size: .44rem !important;
+    line-height: 1.18 !important;
+    letter-spacing: .072em !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__copy strong {
+    font-size: clamp(1.45rem,7vw,1.95rem) !important;
+    line-height: .94 !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__copy p {
+    display: block !important;
+    margin-top: .05rem !important;
+    padding: 0 !important;
+    font-size: .54rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .pcf-person-card--president .pcf-person-card__copy i {
+    top: 50% !important;
+    right: .65rem !important;
+    bottom: auto !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    transform: translateY(-50%) !important;
+    font-size: .48rem !important;
+  }
+
+  .pcf-directors-head {
+    padding-top: .75rem !important;
+    margin-bottom: .55rem !important;
+  }
+
+  .pcf-directors-head > span {
+    font-size: .48rem !important;
+  }
+
+  .pcf-people-grid--directors {
+    grid-auto-columns: 42vw !important;
+    gap: .55rem !important;
+    width: calc(100vw - .625rem) !important;
+    padding-right: .7rem !important;
+  }
+
+  .pcf-person-card--director .pcf-person-card__copy {
+    min-height: 3.7rem !important;
+    padding-right: 1.18rem !important;
+  }
+
+  .pcf-person-card--director .pcf-person-card__copy strong {
+    font-size: .7rem !important;
+    line-height: 1.07 !important;
+  }
+
+  .pcf-person-card--director .pcf-person-card__copy span {
+    font-size: .49rem !important;
+    line-height: 1.2 !important;
+  }
+}
