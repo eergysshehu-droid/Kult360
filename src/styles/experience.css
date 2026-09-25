@@ -8059,7 +8059,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   margin:0!important;
   color:#f8f6f0!important;
   font-family:var(--font-sans)!important;
-  font-size:clamp(3.5rem,6.15vw,6.45rem)!important;
+  font-size:clamp(3.05rem,4.6vw,5.15rem)!important;
   font-weight:720!important;
   line-height:.9!important;
   letter-spacing:-.068em!important;
@@ -8071,25 +8071,45 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-hero__dial-live{
   position:relative;
   z-index:12;
+  display:inline-block;
   flex:0 0 auto;
-  padding-right:.08em;
+  min-width:0;
+  padding:0;
   color:var(--experience-yellow);
   background:#090a08;
-  font-size:.5em;
-  font-weight:820;
-  line-height:1;
-  letter-spacing:-.035em;
-  text-transform:uppercase;
+  font:inherit;
+  font-size:1em;
+  font-weight:inherit;
+  line-height:inherit;
+  letter-spacing:inherit;
+  text-transform:none;
+  white-space:nowrap;
   text-shadow:0 0 1rem rgb(240 207 34 / 12%);
-  transform:translateY(-.07em);
+  transform:none;
   opacity:1;
   filter:blur(0);
-  transition:opacity 260ms ease,filter 340ms ease,transform 340ms cubic-bezier(.2,.72,.2,1);
+  transition:
+    width 620ms cubic-bezier(.2,.78,.18,1),
+    opacity 260ms ease,
+    filter 340ms ease,
+    transform 340ms cubic-bezier(.2,.72,.2,1);
 }
 .pcf-hero__dial-live.is-changing{
   opacity:0;
-  filter:blur(4px);
-  transform:translateY(.08em);
+  filter:blur(3.5px);
+  transform:translateY(.035em);
+}
+.pcf-hero__dial-live.is-width-instant{transition:none!important}
+.pcf-hero__dial-measurer{
+  position:absolute!important;
+  left:-9999px!important;
+  top:-9999px!important;
+  width:auto!important;
+  min-width:0!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  transition:none!important;
 }
 .pcf-hero__dial-stage{
   --dial-radius:min(25vw,23rem);
@@ -8288,8 +8308,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 @media(max-width:70rem){
   .pcf-hero__dial-stage{--dial-radius:29vw;right:-16vw;width:64vw}
   .pcf-hero__headline-wrap--dial{width:60vw}
-  .pcf-hero__headline--dial{font-size:clamp(3rem,6vw,5.4rem)!important}
-  .pcf-hero__dial-live{font-size:.52em}
+  .pcf-hero__headline--dial{font-size:clamp(2.85rem,4.6vw,4.8rem)!important}
 }
 @media(max-width:44rem){
   .pcf-hero--dial{min-height:91svh!important}
@@ -8308,8 +8327,8 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     position:absolute!important;
     left:clamp(1rem,4vw,1.25rem)!important;
     top:44.25%!important;
-    width:69vw!important;
-    max-width:69vw!important;
+    width:79vw!important;
+    max-width:79vw!important;
     align-self:auto!important;
     transform:translateY(-50%)!important;
   }
@@ -8319,47 +8338,50 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     width:100%!important;
     max-width:none!important;
     gap:.12em!important;
-    font-size:clamp(1.9rem,7.55vw,2.48rem)!important;
+    font-size:clamp(1.58rem,6.1vw,1.82rem)!important;
     font-weight:720!important;
     line-height:.92!important;
     letter-spacing:-.057em!important;
     white-space:nowrap!important;
   }
   html[lang='sq'] .pcf-hero__headline--dial{
-    font-size:clamp(1.9rem,7.55vw,2.48rem)!important;
+    font-size:clamp(1.58rem,6.1vw,1.82rem)!important;
   }
   .pcf-hero__dial-prefix{flex:0 0 auto}
   .pcf-hero__dial-live{
     flex:0 0 auto;
-    font-size:.54em;
-    letter-spacing:-.015em;
+    font:inherit;
+    font-size:1em;
+    font-weight:inherit;
+    line-height:inherit;
+    letter-spacing:inherit;
     transform:none;
     background:transparent;
   }
-  .pcf-hero__dial-live.is-changing{transform:translateY(.035em)}
 
-  /* The connector is part of the sentence, so it always starts after the active word. */
+  /* The connector owns the remaining space, so longer words shorten it smoothly. */
   .pcf-hero__headline--dial::after{
     content:'';
     flex:1 1 auto;
-    min-width:.7rem;
-    max-width:3.25rem;
+    min-width:.55rem;
+    max-width:3.1rem;
     height:1px;
     margin-left:.34rem;
-    margin-right:.16rem;
+    margin-right:.08rem;
     align-self:center;
-    background:linear-gradient(90deg,rgb(240 207 34 / 12%),rgb(240 207 34 / 72%) 82%,var(--experience-yellow));
-    box-shadow:0 0 .45rem rgb(240 207 34 / 7%);
+    background:linear-gradient(90deg,rgb(240 207 34 / 10%),rgb(240 207 34 / 68%) 82%,var(--experience-yellow));
+    box-shadow:0 0 .42rem rgb(240 207 34 / 6%);
   }
 
-  /* Only about half of the instrument remains in-frame on phones. */
+  /* Keep only roughly half of the instrument visible on phones. */
   .pcf-hero__dial-stage{
     --dial-radius:28vw;
     top:44.25%;
-    right:-41vw;
+    right:-45vw;
     width:82vw;
     max-width:none;
   }
+  .pcf-hero__dial-selector{left:25%}
 
   /* The fixed selector is the single endpoint of the sentence connector. */
   .pcf-hero__dial-beam{display:none}

@@ -361,19 +361,48 @@ const heroWords = ['Nature','Art','Communities','Heritage','Memory','Education',
       });
     };
 
+    const dialMeasure = dialLive?.cloneNode(false) as HTMLElement | undefined;
+    if (dialMeasure && dialLive?.parentElement) {
+      dialMeasure.removeAttribute('data-dial-live');
+      dialMeasure.removeAttribute('aria-live');
+      dialMeasure.setAttribute('aria-hidden', 'true');
+      dialMeasure.classList.add('pcf-hero__dial-measurer');
+      dialLive.parentElement.appendChild(dialMeasure);
+    }
+
+    const measureLabel = (label: string) => {
+      if (!dialMeasure) return 0;
+      dialMeasure.textContent = label;
+      return Math.ceil(dialMeasure.getBoundingClientRect().width);
+    };
+
+    const setLiveWidth = (label: string, animate = true) => {
+      if (!dialLive) return;
+      const width = measureLabel(label);
+      if (!width) return;
+      if (!animate) dialLive.classList.add('is-width-instant');
+      dialLive.style.width = `${width}px`;
+      if (!animate) requestAnimationFrame(() => dialLive.classList.remove('is-width-instant'));
+    };
+
     const setLiveLabel = (animate = true) => {
       if (!dialLive) return;
       window.clearTimeout(liveTimer);
+      const nextLabel = labelFor(active);
+
       if (!animate || reducedMotion) {
-        dialLive.textContent = labelFor(active);
+        dialLive.textContent = nextLabel;
+        setLiveWidth(nextLabel, false);
         dialLive.classList.remove('is-changing');
         return;
       }
+
+      setLiveWidth(nextLabel, true);
       dialLive.classList.add('is-changing');
       liveTimer = window.setTimeout(() => {
-        dialLive.textContent = labelFor(active);
+        dialLive.textContent = nextLabel;
         requestAnimationFrame(() => dialLive.classList.remove('is-changing'));
-      }, 390);
+      }, 330);
     };
 
     const setRotation = (animate = true) => {
@@ -414,6 +443,12 @@ const heroWords = ['Nature','Art','Communities','Heritage','Memory','Education',
     setRotation(false);
     setDialStates();
     setLiveLabel(false);
+    document.fonts?.ready.then(() => setLiveLabel(false));
+    let liveResizeTimer = 0;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(liveResizeTimer);
+      liveResizeTimer = window.setTimeout(() => setLiveLabel(false), 120);
+    }, {passive: true});
     startClock();
   }
 
