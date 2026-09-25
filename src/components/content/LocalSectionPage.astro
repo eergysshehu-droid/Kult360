@@ -15,13 +15,6 @@ import type {ShellPageDefinition} from '../../content/shell-pages';
 interface Props {page: ShellPageDefinition; language: Language}
 const {page, language} = Astro.props;
 const path = localizedPath(`/${page.slug}/`, language);
-const t = {
-  source: language === 'sq' ? 'Regjistër publik' : 'Public record',
-  teamNote: language === 'sq' ? 'Profilet e plota të ekipit janë shtuar nga materiali i dhënë nga KULT360.' : 'Full team profiles have been added from KULT360-supplied source material.',
-  archive: language === 'sq' ? 'Përmbajtja e plotë e disa regjistrave mbetet në rishikim editorial.' : 'Full body content for some records remains under editorial review.',
-  contact: language === 'sq' ? 'Na kontakto' : 'Contact us'
-};
-
 const websitePolicies = {
   privacy: {
     eyebrow: language === 'sq' ? 'Privatësia & të dhënat personale' : 'Privacy & personal data',
