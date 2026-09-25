@@ -49,35 +49,29 @@ const programmeLinks = [
   '/programs/heritage-sustainability/'
 ];
 const heroWords = ['nature.','art.','communities.','heritage.','memory.','education.','equality.','music.','digitality.'];
-const heroWordStep = 360 / heroWords.length;
 ---
 <BaseLayout title={homePage.heading.en} description={homePage.description.en} {language} path="/" translations={['en','sq']}>
-  <section class="pcf-hero pcf-hero--black">
-    <div class="pcf-hero__orbit-art" aria-hidden="true"><img src="/media/brand/kult360-orbit-source.png" alt="" /></div>
+  <section class="pcf-hero pcf-hero--black pcf-hero--symbolic">
+    <div class="pcf-hero__symbol-stage" aria-hidden="true">
+      <div class="pcf-hero__symbol-frame">
+        <img class="pcf-hero__symbol-art" src="/media/brand/kult360-orbit-source.png" alt="" />
+        <div class="pcf-hero__symbol-wordbox" data-symbol-words>
+          {heroWords.map((word, index) => (
+            <span class="pcf-hero__symbol-word" data-symbol-index={index}>
+              <span style={`--symbol-word-scale: ${word.length > 11 ? .72 : word.length > 9 ? .8 : word.length > 7 ? .9 : 1}`}>{word}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
     <div class="container-wide pcf-hero__inner">
       <p class="pcf-kicker">KULT360 Foundation · Albania</p>
 
-      <div class="pcf-hero__headline-wrap">
-        <h1 class="pcf-hero__headline" aria-label="Culture is nature, art, communities, heritage, memory, education, equality, music and digitality">
-          <span class="pcf-hero__prefix">Culture is</span>
-          <span
-            class="pcf-hero__word-cycle"
-            data-word-wheel
-            tabindex="0"
-            role="group"
-            aria-label="Rotating cultural themes. Scroll, swipe, or use arrow keys to rotate."
-          >
-            <span class="pcf-hero__word-cylinder" data-word-cylinder aria-hidden="true">
-              {heroWords.map((word, index) => (
-                <span
-                  class="pcf-hero__word"
-                  data-word-index={index}
-                  style={`--word-angle: ${index * heroWordStep}deg`}
-                >{word}</span>
-              ))}
-            </span>
-            <span class="sr-only" data-word-live aria-live="polite">nature.</span>
-          </span>
+      <div class="pcf-hero__headline-wrap pcf-hero__headline-wrap--symbolic">
+        <h1 class="pcf-hero__headline pcf-hero__headline--symbolic" aria-label="Culture is nature, art, communities, heritage, memory, education, equality, music and digitality">
+          <span class="pcf-hero__prefix pcf-hero__prefix--symbolic">Culture is</span>
+          <span class="sr-only" data-symbol-live aria-live="polite">nature.</span>
         </h1>
       </div>
 
@@ -297,104 +291,72 @@ const heroWordStep = 360 / heroWords.length;
   </section>
 </BaseLayout>
 <script>
-  const wheel = document.querySelector('[data-word-wheel]');
-  const cylinder = wheel?.querySelector('[data-word-cylinder]');
-  const live = wheel?.querySelector('[data-word-live]');
-  const words = wheel ? Array.from(wheel.querySelectorAll('[data-word-index]')) : [];
+  const symbolStage = document.querySelector('[data-symbol-words]');
+  const symbolLive = document.querySelector('[data-symbol-live]');
+  const symbolWords = symbolStage ? Array.from(symbolStage.querySelectorAll('[data-symbol-index]')) : [];
 
-  if (wheel && cylinder && words.length) {
-    const count = words.length;
+  if (symbolStage && symbolWords.length) {
+    const count = symbolWords.length;
+    const stepMs = 4000;
+    const transitionMs = 860;
     let active = 0;
-    let locked = false;
-    let autoplayTimer = 0;
-    let transitionTimer = 0;
-    const transitionMs = 1020;
+    let wordTimer = 0;
+    let settleTimer = 0;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const hero = wheel.closest('.pcf-hero');
 
     const settle = () => {
-      words.forEach((word, index) => {
-        word.dataset.reelState = index === active ? 'active' : 'hidden';
-        delete word.dataset.reelMotion;
-        delete word.dataset.reelDirection;
+      symbolWords.forEach((word, index) => {
+        word.dataset.symbolState = index === active ? 'active' : 'hidden';
+        delete word.dataset.symbolMotion;
       });
-      hero?.classList.remove('pcf-hero--word-shift');
-      if (live) live.textContent = words[active]?.textContent || '';
+      if (symbolLive) symbolLive.textContent = symbolWords[active]?.textContent || '';
     };
 
-    const scheduleAutoplay = () => {
-      window.clearTimeout(autoplayTimer);
-      if (reducedMotion || document.hidden || locked) return;
-      autoplayTimer = window.setTimeout(() => changeWord(1), 3950);
-    };
-
-    const changeWord = (direction) => {
-      if (locked) return;
-
+    const showNext = () => {
       const outgoing = active;
-      const incoming = (active + direction + count) % count;
+      const incoming = (active + 1) % count;
 
       if (reducedMotion) {
         active = incoming;
         settle();
-        scheduleAutoplay();
         return;
       }
 
-      locked = true;
-      window.clearTimeout(autoplayTimer);
-      window.clearTimeout(transitionTimer);
+      window.clearTimeout(settleTimer);
 
-      words.forEach((word, index) => {
-        word.dataset.reelState = 'hidden';
-        delete word.dataset.reelMotion;
-        delete word.dataset.reelDirection;
-
+      symbolWords.forEach((word, index) => {
+        word.dataset.symbolState = 'hidden';
+        delete word.dataset.symbolMotion;
         if (index === outgoing) {
-          word.dataset.reelState = 'active';
-          word.dataset.reelMotion = 'out';
-          word.dataset.reelDirection = direction > 0 ? 'forward' : 'backward';
+          word.dataset.symbolState = 'active';
+          word.dataset.symbolMotion = 'out';
         } else if (index === incoming) {
-          word.dataset.reelMotion = 'in';
-          word.dataset.reelDirection = direction > 0 ? 'forward' : 'backward';
+          word.dataset.symbolMotion = 'in';
         }
       });
 
-      hero?.classList.add('pcf-hero--word-shift');
       active = incoming;
-
-      transitionTimer = window.setTimeout(() => {
-        settle();
-        locked = false;
-        scheduleAutoplay();
-      }, transitionMs);
+      settleTimer = window.setTimeout(settle, transitionMs);
     };
 
-    wheel.addEventListener('keydown', (event) => {
-      if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
-      event.preventDefault();
-      changeWord(event.key === 'ArrowDown' ? 1 : -1);
-    });
-
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (finePointer) {
-      hero?.addEventListener('wheel', (event) => {
-        if (reducedMotion || locked || Math.abs(event.deltaY) < 22) return;
-        changeWord(event.deltaY > 0 ? 1 : -1);
-      }, {passive: true});
-    }
+    const startWordClock = () => {
+      window.clearInterval(wordTimer);
+      if (document.hidden) return;
+      wordTimer = window.setInterval(showNext, stepMs);
+    };
 
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        window.clearTimeout(autoplayTimer);
-        window.clearTimeout(transitionTimer);
-      } else if (!locked) {
-        scheduleAutoplay();
+        window.clearInterval(wordTimer);
+        window.clearTimeout(settleTimer);
+      } else {
+        settle();
+        startWordClock();
       }
     });
 
     settle();
-    scheduleAutoplay();
+    startWordClock();
   }
 
   const teamRail = document.querySelector('[data-team-rail]');
