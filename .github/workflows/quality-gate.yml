@@ -3,7 +3,7 @@ name: KULT360 quality gate
 on:
   pull_request:
   push:
-    branches: [main, rebuild/kult360-foundation]
+    branches: [main, rebuild/kult360-foundation, design/foundation-visual-v1]
 
 permissions:
   contents: read

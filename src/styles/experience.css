@@ -836,7 +836,9 @@ body:has(.pcf-hero) .brand-lockup__accent {
   transform: translateY(-50%);
 }
 body:has(.pcf-hero) .brand-lockup,
-body:has(.program-detail__hero) .brand-lockup {
+body:has(.program-detail__hero) .brand-lockup,
+body:has(.theme-detail__hero) .brand-lockup,
+body:has(.place-essay__hero) .brand-lockup {
   width: 9.2rem;
   padding: .22rem .5rem;
   border: 1px solid rgb(9 9 8 / 12%);
@@ -976,7 +978,9 @@ body:has(.program-detail__hero) .brand-lockup {
 }
 
 /* Immersive programme detail pages. */
-body:has(.program-detail__hero) .site-header {
+body:has(.program-detail__hero) .site-header,
+body:has(.theme-detail__hero) .site-header,
+body:has(.place-essay__hero) .site-header {
   position: absolute;
   inset: 0 0 auto;
   background: transparent;
@@ -985,10 +989,16 @@ body:has(.program-detail__hero) .site-header {
   backdrop-filter: none;
 }
 body:has(.program-detail__hero) .site-header .desktop-navigation a,
-body:has(.program-detail__hero) .site-header .language-switcher a {
+body:has(.program-detail__hero) .site-header .language-switcher a,
+body:has(.theme-detail__hero) .site-header .desktop-navigation a,
+body:has(.theme-detail__hero) .site-header .language-switcher a,
+body:has(.place-essay__hero) .site-header .desktop-navigation a,
+body:has(.place-essay__hero) .site-header .language-switcher a {
   color: #fff;
 }
-body:has(.program-detail__hero) .site-header.is-scrolled {
+body:has(.program-detail__hero) .site-header.is-scrolled,
+body:has(.theme-detail__hero) .site-header.is-scrolled,
+body:has(.place-essay__hero) .site-header.is-scrolled {
   position: fixed;
   background: rgb(9 9 8 / 88%);
   border-bottom: 1px solid rgb(255 255 255 / 12%);
@@ -1001,7 +1011,7 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
 .program-detail__hero {
   position: relative;
   isolation: isolate;
-  min-height: clamp(42rem, 76svh, 52rem);
+  min-height: clamp(38rem, 72svh, 48rem);
   display: grid;
   color: #fff;
   background:
@@ -1077,12 +1087,13 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
   margin: 0;
   max-width: 12ch;
   font-family: var(--font-sans);
-  font-size: clamp(3.7rem, 6.25vw, 6.7rem);
+  font-size: clamp(3.45rem, 5.55vw, 6.1rem);
   font-weight: 760;
   line-height: .86;
   letter-spacing: -.06em;
   color: #f4f1e9;
   text-wrap: balance;
+  overflow-wrap: normal;
 }
 .program-detail__title-grid h1 span {
   display: block;
@@ -1149,7 +1160,7 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
   margin: 0;
   max-width: 15ch;
   font-family: var(--font-sans);
-  font-size: clamp(2.65rem, 4.8vw, 5.15rem);
+  font-size: clamp(2.45rem, 4vw, 4.45rem);
   font-weight: 680;
   line-height: .92;
   letter-spacing: -.06em;
@@ -1312,7 +1323,9 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
 
 @media (max-width: 44rem) {
   body:has(.pcf-hero) .brand-lockup,
-  body:has(.program-detail__hero) .brand-lockup {
+  body:has(.program-detail__hero) .brand-lockup,
+  body:has(.theme-detail__hero) .brand-lockup,
+  body:has(.place-essay__hero) .brand-lockup {
     width: 7.35rem;
     padding: .18rem .4rem;
   }
@@ -1331,7 +1344,7 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
     font-size: clamp(2.25rem, 11vw, 3.25rem);
   }
   .program-detail__hero {
-    min-height: 48rem;
+    min-height: max(34rem, 70svh);
   }
   .program-detail__hero-inner {
     padding-top: 6.7rem;
@@ -1351,7 +1364,7 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
     margin: 0;
   }
   .program-detail__title-grid h1 {
-    font-size: clamp(3.4rem, 16vw, 5rem);
+    font-size: clamp(2.85rem, 12vw, 4rem);
   }
   .program-detail__summary {
     grid-column: 1;
@@ -1366,7 +1379,7 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
     gap: 3rem;
   }
   .program-detail__statement h2 {
-    font-size: clamp(2.65rem, 12.5vw, 4.25rem);
+    font-size: clamp(2.25rem, 9.8vw, 3.35rem);
   }
   .program-detail__principle-grid {
     grid-template-columns: 1fr;
@@ -1380,7 +1393,7 @@ body:has(.program-detail__hero) .site-header.is-scrolled {
     border-bottom: 0;
   }
   .program-detail__principle-grid h3 {
-    font-size: clamp(2.5rem, 12vw, 3.6rem);
+    font-size: clamp(2.1rem, 9vw, 2.9rem);
   }
   .program-detail__project-grid {
     grid-template-columns: 1fr;
@@ -2434,6 +2447,22 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 }
 
 /* Public policy pages — institutional, readable, and deliberately restrained. */
+.section-intro--policy{
+  padding-bottom:clamp(2.8rem,4.5vw,4.6rem);
+}
+.section-intro--policy .section-header{
+  max-width:52rem;
+}
+.section-intro--policy .section-header h1{
+  max-width:14ch;
+  font-size:clamp(2.8rem,4.25vw,4.4rem);
+  line-height:.96;
+  letter-spacing:-.048em;
+}
+.section-intro--policy .section-header__description{
+  max-width:38rem;
+}
+
 .policy-page {
   position: relative;
   display: grid;
@@ -2563,6 +2592,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   .policy-page__note { grid-column:1; }
 }
 @media (max-width:44rem) {
+  .section-intro--policy .section-header h1 { font-size:clamp(2.4rem,10.5vw,3.25rem); }
   .policy-page { padding-block:3.5rem 4.5rem; }
   .policy-page__intro > p:nth-child(2) { font-size:.95rem; }
   .policy-page__identity > div { grid-template-columns:5.6rem minmax(0,1fr); }
@@ -3168,7 +3198,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
 .theme-detail__hero {
   position: relative;
-  min-height: clamp(39rem,72svh,49rem);
+  min-height: clamp(36rem,70svh,46rem);
   overflow: hidden;
   color: #fff;
   background:
@@ -3236,11 +3266,12 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .theme-detail__title h1 {
   margin: 0;
   max-width: 10ch;
-  font-size: clamp(3.7rem,6.7vw,6.9rem);
+  font-size: clamp(3.3rem,5.6vw,6rem);
   line-height: .88;
   letter-spacing: -.062em;
   color: #f4f1e9;
   text-wrap: balance;
+  overflow-wrap: normal;
 }
 
 .theme-detail__title > p:last-child {
@@ -3270,7 +3301,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .theme-detail__statement h2 {
   margin: 0;
   max-width: 18ch;
-  font-size: clamp(2.45rem,4.25vw,4.6rem);
+  font-size: clamp(2.3rem,3.9vw,4.2rem);
   line-height: .92;
   letter-spacing: -.06em;
 }
@@ -3555,9 +3586,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .project-detail-v2__heading h1 {
   margin: 0;
   max-width: 15ch;
-  font-size: clamp(3rem,5.8vw,6.35rem);
+  font-size: clamp(2.95rem,5vw,5.65rem);
   line-height: .88;
-  letter-spacing: -.07em;
+  letter-spacing: -.06em;
+  text-wrap: balance;
 }
 
 .project-detail-v2__dek {
@@ -3662,7 +3694,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .project-detail-v2__story-copy h2 {
   margin: 0;
   max-width: 22ch;
-  font-size: clamp(2.25rem,4.1vw,4.25rem);
+  font-size: clamp(2.2rem,3.65vw,3.9rem);
   line-height: .94;
   letter-spacing: -.055em;
 }
@@ -4047,9 +4079,10 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .journal-detail-v2__header h1 {
   margin: 0;
   max-width: 17ch;
-  font-size: clamp(3rem,5.7vw,6.2rem);
+  font-size: clamp(2.9rem,4.9vw,5.45rem);
   line-height: .9;
-  letter-spacing: -.068em;
+  letter-spacing: -.058em;
+  text-wrap: balance;
 }
 
 .journal-detail-v2__dek {
@@ -4164,7 +4197,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
 .journal-detail-v2__section-head h2 {
   margin: .4rem 0 0;
-  font-size: clamp(2rem,4vw,4rem);
+  font-size: clamp(1.95rem,3.5vw,3.6rem);
   line-height: .95;
   letter-spacing: -.05em;
 }
@@ -4299,7 +4332,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .theme-detail__hero {
-    min-height: 35rem;
+    min-height: max(32rem, 66svh);
   }
 
   .theme-detail__hero-inner {
@@ -4308,13 +4341,15 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .theme-detail__orbit {
-    right: -10rem;
-    bottom: -3rem;
-    width: 30rem;
+    right: -9rem;
+    top: 48%;
+    bottom: auto;
+    width: 26rem;
+    transform: translateY(-50%);
   }
 
   .theme-detail__title h1 {
-    font-size: clamp(2.75rem,11.5vw,3.9rem);
+    font-size: clamp(2.65rem,10.8vw,3.6rem);
   }
 
   .theme-detail__title > p:last-child {
@@ -4406,7 +4441,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .project-detail-v2__heading h1 {
-    font-size: clamp(2.55rem,10.8vw,3.8rem);
+    font-size: clamp(2.45rem,9.8vw,3.45rem);
   }
 
   .project-detail-v2__dek {
@@ -4440,7 +4475,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .project-detail-v2__story-copy h2 {
-    font-size: clamp(2.1rem,9.8vw,3.15rem);
+    font-size: clamp(2rem,8.8vw,2.95rem);
   }
 
   .project-detail-v2__credits-grid {
@@ -4518,7 +4553,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .journal-detail-v2__header h1 {
-    font-size: clamp(2.45rem,10.4vw,3.7rem);
+    font-size: clamp(2.4rem,9.5vw,3.4rem);
   }
 
   .journal-detail-v2__dek {
@@ -4862,7 +4897,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   margin: .3rem 0 1.3rem;
   max-width: 12ch;
   font-family: var(--font-sans);
-  font-size: clamp(2.35rem, 4.8vw, 4.8rem);
+  font-size: clamp(2.2rem, 4.1vw, 4.1rem);
   line-height: .92;
   letter-spacing: -.055em;
   font-weight: 680;
@@ -4969,7 +5004,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .theme-detail__article-copy h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.95rem, 9vw, 2.75rem);
   }
 
   .theme-detail__article-copy > p:not(.theme-detail__label) {
@@ -5899,7 +5934,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   margin: 0;
   max-width: 9ch;
   font-family: var(--font-sans);
-  font-size: clamp(2rem, 3.5vw, 3.8rem);
+  font-size: clamp(1.9rem, 3vw, 3.15rem);
   font-weight: 690;
   line-height: .93;
   letter-spacing: -.05em;
@@ -5922,7 +5957,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
 .place-essay__hero {
   position: relative;
-  min-height: clamp(39rem, 72svh, 49rem);
+  min-height: clamp(36rem, 70svh, 46rem);
   overflow: hidden;
   color: #fff;
   background:
@@ -5989,7 +6024,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .place-essay__hero-copy h1 {
   margin: .85rem 0 0;
   max-width: 8ch;
-  font-size: clamp(3.7rem, 6.5vw, 6.6rem);
+  font-size: clamp(3.3rem, 5.5vw, 5.9rem);
   line-height: .88;
   letter-spacing: -.062em;
   color: #f4f1e9;
@@ -6021,7 +6056,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .place-essay__intro h2 {
   margin: 0;
   max-width: 17ch;
-  font-size: clamp(2.45rem, 4.25vw, 4.55rem);
+  font-size: clamp(2.3rem, 3.9vw, 4.15rem);
   line-height: .92;
   letter-spacing: -.06em;
 }
@@ -6100,7 +6135,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .place-essay__practice-head h2 {
   margin: 0;
   max-width: 12ch;
-  font-size: clamp(2.8rem, 5.4vw, 5.6rem);
+  font-size: clamp(2.55rem, 4.5vw, 4.7rem);
   line-height: .92;
   letter-spacing: -.06em;
 }
@@ -6228,7 +6263,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .place-essay__hero {
-    min-height: max(36rem, 68svh);
+    min-height: max(32rem, 66svh);
   }
 
   .place-essay__hero-inner {
@@ -6237,14 +6272,16 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   }
 
   .place-essay__orbit {
-    right: -10rem;
-    bottom: -5rem;
-    width: 26rem;
-    opacity: .24;
+    right: -9rem;
+    top: 48%;
+    bottom: auto;
+    width: 24rem;
+    opacity: .22;
+    transform: translateY(-50%);
   }
 
   .place-essay__hero-copy h1 {
-    font-size: clamp(2.9rem, 11.8vw, 4.15rem);
+    font-size: clamp(2.65rem, 10.6vw, 3.6rem);
   }
 
   .place-essay__hero-copy > p:last-child {
@@ -6260,7 +6297,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 
   .place-essay__intro h2,
   .place-essay__practice-head h2 {
-    font-size: clamp(2.25rem, 9.5vw, 3.2rem);
+    font-size: clamp(2.15rem, 8.8vw, 3rem);
   }
 
   .place-essay__chapter {
