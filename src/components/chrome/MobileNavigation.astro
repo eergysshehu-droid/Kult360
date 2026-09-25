@@ -7,6 +7,8 @@ interface Props {language: Language; path: string; translations: readonly Langua
 const {language, path, translations} = Astro.props;
 const navSlugs = ['about','programs','projects','journal','get-involved'];
 const items = shellPages.filter(({slug}) => navSlugs.includes(slug));
+const quickSlugs = ['events','people','contact'];
+const quickItems = shellPages.filter(({slug}) => quickSlugs.includes(slug));
 const normalizedPath = path.replace(/^\/sq\/?/, '/');
 const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
 ---
@@ -23,9 +25,17 @@ const activeSlug = normalizedPath.split('/').filter(Boolean)[0] ?? '';
         <button class="menu-close" type="button" aria-label={language === 'sq' ? 'Mbyll menunë' : 'Close menu'}>×</button>
       </div>
       <div class="menu-dialog__body">
-        <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
-          <ul class="menu-list">{items.map((item, index) => <li><span aria-hidden="true">0{index + 1}</span><a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
-        </nav>
+        <div class="menu-dialog__nav-stack">
+          <nav aria-label={language === 'sq' ? 'Navigimi kryesor' : 'Primary navigation'}>
+            <ul class="menu-list">{items.map((item, index) => <li><span aria-hidden="true">0{index + 1}</span><a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]}</a></li>)}</ul>
+          </nav>
+          <nav class="menu-dialog__quick" aria-label={language === 'sq' ? 'Lidhje të shpejta' : 'Quick links'}>
+            <p>{language === 'sq' ? 'Eksploro' : 'Explore'}</p>
+            <div>
+              {quickItems.map((item) => <a href={localizedPath('/' + item.slug + '/', language)} aria-current={activeSlug === item.slug ? 'page' : undefined}>{item.label[language]} <span aria-hidden="true">↗</span></a>)}
+            </div>
+          </nav>
+        </div>
         <div class="menu-dialog__signal" aria-hidden="true">
           <span class="menu-orbit menu-orbit--large"><img src="/media/brand/kult360-orbit-source.png" alt="" /></span>
           <p>Culture · Equality · Communities</p>
