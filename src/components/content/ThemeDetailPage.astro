@@ -62,6 +62,31 @@ const path = localizedPath(`/themes/${theme.slug}/`, language);
       </div>
     </section>
 
+    {theme.lenses.some((lens) => lens.article?.length) && (
+      <section class="theme-detail__articles">
+        <div class="container-wide">
+          <div class="theme-detail__section-head">
+            <p>{language === 'sq' ? 'Shënime nga praktika' : 'Notes from practice'}</p>
+            <span>{language === 'sq' ? 'Mësim, shkëmbim dhe pjesëmarrje' : 'Learning, exchange and participation'}</span>
+          </div>
+          <div class="theme-detail__article-list">
+            {theme.lenses.map((lens, lensIndex) => lens.article?.length && (
+              <article class="theme-detail__article">
+                <div class="theme-detail__article-mark" aria-hidden="true">
+                  <span>{String(lensIndex + 1).padStart(2,'0')}</span>
+                </div>
+                <div class="theme-detail__article-copy">
+                  <p class="theme-detail__label">{language === 'sq' ? 'Lente pune' : 'Working lens'}</p>
+                  <h2>{lens.title[language]}</h2>
+                  {lens.article.map((paragraph) => <p>{paragraph[language]}</p>)}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     {relatedPrograms.length > 0 && (
       <section class="container-wide theme-detail__programs">
         <div class="theme-detail__section-head">
