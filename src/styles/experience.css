@@ -6469,3 +6469,152 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     animation: none !important;
   }
 }
+
+
+/* =========================================================
+   LEADERSHIP FIRST — PRESIDENT + EXECUTIVE DIRECTOR
+   ========================================================= */
+
+.pcf-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.pcf-person-card--leadership {
+  grid-template-columns: minmax(0,.72fr) minmax(0,.28fr);
+  align-items: end;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ece7dc;
+  border: 1px solid rgb(9 9 8 / 18%);
+  border-radius: 12px;
+}
+
+.pcf-person-card--leadership .pcf-person-card__media {
+  aspect-ratio: 4 / 4.65;
+}
+
+.pcf-person-card--leadership .pcf-person-card__copy {
+  min-height: 100%;
+  align-content: end;
+  padding: 0 2.1rem .2rem 0;
+}
+
+.pcf-person-card--leadership .pcf-person-card__copy strong {
+  font-size: clamp(1.15rem,2vw,1.75rem);
+  line-height: 1.04;
+}
+
+.pcf-person-card--leadership .pcf-person-card__copy span {
+  margin-top: .45rem;
+  font-size: .76rem;
+  line-height: 1.35;
+}
+
+.pcf-directors-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .8rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgb(9 9 8 / 16%);
+}
+
+.pcf-directors-head > span {
+  color: var(--pcf-muted);
+  font-size: .62rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.pcf-people-grid--directors {
+  grid-auto-columns: clamp(13rem,18vw,16rem);
+}
+
+@media (max-width: 44rem) {
+  .pcf-leadership-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: .65rem;
+    margin-bottom: 1.55rem;
+  }
+
+  .pcf-person-card--leadership {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: stretch !important;
+    gap: .5rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    contain: none !important;
+  }
+
+  .pcf-person-card--leadership .pcf-person-card__media {
+    aspect-ratio: 4 / 5 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgb(9 9 8 / 24%) !important;
+  }
+
+  .pcf-person-card--leadership .pcf-person-card__copy {
+    min-height: 4.1rem !important;
+    align-content: start !important;
+    padding: 0 1.4rem 0 0 !important;
+  }
+
+  .pcf-person-card--leadership .pcf-person-card__copy strong {
+    font-size: .78rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .pcf-person-card--leadership .pcf-person-card__copy span {
+    margin-top: .12rem !important;
+    font-size: .54rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .pcf-person-card--leadership .pcf-person-card__copy i {
+    width: 1.15rem !important;
+    height: 1.15rem !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+  .pcf-directors-head {
+    margin-top: .35rem;
+    margin-bottom: .65rem;
+    padding-top: 1rem;
+  }
+
+  .pcf-directors-head > span {
+    font-size: .52rem;
+  }
+
+  .pcf-people-grid--directors {
+    grid-auto-columns: 44vw !important;
+    gap: .6rem !important;
+    width: calc(100vw - .625rem) !important;
+    margin-right: calc((100vw - 100%) * -1) !important;
+    padding-right: .75rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+  }
+
+  .pcf-people-grid--directors .pcf-person-card {
+    overflow: hidden !important;
+    contain: layout paint !important;
+  }
+
+  .pcf-people-grid--directors .pcf-person-card__copy strong {
+    font-size: .72rem !important;
+  }
+
+  .pcf-people-grid--directors .pcf-person-card__copy span {
+    font-size: .52rem !important;
+  }
+}
