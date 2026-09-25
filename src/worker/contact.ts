@@ -10,6 +10,9 @@ export interface ContactEnvironment {
 interface ContactPayload {
   name?: unknown;
   email?: unknown;
+  organisation?: unknown;
+  phone?: unknown;
+  inquiry?: unknown;
   message?: unknown;
   language?: unknown;
   website?: unknown;
@@ -37,20 +40,33 @@ const allowedOrigin = (request: Request, configured = ''): string | undefined =>
   return origin === requestOrigin || allowed.includes(origin) ? origin : undefined;
 };
 
-const rawEmail = (from: string, to: string, replyTo: string, name: string, message: string, page: string) => [
+const rawEmail = (
+  from: string,
+  to: string,
+  replyTo: string,
+  name: string,
+  organisation: string,
+  phone: string,
+  inquiry: string,
+  message: string,
+  page: string
+) => [
   `From: KULT360 website <${from}>`,
   `To: ${to}`,
   `Reply-To: ${name} <${replyTo}>`,
-  'Subject: KULT360 website inquiry',
+  `Subject: KULT360 website — ${inquiry || 'General enquiry'}`,
   'MIME-Version: 1.0',
   'Content-Type: text/plain; charset=UTF-8',
   '',
   `Name: ${name}`,
   `Email: ${replyTo}`,
+  organisation ? `Organisation: ${organisation}` : '',
+  phone ? `Phone: ${phone}` : '',
+  `Enquiry: ${inquiry || 'General enquiry'}`,
   `Page: ${page || 'Not provided'}`,
   '',
   message
-].join('\r\n');
+].filter(Boolean).join('\r\n');
 
 export const contactCorsResponse = (request: Request, env: ContactEnvironment): Response => {
   const origin = allowedOrigin(request, env.ALLOWED_ORIGINS);
@@ -85,6 +101,9 @@ export const handleContact = async (request: Request, env: ContactEnvironment): 
 
   const name = clean(payload.name, 120);
   const email = clean(payload.email, 254).toLowerCase();
+  const organisation = clean(payload.organisation, 160);
+  const phone = clean(payload.phone, 60);
+  const inquiry = clean(payload.inquiry, 120);
   const message = clean(payload.message, 6000);
   const page = clean(payload.page, 500);
   const startedAt = typeof payload.startedAt === 'number' ? payload.startedAt : Number(payload.startedAt);
@@ -100,6 +119,6 @@ export const handleContact = async (request: Request, env: ContactEnvironment): 
     return json({error: 'Contact delivery is not configured.'}, 503, origin);
   }
 
-  await sender.send(new EmailMessage(from, destination, rawEmail(from, destination, email, name, message, page)));
+  await sender.send(new EmailMessage(from, destination, rawEmail(from, destination, email, name, organisation, phone, inquiry, message, page)));
   return json({ok: true}, 202, origin);
 };
