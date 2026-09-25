@@ -19,9 +19,9 @@ import {homePage} from '../content/shell-pages';
 
 const language = 'en';
 const leadershipIds = ['person-eda-zari','person-ergys-shehu'];
-const leadership = leadershipIds
-  .map((id) => people.find((person) => person.id === id))
-  .filter(Boolean);
+const leadership = people
+  .filter((person) => leadershipIds.includes(person.id))
+  .sort((a, b) => leadershipIds.indexOf(a.id) - leadershipIds.indexOf(b.id));
 const directors = people.filter((person) => !leadershipIds.includes(person.id));
 const programmeImages = [
   '/media/projects/artist-hub.jpg',
