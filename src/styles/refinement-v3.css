@@ -2166,6 +2166,42 @@ body:not(:has(.pcf-hero)) .brand-lockup{
     gap:2.4rem !important;
   }
 
+  .project-grid .project-card{
+    overflow:hidden;
+    border:1px solid rgb(9 9 8 / 18%);
+    border-radius:10px;
+    background:#f7f4ed;
+  }
+
+  .project-grid .project-card__link{
+    gap:0;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    border-radius:inherit;
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .project-grid .project-card__media{
+    margin:0;
+    border:0;
+    border-bottom:1px solid rgb(9 9 8 / 16%);
+    border-radius:0;
+    background:#f3efe7;
+  }
+
+  .project-grid .project-card__body{
+    padding:.9rem .95rem 1rem;
+    background:#f7f4ed;
+  }
+
+  .project-grid .project-card__link:hover,
+  .project-grid .project-card__link:focus-visible{
+    background:transparent;
+    box-shadow:none;
+  }
+
   .project-card__link,
   .journal-card__link{
     margin:0;
@@ -2195,13 +2231,24 @@ body:not(:has(.pcf-hero)) .brand-lockup{
 
 /* Touch devices should still feel responsive */
 @media(hover:none){
+  .project-grid .project-card__link:hover,
+  .project-grid .project-card__link:focus{
+    background:transparent;
+    box-shadow:none;
+  }
+
   .pcf-programme-card:active,
   .pcf-project-card:active,
   .pcf-story-card:active,
   .pcf-person-card:active,
-  .project-card__link:active,
   .journal-card__link:active,
   .pcf-button:active{
     transform:scale(.985);
+  }
+
+  .project-grid .project-card__link:active{
+    transform:scale(.992);
+    background:transparent;
+    box-shadow:none;
   }
 }

@@ -8069,7 +8069,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
 .pcf-hero__headline--dial{
   display:flex!important;
   align-items:baseline!important;
-  gap:.18em!important;
+  gap:.24em!important;
   width:auto!important;
   max-width:min(100%,58rem)!important;
   margin:0!important;
@@ -8353,7 +8353,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     align-items:center!important;
     width:100%!important;
     max-width:none!important;
-    gap:.12em!important;
+    gap:0!important;
     font-size:clamp(1.58rem,6.1vw,1.82rem)!important;
     font-weight:720!important;
     line-height:.92!important;
@@ -8366,6 +8366,7 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
   .pcf-hero__dial-prefix{flex:0 0 auto}
   .pcf-hero__dial-live{
     flex:0 0 auto;
+    margin-left:.22em;
     font:inherit;
     font-size:1em;
     font-weight:inherit;
@@ -8375,17 +8376,17 @@ a:is(.pcf-programme-card,.pcf-project-card,.pcf-story-card,.pcf-person-card,.pro
     background:transparent;
   }
 
-  /* The connector owns the remaining space, so longer words shorten it smoothly. */
+  /* The selector endpoint never moves. The live word changes width and only
+     trims the LEFT side of this connector, so there is no horizontal jump. */
   .pcf-hero__headline--dial::after{
     content:'';
-    flex:1 1 auto;
-    min-width:.55rem;
-    max-width:3.1rem;
+    flex:1 1 0;
+    min-width:0;
     height:1px;
-    margin-left:.34rem;
-    margin-right:.08rem;
+    margin-left:.38rem;
+    margin-right:0;
     align-self:center;
-    background:linear-gradient(90deg,rgb(240 207 34 / 10%),rgb(240 207 34 / 68%) 82%,var(--experience-yellow));
+    background:linear-gradient(90deg,rgb(240 207 34 / 8%),rgb(240 207 34 / 62%) 76%,var(--experience-yellow));
     box-shadow:0 0 .42rem rgb(240 207 34 / 6%);
   }
 
